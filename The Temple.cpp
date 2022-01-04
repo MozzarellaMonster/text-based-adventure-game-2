@@ -9,7 +9,7 @@ using namespace std;
 int main(){
     cout << bleh();
 
-    outside_temple();
+    start();
 
     return 0;
 }

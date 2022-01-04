@@ -2,6 +2,9 @@
 
 string bleh();
 
-void outside_temple();
+void try_again();
+void start();
+void first_choice();
 void temple_entrance();
+void temple_first_room_text();
 void temple_first_room();
