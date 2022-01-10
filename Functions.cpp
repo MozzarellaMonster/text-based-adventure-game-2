@@ -131,20 +131,47 @@ void temple_first_room(){
     cout << "Do you want to try and solve the riddle now or do you want to look around the room more?\n";
     cout << "A. I'll try to solve the riddle now.\n";
     cout << "B. I want to look around the room more.\n";
-    cout << "C. What about the entrance?\n";
+    cout << "C. What about the entrance?\n\n";
+    print_line();
     cin >> choice;
 
-    if(choice == 'a' || choice == 'A'){
+    if(choice == 'A' || choice == 'a'){
         char second_choice;
-
+        print_line();
         cout << "You decide you want to try and solve the riddle now.\n";
         cout << "Of the three symbols on the walls, you decide to choose: \n";
         cout << "A. Wind\n";
         cout << "B. Fire\n";
-        cout << "C. Water\n";
+        cout << "C. Water\n\n";
+        print_line();
         
         cin >> second_choice;
         if(second_choice == 'A' || second_choice == 'a'){
+            cout << "You choose Wind.\n";
+            cout << "You walk up to the Wind symbol on the wall and gently touch it with your hand.\n";
+            cout << "Almost immediately, you feel gusts of air blowing from somewhere within the small room.\n";
+            cout << "Suddenly, the ceiling of the room opens up and several leaves are suddenly dumped into the room.\n";
+            cout << "You move to brush the ones that fell on you off, but suddenly pull your hand away when you feel a sharp pain.\n";
+            cout << "You quickly draw back your hand and look at the deep gash oozing blood over your palm.\n";
+            cout << "It's then you notice that the leaf stuck on your shirt is... embedded in the fabric.\n";
+            cout << "Small but wickedly sharp serrations can be seen lining the edge of the leaf and these have been entangled in the cloth of your shirt.\n";
+            cout << "You attempt to peel the leaf off with your fingernail, but only succeed in cutting the sensitive flesh underneath.\n";
+            cout << "You pull your finger away, but before you do that, you realize the leaf was surprisingly stiff and sturdy, like a piece of metal.\n";
+            cout << "Then with growing horror, you realize that the gusts of air are growing stronger and the leaves are slowly starting to twirl around the room.\n";
+            cout << "You rush to the still-sealed entrance of the room and fruitlessly pound on the large stone slab keeping it closed.\n";
+            cout << "The wind picks up even more, and the leaves dance freely around the room.\n";
+            cout << "You feel the fabric of your clothes tear as the leaves cut cleanly through them.\n";
+            cout << "You continue to helplessly pound on the stone slab, tears now pouring freely from your eyes.\n";
+            cout << "The wind is now a forceful gale and tosses the leaves violently around the room.\n";
+            cout << "Pain soon floods every part of your nearly exposed body as the leaves effortlessly tear open your skin.\n";
+            cout << "You pound on the stone slab and scream for help, but you can't even hear yourself over the howling wind.\n";
+            cout << "You scream and scream until you feel a leaf cut cleanly through both of your cheeks as another slices open your throat.\n";
+            cout << "Blood fills your throat as you let out one more scream that comes out more as a pathetic gurgle.\n";
+            cout << "You fall forward on the ground and faintly feel your ear get cut away as a leaf embeds itself in your eye.\n";
+            cout << "Your world is reduced to nothing but pain as your vision fades and you hear a voice in your head before everything fades to black.\n";
+            cout << "\"Wrong answer.\"\n\n";
+        }
+        if(second_choice == 'B' || second_choice == 'b'){
 
         }
     }
