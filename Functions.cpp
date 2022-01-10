@@ -94,52 +94,54 @@ void temple_entrance(){
     cout << "After making your choice, you turn back to the now-open temple entrance.\n";
     cout << "Something catches your eye however, and you turn to look at the pedestal holding the bowl of fire.\n";
     cout << "Somehow, the symbols now makes sense to you.\n";
-    cout << "The engraved text reads \"An offering needed to gain insight and entrance\".";
-    cout << "\"So,\" you think to yourself, \"now I can understand that language and enter the temple.\"";
+    cout << "The engraved text reads \"An offering needed to gain insight and entrance\".\n";
+    cout << "\"So,\" you think to yourself, \"now I can understand that language and enter the temple.\"\n";
     cout << "Will you go into the temple? ";
     cin >> choice;
     if(choice == 'Y' || choice == 'y'){
-        cout << "You head deeper into the temple.";
+        cout << "You head deeper into the temple.\n\n";
     }
     else{
-        cout << "You decide against going into the temple.";
+        cout << "You decide against going into the temple.\n\n";
     }
 }
 
 void temple_first_room_text(){
-    cout << "You enter the temple and find yourself in a dimly lit room."; 
-    cout << "There is a small bowl of fire on a pedestal in the very center of the room and no other source of light, save for the open doorway you're standing in.";
-    cout << "Cautiously, you step into the room. When you're about halfway toward the pedestal in the middle of the room, the doorway suddenly shuts as a huge slab of stone slides over the entrance, completely sealing you in.";
-    cout << "Well, looks like you're stuck here now, might as well examine the room more.";
-    cout << "You notice a recess set into the pedestal below the bowl. Inside, there is a brown polished stone with a strange glyph carved into it."; 
-    cout << "You pick it up and examine it closely. Suddenly, the glyph morphs into the word \"Answer\" right before your eyes.";
-    cout << "You blink, but the word has disappeared and the symbol has returned. You gently set the stone back inside the recess and look around the room.";
-    cout << "The room itself is pretty barren, composed entirely of smooth stone save for three symbols set into each of the walls beside the one containing the entryway.";
-    cout << "Suddenly, the room grows dimmer as the fire quickly wanes and abruptly dies only to fiercely reignite only moments later with a blazing blue light.";
-    cout << "An loud voice suddenly booms from out of nowhere, as you quickly slam your hands over your ears. It doesn't help however, as it seems the voice is coming directly from inside your head.";
+    print_line();
+    cout << "You enter the temple and find yourself in a dimly lit room.\n"; 
+    cout << "There is a small bowl of fire on a pedestal in the very center of the room and no other source of light, save for the open doorway you're standing in.\n";
+    cout << "Cautiously, you step into the room. When you're about halfway toward the pedestal in the middle of the room, the doorway suddenly shuts as a huge slab of stone slides over the entrance, completely sealing you in.\n";
+    cout << "Well, looks like you're stuck here now, might as well examine the room more.\n";
+    cout << "You notice a recess set into the pedestal below the bowl. Inside, there is a brown polished stone with a strange glyph carved into it.\n";
+    cout << "You pick it up and examine it closely. Suddenly, the glyph morphs into the word \"Answer\" right before your eyes.\n";
+    cout << "You blink, but the word has disappeared and the symbol has returned. You gently set the stone back inside the recess and look around the room.\n";
+    cout << "The room itself is pretty barren, composed entirely of smooth stone save for three symbols set into each of the walls beside the one containing the entryway.\n";
+    cout << "Suddenly, the room grows dimmer as the fire quickly wanes and abruptly dies only to fiercely reignite only moments later with a blazing blue light.\n";
+    cout << "An loud voice suddenly booms from out of nowhere, as you quickly slam your hands over your ears. It doesn't help however, as it seems the voice is coming directly from inside your head.\n";
     cout << "\"";
     cout << "\"Unhindered, I can destroy cities, yet tamed I supply them. I carve the very Earth, yet flesh does not yield. I reign over the many kingdoms of man, for I have seen them all.\"";
     cout << "\"For millennia you have tried to control me, to confine me, yet you are the greatest prisoner, for you cannot live without me.\"";
-    cout << "You take a closer look at the symbols around the room. One appears to be a stylized gust of wind, another is clearly a flame, and the last appears to be running water.";
+    cout << "You take a closer look at the symbols around the room. One appears to be a stylized gust of wind, another is clearly a flame, and the last appears to be running water.\n\n";
     temple_first_room();
 }
 
 void temple_first_room(){
     char choice;
-    cout << "Do you want to try and solve the riddle now or do you want to look around the room more?";
-    cout << "A. I'll try to solve the riddle now.";
-    cout << "B. I want to look around the room more.";
-    cout << "C. What about the entrance?";
+    print_line();
+    cout << "Do you want to try and solve the riddle now or do you want to look around the room more?\n";
+    cout << "A. I'll try to solve the riddle now.\n";
+    cout << "B. I want to look around the room more.\n";
+    cout << "C. What about the entrance?\n";
     cin >> choice;
 
     if(choice == 'a' || choice == 'A'){
         char second_choice;
 
-        cout << "You decide you want to try and solve the riddle now.";
-        cout << "Of the three symbols on the walls, you decide to choose: ";
-        cout << "A. Wind";
-        cout << "B. Fire";
-        cout << "C. Water";
+        cout << "You decide you want to try and solve the riddle now.\n";
+        cout << "Of the three symbols on the walls, you decide to choose: \n";
+        cout << "A. Wind\n";
+        cout << "B. Fire\n";
+        cout << "C. Water\n";
         
         cin >> second_choice;
         if(second_choice == 'A' || second_choice == 'a'){
