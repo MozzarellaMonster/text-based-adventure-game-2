@@ -150,11 +150,11 @@ void temple_first_room(){
             cout << "You choose Wind.\n";
             cout << "You walk up to the Wind symbol on the wall and gently touch it with your hand.\n";
             cout << "Almost immediately, you feel gusts of air blowing from somewhere within the small room.\n";
-            cout << "Suddenly, the ceiling of the room opens up and several leaves are suddenly dumped into the room.\n";
-            cout << "You move to brush the ones that fell on you off, but suddenly pull your hand away when you feel a sharp pain.\n";
+            cout << "Suddenly, the ceiling of the room opens up and several thousand leaves are dumped into the room.\n";
+            cout << "You move to brush off the ones that fell on you, but immediately pull your hand away when you feel a sharp pain.\n";
             cout << "You quickly draw back your hand and look at the deep gash oozing blood over your palm.\n";
             cout << "It's then you notice that the leaf stuck on your shirt is... embedded in the fabric.\n";
-            cout << "Small but wickedly sharp serrations can be seen lining the edge of the leaf and these have been entangled in the cloth of your shirt.\n";
+            cout << "Small but wickedly sharp serrations can be seen lining the edge of the leaf and have been entangled in the cloth of your shirt.\n";
             cout << "You attempt to peel the leaf off with your fingernail, but only succeed in cutting the sensitive flesh underneath.\n";
             cout << "You pull your finger away, but before you do that, you realize the leaf was surprisingly stiff and sturdy, like a piece of metal.\n";
             cout << "Then with growing horror, you realize that the gusts of air are growing stronger and the leaves are slowly starting to twirl around the room.\n";
@@ -172,7 +172,23 @@ void temple_first_room(){
             cout << "\"Wrong answer.\"\n\n";
         }
         if(second_choice == 'B' || second_choice == 'b'){
-
+            cout << "You choose Fire.\n";
+            cout << "You walk up to the Fire symbol and gently touch it with your hand.\n";
+            cout << "After some time passes with seemingly nothing happening, you slowly back up and look quickly around the room.\n";
+            cout << "Nothing seems out of place or anything, but then you notice that something did change.\n";
+            cout << "The room feels hotter.\n";
+            cout << "It is then that you notice small heat waves emanating from the cracks in the stone floor.\n";
+            cout << "You quickly stoop down and place your hand near one of the cracks. Intense heat brushes over the skin of your palm.\n";
+            cout << "Suddenly, the stone brick making up the floor directly in front of you gives way and falls down, revealing a fiery inferno underneath.\n";
+            cout << "Soon, more stone bricks start to fall into the high reach of the flames beneath at rapidly increasing intervals.\n";
+            cout << "Quickly, you scan what little of the room remains to stand on and notice the pedestal is resting on a sturdy pillar of rock.\n";
+            cout << "You deftly jump over to it and hold on to it as the rest of the room's floor falls away.\n";
+            cout << "It's so hot now, you can barely breathe. Fire rages all around you. There's nowhere to run, to stand, nothing.\n";
+            cout << "The raging inferno grows bigger, tentacles of flame lick at the soles of your shoes.\n";
+            cout << "You finally let out the scream you were holding in, hoping for a miracle.\n";
+            cout << "But the miracle never came, the flames did.\n";
+            cout << "As your skin melts away, you hear a voice in your head.\n";
+            cout << "\"Wrong answer.\"";
         }
     }
     else if(choice == 'B' || choice == 'b'){
