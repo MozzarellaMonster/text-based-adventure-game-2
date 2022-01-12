@@ -138,7 +138,7 @@ void temple_first_room(){
     if(choice == 'A' || choice == 'a'){
         char second_choice;
         print_line();
-        cout << "You decide you want to try and solve the riddle now.\n";
+        cout << "You decide you want to try and solve the riddle now.\n\n";
         cout << "Of the three symbols on the walls, you decide to choose: \n";
         cout << "A. Wind\n";
         cout << "B. Fire\n";
@@ -179,15 +179,14 @@ void temple_first_room(){
             cout << "The room feels hotter.\n";
             cout << "It is then that you notice small heat waves emanating from the cracks in the stone floor.\n";
             cout << "You quickly stoop down and place your hand near one of the cracks. Intense heat brushes over the skin of your palm.\n";
-            cout << "Suddenly, the stone brick making up the floor directly in front of you gives way and falls down, revealing a fiery inferno underneath.\n";
-            cout << "Soon, more stone bricks start to fall into the high reach of the flames beneath at rapidly increasing intervals.\n";
+            cout << "Suddenly, a stone brick in the floor directly in front of you gives way and falls down, revealing a fiery inferno underneath.\n";
+            cout << "Soon, more bricks start to fall into the flames beneath, each faster than the last.\n";
             cout << "Quickly, you scan what little of the room remains to stand on and notice the pedestal is resting on a sturdy pillar of rock.\n";
             cout << "You deftly jump over to it and hold on to it as the rest of the room's floor falls away.\n";
-            cout << "It's so hot now, you can barely breathe. Fire rages all around you. There's nowhere to run, to stand, nothing.\n";
-            cout << "The raging inferno grows bigger, tentacles of flame lick at the soles of your shoes.\n";
-            cout << "You finally let out the scream you were holding in, hoping for a miracle.\n";
-            cout << "But the miracle never came, the flames did.\n";
-            cout << "As your skin melts away, you hear a voice in your head.\n";
+            cout << "It's so hot now, you can barely breathe. Fire rages all around you. There's nowhere to run, nowhere to stand, nowhere to go.\n";
+            cout << "The raging inferno grows bigger, billows of flame lick at the soles of your shoes.\n";
+            cout << "You tilt your head back and finally scream.\n";
+            cout << "As your skin melts away and the flames scorch your flesh, you hear a voice in your head.\n";
             cout << "\"Wrong answer.\"";
         }
     }
