@@ -4,10 +4,11 @@
 
 #include "The Temple.cpp"
 #include "Functions.hpp"
+#include "Trackers.hpp"
 
 using namespace std;
 
-vector<Items> inventory;
+vector<string> inventory;
 
 string bleh(){
     return "Bleh.";
@@ -68,7 +69,7 @@ void first_choice(){
         cout << "Suddenly, the stone slab blocking the entrance into the temple slides up, opening into the dark interior of the temple.\n";
         cout << "You stand there for a moment, then state, \"Aaand it just did.\"\n";
         cout << "You pick the dagger back up and store it on your person.\n";
-        inventory.push_back(Items::dagger);
+        inventory.push_back(dagger);
         temple_entrance();
     }
     else if(choice == 'N' || choice == 'n'){
@@ -190,11 +191,27 @@ void temple_first_room(){
             cout << "\"Wrong answer.\"";
         }
     }
+    else if((choice == 'B' || choice == 'b') && first_room_explored){
+        cout << "You quickly look around the room, but you're sure you've already examined everything.\n";
+        cout << "You turn back to the room.\n";
+        temple_first_room();
+    }
     else if(choice == 'B' || choice == 'b'){
-        //cout << ""
+        cout << "You decide to look around the room more.\n";
+        cout << "You look closer at the symbols on the walls: there's the wind symbol on the left wall, the water symbol on the wall directly opposite you and the fire symbol on the right wall.\n";
+        cout << "Other than the fact that the symbols seemed to be etched out of the wall itself, there doesn't seem to be anything else interesting about them.\n";
+        cout << "You also examine the pedestal in the center of the room and notice that there is a little piece of paper sticking out from a small crack between the pedestal and the floor.\n";
+        cout << "You gently pull it out and read what it says: \"The riddle is different for everyone. My answer was Wind, be aware that there will be many winding paths throughout this temple.\"\n";
+        cout << "\"Make each choice you come across carefully, the temple is testing you. If you fail even one, the price will be your life.\"\n";
+        cout << "There is also a strange symbol that looks like a Sun on the corner of the paper. You flip the paper over and examine the back, but there is nothing else to read.\n";
+        cout << "You gently fold the piece of paper up and look back to the room.\n";
+        first_room_explored = true;
+        temple_first_room();
     }
     else if(choice == 'C' || choice == 'c'){
-
+        cout << "You look back to the entryway. The huge stone slab remains, sealing you in the temple.\n";
+        cout << "You sigh and turn back to the room.\n";
+        temple_first_room();
     }
     else{
         try_again();

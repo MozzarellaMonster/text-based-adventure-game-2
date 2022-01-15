@@ -3,8 +3,4 @@
 
 using namespace std;
 
-class Items{
-    string dagger = "Iron Dagger";
-    
-
-};
+string dagger = "Iron Dagger";
