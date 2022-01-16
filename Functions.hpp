@@ -4,7 +4,7 @@ string bleh();
 
 void try_again();
 void retry();
-void retry(void *func)
+void retry(void *func);
 void start();
 void first_choice();
 void temple_entrance();

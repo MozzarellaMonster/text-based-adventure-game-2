@@ -30,7 +30,7 @@ void retry(){
         start();
     }
     else if(choice == 'N' || choice == 'n'){
-        exit();
+        exit(0);
     }
     else{
         try_again();
@@ -40,7 +40,18 @@ void retry(){
 
 void retry(void (*func)){
     char choice;
-
+    cout << "\nRetry from the last room? Y/N: ";
+    cin >> choice;
+    if(choice == 'Y' || choice == 'y'){
+        //func(); Find solution for this.
+    }
+    else if(choice == 'N' || choice == 'n'){
+        retry();
+    }
+    else{
+        try_again();
+        retry(func);
+    }
 }
 
 void start(){
