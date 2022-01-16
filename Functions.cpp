@@ -22,6 +22,27 @@ void try_again(){
     cout << "\nSorry, that is not a valid option, please try again.\n";
 }
 
+void retry(){
+    char choice;
+    cout << "\nWould you like to play again? Y/N: ";
+    cin >> choice;
+    if(choice == 'Y' || choice == 'y'){
+        start();
+    }
+    else if(choice == 'N' || choice == 'n'){
+        exit();
+    }
+    else{
+        try_again();
+        retry();
+    }
+}
+
+void retry(void (*func)){
+    char choice;
+
+}
+
 void start(){
     cout << "_________          _______   _________ _______  _______  _______  _        _______ \n";
     cout << "\\__   __/|\\     /|(  ____ \\  \\__   __/(  ____ \\(       )(  ____ )( \\      (  ____ \\\n";
@@ -101,9 +122,11 @@ void temple_entrance(){
     cin >> choice;
     if(choice == 'Y' || choice == 'y'){
         cout << "You head deeper into the temple.\n\n";
+        temple_first_room_text();
     }
     else{
         cout << "You decide against going into the temple.\n\n";
+        // Finish this
     }
 }
 
@@ -171,6 +194,8 @@ void temple_first_room(){
             cout << "You fall forward on the ground and faintly feel your ear get cut away as a leaf embeds itself in your eye.\n";
             cout << "Your world is reduced to nothing but pain as your vision fades and you hear a voice in your head before everything fades to black.\n";
             cout << "\"Wrong answer.\"\n\n";
+
+            // Finish this
         }
         if(second_choice == 'B' || second_choice == 'b'){
             cout << "You choose Fire.\n";
@@ -189,6 +214,8 @@ void temple_first_room(){
             cout << "You tilt your head back and finally scream.\n";
             cout << "As your skin melts away and the flames scorch your flesh, you hear a voice in your head.\n";
             cout << "\"Wrong answer.\"";
+            
+            // Finish this
         }
     }
     else if((choice == 'B' || choice == 'b') && first_room_explored){
