@@ -4,3 +4,4 @@
 using namespace std;
 
 string dagger = "Iron Dagger";
+string first_note = "Note 1";

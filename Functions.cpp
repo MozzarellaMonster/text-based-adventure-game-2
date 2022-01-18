@@ -38,12 +38,12 @@ void retry(){
     }
 }
 
-void retry(void (*func)){
+void retry(void (*func)()){
     char choice;
     cout << "\nRetry from the last room? Y/N: ";
     cin >> choice;
     if(choice == 'Y' || choice == 'y'){
-        //func(); Find solution for this.
+        func();
     }
     else if(choice == 'N' || choice == 'n'){
         retry();
@@ -136,8 +136,20 @@ void temple_entrance(){
         temple_first_room_text();
     }
     else{
-        cout << "You decide against going into the temple.\n\n";
-        // Finish this
+        cout << "You decide against going into the temple, instead opting to explore your location more.\n\n";
+        cout << "You look around more and come across a rucksack half-buried in the dense foliage.\n";
+        cout << "You pull it out and search the pockets. You find an old map, a broken watch, and a piece of paper.\n";
+        cout << "The old map is nearly useless, as it is so worn and faded that all you can really see are faint gridlines and the border.\n";
+        cout << "The broken watch is even more useless since the casing seemingly broke open long ago and all the internal mechanisms have now fallen completely apart.\n";
+        cout << "The piece of paper is actually the most interesting of the junk you find. There's something written on it in in crooked, barely legible script.\n";
+        cout << "It reads: \n\"11/13/07\n   I've done it! After trying another combination of glyphs, I've finally opened a doorway to another dimension.\n";
+        cout << "I've yet to try anything more than sending several test items through. None have returned, but that is to be expected. I'm gonna try to get an image next.\n";
+        cout << "Success! I now have a photograph of the other side of the doorway. However, what I did not expect was...\n";
+        cout << "The rest of the message is gone.\n";
+        cout << "You fold up the piece of paper and stash it on your person.\n";
+        inventory.push_back(first_note);
+        cout << "You head back to the temple entrance and step inside.\n";
+        temple_first_room_text();
     }
 }
 
@@ -205,8 +217,8 @@ void temple_first_room(){
             cout << "You fall forward on the ground and faintly feel your ear get cut away as a leaf embeds itself in your eye.\n";
             cout << "Your world is reduced to nothing but pain as your vision fades and you hear a voice in your head before everything fades to black.\n";
             cout << "\"Wrong answer.\"\n\n";
-
-            // Finish this
+            
+            retry(temple_first_room());
         }
         if(second_choice == 'B' || second_choice == 'b'){
             cout << "You choose Fire.\n";
@@ -226,7 +238,7 @@ void temple_first_room(){
             cout << "As your skin melts away and the flames scorch your flesh, you hear a voice in your head.\n";
             cout << "\"Wrong answer.\"";
             
-            // Finish this
+            retry(temple_first_room());
         }
     }
     else if((choice == 'B' || choice == 'b') && first_room_explored){
