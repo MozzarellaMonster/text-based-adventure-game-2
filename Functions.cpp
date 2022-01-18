@@ -186,6 +186,9 @@ void temple_first_room(){
         char second_choice;
         print_line();
         cout << "You decide you want to try and solve the riddle now.\n\n";
+        cout << "The riddle is:\n";
+        cout << "\"Unhindered, I can destroy cities, yet tamed I supply them. I carve the very Earth, yet flesh does not yield. I reign over the many kingdoms of man, for I have seen them all.\"";
+        cout << "\"For millennia you have tried to control me, to confine me, yet you are the greatest prisoner, for you cannot live without me.\"\n";
         cout << "Of the three symbols on the walls, you decide to choose: \n";
         cout << "A. Wind\n";
         cout << "B. Fire\n";
@@ -218,7 +221,7 @@ void temple_first_room(){
             cout << "Your world is reduced to nothing but pain as your vision fades and you hear a voice in your head before everything fades to black.\n";
             cout << "\"Wrong answer.\"\n\n";
             
-            retry(temple_first_room());
+            retry(&temple_first_room);
         }
         if(second_choice == 'B' || second_choice == 'b'){
             cout << "You choose Fire.\n";
@@ -238,7 +241,7 @@ void temple_first_room(){
             cout << "As your skin melts away and the flames scorch your flesh, you hear a voice in your head.\n";
             cout << "\"Wrong answer.\"";
             
-            retry(temple_first_room());
+            retry(&temple_first_room);
         }
     }
     else if((choice == 'B' || choice == 'b') && first_room_explored){
