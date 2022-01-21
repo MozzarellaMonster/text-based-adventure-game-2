@@ -4,4 +4,4 @@
 
 using namespace std;
 
-first_room_explored = false;
+bool first_room_explored = false;

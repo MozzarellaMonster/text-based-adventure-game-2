@@ -1,4 +1,6 @@
 //Header file for Functions.cpp
+#ifndef FUNCTIONS_HPP
+#define FUNCTIONS_HPP
 
 string bleh();
 
@@ -10,3 +12,5 @@ void first_choice();
 void temple_entrance();
 void temple_first_room_text();
 void temple_first_room();
+
+#endif

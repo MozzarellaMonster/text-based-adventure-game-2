@@ -4,6 +4,7 @@
 
 #include "The Temple.cpp"
 #include "Functions.hpp"
+#include "Items.hpp"
 #include "Trackers.hpp"
 
 using namespace std;
@@ -64,9 +65,9 @@ void start(){
     cout << "   | |   | )   ( || (____/\\     | |   | (____/\\| )   ( || )      | (____/\\| (____/\\\n";
     cout << "   )_(   |/     \\|(_______/     )_(   (_______/|/     \\||/       (_______/(_______/\n\n\n";
                                                                                    
-    
-    
-    
+    cout << "A game by MozzarellaMonster\n";
+    cout << "Hello! Welcome to the sequel to The House!\n";
+    cout << "Hopefully you enjoy it and have as much fun as I did making it!\n\n";
     
     print_line();
     cout << "After wandering through the jungle for an immeasurable amount of time, you come across a strange temple.\n";
@@ -129,13 +130,13 @@ void temple_entrance(){
     cout << "Somehow, the symbols now makes sense to you.\n";
     cout << "The engraved text reads \"An offering needed to gain insight and entrance\".\n";
     cout << "\"So,\" you think to yourself, \"now I can understand that language and enter the temple.\"\n";
-    cout << "Will you go into the temple? ";
+    cout << "Will you go into the temple? Y/N: ";
     cin >> choice;
     if(choice == 'Y' || choice == 'y'){
         cout << "You head deeper into the temple.\n\n";
         temple_first_room_text();
     }
-    else{
+    else if(choice == 'N' || choice == 'n'){
         cout << "You decide against going into the temple, instead opting to explore your location more.\n\n";
         cout << "You look around more and come across a rucksack half-buried in the dense foliage.\n";
         cout << "You pull it out and search the pockets. You find an old map, a broken watch, and a piece of paper.\n";
@@ -150,6 +151,10 @@ void temple_entrance(){
         inventory.push_back(first_note);
         cout << "You head back to the temple entrance and step inside.\n";
         temple_first_room_text();
+    }
+    else{
+        try_again();
+        temple_entrance();
     }
 }
 
@@ -189,7 +194,7 @@ void temple_first_room(){
         cout << "The riddle is:\n";
         cout << "\"Unhindered, I can destroy cities, yet tamed I supply them. I carve the very Earth, yet flesh does not yield. I reign over the many kingdoms of man, for I have seen them all.\"";
         cout << "\"For millennia you have tried to control me, to confine me, yet you are the greatest prisoner, for you cannot live without me.\"\n";
-        cout << "Of the three symbols on the walls, you decide to choose: \n";
+        cout << "Of the three symbols on the walls, you decide to choose: \n\n";
         cout << "A. Wind\n";
         cout << "B. Fire\n";
         cout << "C. Water\n\n";
