@@ -65,7 +65,7 @@ void start(){
     cout << "   | |   | )   ( || (____/\\     | |   | (____/\\| )   ( || )      | (____/\\| (____/\\\n";
     cout << "   )_(   |/     \\|(_______/     )_(   (_______/|/     \\||/       (_______/(_______/\n\n\n";
                                                                                    
-    cout << "A game by MozzarellaMonster\n";
+    cout << "A game by MozzarellaMonster.\n";
     cout << "Hello! Welcome to the sequel to The House!\n";
     cout << "Hopefully you enjoy it and have as much fun as I did making it!\n\n";
     
@@ -226,7 +226,7 @@ void temple_first_room(){
             cout << "Your world is reduced to nothing but pain as your vision fades and you hear a voice in your head before everything fades to black.\n";
             cout << "\"Wrong answer.\"\n\n";
             
-            retry(&temple_first_room);
+            retry(&temple_first_room_text);
         }
         if(second_choice == 'B' || second_choice == 'b'){
             cout << "You choose Fire.\n";
@@ -246,7 +246,7 @@ void temple_first_room(){
             cout << "As your skin melts away and the flames scorch your flesh, you hear a voice in your head.\n";
             cout << "\"Wrong answer.\"";
             
-            retry(&temple_first_room);
+            retry(&temple_first_room_text);
         }
     }
     else if((choice == 'B' || choice == 'b') && first_room_explored){
