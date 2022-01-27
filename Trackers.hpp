@@ -4,6 +4,6 @@
 
 using namespace std;
 
-bool first_room_explored;
+extern bool first_room_explored;
 
 #endif

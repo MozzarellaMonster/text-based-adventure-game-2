@@ -6,7 +6,7 @@
 
 using namespace std;
 
-string dagger;
-string first_note;
+extern string dagger;
+extern string first_note;
 
 #endif

@@ -8,13 +8,13 @@ using namespace std;
 
 string bleh();
 
-void try_again();
-void retry();
-void retry(void *func);
-void start();
-void first_choice();
-void temple_entrance();
-void temple_first_room_text();
-void temple_first_room();
+extern void try_again();
+extern void retry();
+extern void retry(void *func);
+extern void start();
+extern void first_choice();
+extern void temple_entrance();
+extern void temple_first_room_text();
+extern void temple_first_room();
 
 #endif
