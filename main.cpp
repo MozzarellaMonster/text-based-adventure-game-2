@@ -6,8 +6,6 @@
 using namespace std;
 
 int main(){
-    cout << bleh();
-
     start();
 
     return 0;
