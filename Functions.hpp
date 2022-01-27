@@ -16,5 +16,7 @@ extern void first_choice();
 extern void temple_entrance();
 extern void temple_first_room_text();
 extern void temple_first_room();
+extern void temple_second_room_text();
+extern void temple_second_room();
 
 #endif

@@ -228,7 +228,7 @@ void temple_first_room(){
             
             retry(&temple_first_room_text);
         }
-        if(second_choice == 'B' || second_choice == 'b'){
+        else if(second_choice == 'B' || second_choice == 'b'){
             cout << "You choose Fire.\n";
             cout << "You walk up to the Fire symbol and gently touch it with your hand.\n";
             cout << "After some time passes with seemingly nothing happening, you slowly back up and look quickly around the room.\n";
@@ -247,6 +247,18 @@ void temple_first_room(){
             cout << "\"Wrong answer.\"";
             
             retry(&temple_first_room_text);
+        }
+        else if(second_choice == 'C' || second_choice == 'b'){
+            cout << "You choose Water.\n";
+            cout << "At first, nothing happens. Then, there's a low rumbling sound as the wall with the Water symbol slowly slides up into the ceiling.\n";
+            cout << "You slowly approach and look into the room beyond. Or at least you try to, but it's so dark that not even the burning flame is able to cast much light.\n";
+            cout << "Cautiously, you take a single step into the room and suddenly several bowls ignite around the perimeter of the much larger room, bathing the room in a warm glow.\n";
+            cout << "It is then you hear a voice in your head, \"Correct.\".";
+            
+        }
+        else{
+            try_again();
+            temple_first_room();
         }
     }
     else if((choice == 'B' || choice == 'b') && first_room_explored){
@@ -275,4 +287,12 @@ void temple_first_room(){
         try_again();
         temple_first_room();
     }
+}
+
+void temple_second_room_text(){
+
+}
+
+void temple_second_room(){
+    
 }
