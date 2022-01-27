@@ -2,6 +2,10 @@
 #ifndef FUNCTIONS_HPP
 #define FUNCTIONS_HPP
 
+#include <string>
+
+using namespace std;
+
 string bleh();
 
 void try_again();

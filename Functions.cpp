@@ -1,8 +1,8 @@
 //Function definitions for the main game file.
 #include <iostream>
+#include <string>
 #include <vector>
 
-#include "The Temple.cpp"
 #include "Functions.hpp"
 #include "Items.hpp"
 #include "Trackers.hpp"
