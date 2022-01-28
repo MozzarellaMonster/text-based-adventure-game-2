@@ -253,8 +253,8 @@ void temple_first_room(){
             cout << "At first, nothing happens. Then, there's a low rumbling sound as the wall with the Water symbol slowly slides up into the ceiling.\n";
             cout << "You slowly approach and look into the room beyond. Or at least you try to, but it's so dark that not even the burning flame is able to cast much light.\n";
             cout << "Cautiously, you take a single step into the room and suddenly several bowls ignite around the perimeter of the much larger room, bathing the room in a warm glow.\n";
-            cout << "It is then you hear a voice in your head, \"Correct.\".";
-            
+            cout << "It is then you hear a voice in your head, \"Correct.\".\n\n";
+            temple_second_room_text();
         }
         else{
             try_again();
@@ -290,7 +290,13 @@ void temple_first_room(){
 }
 
 void temple_second_room_text(){
-
+    print_line();
+    cout << "You step into the much larger room and look around.\n";
+    cout << "Spaced evenly around the perimeter of the room are seven stone archways.\n";
+    cout << "All of the archways have intricate carvings adorning them, each of them depicting different scenes.\n";
+    cout << "One archway appears to have faces carved into the smooth, black stone. The room appears to be named \"The Room of the Dead\".\n";
+    cout << "Another appears to be adorned with carvings of insects and reads \"The Room of the Swarm\".\n";
+    cout << "";
 }
 
 void temple_second_room(){
