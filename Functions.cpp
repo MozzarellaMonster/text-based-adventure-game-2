@@ -296,9 +296,25 @@ void temple_second_room_text(){
     cout << "All of the archways have intricate carvings adorning them, each of them depicting different scenes.\n";
     cout << "One archway appears to have faces carved into the smooth, black stone. The room appears to be named \"The Room of the Dead\".\n";
     cout << "Another appears to be adorned with carvings of insects and reads \"The Room of the Swarm\".\n";
-    cout << "";
+    cout << "There are more rooms, but they are too far away to clearly read the names of them.\n";
+    cout << "Instead, you focus on the center of the room where an imposing stone obelisk stands.\n";
+    cout << "You approach the obelisk and are able to make out the few lines of text on it.\n";
+    cout << "\"Bring forth six tokens from the six paths, wanderer. Present them to continue your journey.\"";
+    cout << "You look to the seven archways, all but one are open. The largest one in the center of all the archways is closed off by a large stone.\n";
+    cout << "You look back to the obelisk where six recesses are arranged in a hexagonal pattern.\n";
+    cout << "You scan the different open archways again. Which to choose?\n";
+    temple_second_room();
 }
 
 void temple_second_room(){
-    
+    print_line();
+    cout << "\nWhich archway would you like to approach?\n";
+    cout << "A. The First Archway\n";
+    cout << "B. The Second Archway\n";
+    cout << "C. The Third Archway\n";
+    cout << "D. The Fourth Archway\n";
+    cout << "E. The Fifth Archway\n";
+    cout << "F. The Sixth Archway\n";
+    cout << "G. The Seventh Archway\n";
+    // Add variable names to archway options based on which ones the player has approached already.
 }
