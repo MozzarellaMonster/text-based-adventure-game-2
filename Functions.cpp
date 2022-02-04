@@ -51,6 +51,20 @@ void retry(void (*func)()){
     }
 }
 
+void determine_riddle(){
+    set_riddle = rand() % 3;
+    switch(set_riddle){
+        case 1:
+            current_riddle = wind_riddle;
+            break;
+        case 2:
+            current_riddle = fire_riddle;
+            break;
+        default:
+            current_riddle = water_riddle;
+    }
+}
+
 void start(){
     cout << "_________          _______   _________ _______  _______  _______  _        _______ \n";
     cout << "\\__   __/|\\     /|(  ____ \\  \\__   __/(  ____ \\(       )(  ____ )( \\      (  ____ \\\n";
@@ -166,14 +180,13 @@ void temple_first_room_text(){
     cout << "The room itself is pretty barren, composed entirely of smooth stone save for three symbols set into each of the walls beside the one containing the entryway.\n";
     cout << "Suddenly, the room grows dimmer as the fire quickly wanes and abruptly dies only to fiercely reignite only moments later with a blazing blue light.\n";
     cout << "An loud voice suddenly booms from out of nowhere, as you quickly slam your hands over your ears. It doesn't help however, as it seems the voice is coming directly from inside your head.\n";
-    cout << "\"";
-    cout << "\"Unhindered, I can destroy cities, yet tamed I supply them. I carve the very Earth, yet flesh does not yield. I reign over the many kingdoms of man, for I have seen them all.\"";
-    cout << "\"For millennia you have tried to control me, to confine me, yet you are the greatest prisoner, for you cannot live without me.\"";
+    cout << current_riddle << endl;
     cout << "You take a closer look at the symbols around the room. One appears to be a stylized gust of wind, another is clearly a flame, and the last appears to be running water.\n\n";
     temple_first_room();
 }
 
 void temple_first_room(){
+    determine_riddle();
     char choice;
     print_line();
     cout << "Do you want to try and solve the riddle now or do you want to look around the room more?\n";
@@ -186,11 +199,10 @@ void temple_first_room(){
     if(choice == 'A' || choice == 'a'){
         char second_choice;
         print_line();
-        cout << "You decide you want to try and solve the riddle now.\n\n";
-        cout << "The riddle is:\n";
-        cout << "\"Unhindered, I can destroy cities, yet tamed I supply them. I carve the very Earth, yet flesh does not yield. I reign over the many kingdoms of man, for I have seen them all.\"";
-        cout << "\"For millennia you have tried to control me, to confine me, yet you are the greatest prisoner, for you cannot live without me.\"\n";
-        cout << "Of the three symbols on the walls, you decide to choose: \n\n";
+        cout << "You decide you want to try and solve the riddle now.\n";
+        cout << "The riddle is:\n\n";
+        cout << current_riddle << endl;
+        cout << "\n\nOf the three symbols on the walls, you decide to choose: \n\n";
         cout << "A. Wind\n";
         cout << "B. Fire\n";
         cout << "C. Water\n\n";
@@ -199,80 +211,109 @@ void temple_first_room(){
         cin >> second_choice;
         if(second_choice == 'A' || second_choice == 'a'){
             cout << "You choose Wind.\n";
-            cout << "You walk up to the Wind symbol on the wall and gently touch it with your hand.\n";
-            cout << "Almost immediately, you feel gusts of air blowing from somewhere within the small room.\n";
-            cout << "Suddenly, the ceiling of the room opens up and several thousand leaves are dumped into the room.\n";
-            cout << "You move to brush off the ones that fell on you, but immediately pull your hand away when you feel a sharp pain.\n";
-            cout << "You quickly draw back your hand and look at the deep gash oozing blood over your palm.\n";
-            cout << "It's then you notice that the leaf stuck on your shirt is... embedded in the fabric.\n";
-            cout << "Small but wickedly sharp serrations can be seen lining the edge of the leaf and have been entangled in the cloth of your shirt.\n";
-            cout << "You attempt to peel the leaf off with your fingernail, but only succeed in cutting the sensitive flesh underneath.\n";
-            cout << "You pull your finger away, but before you do that, you realize the leaf was surprisingly stiff and sturdy, like a piece of metal.\n";
-            cout << "Then with growing horror, you realize that the gusts of air are growing stronger and the leaves are slowly starting to twirl around the room.\n";
-            cout << "You rush to the still-sealed entrance of the room and fruitlessly pound on the large stone slab keeping it closed.\n";
-            cout << "The wind picks up even more, and the leaves dance freely around the room.\n";
-            cout << "You feel the fabric of your clothes tear as the leaves cut cleanly through them.\n";
-            cout << "You continue to helplessly pound on the stone slab, tears now pouring freely from your eyes.\n";
-            cout << "The wind is now a forceful gale and tosses the leaves violently around the room.\n";
-            cout << "Pain soon floods every part of your nearly exposed body as the leaves effortlessly tear open your skin.\n";
-            cout << "You pound on the stone slab and scream for help, but you can't even hear yourself over the howling wind.\n";
-            cout << "You scream and scream until you feel a leaf cut cleanly through both of your cheeks as another slices open your throat.\n";
-            cout << "Blood fills your throat as you let out one more scream that comes out more as a pathetic gurgle.\n";
-            cout << "You fall forward on the ground and faintly feel your ear get cut away as a leaf embeds itself in your eye.\n";
-            cout << "Your world is reduced to nothing but pain as your vision fades and you hear a voice in your head before everything fades to black.\n";
-            cout << "\"Wrong answer.\"\n\n";
-            
-            retry(&temple_first_room_text);
+            if(set_riddle != 1){
+                cout << "You walk up to the Wind symbol on the wall and gently touch it with your hand.\n";
+                cout << "Almost immediately, you feel gusts of air blowing from somewhere within the small room.\n";
+                cout << "Suddenly, the ceiling of the room opens up and several thousand leaves are dumped into the room.\n";
+                cout << "You move to brush off the ones that fell on you, but immediately pull your hand away when you feel a sharp pain.\n";
+                cout << "You quickly draw back your hand and look at the deep gash oozing blood over your palm.\n";
+                cout << "It's then you notice that the leaf stuck on your shirt is... embedded in the fabric.\n";
+                cout << "Small but wickedly sharp serrations can be seen lining the edge of the leaf and have been entangled in the cloth of your shirt.\n";
+                cout << "You attempt to peel the leaf off with your fingernail, but only succeed in cutting the sensitive flesh underneath.\n";
+                cout << "You pull your finger away, but before you do that, you realize the leaf was surprisingly stiff and sturdy, like a piece of metal.\n";
+                cout << "Then with growing horror, you realize that the gusts of air are growing stronger and the leaves are slowly starting to twirl around the room.\n";
+                cout << "You rush to the still-sealed entrance of the room and fruitlessly pound on the large stone slab keeping it closed.\n";
+                cout << "The wind picks up even more, and the leaves dance freely around the room.\n";
+                cout << "You feel the fabric of your clothes tear as the leaves cut cleanly through them.\n";
+                cout << "You continue to helplessly pound on the stone slab, tears now pouring freely from your eyes.\n";
+                cout << "The wind is now a forceful gale and tosses the leaves violently around the room.\n";
+                cout << "Pain soon floods every part of your nearly exposed body as the leaves effortlessly tear open your skin.\n";
+                cout << "You pound on the stone slab and scream for help, but you can't even hear yourself over the howling wind.\n";
+                cout << "You scream and scream until you feel a leaf cut cleanly through both of your cheeks as another slices open your throat.\n";
+                cout << "Blood fills your throat as you let out one more scream that comes out more as a pathetic gurgle.\n";
+                cout << "You fall forward on the ground and faintly feel your ear get cut away as a leaf embeds itself in your eye.\n";
+                cout << "Your world is reduced to nothing but pain as your vision fades and you hear a voice in your head before everything fades to black.\n";
+                cout << "\"Wrong answer.\"\n\n";
+                
+                retry(&temple_first_room_text);
+            }
+            else{
+                cout << correct_riddle;
+                temple_second_room_text();
+            }
         }
         else if(second_choice == 'B' || second_choice == 'b'){
             cout << "You choose Fire.\n";
-            cout << "You walk up to the Fire symbol and gently touch it with your hand.\n";
-            cout << "After some time passes with seemingly nothing happening, you slowly back up and look quickly around the room.\n";
-            cout << "Nothing seems out of place or anything, but then you notice that something did change.\n";
-            cout << "The room feels hotter.\n";
-            cout << "It is then that you notice small heat waves emanating from the cracks in the stone floor.\n";
-            cout << "You quickly stoop down and place your hand near one of the cracks. Intense heat brushes over the skin of your palm.\n";
-            cout << "Suddenly, a stone brick in the floor directly in front of you gives way and falls down, revealing a fiery inferno underneath.\n";
-            cout << "Soon, more bricks start to fall into the flames beneath, each faster than the last.\n";
-            cout << "Quickly, you scan what little of the room remains to stand on and notice the pedestal is resting on a sturdy pillar of rock.\n";
-            cout << "You deftly jump over to it and hold on to it as the rest of the room's floor falls away.\n";
-            cout << "It's so hot now, you can barely breathe. Fire rages all around you. There's nowhere to run, nowhere to stand, nowhere to go.\n";
-            cout << "The raging inferno grows bigger, billows of flame lick at the soles of your shoes.\n";
-            cout << "You tilt your head back and finally scream.\n";
-            cout << "As your skin melts away and the flames scorch your flesh, you hear a voice in your head.\n";
-            cout << "\"Wrong answer.\"";
-            
-            retry(&temple_first_room_text);
+            if(set_riddle != 2){
+                cout << "You walk up to the Fire symbol and gently touch it with your hand.\n";
+                cout << "After some time passes with seemingly nothing happening, you slowly back up and look quickly around the room.\n";
+                cout << "Nothing seems out of place or anything, but then you notice that something did change.\n";
+                cout << "The room feels hotter.\n";
+                cout << "It is then that you notice small heat waves emanating from the cracks in the stone floor.\n";
+                cout << "You quickly stoop down and place your hand near one of the cracks. Intense heat brushes over the skin of your palm.\n";
+                cout << "Suddenly, a stone brick in the floor directly in front of you gives way and falls down, revealing a fiery inferno underneath.\n";
+                cout << "Soon, more bricks start to fall into the flames beneath, each faster than the last.\n";
+                cout << "Quickly, you scan what little of the room remains to stand on and notice the pedestal is resting on a sturdy pillar of rock.\n";
+                cout << "You deftly jump over to it and hold on to it as the rest of the room's floor falls away.\n";
+                cout << "It's so hot now, you can barely breathe. Fire rages all around you. There's nowhere to run, nowhere to stand, nowhere to go.\n";
+                cout << "The raging inferno grows bigger, billows of flame lick at the soles of your shoes.\n";
+                cout << "You tilt your head back and finally scream.\n";
+                cout << "As your skin melts away and the flames scorch your flesh, you hear a voice in your head.\n";
+                cout << "\"Wrong answer.\"";
+                
+                retry(&temple_first_room_text);
+            }
+            else{
+                cout << correct_riddle;
+                temple_second_room_text();
+            }
         }
-        else if(second_choice == 'C' || second_choice == 'b'){
+        else if(second_choice == 'C' || second_choice == 'c'){
             cout << "You choose Water.\n";
-            cout << "At first, nothing happens. Then, there's a low rumbling sound as the wall with the Water symbol slowly slides up into the ceiling.\n";
-            cout << "You slowly approach and look into the room beyond. Or at least you try to, but it's so dark that not even the burning flame is able to cast much light.\n";
-            cout << "Cautiously, you take a single step into the room and suddenly several bowls ignite around the perimeter of the much larger room, bathing the room in a warm glow.\n";
-            cout << "It is then you hear a voice in your head, \"Correct.\".\n\n";
-            temple_second_room_text();
+            if(set_riddle != 0){
+                cout << "You walk up to the Water symbol and gently touch it with your hand.\n";
+                cout << "Nothing happens for several seconds, until you hear a roar right above you.\n";
+                cout << "Your head snaps up to look at the ceiling where you see that several apertures have opened above you, allowing several gallons of water to start pouring in.\n";
+                cout << "You quickly try to avoid the deluge, but there's nowhere to run. Instead, you climb the pedestal in the center of the room holding the now-extinguished bowl.\n";
+                cout << "You watch with growing horror as the water level rises quickly, with no other option, you attempt to bang on the ceiling, to no avail.\n";
+                cout << "The water level is now a chest level, and there is nothing left to do but scream.\n";
+                cout << "You scream and scream, but no help comes.\n";
+                cout << "As the water rises indifferently, you take a final gasp of air before the water finally fills the room.\n";
+                cout << "You struggle to hold your breath, but you can feel your lungs burning for oxygen.\n";
+                cout << "You hold back for as long as you can, but you can't hold on forever. You open your mouth and inhale the cold water.\n";
+                cout << "As your vision fades and the cold invades your body, you hear a voice in your head.\n";
+                cout << "\"Wrong answer.\"";
+
+                retry(&temple_first_room_text);
+            }
+            else{
+                cout << correct_riddle;
+                temple_second_room_text();
+            }
         }
         else{
             try_again();
             temple_first_room();
         }
     }
-    else if((choice == 'B' || choice == 'b') && first_room_explored){
-        cout << "You quickly look around the room, but you're sure you've already examined everything.\n";
-        cout << "You turn back to the room.\n";
-        temple_first_room();
-    }
     else if(choice == 'B' || choice == 'b'){
-        cout << "You decide to look around the room more.\n";
-        cout << "You look closer at the symbols on the walls: there's the wind symbol on the left wall, the water symbol on the wall directly opposite you and the fire symbol on the right wall.\n";
-        cout << "Other than the fact that the symbols seemed to be etched out of the wall itself, there doesn't seem to be anything else interesting about them.\n";
-        cout << "You also examine the pedestal in the center of the room and notice that there is a little piece of paper sticking out from a small crack between the pedestal and the floor.\n";
-        cout << "You gently pull it out and read what it says: \"The riddle is different for everyone. My answer was Wind, be aware that there will be many winding paths throughout this temple.\"\n";
-        cout << "\"Make each choice you come across carefully, the temple is testing you. If you fail even one, the price will be your life.\"\n";
-        cout << "There is also a strange symbol that looks like a Sun on the corner of the paper. You flip the paper over and examine the back, but there is nothing else to read.\n";
-        cout << "You gently fold the piece of paper up and look back to the room.\n";
-        first_room_explored = true;
-        temple_first_room();
+        if(first_room_explored){
+            cout << "You quickly look around the room, but you're sure you've already examined everything.\n";
+            cout << "You turn back to the room.\n";
+            temple_first_room();
+        }
+        else{
+            cout << "You decide to look around the room more.\n";
+            cout << "You look closer at the symbols on the walls: there's the wind symbol on the left wall, the water symbol on the wall directly opposite you and the fire symbol on the right wall.\n";
+            cout << "Other than the fact that the symbols seemed to be etched out of the wall itself, there doesn't seem to be anything else interesting about them.\n";
+            cout << "You also examine the pedestal in the center of the room and notice that there is a little piece of paper sticking out from a small crack between the pedestal and the floor.\n";
+            cout << "You gently pull it out and read what it says: \"The riddle is different for everyone. My answer was Wind, be aware that there will be many winding paths throughout this temple.\"\n";
+            cout << "\"Make each choice you come across carefully, the temple is testing you. If you fail even one, the price will be your life.\"\n";
+            cout << "There is also a strange symbol that looks like a Sun on the corner of the paper. You flip the paper over and examine the back, but there is nothing else to read.\n";
+            cout << "You gently fold the piece of paper up and look back to the room.\n";
+            first_room_explored = true;
+            temple_first_room();
+        }
     }
     else if(choice == 'C' || choice == 'c'){
         cout << "You look back to the entryway. The huge stone slab remains, sealing you in the temple.\n";
@@ -313,4 +354,5 @@ void temple_second_room(){
     cout << "F. The Sixth Archway\n";
     cout << "G. The Seventh Archway\n";
     // Add variable names to archway options based on which ones the player has approached already.
+    retry(); // Temporary function call for playtesting purposes.
 }

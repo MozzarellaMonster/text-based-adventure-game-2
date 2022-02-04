@@ -6,8 +6,7 @@
 
 using namespace std;
 
-string bleh();
-
+extern void determine_riddle();
 extern void try_again();
 extern void retry();
 extern void retry(void *func);
