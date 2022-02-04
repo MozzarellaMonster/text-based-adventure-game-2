@@ -6,10 +6,10 @@
 
 using namespace std;
 
-extern void determine_riddle();
 extern void try_again();
 extern void retry();
 extern void retry(void *func);
+extern void determine_riddle();
 extern void start();
 extern void first_choice();
 extern void temple_entrance();

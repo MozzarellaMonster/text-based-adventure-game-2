@@ -18,8 +18,8 @@ string correct_riddle = "You walk up to the wall with the same symbol and gently
                         "At first, nothing happens. Then, there's a low rumbling sound as the wall slowly slides up into the ceiling.\n"
                         "You slowly approach and look into the room beyond. Or at least you try to, but it's so dark that not even the burning flame is able to cast much light.\n"
                         "Cautiously, you take a single step into the room and suddenly several bowls ignite around the perimeter of the much larger room, bathing the room in a warm glow.\n"
-                        "It is then you hear a voice in your head, \"Correct.\".\n\n";
-
-int set_riddle = 0;
+                        "It is then you hear a voice in your head:\n\"Correct.\".\n";
 string current_riddle;
+
+int set_riddle;
 bool first_room_explored = false;
