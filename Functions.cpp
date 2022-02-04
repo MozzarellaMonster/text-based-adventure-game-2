@@ -11,10 +11,6 @@ using namespace std;
 
 vector<string> inventory;
 
-string bleh(){
-    return "Bleh.";
-}
-
 void print_line(){
     cout << "\n\n============================================\n";
 }
