@@ -23,3 +23,11 @@ string current_riddle;
 
 int set_riddle;
 bool first_room_explored = false;
+
+bool first_archway_read = false;
+bool second_archway_read = false;
+bool third_archway_read = false;
+bool fourth_archway_read = false;
+bool fifth_archway_read = false;
+bool sixth_archway_read = false;
+bool seventh_archway_read = false;

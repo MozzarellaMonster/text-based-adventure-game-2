@@ -360,19 +360,94 @@ void temple_second_room_text(){
     cout << "\t\"Bring forth six tokens from the six paths, wanderer. Present them to continue your journey.\"\n";
     cout << "\nYou look to the seven archways, all but one are open. The largest one in the center of all the archways is closed off by a large stone.\n";
     cout << "You look back to the obelisk where six recesses are arranged in a hexagonal pattern.\n";
-    cout << "You scan the different open archways again. Which to choose?\n";
+    cout << "You scan the different open archways again.\n";
     temple_second_room();
 }
 
 void temple_second_room(){
+    char choice;
     print_line();
     cout << "What would you like to do?\n";
-    cout << "A. Approach the First Archway\n";
-    cout << "B. The Second Archway\n";
-    cout << "C. The Third Archway\n";
-    cout << "D. The Fourth Archway\n";
-    cout << "E. The Fifth Archway\n";
-    cout << "F. The Sixth Archway\n";
-    cout << "G. The Seventh Archway\n";
+    if(first_archway_read){
+        cout << "A. Approach the Room of the Dead\n";
+    }
+    else{
+        cout << "A. Approach the First Archway\n";
+    }
+    if(second_archway_read){
+        cout << "B. Approach the Heart of the Colony\n";
+    }
+    else{
+        cout << "B. Approach the Second Archway\n";
+    }
+    if(third_archway_read){
+        cout << "C. Approach The Glowing Cave\n";
+    }
+    else{
+        cout << "C. Approach the Third Archway\n";
+    }
+    if(fourth_archway_read){
+        cout << "D. Approach The Labyrinth\n";
+    }
+    else{
+        cout << "D. Approach the Fourth Archway\n";
+    }
+    if(fifth_archway_read){
+        cout << "E. Approach The Oasis\n";
+    }
+    else{
+        cout << "E. Approach the Fifth Archway\n";
+    }
+    if(sixth_archway_read){
+        cout << "F. Approach The Whistling Gorge\n";
+    }
+    else{
+        cout << "F. Approach the Sixth Archway\n";
+    }
+    if(seventh_archway_read){
+        cout << "G. Approach The Silken Room\n";
+    }
+    else{
+        cout << "G. Approach the Seventh Archway\n";
+    }
+    print_line();
     
+    cin >> choice;
+    if(choice == 'A' || choice == 'a'){
+        // The First Archway - The Room of the Dead
+        cout << "You approach the First Archway. As you approach, the name of the Archway becomes clear: \"The Room of the Dead\"";
+        cout << "";
+
+        first_archway_read = true;
+    }
+    else if(choice == 'B' || choice == 'b'){
+        // The Second Archway - the Heart of the Colony
+        cout << "";
+
+        second_archway_read = true;
+    }
+    else if(choice == 'C' || choice == 'c'){
+        // The Third Archway - The Glowing Cave
+        cout << "";
+    }
+    else if(choice == 'D' || choice == 'd'){
+        // The Fourth Archway - The Labyrinth - entrance to next area, will not be available until the other rooms are completed
+        cout << "";
+    }
+    else if(choice == 'E' || choice == 'e'){
+        // The Fifth Archway - The Oasis
+        cout << "";
+    }
+    else if(choice == 'F' || choice == 'f'){
+        // The Sixth Archway - The Whistling Gorge
+        cout << "";
+    }
+    else if(choice == 'G' || choice == 'g'){
+        // The Seventh Archway - The Silken Room
+        cout << "";
+    }
+    else{
+        try_again();
+        temple_second_room();
+    }
 }

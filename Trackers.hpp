@@ -14,4 +14,11 @@ extern string current_riddle;
 extern int set_riddle;
 extern bool first_room_explored;
 
+extern bool first_archway_read;
+extern bool second_archway_read;
+extern bool third_archway_read;
+extern bool fourth_archway_read;
+extern bool fifth_archway_read;
+extern bool sixth_archway_read;
+extern bool seventh_archway_read;
 #endif
