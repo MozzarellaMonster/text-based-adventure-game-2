@@ -201,10 +201,10 @@ void temple_first_room_text(){
 void temple_first_room(){
     char choice;
     print_line();
-    cout << "Do you want to try and solve the riddle now or do you want to look around the room more?\n";
-    cout << "A. I'll try to solve the riddle now.\n";
-    cout << "B. I want to look around the room more.\n";
-    cout << "C. What about the entrance?\n";
+    cout << "What would you like to do?\n";
+    cout << "A. I'll try to solve the riddle now\n";
+    cout << "B. I want to look around the room more\n";
+    cout << "C. Look at the entrance\n";
     print_line();
     cin >> choice;
 
@@ -366,14 +366,13 @@ void temple_second_room_text(){
 
 void temple_second_room(){
     print_line();
-    cout << "Which archway would you like to approach?\n";
-    cout << "A. The First Archway\n";
+    cout << "What would you like to do?\n";
+    cout << "A. Approach the First Archway\n";
     cout << "B. The Second Archway\n";
     cout << "C. The Third Archway\n";
     cout << "D. The Fourth Archway\n";
     cout << "E. The Fifth Archway\n";
     cout << "F. The Sixth Archway\n";
     cout << "G. The Seventh Archway\n";
-    // Add variable names to archway options based on which ones the player has approached already.
-    retry(); // Temporary function call for playtesting purposes.
+    
 }
