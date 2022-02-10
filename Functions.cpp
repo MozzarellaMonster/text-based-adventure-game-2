@@ -58,6 +58,37 @@ void shimmer(){
     cout << "The shimmer also appears less active, like an undisturbed lake of water.\n";
 }
 
+void archway(string message, string name, bool *archway_read, void (*func)()){
+    char answer;
+
+        if(!(*archway_read)){
+            cout << message;
+            if(!saw_archway){
+                shimmer();
+            }
+            *archway_read = true;
+            saw_archway = true;
+        }
+        else{
+            cout << "\nYou approach " << name << "\n";
+        }
+
+        cout << "\nDo you want to enter the archway? Y/N: ";
+        cin >> answer;
+        if(answer == 'Y' || answer == 'y'){
+            cout << "You take a step forward and enter " << name << "\n";
+            func();
+        }
+        else if(answer == 'N' || answer == 'n'){
+            cout << "You decide not to go in and return to the center of the room.\n";
+            temple_second_room();
+        }
+        else{
+            try_again();
+            temple_second_room();
+        }
+}
+
 void determine_riddle(){
     set_riddle = rand() % 3;
     switch(set_riddle){
@@ -151,7 +182,7 @@ void temple_entrance(){
     cout << "After making your choice, you turn back to the now-open temple entrance.\n";
     cout << "Something catches your eye however, and you turn to look at the pedestal holding the bowl of fire.\n";
     cout << "Somehow, the symbols now makes sense to you.\n";
-    cout << "The engraved text reads:\n\n\t\"An offering needed to gain insight and entrance\"\n\n";
+    cout << "The engraved text reads:\n\n\tAn offering needed to gain insight and entrance\n\n";
     cout << "\"So,\" you think to yourself, \"now I can understand that language and enter the temple.\"\n";
     print_line();
     cout << "Will you go into the temple? Y/N: ";
@@ -193,12 +224,8 @@ void temple_first_room_text(){
     cout << "There is a small bowl of fire on a pedestal in the very center of the room and no other source of light, save for the open doorway you're standing in.\n";
     cout << "Cautiously, you step into the room. When you're about halfway toward the pedestal in the middle of the room, the doorway suddenly shuts as a huge slab of stone slides over the entrance, completely sealing you in.\n";
     cout << "Well, looks like you're stuck here now, might as well examine the room more.\n";
-    cout << "You notice a recess set into the pedestal below the bowl. Inside, there is a brown polished stone with a strange glyph carved into it.\n";
-    cout << "You pick it up and examine it closely. Suddenly, the glyph morphs into the word \"Answer\" right before your eyes.\n";
-    cout << "You blink, but the word has disappeared and the symbol has returned. You gently set the stone back inside the recess and look around the room.\n";
-    cout << "The room itself is pretty barren, composed entirely of smooth stone save for three symbols set into each of the walls beside the one containing the entryway.\n";
-    cout << "Suddenly, the room grows dimmer as the fire quickly wanes and abruptly dies only to fiercely reignite only moments later with a blazing blue light.\n";
-    cout << "An loud voice suddenly booms from out of nowhere, as you quickly slam your hands over your ears. It doesn't help however, as it seems the voice is coming directly from inside your head.\n\n";
+    cout << "The room is pretty barren, composed entirely of smooth stone save for three symbols set into each of the walls beside the one containing the entryway.\n";
+    cout << "A loud voice suddenly booms from out of nowhere, as you quickly slam your hands over your ears. It doesn't help however, as it seems the voice is coming directly from inside your head.\n\n";
     cout << current_riddle << "\n";
     cout << "\nYou take a closer look at the symbols around the room. One appears to be a stylized gust of wind, another is clearly a flame, and the last appears to be running water.\n\n";
     temple_first_room();
@@ -284,7 +311,7 @@ void temple_first_room(){
                 cout << "As your skin melts away and the flames scorch your flesh, you hear a voice in your head.\n";
                 cout << "\"Wrong answer.\"";
 
-                //cout << "\n\nEnding 3: Cremation II";
+                //cout << "\n\nEnding 3: Cremation Mk.2";
                 print_line();
                 retry(&temple_first_room_text);
             }
@@ -306,10 +333,12 @@ void temple_first_room(){
                 cout << "The water level is now at chest level, and there is nothing left to do but scream.\n";
                 cout << "You scream and scream, but no help comes.\n";
                 cout << "As the water rises indifferently, you take a final gasp of air before the water finally fills the room.\n";
-                cout << "You struggle to hold your breath, but you can feel your lungs burning for oxygen.\n";
+                cout << "You struggle to hold your breath, but you can feel your lungs burning for air.\n";
                 cout << "You hold back for as long as you can, but you can't hold on forever. You open your mouth and inhale the cold water.\n";
                 cout << "As your vision fades and the cold invades your body, you hear a voice in your head.\n";
                 cout << "\"Wrong answer.\"";
+
+                //cout << "\n\nEnding 4: Drowned"
                 print_line();
                 retry(&temple_first_room_text);
             }
@@ -337,9 +366,9 @@ void temple_first_room(){
             cout << "You look closer at the symbols on the walls: there's the wind symbol on the left wall, the water symbol on the wall directly opposite you and the fire symbol on the right wall.\n";
             cout << "Other than the fact that the symbols seemed to be etched out of the wall itself, there doesn't seem to be anything else interesting about them.\n";
             cout << "You also examine the pedestal in the center of the room and notice that there is a little piece of paper sticking out from a small crack between the pedestal and the floor.\n";
-            cout << "You gently pull it out and read what it says:\n\n\t\"The riddle is different for everyone. Be aware that there will be many winding paths throughout this temple.\"\n";
-            cout << "\t\"Make each choice you come across carefully, the temple is testing you. If you fail even one, the price will be your life.\"\n";
-            cout << "\nThere is also a strange symbol that looks like a Sun on the corner of the paper. You flip the paper over and examine the back, but there is nothing else to read.\n";
+            cout << "You gently pull it out and read what it says:\n\n\tThe riddle is different for everyone. Be aware that there will be many winding paths throughout this temple.\n";
+            cout << "\tMake each choice you come across carefully, the temple is testing you. If you fail even one, the price will be your life.\n";
+            cout << "\nYou flip the paper over and examine the back, but there is nothing else to read.\n";
             cout << "You gently fold the piece of paper up and look back to the room.\n";
             first_room_explored = true;
             temple_first_room();
@@ -367,7 +396,7 @@ void temple_second_room_text(){
     cout << "There are more rooms, but they are too far away to clearly read the names of them.\n";
     cout << "Instead, you focus on the center of the room where an imposing stone obelisk stands.\n";
     cout << "You approach the obelisk and are able to make out the few lines of text on it.\n\n";
-    cout << "\t\"Bring forth six tokens from the six paths, wanderer. Present them to continue your journey.\"\n\n";
+    cout << "\tBring forth six tokens from the six paths, wanderer. Present them to continue your journey.\n";
     cout << "\nYou look to the seven archways, all but one are open. The largest one in the center of all the archways is closed off by a large stone.\n";
     cout << "You look back to the obelisk where six recesses are arranged in a hexagonal pattern.\n";
     cout << "You scan the different open archways again.\n";
@@ -425,45 +454,27 @@ void temple_second_room(){
     cin >> choice;
     if(choice == 'A' || choice == 'a'){
         // The First Archway - The Room of the Dead
-        char answer;
+        string message = "You approach the First Archway. As you approach, the name of the Archway becomes clear: \"The Room of the Dead\"\n"
+                         "The stone archway is covered in carvings of solemn, still faces. A message can be seen below the name of the room:\n"
+                         "\n\tDo not disturb the slumber of the dead, wanderer. They are weary of life and will take yours if they awaken.\n\n"
+                         "You gently touch the carved surface of the archway, running your hand over one of the carved faces.\n"
+                         "A cold chill runs down your spine as your thumb drags over the closed eye of the stone face.\n"
+                         "You look to the entrance.\n";
 
-        if(!first_archway_read){
-            cout << "You approach the First Archway. As you approach, the name of the Archway becomes clear: \"The Room of the Dead\"\n";
-            cout << "The stone archway is covered in carvings of solemn, still faces. A phrase can be seen below the name of the room:\n";
-            cout << "\n\tDo not disturb the slumber of the dead, wanderer. They are weary of life and will take yours if they awaken.\n";
-            cout << "You gently touch the carved surface of the archway, running your hand over one of the carved faces.\n";
-            cout << "A cold chill runs down your spine as your thumb drags over the closed eye of the stone face.\n";
-            cout << "You look to the entrance.\n";
-            if(!saw_archway){
-                shimmer();
-            }
-            first_archway_read = true;
-            saw_archway = true;
-        }
-        else{
-            cout << "You approach The Room of the Dead.\n";
-        }
-
-        cout << "\nDo you want to enter the archway?: ";
-        cin >> answer;
-        if(answer == 'Y' || answer == 'y'){
-            cout << "You take a step forward and enter The Room of the Dead.";
-            // room_of_the_dead();
-        }
-        else if(answer == 'N' || answer == 'n'){
-            cout << "You decide not to go in and return to the center of the room.\n";
-            temple_second_room();
-        }
-        else{
-            try_again();
-            temple_second_room();
-        }
+        archway(message, "The Room of the Dead", &first_archway_read, &the_room_of_the_dead);
     }
     else if(choice == 'B' || choice == 'b'){
         // The Second Archway - the Heart of the Colony
-        cout << "";
+        string message = "You approach the Second Archway. As you approach, the name of the Archway becomes clear: \"The Heart of the Colony\"\n"
+                        "The stone archway is noticeably older than the other archways and appears to be decorated with strange, distorted carvings of insect-like creatures.\""
+                        "Your eyes glance towards the carved message beneath the name of the archway:\n"
+                        "\n\tThey are the masters of their domain. Respect is required if you wish to keep your life and freedom.\n"
+                        "You look closer at the carvings on the archway, an intricate framework of what appears to be tunnels and several thousand insects is depicted.\n"
+                        "A sudden, low chittering sound occurs right behind you.\n"
+                        "You swiftly turn around, but there is nothing there.\n"
+                        "You look back to the entrance.\n";
 
-        second_archway_read = true;
+        archway(message, "the Heart of the Colony", &second_archway_read, &the_heart_of_the_colony);
     }
     else if(choice == 'C' || choice == 'c'){
         // The Third Archway - The Glowing Cave
@@ -489,4 +500,12 @@ void temple_second_room(){
         try_again();
         temple_second_room();
     }
+}
+
+void the_room_of_the_dead(){
+
+}
+
+void the_heart_of_the_colony(){
+
 }
