@@ -52,6 +52,12 @@ void retry(void (*func)()){
     }
 }
 
+void shimmer(){
+    cout << "The same opaque liquid shimmer that you saw in the ring of the machine in The House is faintly visible in the dark opening.\n";
+    cout << "Though this particular one is much larger, encompassing the entire entrance of the archway with an oily appearance.\n";
+    cout << "The shimmer also appears less active, like an undisturbed lake of water.\n";
+}
+
 void determine_riddle(){
     set_riddle = rand() % 3;
     switch(set_riddle){
@@ -247,6 +253,8 @@ void temple_first_room(){
                 cout << "You fall forward on the ground and faintly feel your ear get cut away as a leaf embeds itself in your eye.\n";
                 cout << "Your world is reduced to nothing but pain as your vision fades and you hear a voice in your head before everything fades to black.\n";
                 cout << "\"Wrong answer.\"";
+
+                //cout << "\n\nEnding 2: Razor Leaf";
                 print_line();
                 retry(&temple_first_room_text);
             }
@@ -275,6 +283,8 @@ void temple_first_room(){
                 cout << "You tilt your head back and finally scream.\n";
                 cout << "As your skin melts away and the flames scorch your flesh, you hear a voice in your head.\n";
                 cout << "\"Wrong answer.\"";
+
+                //cout << "\n\nEnding 3: Cremation II";
                 print_line();
                 retry(&temple_first_room_text);
             }
@@ -357,7 +367,7 @@ void temple_second_room_text(){
     cout << "There are more rooms, but they are too far away to clearly read the names of them.\n";
     cout << "Instead, you focus on the center of the room where an imposing stone obelisk stands.\n";
     cout << "You approach the obelisk and are able to make out the few lines of text on it.\n\n";
-    cout << "\t\"Bring forth six tokens from the six paths, wanderer. Present them to continue your journey.\"\n";
+    cout << "\t\"Bring forth six tokens from the six paths, wanderer. Present them to continue your journey.\"\n\n";
     cout << "\nYou look to the seven archways, all but one are open. The largest one in the center of all the archways is closed off by a large stone.\n";
     cout << "You look back to the obelisk where six recesses are arranged in a hexagonal pattern.\n";
     cout << "You scan the different open archways again.\n";
@@ -415,10 +425,39 @@ void temple_second_room(){
     cin >> choice;
     if(choice == 'A' || choice == 'a'){
         // The First Archway - The Room of the Dead
-        cout << "You approach the First Archway. As you approach, the name of the Archway becomes clear: \"The Room of the Dead\"";
-        cout << "";
+        char answer;
 
-        first_archway_read = true;
+        if(!first_archway_read){
+            cout << "You approach the First Archway. As you approach, the name of the Archway becomes clear: \"The Room of the Dead\"\n";
+            cout << "The stone archway is covered in carvings of solemn, still faces. A phrase can be seen below the name of the room:\n";
+            cout << "\n\tDo not disturb the slumber of the dead, wanderer. They are weary of life and will take yours if they awaken.\n";
+            cout << "You gently touch the carved surface of the archway, running your hand over one of the carved faces.\n";
+            cout << "A cold chill runs down your spine as your thumb drags over the closed eye of the stone face.\n";
+            cout << "You look to the entrance.\n";
+            if(!saw_archway){
+                shimmer();
+            }
+            first_archway_read = true;
+            saw_archway = true;
+        }
+        else{
+            cout << "You approach The Room of the Dead.\n";
+        }
+
+        cout << "\nDo you want to enter the archway?: ";
+        cin >> answer;
+        if(answer == 'Y' || answer == 'y'){
+            cout << "You take a step forward and enter The Room of the Dead.";
+            // room_of_the_dead();
+        }
+        else if(answer == 'N' || answer == 'n'){
+            cout << "You decide not to go in and return to the center of the room.\n";
+            temple_second_room();
+        }
+        else{
+            try_again();
+            temple_second_room();
+        }
     }
     else if(choice == 'B' || choice == 'b'){
         // The Second Archway - the Heart of the Colony

@@ -21,4 +21,5 @@ extern bool fourth_archway_read;
 extern bool fifth_archway_read;
 extern bool sixth_archway_read;
 extern bool seventh_archway_read;
+extern bool saw_archway;
 #endif

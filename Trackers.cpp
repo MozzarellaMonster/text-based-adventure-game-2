@@ -31,3 +31,4 @@ bool fourth_archway_read = false;
 bool fifth_archway_read = false;
 bool sixth_archway_read = false;
 bool seventh_archway_read = false;
+bool saw_archway = false;
