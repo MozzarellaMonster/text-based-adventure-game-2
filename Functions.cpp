@@ -76,11 +76,11 @@ void archway(string message, string name, bool *archway_read, void (*func)()){
         cout << "\nDo you want to enter the archway? Y/N: ";
         cin >> answer;
         if(answer == 'Y' || answer == 'y'){
-            cout << "You take a step forward and enter " << name << "\n";
+            cout << "\nYou take a step forward and enter " << name << "\n";
             func();
         }
         else if(answer == 'N' || answer == 'n'){
-            cout << "You decide not to go in and return to the center of the room.\n";
+            cout << "\nYou decide not to go in and return to the center of the room.\n";
             temple_second_room();
         }
         else{
@@ -468,7 +468,7 @@ void temple_second_room(){
         string message = "You approach the Second Archway. As you approach, the name of the Archway becomes clear: \"The Heart of the Colony\"\n"
                         "The stone archway is noticeably older than the other archways and appears to be decorated with strange, distorted carvings of insect-like creatures.\""
                         "Your eyes glance towards the carved message beneath the name of the archway:\n"
-                        "\n\tThey are the masters of their domain. Respect is required if you wish to keep your life and freedom. Do this and you may trade.\n"
+                        "\n\tThey are the masters of their domain. Respect is required if you wish to keep your life and freedom. Do this and you may trade.\n\n"
                         "You look closer at the carvings on the archway, an intricate framework of what appears to be tunnels and several thousand insects is depicted.\n"
                         "A sudden, low chittering sound occurs right behind you.\n"
                         "You swiftly turn around, but there is nothing there.\n"
@@ -481,7 +481,7 @@ void temple_second_room(){
         string message = "You approach the Third Archway. As you approach, the name of the Archway becomes clear: \"The Glowing Cave\"\n"
                         "This stone archway appears to be made of a different material than the others, it is much darker and surprisingly damp.\n"
                         "You look up at the carved message underneath the name of the archway:\n"
-                        "\n\tThis cave is used only for gathering materials, but dangers still remain. Still your mind, lest you lose your way.\n"
+                        "\n\tThis cave is used only for gathering materials, but dangers still remain. Still your mind, lest you lose your way.\n\n"
                         "You run your hand over the archway. Unlike the others, this archway is not carved and appears roughly hewn from the stone.\n"
                         "You pull your hand away, taking notice of how damp it is. A faint glow appears to be emanating from the entrance.\n"
                         "You take a closer look.\n";
@@ -498,7 +498,7 @@ void temple_second_room(){
         string message = "You approach the Fifth Archway. As you approach, the name of the Archway becomes clear: \"The Oasis\"\n"
                         "This stone archway is covered in beautiful carvings of delicate-looking flowers, exotic plants, and a waterfall.\n"
                         "The message beneath the name of the archway reads:\n"
-                        "\n\tDo not be deceived by the beauty of the Oasis, hidden dangers prey on the unwary.\n"
+                        "\n\tDo not be deceived by the beauty of the Oasis, hidden dangers prey on the unwary.\n\n"
                         "You gently brush the intricate carvings on the archway. A sense of calm rushes through your body, but a lingering fear remains.\n"
                         "You try to relax and close your eyes, to fade into the imagined natural sounds of the Oasis. Your body slowly releases tension.\n"
                         "Then you hear a loud groan of wood snapping above you.\n"
@@ -512,7 +512,7 @@ void temple_second_room(){
         string message = "You approach the Sixth Archway. As you approach, the name of the Archway becomes clear: \"The Whistling Gorge\"\n"
                         "The archway is noticeably lighter in color than the other archways and is covered in carvings of strange-looking trees.\n"
                         "A message beneath the name of the archway reads:\n"
-                        "\n\tA terrible place, the wails of the damned howl forever in this accursed land. Death is a welcome alternative.\n"
+                        "\n\tA terrible place, the wails of the damned howl forever in this accursed land. Death is a welcome alternative.\n\n"
                         "Suddenly, a strong gust of wind blows out of the entrance, nearly knocking you over.\n"
                         "A long, mournful whistling wail cuts through the still air of the temple. A cold dread fills your stomach as you take an involutary step backward.\n"
                         "After a long moment, you walk back up to the entrance.\n";
@@ -526,7 +526,7 @@ void temple_second_room(){
                         "You then realize that the archway is actually made of stone, realistically carved to resemble draped fabric.\n"
                         "You take a closer look at the exquisitely carved archway, it appears to be made of one smooth, unbroken piece of marble.\n"
                         "You finally stop admiring the handiwork of the archway and read the message beneath the archway name:\n"
-                        "\n\tOnly those of noble blood may enter, but exceptions will be made for sacrifices.\n"
+                        "\n\tOnly those of noble blood may enter, but exceptions will be made for sacrifices.\n\n"
                         "You look to the entrance of the archway.\n";
         
         archway(message, "The Silken Throne", &seventh_archway_read, &the_silken_throne);
@@ -538,25 +538,25 @@ void temple_second_room(){
 }
 
 void the_room_of_the_dead(){
-
+    retry();
 }
 
 void the_heart_of_the_colony(){
-
+    retry();
 }
 
 void the_glowing_cave(){
-
+    retry();
 }
 
 void the_oasis(){
-
+    retry();
 }
 
 void the_whistling_gorge(){
-
+    retry();
 }
 
 void the_silken_throne(){
-
+    retry();
 }
