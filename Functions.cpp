@@ -444,7 +444,7 @@ void temple_second_room(){
         cout << "F. Approach the Sixth Archway\n";
     }
     if(seventh_archway_read){
-        cout << "G. Approach The Silken Room\n";
+        cout << "G. Approach The Silken Throne\n";
     }
     else{
         cout << "G. Approach the Seventh Archway\n";
@@ -468,7 +468,7 @@ void temple_second_room(){
         string message = "You approach the Second Archway. As you approach, the name of the Archway becomes clear: \"The Heart of the Colony\"\n"
                         "The stone archway is noticeably older than the other archways and appears to be decorated with strange, distorted carvings of insect-like creatures.\""
                         "Your eyes glance towards the carved message beneath the name of the archway:\n"
-                        "\n\tThey are the masters of their domain. Respect is required if you wish to keep your life and freedom.\n"
+                        "\n\tThey are the masters of their domain. Respect is required if you wish to keep your life and freedom. Do this and you may trade.\n"
                         "You look closer at the carvings on the archway, an intricate framework of what appears to be tunnels and several thousand insects is depicted.\n"
                         "A sudden, low chittering sound occurs right behind you.\n"
                         "You swiftly turn around, but there is nothing there.\n"
@@ -478,23 +478,58 @@ void temple_second_room(){
     }
     else if(choice == 'C' || choice == 'c'){
         // The Third Archway - The Glowing Cave
-        cout << "";
+        string message = "You approach the Third Archway. As you approach, the name of the Archway becomes clear: \"The Glowing Cave\"\n"
+                        "This stone archway appears to be made of a different material than the others, it is much darker and surprisingly damp.\n"
+                        "You look up at the carved message underneath the name of the archway:\n"
+                        "\n\tThis cave is used only for gathering materials, but dangers still remain. Still your mind, lest you lose your way.\n"
+                        "You run your hand over the archway. Unlike the others, this archway is not carved and appears roughly hewn from the stone.\n"
+                        "You pull your hand away, taking notice of how damp it is. A faint glow appears to be emanating from the entrance.\n"
+                        "You take a closer look.\n";
+
+        archway(message, "The Glowing Cave", &third_archway_read, &the_glowing_cave);
     }
     else if(choice == 'D' || choice == 'd'){
         // The Fourth Archway - The Labyrinth - entrance to next area, will not be available until the other rooms are completed
         cout << "";
+        
     }
     else if(choice == 'E' || choice == 'e'){
         // The Fifth Archway - The Oasis
-        cout << "";
+        string message = "You approach the Fifth Archway. As you approach, the name of the Archway becomes clear: \"The Oasis\"\n"
+                        "This stone archway is covered in beautiful carvings of delicate-looking flowers, exotic plants, and a waterfall.\n"
+                        "The message beneath the name of the archway reads:\n"
+                        "\n\tDo not be deceived by the beauty of the Oasis, hidden dangers prey on the unwary.\n"
+                        "You gently brush the intricate carvings on the archway. A sense of calm rushes through your body, but a lingering fear remains.\n"
+                        "You try to relax and close your eyes, to fade into the imagined natural sounds of the Oasis. Your body slowly releases tension.\n"
+                        "Then you hear a loud groan of wood snapping above you.\n"
+                        "Immediately, your eyes shoot open and you look up, but you see nothing but the ceiling of the temple room.\n"
+                        "After a short moment, you look back to the entrance.\n";
+        
+        archway(message, "The Oasis", &fifth_archway_read, &the_oasis);
     }
     else if(choice == 'F' || choice == 'f'){
         // The Sixth Archway - The Whistling Gorge
-        cout << "";
+        string message = "You approach the Sixth Archway. As you approach, the name of the Archway becomes clear: \"The Whistling Gorge\"\n"
+                        "The archway is noticeably lighter in color than the other archways and is covered in carvings of strange-looking trees.\n"
+                        "A message beneath the name of the archway reads:\n"
+                        "\n\tA terrible place, the wails of the damned howl forever in this accursed land. Death is a welcome alternative.\n"
+                        "Suddenly, a strong gust of wind blows out of the entrance, nearly knocking you over.\n"
+                        "A long, mournful whistling wail cuts through the still air of the temple. A cold dread fills your stomach as you take an involutary step backward.\n"
+                        "After a long moment, you walk back up to the entrance.\n";
+
+        archway(message, "The Whistling Gorge", &sixth_archway_read, &the_whistling_gorge);
     }
     else if(choice == 'G' || choice == 'g'){
-        // The Seventh Archway - The Silken Room
-        cout << "";
+        // The Seventh Archway - The Silken Throne
+        string message = "You approach the Seventh Archway. As you approach, the name of the Archway becomes clear: \"The Silken Throne\"\n"
+                        "The archway appears to be covered in several sheets of fabric. Then you take a closer look.\n"
+                        "You then realize that the archway is actually made of stone, realistically carved to resemble draped fabric.\n"
+                        "You take a closer look at the exquisitely carved archway, it appears to be made of one smooth, unbroken piece of marble.\n"
+                        "You finally stop admiring the handiwork of the archway and read the message beneath the archway name:\n"
+                        "\n\tOnly those of noble blood may enter, but exceptions will be made for sacrifices.\n"
+                        "You look to the entrance of the archway.\n";
+        
+        archway(message, "The Silken Throne", &seventh_archway_read, &the_silken_throne);
     }
     else{
         try_again();
@@ -507,5 +542,21 @@ void the_room_of_the_dead(){
 }
 
 void the_heart_of_the_colony(){
+
+}
+
+void the_glowing_cave(){
+
+}
+
+void the_oasis(){
+
+}
+
+void the_whistling_gorge(){
+
+}
+
+void the_silken_throne(){
 
 }

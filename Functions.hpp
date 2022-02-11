@@ -21,5 +21,9 @@ extern void temple_second_room_text();
 extern void temple_second_room();
 extern void the_room_of_the_dead();
 extern void the_heart_of_the_colony();
+extern void the_glowing_cave();
+extern void the_oasis();
+extern void the_whistling_gorge();
+extern void the_silken_throne();
 
 #endif
