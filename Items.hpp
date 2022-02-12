@@ -9,4 +9,11 @@ using namespace std;
 extern string dagger;
 extern string first_note;
 
+extern string the_dead_room_key;
+extern string the_heart_of_the_colony_key;
+extern string the_glowing_cave_key;
+extern string the_oasis_key;
+extern string the_whistling_gorge_key;
+extern string the_silken_throne_key;
+
 #endif

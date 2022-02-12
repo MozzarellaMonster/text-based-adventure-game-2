@@ -468,7 +468,7 @@ void temple_second_room(){
         string message = "You approach the Second Archway. As you approach, the name of the Archway becomes clear: \"The Heart of the Colony\"\n"
                         "The stone archway is noticeably older than the other archways and appears to be decorated with strange, distorted carvings of insect-like creatures.\""
                         "Your eyes glance towards the carved message beneath the name of the archway:\n"
-                        "\n\tThey are the masters of their domain. Respect is required if you wish to keep your life and freedom. Do this and you may trade.\n\n"
+                        "\n\tThey are the masters of their domain. Respect is required if you wish to keep your life and freedom.\n\n"
                         "You look closer at the carvings on the archway, an intricate framework of what appears to be tunnels and several thousand insects is depicted.\n"
                         "A sudden, low chittering sound occurs right behind you.\n"
                         "You swiftly turn around, but there is nothing there.\n"
@@ -490,7 +490,16 @@ void temple_second_room(){
     }
     else if(choice == 'D' || choice == 'd'){
         // The Fourth Archway - The Labyrinth - entrance to next area, will not be available until the other rooms are completed
-        cout << "";
+        cout << "You approach the Fourth Archway. As you approach, the name of the Archway becomes clear: \"The Labyrinth\"\n"
+                "The stone archway appears to be made of bricks, with several different intricate carvings of maze-like lines on them.\n"
+                "You look up and read the message beneath the name of the archway:\n"
+                "\n\tThe final obstacle, open only to those who've found all the keys.\n\n"
+                "You feel the intricate carvings on the archway, the lines like ridges on the stone bricks.\n";
+        
+        //if(){
+        // Logic for determining if necessary keys are present for unlocking next area.
+        //}
+                
         
     }
     else if(choice == 'E' || choice == 'e'){
@@ -526,7 +535,8 @@ void temple_second_room(){
                         "You then realize that the archway is actually made of stone, realistically carved to resemble draped fabric.\n"
                         "You take a closer look at the exquisitely carved archway, it appears to be made of one smooth, unbroken piece of marble.\n"
                         "You finally stop admiring the handiwork of the archway and read the message beneath the archway name:\n"
-                        "\n\tOnly those of noble blood may enter, but exceptions will be made for sacrifices.\n\n"
+                        "\n\tOnly those of noble blood may trade, but visitors are tolerated. Act honorably or you will never leave.\n\n"
+                        "A strange mixture of feelings overcomes you - pleasure and pain. But it passes quickly, like silk over skin.\n"
                         "You look to the entrance of the archway.\n";
         
         archway(message, "The Silken Throne", &seventh_archway_read, &the_silken_throne);
