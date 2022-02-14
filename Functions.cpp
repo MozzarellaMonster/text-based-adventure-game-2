@@ -52,19 +52,13 @@ void retry(void (*func)()){
     }
 }
 
-void shimmer(){
-    cout << "The same opaque liquid shimmer that you saw in the ring of the machine in The House is faintly visible in the dark opening.\n";
-    cout << "Though this particular one is much larger, encompassing the entire entrance of the archway with an oily appearance.\n";
-    cout << "The shimmer also appears less active, like an undisturbed lake of water.\n";
-}
-
 void archway(string message, string name, bool *archway_read, void (*func)()){
     char answer;
 
         if(!(*archway_read)){
             cout << message;
             if(!saw_archway){
-                shimmer();
+                cout << shimmer;
             }
             *archway_read = true;
             saw_archway = true;
@@ -396,14 +390,19 @@ void temple_second_room_text(){
     cout << "There are more rooms, but they are too far away to clearly read the names of them.\n";
     cout << "Instead, you focus on the center of the room where an imposing stone obelisk stands.\n";
     cout << "You approach the obelisk and are able to make out the few lines of text on it.\n\n";
-    cout << "\tBring forth six tokens from the six paths, wanderer. Present them to continue your journey.\n";
-    cout << "\nYou look to the seven archways, all but one are open. The largest one in the center of all the archways is closed off by a large stone.\n";
+    cout << "\tBring forth six tokens from the six paths, wanderer. Present them to continue your journey.\n\n";
+    cout << "You look to the seven archways, all but one are open. The largest one in the center of all the archways is closed off by a large stone.\n";
     cout << "You look back to the obelisk where six recesses are arranged in a hexagonal pattern.\n";
     cout << "You scan the different open archways again.\n";
     temple_second_room();
 }
 
 void temple_second_room(){
+    // Logic for depositing the key when you leave a room with said key.
+    //
+    //
+    //
+
     char choice;
     print_line();
     cout << "What would you like to do?\n";
@@ -490,17 +489,45 @@ void temple_second_room(){
     }
     else if(choice == 'D' || choice == 'd'){
         // The Fourth Archway - The Labyrinth - entrance to next area, will not be available until the other rooms are completed
-        cout << "You approach the Fourth Archway. As you approach, the name of the Archway becomes clear: \"The Labyrinth\"\n"
-                "The stone archway appears to be made of bricks, with several different intricate carvings of maze-like lines on them.\n"
-                "You look up and read the message beneath the name of the archway:\n"
-                "\n\tThe final obstacle, open only to those who've found all the keys.\n\n"
-                "You feel the intricate carvings on the archway, the lines like ridges on the stone bricks.\n";
-        
-        //if(){
-        // Logic for determining if necessary keys are present for unlocking next area.
-        //}
-                
-        
+        if(!fourth_archway_read){
+            cout << "You approach the Fourth Archway. As you approach, the name of the Archway becomes clear: \"The Labyrinth\"\n"
+                    "The stone archway appears to be made of bricks, with several different intricate carvings of maze-like lines on them.\n"
+                    "You look up and read the message beneath the name of the archway:\n"
+                    "\n\tThe final obstacle, open only to those who've found all the keys.\n\n"
+                    "You feel the intricate carvings on the archway, the lines like ridges on the stone bricks.\n";
+            if(!saw_archway){
+                cout << shimmer;
+            }
+            fourth_archway_read = true;
+            saw_archway = true;
+        }
+        else{
+            char answer;
+            cout << "\nYou approach The Labyrinth.\n";
+            cout << "\nDo you want to enter the archway? Y/N: ";
+            cin >> answer;
+            if(answer == 'Y' || answer == 'y'){
+                if(second_room_obelisk_complete){
+                    cout << "You have traveled the six paths and have collected the keys from each one.\n";
+                    cout << "With the stone guarding the entrance gone, you can now enter The Labyrinth.\n";
+                    cout << "You take a step forward.\n";
+                    the_labyrinth();
+                }
+                else{
+                    cout << "You cannot go through the archway because you do not have all the keys for the stone obelisk.\n";
+                    cout << "You return to the center of the room.\n";
+                    temple_second_room();
+                }
+            }
+            else if(answer == 'N' || answer == 'n'){
+                cout << "\nYou decide not to go in and return to the center of the room.\n";
+                temple_second_room();
+            }
+            else{
+                try_again();
+                temple_second_room();
+            }
+        }
     }
     else if(choice == 'E' || choice == 'e'){
         // The Fifth Archway - The Garden
@@ -569,4 +596,8 @@ void the_whistling_gorge(){
 
 void the_silken_throne(){
     retry();
+}
+
+void the_labyrinth(){
+
 }

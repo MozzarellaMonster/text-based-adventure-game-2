@@ -9,7 +9,6 @@ using namespace std;
 extern void try_again();
 extern void retry();
 extern void retry(void *func);
-extern void shimmer();
 extern void archway(string message, string name, bool archway_read, void (*func)());
 extern void determine_riddle();
 extern void start();
@@ -25,5 +24,6 @@ extern void the_glowing_cave();
 extern void the_garden();
 extern void the_whistling_gorge();
 extern void the_silken_throne();
+extern void the_labyrinth();
 
 #endif

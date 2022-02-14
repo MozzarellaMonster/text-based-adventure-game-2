@@ -11,8 +11,11 @@ extern string fire_riddle;
 extern string correct_riddle;
 extern string current_riddle;
 
+extern string shimmer;
+
 extern int set_riddle;
 extern bool first_room_explored;
+extern bool second_room_obelisk_complete;
 
 extern bool first_archway_read;
 extern bool second_archway_read;

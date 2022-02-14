@@ -21,8 +21,13 @@ string correct_riddle = "You walk up to the wall with the same symbol and gently
                         "It is then you hear a voice in your head:\n\"Correct.\".\n";
 string current_riddle;
 
+string shimmer = "The same opaque liquid shimmer that you saw in the ring of the machine in The House is faintly visible in the dark opening.\n"
+                "Though this particular one is much larger, encompassing the entire entrance of the archway with an oily appearance.\n"
+                "The shimmer also appears less active, like an undisturbed lake of water.\n";
+
 int set_riddle;
 bool first_room_explored = false;
+bool second_room_obelisk_complete = false;
 
 bool first_archway_read = false;
 bool second_archway_read = false;
