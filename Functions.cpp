@@ -279,7 +279,7 @@ void temple_first_room(){
                 cout << "Blood fills your throat as you let out one more scream that comes out more as a pathetic gurgle.\n";
                 cout << "You fall forward on the ground and faintly feel your ear get cut away as a leaf embeds itself in your eye.\n";
                 cout << "Your world is reduced to nothing but pain as your vision fades and you hear a voice in your head before everything fades to black.\n";
-                cout << "\"Wrong answer.\"";
+                cout << "\"Wrong answer.\"\n";
 
                 //cout << "\n\nEnding 2: Razor Leaf";
                 print_line();
@@ -309,7 +309,7 @@ void temple_first_room(){
                 cout << "The raging inferno grows bigger, billows of flame lick at the soles of your shoes.\n";
                 cout << "You tilt your head back and finally scream.\n";
                 cout << "As your skin melts away and the flames scorch your flesh, you hear a voice in your head.\n";
-                cout << "\"Wrong answer.\"";
+                cout << "\"Wrong answer.\"\n";
 
                 //cout << "\n\nEnding 3: Cremation Mk.2";
                 print_line();
@@ -336,7 +336,7 @@ void temple_first_room(){
                 cout << "You struggle to hold your breath, but you can feel your lungs burning for air.\n";
                 cout << "You hold back for as long as you can, but you can't hold on forever. You open your mouth and inhale the cold water.\n";
                 cout << "As your vision fades and the cold invades your body, you hear a voice in your head.\n";
-                cout << "\"Wrong answer.\"";
+                cout << "\"Wrong answer.\"\n";
 
                 //cout << "\n\nEnding 4: Drowned"
                 print_line();
@@ -432,7 +432,7 @@ void temple_second_room(){
         cout << "D. Approach the Fourth Archway\n";
     }
     if(fifth_archway_read){
-        cout << "E. Approach The Oasis\n";
+        cout << "E. Approach The Garden\n";
     }
     else{
         cout << "E. Approach the Fifth Archway\n";
@@ -503,18 +503,18 @@ void temple_second_room(){
         
     }
     else if(choice == 'E' || choice == 'e'){
-        // The Fifth Archway - The Oasis
-        string message = "You approach the Fifth Archway. As you approach, the name of the Archway becomes clear: \"The Oasis\"\n"
+        // The Fifth Archway - The Garden
+        string message = "You approach the Fifth Archway. As you approach, the name of the Archway becomes clear: \"The Garden\"\n"
                         "This stone archway is covered in beautiful carvings of delicate-looking flowers, exotic plants, and a waterfall.\n"
                         "The message beneath the name of the archway reads:\n"
-                        "\n\tDo not be deceived by the beauty of the Oasis, hidden dangers prey on the unwary.\n\n"
+                        "\n\tDo not be deceived by the beauty of the Garden, hidden dangers prey on the unwary.\n\n"
                         "You gently brush the intricate carvings on the archway. A sense of calm rushes through your body, but a lingering fear remains.\n"
-                        "You try to relax and close your eyes, to fade into the imagined natural sounds of the Oasis. Your body slowly releases tension.\n"
+                        "You try to relax and close your eyes, to fade into the imagined natural sounds of the Garden. Your body slowly releases tension.\n"
                         "Then you hear a loud groan of wood snapping above you.\n"
                         "Immediately, your eyes shoot open and you look up, but you see nothing but the ceiling of the temple room.\n"
                         "After a short moment, you look back to the entrance.\n";
         
-        archway(message, "The Oasis", &fifth_archway_read, &the_oasis);
+        archway(message, "The Garden", &fifth_archway_read, &the_garden);
     }
     else if(choice == 'F' || choice == 'f'){
         // The Sixth Archway - The Whistling Gorge
@@ -559,7 +559,7 @@ void the_glowing_cave(){
     retry();
 }
 
-void the_oasis(){
+void the_garden(){
     retry();
 }
 
