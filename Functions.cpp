@@ -385,7 +385,7 @@ void temple_second_room_text(){
     cout << "You step into the much larger room and look around.\n";
     cout << "Spaced evenly around the perimeter of the room are seven stone archways.\n";
     cout << "All of the archways have intricate carvings adorning them, each of them depicting different scenes.\n";
-    cout << "One archway appears to have faces carved into the smooth, black stone. The room appears to be named \"The Room of the Dead\".\n";
+    cout << "One archway appears to have faces carved into the smooth, black stone. The room appears to be named \"The Desert of the Dea\".\n";
     cout << "Another appears to be adorned with carvings of insects and reads \"The Room of the Swarm\".\n";
     cout << "There are more rooms, but they are too far away to clearly read the names of them.\n";
     cout << "Instead, you focus on the center of the room where an imposing stone obelisk stands.\n";
@@ -407,7 +407,7 @@ void temple_second_room(){
     print_line();
     cout << "What would you like to do?\n";
     if(first_archway_read){
-        cout << "A. Approach the Room of the Dead\n";
+        cout << "A. Approach The Desert of the Dead\n";
     }
     else{
         cout << "A. Approach the First Archway\n";
@@ -452,15 +452,15 @@ void temple_second_room(){
     
     cin >> choice;
     if(choice == 'A' || choice == 'a'){
-        // The First Archway - The Room of the Dead
-        string message = "You approach the First Archway. As you approach, the name of the Archway becomes clear: \"The Room of the Dead\"\n"
+        // The First Archway - The Desert of the Dead
+        string message = "You approach the First Archway. As you approach, the name of the Archway becomes clear: \"The Desert of the Dead\"\n"
                          "The stone archway is covered in carvings of solemn, still faces. A message can be seen below the name of the room:\n"
                          "\n\tDo not disturb the slumber of the dead, wanderer. They are weary of life and will take yours if they awaken.\n\n"
                          "You gently touch the carved surface of the archway, running your hand over one of the carved faces.\n"
                          "A cold chill runs down your spine as your thumb drags over the closed eye of the stone face.\n"
                          "You look to the entrance.\n";
 
-        archway(message, "The Room of the Dead", &first_archway_read, &the_room_of_the_dead);
+        archway(message, "The Desert of the Dead", &first_archway_read, &the_desert_of_the_dead);
     }
     else if(choice == 'B' || choice == 'b'){
         // The Second Archway - the Heart of the Colony
@@ -574,8 +574,80 @@ void temple_second_room(){
     }
 }
 
-void the_room_of_the_dead(){
-    retry();
+void the_desert_of_the_dead_text(){
+    print_line();
+    cout << "You fall to your knees. Going through the entrance knocked the wind out of you.\n";
+    cout << "After taking a few seconds to catch your breath, you stand back up and look around the room you are now in.\n";
+    cout << "The room is large, at least the size of two football fields. Several torches hang from the ceiling but are not the only source of light.\n";
+    cout << "You look up to see small openings near the ceiling of the room letting in bright, hot sunlight.\n";
+    cout << "Unlike the temple, the air in this place feels drastically drier and noticeably hotter.\n";
+    cout << "You look behind you to see an open doorway, but not the portal you expected.\n";
+    cout << "Instead, you appear to have been transported to a vast desert with nothing around for miles except large extrusions of volcanic rock and sand.\n";
+    cout << "You look back to the interior of the room and see that the walls are lined with numerous upright sarcophaguses.\n";
+    cout << "There are also several rows of tombs lying throughout the expanse of the room with a large raised platform in the very center of the room.\n\n";
+    the_desert_of_the_dead();
+}
+
+void the_desert_of_the_dead(){
+    char choice;
+    bool explored_room = false;
+    bool looked_outside = false;
+    print_line();
+    cout << "What would you like to do?\n";
+    cout << "A. Look around the room\n";
+    cout << "B. Investigate the center platform\n";
+    if(looked_outside){
+        cout << "C. Go out into the desert\n";
+    }
+    else{
+        cout << "C. Look outside\n";
+    }
+
+    print_line();
+    cin >> choice;
+    
+    if(choice == 'A' || choice == 'a'){
+        if(!explored_room){
+            cout << "You decide to explore the room a little.\n";
+            cout << "You walk between the rows of tombs, noticing the names inscribed on several of them.\n";
+            cout << "After several moments, you make your way to the walls of the room where the upright sarcophaguses are.\n";
+            cout << "Unlike the tombs which are sealed shut, some of the sarcophaguses appear to have been opened or are damaged enough to expose the body within.\n";
+            cout << "Mummified remains can be seen hanging loosely out of some of them, while others are empty entirely.\n";
+            cout << "This last detail is incredibly worrisome, since the archway had warned you about disturbing the dead.\n";
+            cout << "You quickly scan the room, but thankfully don't see any corpses walking around. At least not yet.\n";
+            cout << "You head back to the entrance of the room.\n";
+            explored_room = true;
+            the_desert_of_the_dead();
+        }
+        else{
+            cout << "";
+        }
+    }
+    else if(choice == 'B' || choice == 'b'){
+
+    }
+    else if(choice == 'C' || choice == 'c'){
+        if(!looked_outside){
+            cout << "You quickly poke your head out of the doorway to the building you're in.\n";
+            cout << "Heat waves ripple the air around you, forcing you to squint for a better view of your surroundings.\n";
+            cout << "Mountainous volcanic rock ridges jut out of the sand several miles directly ahead of you.\n";
+            cout << "To your left and right, there is nothing but sand and several smaller formations of the volcanic rock every hundred feet or so.\n";
+            cout << "You pull your head back in and wipe the sweat from your brow.\n";
+            cout << "After just peeking your head out for a moment, you have already felt the tremendous heat of the desert beyond the doorway.\n";
+            cout << "In contrast, the building you're in is several degrees cooler than outside, with some protection from the heat of the sun.\n";
+            cout << "It would be unwise to try wandering around the desert, you imagine. Still, the option is open to you if you so choose.\n";
+            looked_outside = true;
+            the_desert_of_the_dead();
+        }
+        else{
+            
+        }
+
+    }
+    else{
+        try_again();
+        the_desert_of_the_dead();
+    }
 }
 
 void the_heart_of_the_colony(){
@@ -599,5 +671,5 @@ void the_silken_throne(){
 }
 
 void the_labyrinth(){
-
+    retry();
 }
