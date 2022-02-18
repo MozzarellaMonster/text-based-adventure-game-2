@@ -12,7 +12,7 @@ using namespace std;
 vector<string> inventory;
 
 void print_line(){
-    cout << "\n============================================\n";
+    cout << "\n==============================================================================================\n";
 }
 
 void try_again(){
@@ -56,6 +56,7 @@ void archway(string message, string name, bool *archway_read, void (*func)()){
     char answer;
 
         if(!(*archway_read)){
+            print_line();
             cout << message;
             if(!saw_archway){
                 cout << shimmer;
@@ -101,6 +102,7 @@ void determine_riddle(){
 }
 
 void start(){
+    print_line();
     cout << "_________          _______   _________ _______  _______  _______  _        _______ \n";
     cout << "\\__   __/|\\     /|(  ____ \\  \\__   __/(  ____ \\(       )(  ____ )( \\      (  ____ \\\n";
     cout << "   ) (   | )   ( || (    \\/     ) (   | (    \\/| () () || (    )|| (      | (    \\/\n";
@@ -110,19 +112,19 @@ void start(){
     cout << "   | |   | )   ( || (____/\\     | |   | (____/\\| )   ( || )      | (____/\\| (____/\\\n";
     cout << "   )_(   |/     \\|(_______/     )_(   (_______/|/     \\||/       (_______/(_______/\n\n\n";
                                                                                    
-    cout << "A game by MozzarellaMonster.\n";
-    cout << "Hello! Welcome to the sequel to The House!\n";
-    cout << "Hopefully you enjoy it and have as much fun as I did making it!\n\n";
+    cout << "A game by MozzarellaMonster.\n"
+            "Hello! Welcome to the sequel to The House!\n"
+            "Hopefully you enjoy it and have as much fun as I did making it!\n\n";
     
     print_line();
-    cout << "After wandering through the jungle for an immeasurable amount of time, you come across a strange temple.\n";
-    cout << "The temple is constructed of what appears to be large, polished black stone bricks with numerous strange engravings in them.\n";
-    cout << "The stone bricks are so well-polished in fact, that you can actually see your reflection in them.\n";
-    cout << "An ornate stone archway is set into the temple, but is currently blocked by what appears to be a large slab of stone.\n";
-    cout << "A stone pedestal stands before you holding a bowl of fire, seemingly burning some kind of charcoal.\n";
-    cout << "Exactly how the bowl of fire is burning when you have not come across anyone that could have started it is strange,\nbut you've already seen enough weird stuff to not question it further.\n";
-    cout << "There is an engraving below the pedestal, but you have cannot read the strange writing.\n";
-    cout << "An ornate dagger lies in a small recess beneath the inscription, seemingly made of an iron-like metal.\n";
+    cout << "After wandering through the jungle for an immeasurable amount of time, you come across a strange temple.\n"
+            "The temple is constructed of what appears to be large, polished black stone bricks with numerous strange engravings in them.\n"
+            "The stone bricks are so well-polished in fact, that you can actually see your reflection in them.\n"
+            "An ornate stone archway is set into the temple, but is currently blocked by what appears to be a large slab of stone.\n"
+            "A stone pedestal stands before you holding a bowl of fire, seemingly burning some kind of charcoal.\n"
+            "Exactly how the bowl of fire is burning when you have not come across anyone that could have started it is strange,\nbut you've already seen enough weird stuff to not question it further.\n"
+            "There is an engraving below the pedestal, but you have cannot read the strange writing.\n"
+            "An ornate dagger lies in a small recess beneath the inscription, seemingly made of an iron-like metal.\n";
     first_choice();
 }
 
@@ -135,33 +137,33 @@ void first_choice(){
 
     if(choice == 'Y' || choice == 'y'){
         print_line();
-        cout << "You take the dagger out of the recess.\n";
-        cout << "Upon closer inspection, you notice there are strange glyphs in the center of the blade.\n";
-        cout << "The glyphs appear to be similar to the glyphs you saw on the stone ring in the basement of The House.\n";
-        cout << "You slowly run your thumb over the strange symbols.\n";
-        cout << "Suddenly, the glyphs glow a menacing red and you feel a sudden urge to cut your hand.\n";
-        cout << "The urge steadily grows until you deftly slice open the palm of your left hand.\n";
-        cout << "Complete surprise overtakes you for a moment as you process what you have just done until you suddenly and involuntarily thrust your hand over the bowl of fire\n and squeeze several large drops of your own blood into the waiting flames below.\n";
-        cout << "The blood sizzles as it hits the hot coals and the fire astoundingly changes colors into a deep red before quickly reverting back.\n";
-        cout << "Remarkably, the cut on your left palm has sealed completely with no visible scars, as if it was never there.\n";
-        cout << "You stand still for a while, flexing your hand and running your fingers over your smooth, unharmed palm.\n";
-        cout << "\"Things could not get any weirder,\" you think to yourself.\n";
-        cout << "Suddenly, the stone slab blocking the entrance into the temple slides up, opening into the dark interior of the temple.\n";
-        cout << "You stand there for a moment, then state, \"Aaand it just did.\"\n";
-        cout << "You pick the dagger back up and store it on your person.\n";
+        cout << "You take the dagger out of the recess.\n"
+                "Upon closer inspection, you notice there are strange glyphs in the center of the blade.\n"
+                "The glyphs appear to be similar to the glyphs you saw on the stone ring in the basement of The House.\n"
+                "You slowly run your thumb over the strange symbols.\n"
+                "Suddenly, the glyphs glow a menacing red and you feel a sudden urge to cut your hand.\n"
+                "The urge steadily grows until you deftly slice open the palm of your left hand.\n"
+                "Complete surprise overtakes you for a moment as you process what you have just done until you suddenly and involuntarily thrust your hand over the bowl of fire\n and squeeze several large drops of your own blood into the waiting flames below.\n"
+                "The blood sizzles as it hits the hot coals and the fire astoundingly changes colors into a deep red before quickly reverting back.\n"
+                "Remarkably, the cut on your left palm has sealed completely with no visible scars, as if it was never there.\n"
+                "You stand still for a while, flexing your hand and running your fingers over your smooth, unharmed palm.\n"
+                "\"Things could not get any weirder,\" you think to yourself.\n"
+                "Suddenly, the stone slab blocking the entrance into the temple slides up, opening into the dark interior of the temple.\n"
+                "You stand there for a moment, then state, \"Aaand it just did.\"\n"
+                "You pick the dagger back up and store it on your person.\n";
         inventory.push_back(dagger);
         temple_entrance();
     }
     else if(choice == 'N' || choice == 'n'){
         print_line();
-        cout << "You decide against taking the dagger.\n";
-        cout << "You look around and decide to get a better grasp of your surroundings.\n";
-        cout << "You head back into the jungle.\n\n";
-        cout << "XXXXXXXXXXXXXXXXXXXXXXXXX\n";
-        cout << "SEVERAL MINUTES LATER\n";
-        cout << "XXXXXXXXXXXXXXXXXXXXXXXXX\n";
-        cout << "\nYou look up after wandering through the jungle again only to find that you're back at the temple.\n";
-        cout << "Well, looks like you're back at square one.\n";
+        cout << "You decide against taking the dagger.\n"
+                "You look around and decide to get a better grasp of your surroundings.\n"
+                "You head back into the jungle.\n\n"
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
+                "   SEVERAL MINUTES LATER\n"
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
+                "\nYou look up after wandering through the jungle again only to find that you're back at the temple.\n"
+                "Well, looks like you're back at square one.\n";
         first_choice();
     }
     else{
@@ -173,11 +175,10 @@ void first_choice(){
 void temple_entrance(){
     char choice;
     print_line();
-    cout << "After making your choice, you turn back to the now-open temple entrance.\n";
-    cout << "Something catches your eye however, and you turn to look at the pedestal holding the bowl of fire.\n";
-    cout << "Somehow, the symbols now makes sense to you.\n";
-    cout << "The engraved text reads:\n\n\tAn offering needed to gain insight and entrance\n\n";
-    cout << "\"So,\" you think to yourself, \"now I can understand that language and enter the temple.\"\n";
+    cout << "After making your choice, you turn back to the now-open temple entrance.\n"
+            "Something catches your eye however, and you turn to look at the pedestal holding the bowl of fire.\n"
+            "Somehow, the symbols now makes sense to you.\n"
+            "The engraved text reads:\n\n\tAn offering needed to gain insight and entrance\n\n";
     print_line();
     cout << "Will you go into the temple? Y/N: ";
     cin >> choice;
@@ -190,17 +191,17 @@ void temple_entrance(){
     }
     else if(choice == 'N' || choice == 'n'){
         print_line();
-        cout << "You decide against going into the temple, instead opting to explore your location more.\n\n";
-        cout << "You look around more and come across a rucksack half-buried in the dense foliage.\n";
-        cout << "You pull it out and search the pockets. You find an old map, a broken watch, and a piece of paper.\n";
-        cout << "The old map is nearly useless, as it is so worn and faded that all you can really see are faint gridlines and the border.\n";
-        cout << "The broken watch is even more useless since the casing seemingly broke open long ago and all the internal mechanisms have now fallen completely apart.\n";
-        cout << "The piece of paper is actually the most interesting of the junk you find. There's something written on it in in crooked, barely legible script.\n";
-        cout << "It reads:\n\n\t11/13/07\n\tI've done it! After trying another combination of glyphs, I've finally opened a doorway to another dimension.\n";
-        cout << "\tI've yet to try anything more than sending several test items through. None have returned, but that is to be expected. I'm gonna try to get an image next.\n";
-        cout << "\tSuccess! I now have a photograph of the other side of the doorway. However, what I did not expect was...\n\n";
-        cout << "The rest of the message is torn off.\n";
-        cout << "You fold up the piece of paper and stash it on your person.\n";
+        cout << "You decide against going into the temple, instead opting to explore your location more.\n\n"
+                "You look around more and come across a rucksack half-buried in the dense foliage.\n"
+                "You pull it out and search the pockets. You find an old map, a broken watch, and a piece of paper.\n"
+                "The old map is nearly useless, as it is so worn and faded that all you can really see are faint gridlines and the border.\n"
+                "The broken watch is even more useless since the casing seemingly broke open long ago and all the internal mechanisms have now fallen completely apart.\n"
+                "The piece of paper is actually the most interesting of the junk you find. There's something written on it in in crooked, barely legible script.\n"
+                "It reads:\n\n\t11/13/07\n\tI've done it! After trying another combination of glyphs, I've finally opened a doorway to another dimension.\n"
+                "\tI've yet to try anything more than sending several test items through. None have returned, but that is to be expected. I'm gonna try to get an image next.\n"
+                "\tSuccess! I now have a photograph of the other side of the doorway. However, what I did not expect was...\n\n"
+                "The rest of the message is torn off.\n"
+                "You fold up the piece of paper and stash it on your person.\n";
         inventory.push_back(first_note);
         cout << "You head back to the temple entrance and step inside.\n";
         temple_first_room_text();
@@ -214,12 +215,12 @@ void temple_entrance(){
 void temple_first_room_text(){
     determine_riddle();
     print_line();
-    cout << "You enter the temple and find yourself in a dimly lit room.\n"; 
-    cout << "There is a small bowl of fire on a pedestal in the very center of the room and no other source of light, save for the open doorway you're standing in.\n";
-    cout << "Cautiously, you step into the room. When you're about halfway toward the pedestal in the middle of the room, the doorway suddenly shuts as a huge slab of stone slides over the entrance, completely sealing you in.\n";
-    cout << "Well, looks like you're stuck here now, might as well examine the room more.\n";
-    cout << "The room is pretty barren, composed entirely of smooth stone save for three symbols set into each of the walls beside the one containing the entryway.\n";
-    cout << "A loud voice suddenly booms from out of nowhere, as you quickly slam your hands over your ears. It doesn't help however, as it seems the voice is coming directly from inside your head.\n\n";
+    cout << "You enter the temple and find yourself in a dimly lit room.\n"
+            "There is a small bowl of fire on a pedestal in the very center of the room and no other source of light, save for the open doorway you're standing in.\n"
+            "Cautiously, you step into the room. When you're about halfway toward the pedestal in the middle of the room, the doorway suddenly shuts as a huge slab of stone slides over the entrance, completely sealing you in.\n"
+            "Well, looks like you're stuck here now, might as well examine the room more.\n"
+            "The room is pretty barren, composed entirely of smooth stone save for three symbols set into each of the walls beside the one containing the entryway.\n"
+            "A loud voice suddenly booms from out of nowhere, as you quickly slam your hands over your ears. It doesn't help however, as it seems the voice is coming directly from inside your head.\n\n";
     cout << current_riddle << "\n";
     cout << "\nYou take a closer look at the symbols around the room. One appears to be a stylized gust of wind, another is clearly a flame, and the last appears to be running water.\n\n";
     temple_first_room();
@@ -252,30 +253,30 @@ void temple_first_room(){
             print_line();
             cout << "You choose Wind.\n";
             if(set_riddle != 1){
-                cout << "You walk up to the Wind symbol on the wall and gently touch it with your hand.\n";
-                cout << "Almost immediately, you feel gusts of air blowing from somewhere within the small room.\n";
-                cout << "Suddenly, the ceiling of the room opens up and several thousand leaves are dumped into the room.\n";
-                cout << "You move to brush off the ones that fell on you, but immediately pull your hand away when you feel a sharp pain.\n";
-                cout << "You quickly draw back your hand and look at the deep gash oozing blood over your palm.\n";
-                cout << "It's then you notice that the leaf stuck on your shirt is... embedded in the fabric.\n";
-                cout << "Small but wickedly sharp serrations can be seen lining the edge of the leaf and have been entangled in the cloth of your shirt.\n";
-                cout << "You attempt to peel the leaf off with your fingernail, but only succeed in cutting the sensitive flesh underneath.\n";
-                cout << "You pull your finger away, but before you do that, you realize the leaf was surprisingly stiff and sturdy, like a piece of metal.\n";
-                cout << "Then with growing horror, you realize that the gusts of air are growing stronger and the leaves are slowly starting to twirl around the room.\n";
-                cout << "You rush to the still-sealed entrance of the room and fruitlessly pound on the large stone slab keeping it closed.\n";
-                cout << "The wind picks up even more, and the leaves dance freely around the room.\n";
-                cout << "You feel the fabric of your clothes tear as the leaves cut cleanly through them.\n";
-                cout << "You continue to helplessly pound on the stone slab, tears now pouring freely from your eyes.\n";
-                cout << "The wind is now a forceful gale and tosses the leaves violently around the room.\n";
-                cout << "Pain soon floods every part of your nearly exposed body as the leaves effortlessly tear open your skin.\n";
-                cout << "You pound on the stone slab and scream for help, but you can't even hear yourself over the howling wind.\n";
-                cout << "You scream and scream until you feel a leaf cut cleanly through both of your cheeks as another slices open your throat.\n";
-                cout << "Blood fills your throat as you let out one more scream that comes out more as a pathetic gurgle.\n";
-                cout << "You fall forward on the ground and faintly feel your ear get cut away as a leaf embeds itself in your eye.\n";
-                cout << "Your world is reduced to nothing but pain as your vision fades and you hear a voice in your head before everything fades to black.\n";
-                cout << "\"Wrong answer.\"\n";
+                cout << "You walk up to the Wind symbol on the wall and gently touch it with your hand.\n"
+                        "Almost immediately, you feel gusts of air blowing from somewhere within the small room.\n"
+                        "Suddenly, the ceiling of the room opens up and several thousand leaves are dumped into the room.\n"
+                        "You move to brush off the ones that fell on you, but immediately pull your hand away when you feel a sharp pain.\n"
+                        "You quickly draw back your hand and look at the deep gash oozing blood over your palm.\n"
+                        "It's then you notice that the leaf stuck on your shirt is... embedded in the fabric.\n"
+                        "Small but wickedly sharp serrations can be seen lining the edge of the leaf and have been entangled in the cloth of your shirt.\n"
+                        "You attempt to peel the leaf off with your fingernail, but only succeed in cutting the sensitive flesh underneath.\n"
+                        "You pull your finger away, but before you do that, you realize the leaf was surprisingly stiff and sturdy, like a piece of metal.\n"
+                        "Then with growing horror, you realize that the gusts of air are growing stronger and the leaves are slowly starting to twirl around the room.\n"
+                        "You rush to the still-sealed entrance of the room and fruitlessly pound on the large stone slab keeping it closed.\n"
+                        "The wind picks up even more, and the leaves dance freely around the room.\n"
+                        "You feel the fabric of your clothes tear as the leaves cut cleanly through them.\n"
+                        "You continue to helplessly pound on the stone slab, tears now pouring freely from your eyes.\n"
+                        "The wind is now a forceful gale and tosses the leaves violently around the room.\n"
+                        "Pain soon floods every part of your nearly exposed body as the leaves effortlessly tear open your skin.\n"
+                        "You pound on the stone slab and scream for help, but you can't even hear yourself over the howling wind.\n"
+                        "You scream and scream until you feel a leaf cut cleanly through both of your cheeks as another slices open your throat.\n"
+                        "Blood fills your throat as you let out one more scream that comes out more as a pathetic gurgle.\n"
+                        "You fall forward on the ground and faintly feel your ear get cut away as a leaf embeds itself in your eye.\n"
+                        "Your world is reduced to nothing but pain as your vision fades and you hear a voice in your head before everything fades to black.\n"
+                        "\"Wrong answer.\"\n";
 
-                //cout << "\n\nEnding 2: Razor Leaf";
+                cout << "\n\nEnding 2: Shredded";
                 print_line();
                 retry(&temple_first_room_text);
             }
@@ -289,23 +290,23 @@ void temple_first_room(){
             print_line();
             cout << "You choose Fire.\n";
             if(set_riddle != 2){
-                cout << "You walk up to the Fire symbol and gently touch it with your hand.\n";
-                cout << "After some time passes with seemingly nothing happening, you slowly back up and look quickly around the room.\n";
-                cout << "Nothing seems out of place or anything, but then you notice that something did change.\n";
-                cout << "The room feels hotter.\n";
-                cout << "It is then that you notice small heat waves emanating from the cracks in the stone floor.\n";
-                cout << "You quickly stoop down and place your hand near one of the cracks. Intense heat brushes over the skin of your palm.\n";
-                cout << "Suddenly, a stone brick in the floor directly in front of you gives way and falls down, revealing a fiery inferno underneath.\n";
-                cout << "Soon, more bricks start to fall into the flames beneath, each faster than the last.\n";
-                cout << "Quickly, you scan what little of the room remains to stand on and notice the pedestal is resting on a sturdy pillar of rock.\n";
-                cout << "You deftly jump over to it and hold on to it as the rest of the room's floor falls away.\n";
-                cout << "It's so hot now, you can barely breathe. Fire rages all around you. There's nowhere to run, nowhere to stand, nowhere to go.\n";
-                cout << "The raging inferno grows bigger, billows of flame lick at the soles of your shoes.\n";
-                cout << "You tilt your head back and finally scream.\n";
-                cout << "As your skin melts away and the flames scorch your flesh, you hear a voice in your head.\n";
-                cout << "\"Wrong answer.\"\n";
+                cout << "You walk up to the Fire symbol and gently touch it with your hand.\n"
+                        "After some time passes with seemingly nothing happening, you slowly back up and look quickly around the room.\n"
+                        "Nothing seems out of place or anything, but then you notice that something did change.\n"
+                        "The room feels hotter.\n"
+                        "It is then that you notice small heat waves emanating from the cracks in the stone floor.\n"
+                        "You quickly stoop down and place your hand near one of the cracks. Intense heat brushes over the skin of your palm.\n"
+                        "Suddenly, a stone brick in the floor directly in front of you gives way and falls down, revealing a fiery inferno underneath.\n"
+                        "Soon, more bricks start to fall into the flames beneath, each faster than the last.\n"
+                        "Quickly, you scan what little of the room remains to stand on and notice the pedestal is resting on a sturdy pillar of rock.\n"
+                        "You deftly jump over to it and hold on to it as the rest of the room's floor falls away.\n"
+                        "It's so hot now, you can barely breathe. Fire rages all around you. There's nowhere to run, nowhere to stand, nowhere to go.\n"
+                        "The raging inferno grows bigger, billows of flame lick at the soles of your shoes.\n"
+                        "You tilt your head back and finally scream.\n"
+                        "As your skin melts away and the flames scorch your flesh, you hear a voice in your head.\n"
+                        "\"Wrong answer.\"\n";
 
-                //cout << "\n\nEnding 3: Cremation Mk.2";
+                cout << "\n\nEnding 3: Cremation Mk.2";
                 print_line();
                 retry(&temple_first_room_text);
             }
@@ -319,20 +320,20 @@ void temple_first_room(){
             print_line();
             cout << "You choose Water.\n";
             if(set_riddle != 0){
-                cout << "You walk up to the Water symbol and gently touch it with your hand.\n";
-                cout << "Nothing happens for several seconds, until you hear a roar right above you.\n";
-                cout << "Your head snaps up to look at the ceiling where you see that several apertures have opened above you, allowing several gallons of water to start pouring in.\n";
-                cout << "You quickly try to avoid the deluge, but there's nowhere to run. Instead, you climb the pedestal in the center of the room holding the now-extinguished bowl.\n";
-                cout << "You watch with growing horror as the water level rises quickly, with no other option, you attempt to bang on the ceiling, to no avail.\n";
-                cout << "The water level is now at chest level, and there is nothing left to do but scream.\n";
-                cout << "You scream and scream, but no help comes.\n";
-                cout << "As the water rises indifferently, you take a final gasp of air before the water finally fills the room.\n";
-                cout << "You struggle to hold your breath, but you can feel your lungs burning for air.\n";
-                cout << "You hold back for as long as you can, but you can't hold on forever. You open your mouth and inhale the cold water.\n";
-                cout << "As your vision fades and the cold invades your body, you hear a voice in your head.\n";
-                cout << "\"Wrong answer.\"\n";
+                cout << "You walk up to the Water symbol and gently touch it with your hand.\n"
+                        "Nothing happens for several seconds, until you hear a roar right above you.\n"
+                        "Your head snaps up to look at the ceiling where you see that several apertures have opened above you, allowing several gallons of water to start pouring in.\n"
+                        "You quickly try to avoid the deluge, but there's nowhere to run. Instead, you climb the pedestal in the center of the room holding the now-extinguished bowl.\n"
+                        "You watch with growing horror as the water level rises quickly, with no other option, you attempt to bang on the ceiling, to no avail.\n"
+                        "The water level is now at chest level, and there is nothing left to do but scream.\n"
+                        "You scream and scream, but no help comes.\n"
+                        "As the water rises indifferently, you take a final gasp of air before the water finally fills the room.\n"
+                        "You struggle to hold your breath, but you can feel your lungs burning for air.\n"
+                        "You hold back for as long as you can, but you can't hold on forever. You open your mouth and inhale the cold water.\n"
+                        "As your vision fades and the cold invades your body, you hear a voice in your head.\n"
+                        "\"Wrong answer.\"\n";
 
-                //cout << "\n\nEnding 4: Drowned"
+                cout << "\n\nEnding 4: Drowned";
                 print_line();
                 retry(&temple_first_room_text);
             }
@@ -350,20 +351,20 @@ void temple_first_room(){
     else if(choice == 'B' || choice == 'b'){
         if(first_room_explored){
             print_line();
-            cout << "You quickly look around the room again, but you're sure you've already examined everything.\n";
-            cout << "You turn back to the room.\n";
+            cout << "You quickly look around the room again, but you're sure you've already examined everything.\n"
+                    "You turn back to the room.\n";
             temple_first_room();
         }
         else{
             print_line();
-            cout << "You decide to look around the room more.\n";
-            cout << "You look closer at the symbols on the walls: there's the wind symbol on the left wall, the water symbol on the wall directly opposite you and the fire symbol on the right wall.\n";
-            cout << "Other than the fact that the symbols seemed to be etched out of the wall itself, there doesn't seem to be anything else interesting about them.\n";
-            cout << "You also examine the pedestal in the center of the room and notice that there is a little piece of paper sticking out from a small crack between the pedestal and the floor.\n";
-            cout << "You gently pull it out and read what it says:\n\n\tThe riddle is different for everyone. Be aware that there will be many winding paths throughout this temple.\n";
-            cout << "\tMake each choice you come across carefully, the temple is testing you. If you fail even one, the price will be your life.\n";
-            cout << "\nYou flip the paper over and examine the back, but there is nothing else to read.\n";
-            cout << "You gently fold the piece of paper up and look back to the room.\n";
+            cout << "You decide to look around the room more.\n"
+                    "You look closer at the symbols on the walls: there's the wind symbol on the left wall, the water symbol on the wall directly opposite you and the fire symbol on the right wall.\n"
+                    "Other than the fact that the symbols seemed to be etched out of the wall itself, there doesn't seem to be anything else interesting about them.\n"
+                    "You also examine the pedestal in the center of the room and notice that there is a little piece of paper sticking out from a small crack between the pedestal and the floor.\n"
+                    "You gently pull it out and read what it says:\n\n\tThe riddle is different for everyone. Be aware that there will be many winding paths throughout this temple.\n"
+                    "\tMake each choice you come across carefully, the temple is testing you. If you fail even one, the price will be your life.\n"
+                    "\nYou flip the paper over and examine the back, but there is nothing else to read.\n"
+                    "You gently fold the piece of paper up and look back to the room.\n";
             first_room_explored = true;
             temple_first_room();
         }
@@ -371,7 +372,7 @@ void temple_first_room(){
     else if(choice == 'C' || choice == 'c'){
         print_line();
         cout << "You look back to the entryway. The huge stone slab remains, sealing you in the temple.\n";
-        cout << "You sigh and turn back to the room.\n";
+                "You sigh and turn back to the room.\n";
         temple_first_room();
     }
     else{
@@ -382,18 +383,18 @@ void temple_first_room(){
 
 void temple_second_room_text(){
     print_line();
-    cout << "You step into the much larger room and look around.\n";
-    cout << "Spaced evenly around the perimeter of the room are seven stone archways.\n";
-    cout << "All of the archways have intricate carvings adorning them, each of them depicting different scenes.\n";
-    cout << "One archway appears to have faces carved into the smooth, black stone. The room appears to be named \"The Desert of the Dea\".\n";
-    cout << "Another appears to be adorned with carvings of insects and reads \"The Room of the Swarm\".\n";
-    cout << "There are more rooms, but they are too far away to clearly read the names of them.\n";
-    cout << "Instead, you focus on the center of the room where an imposing stone obelisk stands.\n";
-    cout << "You approach the obelisk and are able to make out the few lines of text on it.\n\n";
-    cout << "\tBring forth six tokens from the six paths, wanderer. Present them to continue your journey.\n\n";
-    cout << "You look to the seven archways, all but one are open. The largest one in the center of all the archways is closed off by a large stone.\n";
-    cout << "You look back to the obelisk where six recesses are arranged in a hexagonal pattern.\n";
-    cout << "You scan the different open archways again.\n";
+    cout << "You step into the much larger room and look around.\n"
+            "Spaced evenly around the perimeter of the room are seven stone archways.\n"
+            "All of the archways have intricate carvings adorning them, each of them depicting different scenes.\n"
+            "One archway appears to have faces carved into the smooth, black stone. The room appears to be named \"The Desert of the Dea\".\n"
+            "Another appears to be adorned with carvings of insects and reads \"The Room of the Swarm\".\n"
+            "There are more rooms, but they are too far away to clearly read the names of them.\n"
+            "Instead, you focus on the center of the room where an imposing stone obelisk stands.\n"
+            "You approach the obelisk and are able to make out the few lines of text on it.\n\n"
+            "\tBring forth six tokens from the six paths, wanderer. Present them to continue your journey.\n\n"
+            "You look to the seven archways, all but one are open. The largest one in the center of all the archways is closed off by a large stone.\n"
+            "You look back to the obelisk where six recesses are arranged in a hexagonal pattern.\n";
+            "You scan the different open archways again.\n";
     temple_second_room();
 }
 
@@ -508,14 +509,14 @@ void temple_second_room(){
             cin >> answer;
             if(answer == 'Y' || answer == 'y'){
                 if(second_room_obelisk_complete){
-                    cout << "You have traveled the six paths and have collected the keys from each one.\n";
-                    cout << "With the stone guarding the entrance gone, you can now enter The Labyrinth.\n";
-                    cout << "You take a step forward.\n";
+                    cout << "You have traveled the six paths and have collected the keys from each one.\n"
+                            "With the stone guarding the entrance gone, you can now enter The Labyrinth.\n"
+                            "You take a step forward.\n";
                     the_labyrinth();
                 }
                 else{
-                    cout << "You cannot go through the archway because you do not have all the keys for the stone obelisk.\n";
-                    cout << "You return to the center of the room.\n";
+                    cout << "You cannot go through the archway because you do not have all the keys for the stone obelisk.\n"
+                            "You return to the center of the room.\n";
                     temple_second_room();
                 }
             }
@@ -576,27 +577,25 @@ void temple_second_room(){
 
 void the_desert_of_the_dead_text(){
     print_line();
-    cout << "You fall to your knees. Going through the entrance knocked the wind out of you.\n";
-    cout << "After taking a few seconds to catch your breath, you stand back up and look around the room you are now in.\n";
-    cout << "The room is large, at least the size of two football fields. Several torches hang from the ceiling but are not the only source of light.\n";
-    cout << "You look up to see small openings near the ceiling of the room letting in bright, hot sunlight.\n";
-    cout << "Unlike the temple, the air in this place feels drastically drier and noticeably hotter.\n";
-    cout << "You look behind you to see an open doorway, but not the portal you expected.\n";
-    cout << "Instead, you appear to have been transported to a vast desert with nothing around for miles except large extrusions of volcanic rock and sand.\n";
-    cout << "You look back to the interior of the room and see that the walls are lined with numerous upright sarcophaguses.\n";
-    cout << "There are also several rows of tombs lying throughout the expanse of the room with a large raised platform in the very center of the room.\n\n";
+    cout << "You fall to your knees. Going through the entrance knocked the wind out of you.\n"
+            "After taking a few seconds to catch your breath, you stand back up and look around the room you are now in.\n"
+            "The room is large, at least the size of two football fields. Several torches hang from the ceiling but are not the only source of light.\n"
+            "You look up to see small openings near the ceiling of the room letting in bright, hot sunlight.\n"
+            "Unlike the temple, the air in this place feels drastically drier and noticeably hotter.\n"
+            "You look behind you to see an open doorway, but not the portal you expected.\n"
+            "Instead, you appear to have been transported to a vast desert with nothing around for miles except large extrusions of volcanic rock and sand.\n"
+            "You look back to the interior of the room and see that the walls are lined with numerous upright sarcophaguses.\n"
+            "There are also several rows of tombs lying throughout the expanse of the room with a large raised platform in the very center of the room.\n\n";
     the_desert_of_the_dead();
 }
 
 void the_desert_of_the_dead(){
     char choice;
-    bool explored_room = false;
-    bool looked_outside = false;
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Look around the room\n";
     cout << "B. Investigate the center platform\n";
-    if(looked_outside){
+    if(dod_looked_outside){
         cout << "C. Go out into the desert\n";
     }
     else{
@@ -607,42 +606,71 @@ void the_desert_of_the_dead(){
     cin >> choice;
     
     if(choice == 'A' || choice == 'a'){
-        if(!explored_room){
-            cout << "You decide to explore the room a little.\n";
-            cout << "You walk between the rows of tombs, noticing the names inscribed on several of them.\n";
-            cout << "After several moments, you make your way to the walls of the room where the upright sarcophaguses are.\n";
-            cout << "Unlike the tombs which are sealed shut, some of the sarcophaguses appear to have been opened or are damaged enough to expose the body within.\n";
-            cout << "Mummified remains can be seen hanging loosely out of some of them, while others are empty entirely.\n";
-            cout << "This last detail is incredibly worrisome, since the archway had warned you about disturbing the dead.\n";
-            cout << "You quickly scan the room, but thankfully don't see any corpses walking around. At least not yet.\n";
-            cout << "You head back to the entrance of the room.\n";
-            explored_room = true;
+        if(!dod_explored_room){
+            print_line();
+            cout << "You walk between the rows of tombs, noticing the names inscribed on several of them.\n"
+                    "After several moments, you make your way to the walls of the room where the upright sarcophaguses are.\n"
+                    "Unlike the tombs which are sealed shut, some of the sarcophaguses appear to have been opened or are damaged enough to expose the body within.\n"
+                    "Mummified remains can be seen hanging loosely out of some of them, while others are empty entirely.\n"
+                    "This last detail is incredibly worrisome, since the archway had warned you about disturbing the dead.\n"
+                    "You quickly scan the room, but thankfully don't see any corpses walking around. At least not yet.\n"
+                    "You head back to the entrance of the room.\n";
+            dod_explored_room = true;
             the_desert_of_the_dead();
         }
         else{
+            print_line();
             cout << "";
         }
     }
     else if(choice == 'B' || choice == 'b'){
+        print_line();
+        if(!dod_investigated_platform){
+            cout << "You head up to the raised playform in the center of the room.\n"
+                    "On it lies a large stone tablet, several thousand names are inscribed on it.\n";
+        }
+        else{
 
+        }
     }
     else if(choice == 'C' || choice == 'c'){
-        if(!looked_outside){
-            cout << "You quickly poke your head out of the doorway to the building you're in.\n";
-            cout << "Heat waves ripple the air around you, forcing you to squint for a better view of your surroundings.\n";
-            cout << "Mountainous volcanic rock ridges jut out of the sand several miles directly ahead of you.\n";
-            cout << "To your left and right, there is nothing but sand and several smaller formations of the volcanic rock every hundred feet or so.\n";
-            cout << "You pull your head back in and wipe the sweat from your brow.\n";
-            cout << "After just peeking your head out for a moment, you have already felt the tremendous heat of the desert beyond the doorway.\n";
-            cout << "In contrast, the building you're in is several degrees cooler than outside, with some protection from the heat of the sun.\n";
-            cout << "It would be unwise to try wandering around the desert, you imagine. Still, the option is open to you if you so choose.\n";
-            looked_outside = true;
+        print_line();
+        if(!dod_looked_outside){
+            cout << "You quickly poke your head out of the doorway to the building you're in.\n"
+                    "Heat waves ripple the air around you, forcing you to squint for a better view of your surroundings.\n"
+                    "Mountainous volcanic rock ridges jut out of the sand several miles directly ahead of you.\n"
+                    "To your left and right, there is nothing but sand and several smaller formations of the volcanic rock every hundred feet or so.\n"
+                    "You pull your head back in and wipe the sweat from your brow.\n"
+                    "After just peeking your head out for a moment, you have already felt the tremendous heat of the desert beyond the doorway.\n"
+                    "In contrast, the building you're in is several degrees cooler than outside, with some protection from the heat of the sun.\n"
+                    "It would be unwise to try wandering around the desert, you imagine. Still, the option is open to you if you so choose.\n";
+                    "You look back to the room.\n";
+            dod_looked_outside = true;
             the_desert_of_the_dead();
         }
         else{
-            
-        }
+            print_line();
+            cout << "Despite the brutal heat and the extreme isolation, you head out into the desert.\n";
+                    "Within minutes, you are severely sweating and overwhelmingly hot.\n"
+                    "You turn to head back to the building, but don't see it anymore.\n"
+                    "Turning wildly, you scan the horizon, but the building is nowhere in sight.\n"
+                    "The only things that can be seen is sand and volcanic rock.\n"
+                    "After futilely spinning around once more, hoping against hope the building would reappear, you hang your head in defeat and head deeper into the desert.\n"
+                    "XXXXXXXXXXXXXXXXXXXXXXXX\n"
+                    "   SEVERAL DAYS LATER\n"
+                    "XXXXXXXXXXXXXXXXXXXXXXXX\n"
+                    "After wandering the desert for days now, you struggle to stand upright.\n"
+                    "You chew your dry tongue, wishing for the sky to erupt in a shower of blessed water.\n"
+                    "But of course, it does not. There is not a cloud in the sky to be seen.\n"
+                    "Panting, you take one final step before you collapse against the unforgivingly hot sand.\n"
+                    "As you feel your sunburned skin sizzle against the desert floor, you look to the sky one last time.\n"
+                    "The scorching sun glares back at you as your eyes roll up in your head and you see no more.\n"
+                    "You are so thirsty, so terribly thirsty.\n";
 
+            cout << "\n\nEnding 5: Thirst";
+            print_line();
+            retry(&the_desert_of_the_dead_text);
+        }
     }
     else{
         try_again();

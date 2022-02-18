@@ -12,12 +12,16 @@ extern void retry(void *func);
 extern void archway(string message, string name, bool archway_read, void (*func)());
 extern void determine_riddle();
 extern void start();
+
 extern void first_choice();
 extern void temple_entrance();
+
 extern void temple_first_room_text();
 extern void temple_first_room();
+
 extern void temple_second_room_text();
 extern void temple_second_room();
+
 extern void the_desert_of_the_dead();
 extern void the_heart_of_the_colony();
 extern void the_glowing_cave();

@@ -25,4 +25,9 @@ extern bool fifth_archway_read;
 extern bool sixth_archway_read;
 extern bool seventh_archway_read;
 extern bool saw_archway;
+
+extern bool dod_explored_room;
+extern bool dod_looked_outside;
+extern bool dod_investigated_platform;
+
 #endif
