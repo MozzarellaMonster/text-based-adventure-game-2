@@ -5,10 +5,10 @@
 
 using namespace std;
 
-string dagger = "Iron Dagger";
+string dagger = "Jeweled Dagger";
 string first_note = "Note 1";
 
-string the_dead_room_key = "Ruby Skull";
+string the_desert_of_the_dead_key = "Ruby Skull";
 string the_heart_of_the_colony_key = "Amber Stone";
 string the_glowing_cave_key = "Fossil";
 string the_oasis_key = "Sapphire Flower";

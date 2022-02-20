@@ -19,6 +19,9 @@ void try_again(){
     cout << "\nSorry, that is not a valid option, please try again.\n";
 }
 
+// Make a reset function that resets all trackers and items during complete restart or
+// only particular ones depending on player's progress when they restart where they left off.
+
 void retry(){
     char choice;
     cout << "\nWould you like to play again? Y/N: ";
@@ -65,11 +68,13 @@ void archway(string message, string name, bool *archway_read, void (*func)()){
             saw_archway = true;
         }
         else{
+            print_line();
             cout << "\nYou approach " << name << "\n";
         }
 
         cout << "\nDo you want to enter the archway? Y/N: ";
         cin >> answer;
+        cout << "\n";
         if(answer == 'Y' || answer == 'y'){
             cout << "\nYou take a step forward and enter " << name << "\n";
             func();
@@ -190,7 +195,6 @@ void temple_entrance(){
         temple_first_room_text();
     }
     else if(choice == 'N' || choice == 'n'){
-        print_line();
         cout << "You decide against going into the temple, instead opting to explore your location more.\n\n"
                 "You look around more and come across a rucksack half-buried in the dense foliage.\n"
                 "You pull it out and search the pockets. You find an old map, a broken watch, and a piece of paper.\n"
@@ -281,7 +285,6 @@ void temple_first_room(){
                 retry(&temple_first_room_text);
             }
             else{
-                print_line();
                 cout << correct_riddle;
                 temple_second_room_text();
             }
@@ -311,7 +314,6 @@ void temple_first_room(){
                 retry(&temple_first_room_text);
             }
             else{
-                print_line();
                 cout << correct_riddle;
                 temple_second_room_text();
             }
@@ -338,7 +340,6 @@ void temple_first_room(){
                 retry(&temple_first_room_text);
             }
             else{
-                print_line();
                 cout << correct_riddle;
                 temple_second_room_text();
             }
@@ -349,14 +350,13 @@ void temple_first_room(){
         }
     }
     else if(choice == 'B' || choice == 'b'){
+        print_line();
         if(first_room_explored){
-            print_line();
             cout << "You quickly look around the room again, but you're sure you've already examined everything.\n"
                     "You turn back to the room.\n";
             temple_first_room();
         }
         else{
-            print_line();
             cout << "You decide to look around the room more.\n"
                     "You look closer at the symbols on the walls: there's the wind symbol on the left wall, the water symbol on the wall directly opposite you and the fire symbol on the right wall.\n"
                     "Other than the fact that the symbols seemed to be etched out of the wall itself, there doesn't seem to be anything else interesting about them.\n"
@@ -491,6 +491,7 @@ void temple_second_room(){
     else if(choice == 'D' || choice == 'd'){
         // The Fourth Archway - The Labyrinth - entrance to next area, will not be available until the other rooms are completed
         if(!fourth_archway_read){
+            print_line();
             cout << "You approach the Fourth Archway. As you approach, the name of the Archway becomes clear: \"The Labyrinth\"\n"
                     "The stone archway appears to be made of bricks, with several different intricate carvings of maze-like lines on them.\n"
                     "You look up and read the message beneath the name of the archway:\n"
@@ -504,9 +505,11 @@ void temple_second_room(){
         }
         else{
             char answer;
+            print_line();
             cout << "\nYou approach The Labyrinth.\n";
             cout << "\nDo you want to enter the archway? Y/N: ";
             cin >> answer;
+            cout << "\n";
             if(answer == 'Y' || answer == 'y'){
                 if(second_room_obelisk_complete){
                     cout << "You have traveled the six paths and have collected the keys from each one.\n"
@@ -606,8 +609,8 @@ void the_desert_of_the_dead(){
     cin >> choice;
     
     if(choice == 'A' || choice == 'a'){
+        print_line();
         if(!dod_explored_room){
-            print_line();
             cout << "You walk between the rows of tombs, noticing the names inscribed on several of them.\n"
                     "After several moments, you make your way to the walls of the room where the upright sarcophaguses are.\n"
                     "Unlike the tombs which are sealed shut, some of the sarcophaguses appear to have been opened or are damaged enough to expose the body within.\n"
@@ -618,25 +621,66 @@ void the_desert_of_the_dead(){
             dod_explored_room = true;
             the_desert_of_the_dead();
         }
+        else if(dod_investigated_platform){
+            // Seems out-of-place, need to have a reason to disturb them.
+            cout << "You wander around, looking at the names of tombs you pass, looking for the Crimson Leaf family name.\n"
+                    "As you move, you hear something - a shuffling noise, but every time you look you don't see anything.\n"
+                    "You continue to move along between the rows of tombs. The sandstorm persists outside the building.\n"
+                    "You are about halfway through the rows of tombs, still looking for the Crimson Leaf family name when something grabs your foot.\n"
+                    "You jerk your head down to see the head of a mummified corpse poking out of the sand, its soulless eyes staring straight up at you.\n"
+                    "It then roars an unearthly low growl that resonates throughout the chamber."
+                    "There is a moment of absolute silence before a chorus of unearthly screams erupt from every tomb in the room.\n"
+                    "Panicking now, you rip your foot out of the mummy's grip and run towards the entrance of the building."
+                    "You try to force yourself into the sandstorm but are viciously flung backwards as the sandstorm picks up in even more intensity.\n"
+                    "You pull yourself into a sitting position and look towards the entrance, but freeze and scream at what you see." 
+                    "Within the silicon tempest, a skull forms out of the flying sand, eyes shining with an ethereal bright blue light.\n"
+                    "It roars at you and the voice in your head speaks again, \"You disturbed their peace, and now you will pay with your life.\"\n"
+                    "It is then you notice the sound of the lumbering forms behind you. Before you can move, you are roughly pulled to your feet.\n"
+                    "The mummy pulls you into the crowd of corpses. You kick and scream, but there is nothing more you can do as they pull you apart piece by piece."
+                    "As your screams soften into gurgles and the light leaves your eyes, the swarm of bodies disperses, the sandstorm calms, and all is silent in the desert again.\n";
+
+            cout << "\n\nEnding 6: Torn\n";
+            retry(&the_desert_of_the_dead_text);
+        }
+        else if(dod_investigated_platform && dod_used_dagger){
+            // Incorporate the dagger here
+        }
         else{
-            print_line();
-            cout << "";
+            cout << "You walk between the rows of tombs again.\n"
+                    "After several minutes of this, nothing different jumps out at you.\n"
+                    "You head to the wall of sarcophaguses and inspect them again.\n"
+                    "The mummified remains continue to hang loosely out of some of them.\n"
+                    "It would be best not to touch them.\n"
+                    "You return to the entrance of the room.\n";
+            the_desert_of_the_dead();
         }
     }
     else if(choice == 'B' || choice == 'b'){
         print_line();
         if(!dod_investigated_platform){
-            cout << "You head up to the raised playform in the center of the room.\n"
-                    "On it lies a large stone tablet, several thousand names are inscribed on it.\n";
+            cout << "You head up to the raised platform in the center of the room.\n"
+                    "On it lies a large stone tablet, several thousand names are inscribed on it.\n"
+                    "It is then you hear the voice in your head again.\n"
+                    "\"Here the dead rest, returned to their families and undisturbed by the common rabble of life.\""
+                    "\"Retrieve the Ruby Skull held by the head of the Crimson Leaf family, and you will be permitted to return.\""
+                    "\"If you do not, prepare to join the dead, though you will be... unwelcome.\""
+                    "As if on cue, you hear a shuffling noise somewhere ahead of you.\n"
+                    "Your head snaps up to look in the direction of the noise, but you see nothing.\n"
+                    "It is then you notice the world growing darker. You quickly glance toward the ceiling windows.\n"
+                    "A sandstorm has started outside, the wind howling and blocking out the sun. Now, only the feeble light of the torches remains.\n"
+                    "You head back to the entrance of the building.\n";
+            dod_investigated_platform = true;
+            dod_sandstorm = true;
+            the_desert_of_the_dead();
         }
         else{
-
+            cout << "";
         }
     }
     else if(choice == 'C' || choice == 'c'){
         print_line();
-        if(!dod_looked_outside){
-            cout << "You quickly poke your head out of the doorway to the building you're in.\n"
+        if(!dod_looked_outside && !dod_sandstorm){
+            cout << "You poke your head out of the doorway to the building you're in.\n"
                     "Heat waves ripple the air around you, forcing you to squint for a better view of your surroundings.\n"
                     "Mountainous volcanic rock ridges jut out of the sand several miles directly ahead of you.\n"
                     "To your left and right, there is nothing but sand and several smaller formations of the volcanic rock every hundred feet or so.\n"
@@ -648,8 +692,14 @@ void the_desert_of_the_dead(){
             dod_looked_outside = true;
             the_desert_of_the_dead();
         }
+        else if(dod_sandstorm){
+            cout << "The sandstorm is so severe, there is no way you could find your way around out there.\n"
+                    "You can't even safely stick your head out.\n"
+                    "Despite this, sand somehow does not enter the building and you don't feel even the slightest of breezes.\n"
+                    "You turn back to the room.\n";
+            the_desert_of_the_dead();
+        }
         else{
-            print_line();
             cout << "Despite the brutal heat and the extreme isolation, you head out into the desert.\n";
                     "Within minutes, you are severely sweating and overwhelmingly hot.\n"
                     "You turn to head back to the building, but don't see it anymore.\n"
@@ -660,12 +710,12 @@ void the_desert_of_the_dead(){
                     "   SEVERAL DAYS LATER\n"
                     "XXXXXXXXXXXXXXXXXXXXXXXX\n"
                     "After wandering the desert for days now, you struggle to stand upright.\n"
+                    "You are so thirsty, so terribly thirsty.\n"
                     "You chew your dry tongue, wishing for the sky to erupt in a shower of blessed water.\n"
                     "But of course, it does not. There is not a cloud in the sky to be seen.\n"
                     "Panting, you take one final step before you collapse against the unforgivingly hot sand.\n"
                     "As you feel your sunburned skin sizzle against the desert floor, you look to the sky one last time.\n"
-                    "The scorching sun glares back at you as your eyes roll up in your head and you see no more.\n"
-                    "You are so thirsty, so terribly thirsty.\n";
+                    "The scorching sun glares back at you as your eyes roll up in your head and at last, you see no more.\n";
 
             cout << "\n\nEnding 5: Thirst";
             print_line();

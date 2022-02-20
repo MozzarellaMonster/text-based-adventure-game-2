@@ -44,3 +44,5 @@ bool saw_archway = false;
 bool dod_explored_room = false;
 bool dod_looked_outside = false;
 bool dod_investigated_platform = false;
+bool dod_sandstorm = false;
+bool dod_used_dagger = false;

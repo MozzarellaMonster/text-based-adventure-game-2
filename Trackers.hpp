@@ -29,5 +29,7 @@ extern bool saw_archway;
 extern bool dod_explored_room;
 extern bool dod_looked_outside;
 extern bool dod_investigated_platform;
+extern bool dod_sandstorm;
+extern bool dod_used_dagger;
 
 #endif
