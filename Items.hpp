@@ -8,6 +8,7 @@ using namespace std;
 
 extern string dagger;
 extern string first_note;
+extern string third_note;
 
 extern string the_desert_of_the_dead_key;
 extern string the_heart_of_the_colony_key;

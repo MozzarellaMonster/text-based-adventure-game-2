@@ -106,6 +106,15 @@ void determine_riddle(){
     }
 }
 
+bool inv_contains(string object){
+    for(int i = 0; i < inventory.size(); i++){
+        if(inventory[i] == object){
+            return true;
+        }
+    }
+    return false;
+}
+
 void start(){
     print_line();
     cout << "_________          _______   _________ _______  _______  _______  _        _______ \n";
@@ -642,9 +651,6 @@ void the_desert_of_the_dead(){
             cout << "\n\nEnding 6: Torn\n";
             retry(&the_desert_of_the_dead_text);
         }
-        else if(dod_investigated_platform && dod_used_dagger){
-            // Incorporate the dagger here
-        }
         else{
             cout << "You walk between the rows of tombs again.\n"
                     "After several minutes of this, nothing different jumps out at you.\n"
@@ -674,7 +680,36 @@ void the_desert_of_the_dead(){
             the_desert_of_the_dead();
         }
         else{
-            cout << "";
+            cout << "You go to the raised platform in the middle of the room and look at the large stone tablet again, trying to locate the Crimson Leaf family name.\n"
+                    "While you're looking through the names, something else catches your eye: a piece of paper folded and tucked in a crack on the side of the stone tablet.\n"
+                    "Curious, you take the piece of paper out of the crack and unfold it. It reads:\n\n"
+                    "\n\t7/08/09\n\tI've brought back more specimens from my trips through the Gates. I cannot help myself, I must study them. My curiosity for the worlds I've been to\n"
+                    "knows no bounds. I'm so intrigued by every new thing I've learned and discovered, I have to document and learn about them. I've acquired some organic growths that\n"
+                    "are incredibly similar to mold from our world except that their growth and spread is heavily accelerated due to the much harsher conditions of their world.\n"
+                    "Further study is required.\n"
+                    "You fold up the piece of paper and stuff it in your pocket.\n"
+                    "Your attention returns to the large stone tablet and you once again skim the text for the Crimson Leaf family name.\n"
+                    "Finally, after several long moments, you find it near the bottom right of the stone tablet. Assuming the layout of the sarcophaguses are the same as presented on the stone tablet,\n"
+                    "you jump off from the raised platform and run towards the bottom right end of the tombs.\n"
+                    "It is only when you're nearly halfway there that you start to hear groaning and see motion out of the corner of your eye.\n"
+                    "You look towards the tombs and notice several mummies have now opened their sarcophaguses and are climbing out.\n"
+                    "It seems in your eagerness to get out of there, you accidentally woke up the dead. You quicken your pace.\n"
+                    "There are a lot of mummies now, and they're all taking notice of you. You quickly run up to the tomb that was said to contain the Ruby Skull and deftly push the lid off.\n"
+                    "There inside the tomb lays a mummy holding the Ruby Skull in its cold dead hands. No time for respect or reverence, you quickly yank the Ruby Skull out of the mummy's hands and take off towards the exit.\n"
+                    "You hear a piercing wail behind you as several mummies have now closed in on your position.\n"
+                    "Pulling out the iron dagger, you cut at the limbs of any that manage to grab you, forcing them to let go, and dodge the rest.\n"
+                    "The entrance has reopened into that familiar shimmer of an active Gate, and you make a mad dash for it.\n"
+                    "You're about to jump through the gate when suddenly, you're held back by a pair of strong hands.\n"
+                    "You turn around and recognize the mummy you took the Ruby Skull from and quickly raise the iron dagger to swipe at one of its arms.\n"
+                    "The mummy deftly grabs your wrist and stops the downward plunge of the blade. It then pulls you closer, lifting you off the ground entirely and roars loudly in your face.\n"
+                    "Thinking quickly, you pull in both your legs and push hard against the body of the mummy, launching yourself through the entrance.\n"
+                    "There's a sickening tearing sound as the mummy's arms rip at the elbows and you go flying through the Gate.\n"
+                    "You land hard on your back in the temple room with the Ruby Skull still clutched hard against your chest.\n"
+                    "You remain laying on the floor, taking a moment to catch your breath before you hesitantly pick yourself up and approach the obelisk in the center of the room.\n";
+            inventory.push_back(third_note);
+            inventory.push_back(the_desert_of_the_dead_key);
+            temple_second_room();
+            // return to room to insert obelisk key
         }
     }
     else if(choice == 'C' || choice == 'c'){

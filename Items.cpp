@@ -7,6 +7,7 @@ using namespace std;
 
 string dagger = "Jeweled Dagger";
 string first_note = "Note 1";
+string third_note = "Note 3";
 
 string the_desert_of_the_dead_key = "Ruby Skull";
 string the_heart_of_the_colony_key = "Amber Stone";
