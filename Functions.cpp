@@ -163,10 +163,9 @@ void first_choice(){
                 "The blood sizzles as it hits the hot coals and the fire astoundingly changes colors into a deep red before quickly reverting back.\n"
                 "Remarkably, the cut on your left palm has sealed completely with no visible scars, as if it was never there.\n"
                 "You stand still for a while, flexing your hand and running your fingers over your smooth, unharmed palm.\n"
-                "\"Things could not get any weirder,\" you think to yourself.\n"
+                "Well, things couldn't get any stranger.\n"
                 "Suddenly, the stone slab blocking the entrance into the temple slides up, opening into the dark interior of the temple.\n"
-                "You stand there for a moment, then state, \"Aaand it just did.\"\n"
-                "You pick the dagger back up and store it on your person.\n";
+                "You stand still for a moment, looking at the entrance. Then, you pick the dagger back up and store it on your person.\n";
         inventory.push_back(dagger);
         temple_entrance();
     }
