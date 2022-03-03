@@ -13,6 +13,7 @@ extern string current_riddle;
 
 extern string shimmer;
 
+extern int jungle_repeat;
 extern int set_riddle;
 extern bool first_room_explored;
 extern bool second_room_obelisk_complete;

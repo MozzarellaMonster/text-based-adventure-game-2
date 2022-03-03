@@ -25,6 +25,8 @@ string shimmer = "The same opaque liquid shimmer that you saw in the ring of the
                 "Though this particular one is much larger, encompassing the entire entrance of the archway with an oily appearance.\n"
                 "The shimmer also appears less active, like an undisturbed lake of water.\n";
 
+int jungle_repeat = 0;
+
 // First room
 int set_riddle;
 bool first_room_explored = false;

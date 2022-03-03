@@ -19,8 +19,9 @@ void try_again(){
     cout << "\nSorry, that is not a valid option, please try again.\n";
 }
 
-// Make a reset function that resets all trackers and items during complete restart or
-// only particular ones depending on player's progress when they restart where they left off.
+void reset(){
+    // Once all trackers are determined, use this function to reset them upon a retry.
+}
 
 void retry(){
     char choice;
@@ -28,6 +29,7 @@ void retry(){
     cin >> choice;
     if(choice == 'Y' || choice == 'y'){
         cout << "\n\nRESTARTING...\n\n";
+        //reset();
         start();
     }
     else if(choice == 'N' || choice == 'n'){
@@ -170,15 +172,36 @@ void first_choice(){
     }
     else if(choice == 'N' || choice == 'n'){
         print_line();
-        cout << "You decide against taking the dagger.\n"
-                "You look around and decide to get a better grasp of your surroundings.\n"
-                "You head back into the jungle.\n\n"
-                "XXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
-                "   SEVERAL MINUTES LATER\n"
-                "XXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
-                "\nYou look up after wandering through the jungle again only to find that you're back at the temple.\n"
-                "Well, looks like you're back at square one.\n";
-        first_choice();
+        if(jungle_repeat > 2){
+            cout << "You decide against taking the dagger.\n"
+                    "You look around and decide to get a better grasp of your surroundings.\n"
+                    "You head back into the jungle.\n\n"
+                    "XXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
+                    "   SEVERAL MINUTES LATER\n"
+                    "XXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
+                    "\nYou look up after wandering through the jungle expecting to see the temple again, but there is nothing there.\n"
+                    "You walk up to where the temple should be only to find an empty clearing.\n"
+                    "You turn around, hoping the temple will just miraculously appear again, but nothing happens.\n"
+                    "You stay there for several minutes, an hour, two hours, but there is still no temple.\n"
+                    "Whatever chance you had for progress is now lost.\n"
+                    "As are you, forever.\n";
+
+            cout << "\n\nEnding 1: Forever Lost";
+            print_line();
+            retry();
+        }
+        else{
+            cout << "You decide against taking the dagger.\n"
+                    "You look around and decide to get a better grasp of your surroundings.\n"
+                    "You head back into the jungle.\n\n"
+                    "XXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
+                    "   SEVERAL MINUTES LATER\n"
+                    "XXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
+                    "\nYou look up after wandering through the jungle again only to find that you're back at the temple.\n"
+                    "Well, looks like you're back at square one.\n";
+            jungle_repeat++;
+            first_choice();
+        }
     }
     else{
         try_again();
