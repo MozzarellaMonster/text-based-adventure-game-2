@@ -91,6 +91,24 @@ void archway(string message, string name, bool *archway_read, void (*func)()){
         }
 }
 
+void deposit(){
+    string key;
+    print_line();
+    for(int i = 0; i < inventory.size(); i++){
+        for(int j = 0; j < sizeof(keys); j++){
+            if(inventory[i] == keys[j]){
+                key = inventory[i];
+                inventory.erase(inventory.begin() + (i-1));
+                break;
+            }
+        }
+    }
+    if(key != ""){
+        cout << "\nYou place the " << key << " into the monolith and turn back to the room.\n";
+    }
+    return;
+}
+
 void determine_riddle(){
     set_riddle = rand() % 3;
     switch(set_riddle){
@@ -183,7 +201,7 @@ void first_choice(){
                     "You turn around, hoping the temple will just miraculously appear again, but nothing happens.\n"
                     "You stay there for several minutes, an hour, two hours, but there is still no temple.\n"
                     "Whatever chance you had for progress is now lost.\n"
-                    "As are you, forever.\n";
+                    "As are you. Forever.\n";
 
             cout << "\n\nEnding 1: Forever Lost";
             print_line();
@@ -430,12 +448,8 @@ void temple_second_room_text(){
 }
 
 void temple_second_room(){
-    // Logic for depositing the key when you leave a room with said key.
-    //
-    //
-    //
-
     char choice;
+    deposit();
     print_line();
     cout << "What would you like to do?\n";
     if(first_archway_read){
@@ -653,12 +667,11 @@ void the_desert_of_the_dead(){
             the_desert_of_the_dead();
         }
         else if(dod_investigated_platform){
-            // Seems out-of-place, need to have a reason to disturb them.
             cout << "You wander around, looking at the names of tombs you pass, looking for the Crimson Leaf family name.\n"
                     "As you move, you hear something - a shuffling noise, but every time you look you don't see anything.\n"
                     "You continue to move along between the rows of tombs. The sandstorm persists outside the building.\n"
                     "You are about halfway through the rows of tombs, still looking for the Crimson Leaf family name when something grabs your foot.\n"
-                    "You jerk your head down to see the head of a mummified corpse poking out of the sand, its soulless eyes staring straight up at you.\n"
+                    "You quickly look down to see the head of a mummified corpse poking out of the sand, its soulless eyes staring straight up at you and its hand grabbing your foot.\n"
                     "It then roars an unearthly low growl that resonates throughout the chamber."
                     "There is a moment of absolute silence before a chorus of unearthly screams erupt from every tomb in the room.\n"
                     "Panicking now, you rip your foot out of the mummy's grip and run towards the entrance of the building."
@@ -727,7 +740,7 @@ void the_desert_of_the_dead(){
                     "Thinking quickly, you pull in both your legs and push hard against the body of the mummy, launching yourself through the entrance.\n"
                     "There's a sickening tearing sound as the mummy's arms rip at the elbows and you go flying through the Gate.\n"
                     "You land hard on your back in the temple room with the Ruby Skull still clutched hard against your chest.\n"
-                    "You remain laying on the floor, taking a moment to catch your breath before you hesitantly pick yourself up and approach the obelisk in the center of the room.\n";
+                    "You remain laying on the floor, taking a moment to catch your breath before you hesitantly pick yourself back up.\n";
             inventory.push_back(third_note);
             inventory.push_back(the_desert_of_the_dead_key);
             temple_second_room();
