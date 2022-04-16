@@ -798,7 +798,32 @@ void the_desert_of_the_dead(){
     }
 }
 
+void the_heart_of_the_colony_text(){
+    print_line();
+    cout << "You brace yourself, but fall to your knees anyway as you go through the entrance.\n"
+            "Immediately, you notice something odd about the atmosphere here. The air is thick, yet strangely dry.\n"
+            "The ground beneath you is composed of chalky, moist soil. You look up to see that you are in a large tunnel.\n"
+            "Imperfectly circular, yet you can tell it is the work of an intelligent species.\n"
+            "As if on cue, you hear a distant familiar chittering that is gradually getting closer.\n"
+            "You look around for a hiding spot, but find none. You can either run away from the chittering sound,\n"
+            "or you can wait to see what it is that is approaching you.\n\n";
+
+    the_heart_of_the_colony();
+}
+
 void the_heart_of_the_colony(){
+    char choice;
+    print_line();
+    cout << "What would you like to do?\n";
+    cout << "A. Run away from the sound\n";
+    cout << "B. Wait\n";
+    cout << "C. Look around some more\n";
+
+    if(choice == "A" || choice == "a"){
+        
+    }
+    
+    
     retry();
 }
 

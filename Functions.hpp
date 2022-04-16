@@ -25,8 +25,12 @@ extern void temple_first_room();
 extern void temple_second_room_text();
 extern void temple_second_room();
 
+extern void the_desert_of_the_dead_text();
 extern void the_desert_of_the_dead();
+
+extern void the_heart_of_the_colony_text();
 extern void the_heart_of_the_colony();
+
 extern void the_glowing_cave();
 extern void the_garden();
 extern void the_whistling_gorge();
