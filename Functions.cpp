@@ -800,11 +800,11 @@ void the_desert_of_the_dead(){
 
 void the_heart_of_the_colony_text(){
     print_line();
-    cout << "You brace yourself, but fall to your knees anyway as you go through the entrance.\n"
+    cout << "You brace yourself, but fall to your hands and knees anyway as you go through the entrance.\n"
             "Immediately, you notice something odd about the atmosphere here. The air is thick, yet strangely dry.\n"
-            "The ground beneath you is composed of chalky, moist soil. You look up to see that you are in a large tunnel.\n"
-            "Imperfectly circular, yet you can tell it is the work of an intelligent species.\n"
-            "As if on cue, you hear a distant familiar chittering that is gradually getting closer.\n"
+            "The floor beneath your hands is composed of chalky, moist soil. You look up to see that you are in a large, dimly lit tunnel.\n"
+            "Imperfectly circular, the tunnel runs for some distance ahead and behind you. Again, the portal from the temple has disappeared.\n"
+            "Suddenly, you hear a distant familiar chittering that is gradually getting closer. A bright yellow light also approaches.\n"
             "You look around for a hiding spot, but find none. You can either run away from the chittering sound,\n"
             "or you can wait to see what it is that is approaching you.\n\n";
 
@@ -820,7 +820,36 @@ void the_heart_of_the_colony(){
     cout << "C. Look around some more\n";
 
     if(choice == "A" || choice == "a"){
+        cout << "You turn tail and run away from the approaching chittering sounds.\n"
+                "Almost immediately, the chittering sounds increase in volume and urgency.\n"
+                "You hear rapidly approaching scurrying sounds and quickly look behind you.\n"
+                "You are greeted with the sight of multiple giant ants the size of horses chasing you,\n"
+                "their enormous mandibles snapping and compound eyes seemingly bright with anger and bloodlust.\n"
+                "They quickly gain ground, their huge jaws snapping shut just inches behind your ankles.\n"
+                "You attempt to pick up speed yourself, but instead one of the ants catches your left foot in its jaws.\n"
+                "Pain shoots up your leg as its mandibles pierce through the walls of your shoe and into your ankle.\n"
+                "You trip and fall face-first into the dirt floor of the tunnel. Dazed, you barely have to time to register\n"
+                "you're on the ground when you start to get pulled away. You panic and claw at the dirt, trying to pull yourself\n"
+                "free of the giant ant's grip. It is no use however, as the huge insect easily drags you back towards it.\n"
+                "Finally, after dragging you a few meters away from where you were, it releases its grip and you roll over to see\n"
+                "that you're surrounded on all sides by the giant arthropods. For a moment, you simply look at them, and they at you,\n"
+                "before the one that was dragging you swiftly closes the distance and locks its jaws around your throat. You gasp,\n"
+                "trying to pull against the iron grip of the huge ant's jaws. It is no use however, as you stare into the dead compound eyes,\n"
+                "it slowly clamps its jaws harder and harder around your throat. As your eyes roll up and you gasp for air, you hear\n"
+                "a sickening crunch followed by triumphant chittering as you finally die.\n";
+                
+        cout << "\n\nEnding 7: Crunch";
         
+    }
+    else if(choice == "B" || choice == "b"){
+
+    }
+    else if(choice == "C" || choice == "c"){
+
+    }
+    else{
+        try_again();
+        the_heart_of_the_colony();
     }
     
     
