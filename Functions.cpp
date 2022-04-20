@@ -804,7 +804,7 @@ void the_heart_of_the_colony_text(){
             "Immediately, you notice something odd about the atmosphere here. The air is thick, yet strangely dry.\n"
             "The floor beneath your hands is composed of chalky, moist soil. You look up to see that you are in a large, dimly lit tunnel.\n"
             "Imperfectly circular, the tunnel runs for some distance ahead and behind you. Again, the portal from the temple has disappeared.\n"
-            "Suddenly, you hear a distant familiar chittering that is gradually getting closer. A bright yellow light also approaches.\n"
+            "Suddenly, you hear a distant familiar chittering that is gradually getting closer. A bright yellow light accompanies the source of the sound.\n"
             "You look around for a hiding spot, but find none. You can either run away from the chittering sound,\n"
             "or you can wait to see what it is that is approaching you.\n\n";
 
@@ -842,7 +842,16 @@ void the_heart_of_the_colony(){
         
     }
     else if(choice == "B" || choice == "b"){
-
+        cout << "You wait, facing the oncoming chittering noises. You nervously grip the loose fabric of your pants, anxiety slowly increasing\n"
+                "as your fate waits to be written. Soon, you see the source of the noise and the light: several large ants, one of them carrying an\n"
+                "unusual organic-looking lantern on its back. The ants stop and look at you, seemingly bemused at your sudden appearance, but then quickly move in,\n"
+                "surrounding you on all sides while one behind you nips at your heels with its huge jaws, urging you forward. Hesitantly, you move forward, keeping pace with\n"
+                "the huge insects. Eventually, the tunnel opens up into a large chamber where you spy a distinct silhouette facing away from you: the Ant Queen.\n"
+                "Not completely unexpected, you think to yourself.\n"
+                "\"No, I suppose it is not, human.\", you suddenly hear in your head."
+                "Your eyes widen at the intrusion of the distinctly feminine voice within your thoughts."
+                "\"But your sudden unannounced appearance before my Court is, now state your reason for visiting.\"";
+                // To be continued...
     }
     else if(choice == "C" || choice == "c"){
 
