@@ -806,7 +806,7 @@ void the_heart_of_the_colony_text(){
             "Imperfectly circular, the tunnel runs for some distance ahead and behind you. Again, the portal from the temple has disappeared.\n"
             "Suddenly, you hear a distant familiar chittering that is gradually getting closer. A bright yellow light accompanies the source of the sound.\n"
             "You look around for a hiding spot, but find none. You can either run away from the chittering sound,\n"
-            "or you can wait to see what it is that is approaching you.\n\n";
+            "or you can wait to see what is approaching you.\n\n";
 
     the_heart_of_the_colony();
 }
@@ -818,8 +818,11 @@ void the_heart_of_the_colony(){
     cout << "A. Run away from the sound\n";
     cout << "B. Wait\n";
     cout << "C. Look around some more\n";
+    print_line();
+    cin >> choice;
 
     if(choice == "A" || choice == "a"){
+        print_line();
         cout << "You turn tail and run away from the approaching chittering sounds.\n"
                 "Almost immediately, the chittering sounds increase in volume and urgency.\n"
                 "You hear rapidly approaching scurrying sounds and quickly look behind you.\n"
@@ -835,26 +838,49 @@ void the_heart_of_the_colony(){
                 "that you're surrounded on all sides by the giant arthropods. For a moment, you simply look at them, and they at you,\n"
                 "before the one that was dragging you swiftly closes the distance and locks its jaws around your throat. You gasp,\n"
                 "trying to pull against the iron grip of the huge ant's jaws. It is no use however, as you stare into the dead compound eyes,\n"
-                "it slowly clamps its jaws harder and harder around your throat. As your eyes roll up and you gasp for air, you hear\n"
-                "a sickening crunch followed by triumphant chittering as you finally die.\n";
+                "it slowly clamps its jaws harder and harder around your throat. As your eyes roll up and you gasp for air, you feel\n"
+                "blood pouring from your punctured neck and soon a sickening crunch is heard as your neck is broken.\n"
+                "The last thing you hear before your limp body falls to the ground is triumphant chittering.\n"
+                "Soon the chittering fades away, and you are left staring at the tunnel floor, awaiting death.\n"
+                "It cannot arrive soon enough.\n";
                 
         cout << "\n\nEnding 7: Crunch";
         
     }
     else if(choice == "B" || choice == "b"){
+        print_line();
         cout << "You wait, facing the oncoming chittering noises. You nervously grip the loose fabric of your pants, anxiety slowly increasing\n"
                 "as your fate waits to be written. Soon, you see the source of the noise and the light: several large ants, one of them carrying an\n"
                 "unusual organic-looking lantern on its back. The ants stop and look at you, seemingly bemused at your sudden appearance, but then quickly move in,\n"
                 "surrounding you on all sides while one behind you nips at your heels with its huge jaws, urging you forward. Hesitantly, you move forward, keeping pace with\n"
                 "the huge insects. Eventually, the tunnel opens up into a large chamber where you spy a distinct silhouette facing away from you: the Ant Queen.\n"
                 "Not completely unexpected, you think to yourself.\n"
-                "\"No, I suppose it is not, human.\", you suddenly hear in your head."
-                "Your eyes widen at the intrusion of the distinctly feminine voice within your thoughts."
-                "\"But your sudden unannounced appearance before my Court is, now state your reason for visiting.\"";
-                // To be continued...
+                "\"No, I suppose it is not, human.\", you suddenly hear in your head.\n"
+                "Your eyes widen at the intrusion of the distinctly feminine voice within your thoughts.\n"
+                "\"But your sudden unannounced appearance before my Court is. Now, state your reason for visiting.\"\n"
+                "The huge ant queen turns to face you, looking down upon you with a terrible intelligence in its multifaceted eyes.\n"
+                "You stare, dumbstruck for a moment. Then, regaining your composure, you speak back at it with your thoughts.\n"
+                "\"I apologize. I only wish to travel back to my world, and I must find a token here to do so.\", you think.\n"
+                "\"I see. You are but another contestant for the game of the Worldwalkers. Unfortunately for you, not even I am aware of the location of your token.\"\n"
+                "The Ant Queen turns back away from you. \"You are free to look, but should you attempt to bring harm upon any of my subjects or overstay your welcome,\"\n"
+                "The Ant Queen looks back at you, \"I will feed you to them.\"\n"
+                "A cold shiver runs down your spine, and you quickly nod in acknowledgement.\n"
+                "\"Now, leave my chambers and hasten your search, for my patience is limited.\"\n"
+                "You get up quickly and leave, noticing the ants around you have stopped escorting you.\n";
+        
+        the_heart_of_the_colony_2(); // call to next part
     }
     else if(choice == "C" || choice == "c"){
+        print_line();
+        cout << "You quickly look around the tunnel again, looking for anything you might have missed before.\n"
+                "It is then you notice an impression in one side of the tunnel, something you missed before due to the dim lighting.\n"
+                "It looks as though someone tried digging out another tunnel, but stopped for some reason. It looks like you could hide in there, if you positioned yourself a certain way.\n"
+                "The chittering grows louder, it's now or never. You quickly jump into the impression and flatten yourself against the wall as much as possible.\n"
+                "You remain still as several huge ants pass by you, the chittering remaining uninterrupted. However, one stops where you dropped from the portal, causing the others to take notice.\n"
+                "Its antennae dance around the tunnel floor where you were on your knees, it chitters at the others and soon all of them are looking for you.\n"
+                "You could either run away, surrender, or try to fight. After all, you have a momentary advantage over them with a surprise attack.";
 
+        // make another file with functions purely for the heart of the colony
     }
     else{
         try_again();
