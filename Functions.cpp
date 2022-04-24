@@ -845,7 +845,8 @@ void the_heart_of_the_colony(){
                 "It cannot arrive soon enough.\n";
                 
         cout << "\n\nEnding 7: Crunch";
-        
+        print_line();
+        retry(&the_heart_of_the_colony_text);
     }
     else if(choice == "B" || choice == "b"){
         print_line();
@@ -868,7 +869,7 @@ void the_heart_of_the_colony(){
                 "\"Now, leave my chambers and hasten your search, for my patience is limited.\"\n"
                 "You get up quickly and leave, noticing the ants around you have stopped escorting you.\n";
         
-        the_heart_of_the_colony_2(); // call to next part
+        // call to next part, possibly to a function from the heart of the colony functions file
     }
     else if(choice == "C" || choice == "c"){
         print_line();
