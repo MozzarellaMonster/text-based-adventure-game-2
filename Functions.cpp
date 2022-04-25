@@ -6,6 +6,7 @@
 #include "Functions.hpp"
 #include "Items.hpp"
 #include "Trackers.hpp"
+#include "Heart_of_the_Colony.hpp"
 
 using namespace std;
 
@@ -869,7 +870,7 @@ void the_heart_of_the_colony(){
                 "\"Now, leave my chambers and hasten your search, for my patience is limited.\"\n"
                 "You get up quickly and leave, noticing the ants around you have stopped escorting you.\n";
         
-        // call to next part, possibly to a function from the heart of the colony functions file
+        explore_nest();
     }
     else if(choice == "C" || choice == "c"){
         print_line();
