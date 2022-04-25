@@ -5,5 +5,6 @@
 #include <string>
 
 extern void explore_nest();
+extern void tunnel_options();
 
 #endif

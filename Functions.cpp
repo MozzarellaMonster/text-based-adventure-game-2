@@ -822,7 +822,7 @@ void the_heart_of_the_colony(){
     print_line();
     cin >> choice;
 
-    if(choice == "A" || choice == "a"){
+    if(choice == 'A' || choice == 'a'){
         print_line();
         cout << "You turn tail and run away from the approaching chittering sounds.\n"
                 "Almost immediately, the chittering sounds increase in volume and urgency.\n"
@@ -849,7 +849,7 @@ void the_heart_of_the_colony(){
         print_line();
         retry(&the_heart_of_the_colony_text);
     }
-    else if(choice == "B" || choice == "b"){
+    else if(choice == 'B' || choice == 'b'){
         print_line();
         cout << "You wait, facing the oncoming chittering noises. You nervously grip the loose fabric of your pants, anxiety slowly increasing\n"
                 "as your fate waits to be written. Soon, you see the source of the noise and the light: several large ants, one of them carrying an\n"
@@ -872,7 +872,7 @@ void the_heart_of_the_colony(){
         
         explore_nest();
     }
-    else if(choice == "C" || choice == "c"){
+    else if(choice == 'C' || choice == 'c'){
         print_line();
         cout << "You quickly look around the tunnel again, looking for anything you might have missed before.\n"
                 "It is then you notice an impression in one side of the tunnel, something you missed before due to the dim lighting.\n"
@@ -882,7 +882,7 @@ void the_heart_of_the_colony(){
                 "Its antennae dance around the tunnel floor where you were on your knees, it chitters at the others and soon all of them are looking for you.\n"
                 "You could either run away, surrender, or try to fight. After all, you have a momentary advantage over them with a surprise attack.";
 
-        // make another file with functions purely for the heart of the colony
+        tunnel_options();
     }
     else{
         try_again();

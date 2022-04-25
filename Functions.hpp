@@ -6,6 +6,7 @@
 
 using namespace std;
 
+extern void print_line();
 extern void try_again();
 extern void reset();
 extern void retry();
