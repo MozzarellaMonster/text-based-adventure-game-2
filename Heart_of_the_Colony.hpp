@@ -4,7 +4,8 @@
 
 #include <string>
 
-extern void explore_nest();
-extern void tunnel_options();
+extern void hotc_explore_nest_text();
+extern void hotc_explore_nest();
+extern void hotc_tunnel_options();
 
 #endif

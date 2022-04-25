@@ -870,7 +870,7 @@ void the_heart_of_the_colony(){
                 "\"Now, leave my chambers and hasten your search, for my patience is limited.\"\n"
                 "You get up quickly and leave, noticing the ants around you have stopped escorting you.\n";
         
-        explore_nest();
+        hotc_explore_nest_text();
     }
     else if(choice == 'C' || choice == 'c'){
         print_line();
@@ -882,15 +882,12 @@ void the_heart_of_the_colony(){
                 "Its antennae dance around the tunnel floor where you were on your knees, it chitters at the others and soon all of them are looking for you.\n"
                 "You could either run away, surrender, or try to fight. After all, you have a momentary advantage over them with a surprise attack.";
 
-        tunnel_options();
+        hotc_tunnel_options();
     }
     else{
         try_again();
         the_heart_of_the_colony();
     }
-    
-    
-    retry();
 }
 
 void the_glowing_cave(){
