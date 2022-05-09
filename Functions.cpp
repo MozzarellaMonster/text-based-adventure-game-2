@@ -111,7 +111,7 @@ void deposit(){
 }
 
 void determine_riddle(){
-    set_riddle = rand() % 3;
+    set_riddle = rand() % 3 + 1;
     switch(set_riddle){
         case 0:
             current_riddle = water_riddle;
