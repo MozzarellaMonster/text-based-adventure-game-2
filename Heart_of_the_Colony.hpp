@@ -8,4 +8,6 @@ extern void hotc_explore_nest_text();
 extern void hotc_explore_nest();
 extern void hotc_tunnel_options();
 
+extern bool explored_left_tunnel;
+
 #endif
