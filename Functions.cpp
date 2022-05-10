@@ -113,13 +113,13 @@ void deposit(){
 void determine_riddle(){
     set_riddle = rand() % 3 + 1;
     switch(set_riddle){
-        case 0:
+        case 1:
             current_riddle = water_riddle;
             break;
-        case 1:
+        case 2:
             current_riddle = wind_riddle;
             break;
-        case 2:
+        case 3:
             current_riddle = fire_riddle;
             break;
         default:
