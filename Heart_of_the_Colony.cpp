@@ -35,7 +35,7 @@ void hotc_explore_nest(){
 
     if(choice == 'A' || choice == 'a'){
         print_line();
-        if explored_left_tunnel{
+        if(explored_left_tunnel){
             cout << "You look back to the tunnel that leads to the egg room, and shake your head.\n"
                     "You did not find the token there, it would be unlikely to be there now.\n"
                     "You look back to the options before you.\n";
