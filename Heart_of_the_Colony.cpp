@@ -9,6 +9,7 @@
 using namespace std;
 
 bool explored_left_tunnel = false;
+bool explored_middle_tunnel = false;
 
 void hotc_explore_nest_text(){
     print_line();
