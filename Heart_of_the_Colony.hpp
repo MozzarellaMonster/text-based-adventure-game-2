@@ -9,5 +9,6 @@ extern void hotc_explore_nest();
 extern void hotc_tunnel_options();
 
 extern bool explored_left_tunnel;
+extern bool explored_middle_tunnel;
 
 #endif

@@ -55,7 +55,23 @@ void hotc_explore_nest(){
     }
     else if(choice == 'B' || choice == 'b'){
         print_line();
-        cout << "You decide to explore the middle tunnel.\n";
+        if(explored_middle_tunnel){
+            cout << "You look back towards the middle tunnel, remembering how it leads back to the colony's food storage chamber.\n"
+                    "There was nothing of note in there. You look back to the other tunnels.\n";
+            hotc_explore_nest();
+        }
+        else{
+            cout << "You decide to explore the middle tunnel.\n"
+                    "You go down the middle tunnel for quite a distance before eventually you find yourself in a large circular room with a high ceiling.\n"
+                    "The room is lit with organic-looking lanterns hung in even distances along the circumference of the room. In the middle of the room stands a\n"
+                    "large spire of various objects. It takes you a moment before you realize that this room contains all of the colony's collected food. Large, seed-like\n"
+                    "objects are collected in a huge mound and stacked carefully in the center of the room. Surprisingly, there are nearly no ants at all in this room\n"
+                    "and you are free to explore to your heart's content. You make sure not to disturb the giant spire though, as moving one thing out of place may just cause\n"
+                    "the whole thing to collapse. After searching for some time, you decide the room does not contain what you are looking for and leave, trekking back through\n"
+                    "the tunnel to the Queen's Chambers.\n";
+                explored_middle_tunnel = true;
+                hotc_explore_nest();
+        }
     }
     else if(choice == 'C' || choice == 'c'){
         print_line();
