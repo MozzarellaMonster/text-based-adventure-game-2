@@ -855,22 +855,9 @@ void the_heart_of_the_colony(){
                 "as your fate waits to be written. Soon, you see the source of the noise and the light: several large ants, one of them carrying an\n"
                 "unusual organic-looking lantern on its back. The ants stop and look at you, seemingly bemused at your sudden appearance, but then quickly move in,\n"
                 "surrounding you on all sides while one behind you nips at your heels with its huge jaws, urging you forward. Hesitantly, you move forward, keeping pace with\n"
-                "the huge insects. Eventually, the tunnel opens up into a large chamber where you spy a distinct silhouette facing away from you: the Ant Queen.\n"
-                "Not completely unexpected, you think to yourself.\n"
-                "\"No, I suppose it is not, human.\", you suddenly hear in your head.\n"
-                "Your eyes widen at the intrusion of the distinctly feminine voice within your thoughts.\n"
-                "\"But your sudden unannounced appearance before my Court is. Now, state your reason for visiting.\"\n"
-                "The huge ant queen turns to face you, looking down upon you with a terrible intelligence in its multifaceted eyes.\n"
-                "You stare, dumbstruck for a moment. Then, regaining your composure, you speak back at it with your thoughts.\n"
-                "\"I apologize. I only wish to travel back to my world, and I must find a token here to do so.\", you think.\n"
-                "\"I see. You are but another contestant for the game of the Worldwalkers. Unfortunately for you, not even I am aware of the location of your token.\"\n"
-                "The Ant Queen turns back away from you. \"You are free to look, but should you attempt to bring harm upon any of my subjects or overstay your welcome,\"\n"
-                "The Ant Queen looks back at you, \"I will feed you to them.\"\n"
-                "A cold shiver runs down your spine, and you quickly nod in acknowledgement.\n"
-                "\"Now, leave my chambers and hasten your search, for my patience is limited.\"\n"
-                "You get up quickly and leave, noticing the ants around you have stopped escorting you.\n";
-        
-        hotc_explore_nest_text();
+                "the huge insects.\n"
+
+        the_queens_chambers();
     }
     else if(choice == 'C' || choice == 'c'){
         print_line();
