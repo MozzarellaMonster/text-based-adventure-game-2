@@ -11,6 +11,25 @@ using namespace std;
 bool explored_left_tunnel = false;
 bool explored_middle_tunnel = false;
 
+void the_queens_chambers(){
+    cout << "Eventually, the tunnel opens up into a large chamber where you spy a distinct silhouette facing away from you: the Ant Queen.\n"
+            "Not completely unexpected, you think to yourself.\n"
+            "\"No, I suppose it is not, human.\", you suddenly hear in your head.\n"
+            "Your eyes widen at the intrusion of the distinctly feminine voice within your thoughts.\n"
+            "\"But your sudden unannounced appearance before my Court is. Now, state your reason for visiting.\"\n"
+            "The huge ant queen turns to face you, looking down upon you with a terrible intelligence in its multifaceted eyes.\n"
+            "You stare, dumbstruck for a moment. Then, regaining your composure, you speak back at it with your thoughts.\n"
+            "\"I apologize. I only wish to travel back to my world, and I must find a token here to do so.\", you think.\n"
+            "\"I see. You are but another contestant for the game of the Worldwalkers. Unfortunately for you, not even I am aware of the location of your token.\"\n"
+            "The Ant Queen turns back away from you. \"You are free to look, but should you attempt to bring harm upon any of my subjects or overstay your welcome,\"\n"
+            "The Ant Queen looks back at you, \"I will feed you to them.\"\n"
+            "A cold shiver runs down your spine, and you quickly nod in acknowledgement.\n"
+            "\"Now, leave my chambers and hasten your search, for my patience is limited.\"\n"
+            "You get up quickly and leave, noticing the ants around you have stopped escorting you.\n";
+
+    hotc_explore_nest_text();
+}
+
 void hotc_explore_nest_text(){
     print_line();
     cout << "You are now free to explore the ant nest as you please, however keep in mind the warnings the Ant Queen gave you:\n"
@@ -19,7 +38,7 @@ void hotc_explore_nest_text(){
             "the token you will need before you can return to the temple.\n"
             "From where you stand, you can see three different tunnels before you that lead away from the Queen's Chambers.\n"
             "First, there is the middle tunnel where you were first found but never found out what was at the other end, then there is the\n"
-            "tunnel on the left that remains unexplored and the tunnel on the right that also remains unexplored.\n";
+            "two tunnels to the left and right that remain unexplored.\n";
     hotc_explore_nest();
 }
 
@@ -89,5 +108,66 @@ void hotc_explore_nest(){
 }
 
 void hotc_tunnel_options(){
+    char choice;
+    print_line();
+    cout << "What would you like to do?\n";
+    cout << "A. Run away\n";
+    cout << "B. Surrender\n";
+    cout << "C. Fight\n";
+    print_line();
+    cin >> choice;
 
+    if(choice == 'a' || choice == 'A'){
+        print_line();
+        cout << "Quickly, while the ant's attention is away from you, you sprint down the tunnel in the other direction.\n"
+                "Immediately, the ants turn around and give chase, chittering loudly all the while. You take a quick look back\n"
+                "to see them closing the distance. You try to pick up speed but only succeed in tripping, allowing the ants to catch up to you quickly.\n"
+                "You scramble to get back up, but one of the ants steps on your back, putting its full weight on you and pinning you to the ground. Another ant makes\n"
+                "its way to the front of you and looks down on you. Without warning, it clamps its large jaws over your cranium. Blood quickly begins to pour where the\n"
+                "ant has made contact with your temples and you can feel the pressure increasing as the ant clamps down harder and harder. You pull hard against the jaws\n"
+                "of the insect, trying to unclamp them, but they remain in place like a steel vice. It then dawns on you this is how you die - foolishly. Your eyes go wide\n"
+                "when you hear a sickening crunch as your skull gives way, then all is black.\n";
+
+        cout << "\n\nEnding 8: Migraine";
+        print_line();
+        retry(&hotc_tunnel_options);
+    }
+    else if(choice == 'b' || choice == 'B'){
+        print_line();
+        cout << "You decide just to surrender to the giant ants. You slowly walk out of the impression in the wall\n"
+                "with your hands up, showing your defenseless state. The ants quickly turn toward you, surround you,\n"
+                "and then herd you down the tunnel, all the while snapping at your legs with their huge mandibles if\n"
+                "you so much as slow down.\n";
+        
+        the_queens_chambers();
+    }
+    else if(choice == 'c' || choice == 'C'){
+        print_line();
+        cout << "You decide to fight. You jump out brandishing the dagger and lunge at the first ant you see.\n"
+                "Quickly bringing the dagger down on the back of the ant, you put all your strength into making it a killing blow.\n"
+                "The dagger pierces the chitin and stabs the ant, bringing it down. It slumps to the ground, but does not appear dead.\n"
+                "The other two ants immediately lunge toward you, angered and ready to kill. The giant insects manuever around you, one on each side, surrounding you.\n"
+                "You focus quickly shifts from one to the other and you make striking motions with the dagger to keep them at bay. One ant lunges at your legs, jaws snapping.\n"
+                "You turn towards it to fend it off. However, in doing so you have made yourself vulnerable to the other ant. Realizing your mistake you quickly try to\n"
+                "turn back around to fend off the other ant but end up losing your balance and tripping over the first ant to attack, which has now locked its jaws around into your leg.\n"
+                "You fall flat on your back with your left leg held aloft by the first biting ant. You look over at it, trying to pull out of its jaws, but it only locks in tighter.\n"
+                "It then quickly rips its mandibles along the length of your leg, tearing through your sensitive flesh. Pain shoots through your leg as you look down at your now mangled limb.\n"
+                "You scream, before a shadow covers your face and you realize the second ant is now standing over you. You quickly try to stab it with the dagger, but it catches your arm\n"
+                "and pulls hard. Searing pain tears through your arm as you feel your soft flesh rip apart from the strong jaws. You drop the dagger and scream again. The ants have no mercy\n"
+                "for a hostile intruder, however. The second ant grabs your arm again near the shoulder, bites down hard until you feel its mandibles scrape your bone and pulls. A sickening tearing sound\n"
+                "can be heard as your arm is torn from its socket. Screams are no longer sufficient in portraying the hellish pain you are in. Tears flow freely from your eyes and you sob loudly as you realize\n"
+                "what a terrible mistake you've made. Their task is not over, however. As the first ant moves over your body and grabs your lower jaw with its own and easily yanks it free from your skull.\n"
+                "Blood fills your throat as the pain becomes unbearable. You stare at the tunnel ceiling, past the gaze of the ant still looking down at you with your jaw in its own as blood drips from it\n"
+                "into your face. The other ant then enters your view and moves closer, its antennae moving over your destroyed visage. You can do nothing except let it happen.\n"
+                "Eventually, the ant stops and works together with the other to drag what's left of you down the tunnel. Slowly, your vision fades as you watch the tunnel ceiling pass by and you realize you've lost a lot of blood.\n"
+                "One thought strikes you as funny before you eventually die: that you decided to fight an enemy that you knew nothing about and that clearly outnumbered you.\n";
+
+        cout << "\n\nEnding 9: Belligerence";
+        print_line();
+        retry(&hotc_tunnel_options);
+    }
+    else{
+        try_again();
+        hotc_tunnel_options();
+    }
 }
