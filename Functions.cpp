@@ -867,7 +867,7 @@ void the_heart_of_the_colony(){
                 "The chittering grows louder, it's now or never. You quickly jump into the impression and flatten yourself against the wall as much as possible.\n"
                 "You remain still as several huge ants pass by you, the chittering remaining uninterrupted. However, one stops where you dropped from the portal, causing the others to take notice.\n"
                 "Its antennae dance around the tunnel floor where you were on your knees, it chitters at the others and soon all of them are looking for you.\n"
-                "You could either run away, surrender, or try to fight. After all, you have a momentary advantage over them with a surprise attack.";
+                "You could either run away, surrender, or try to fight. After all, you have a momentary advantage over them with a surprise attack.\n";
 
         hotc_tunnel_options();
     }
