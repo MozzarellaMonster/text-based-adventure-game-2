@@ -58,6 +58,31 @@ void retry(void (*func)()){
     }
 }
 
+// Function for handling the player options
+void present_options(vector<string> option_names, vector<string> dialogue, void (*func)()){
+    char choice;
+    print_line();
+    cout << "A." << option_names[0];
+    cout << "B." << option_names[1];
+    cout << "C." << option_names[2];
+    print_line();
+    cin >> choice;
+
+    if(choice == 'a' || choice == 'A'){
+
+    }
+    else if(choice == 'b' || choice == 'B'){
+
+    }
+    else if(choice == 'c' || choice == 'C'){
+
+    }
+    else{
+        try_again();
+        func();
+    }
+}
+
 void archway(string message, string name, bool *archway_read, void (*func)()){
     char answer;
 
