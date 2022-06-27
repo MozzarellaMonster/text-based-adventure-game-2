@@ -63,10 +63,10 @@ void hotc_explore_nest(){
         }
         else{
             cout << "You decide to explore the left tunnel.\n"
-                    "You go down the left tunnel for some distance before it opens into a large open cavernous space with several large stalagnate\n"
-                    "serving as pillars for the massive room. Along the walls and floor of the room are several oblong pill-shaped objects with distinct silhouettes wriggling around inside of them.\n"
-                    "\"Eggs,\" you think to yourself before hesitantly crossing the threshold into the room. The room is lit with several organic-looking lanterns embedded in the ceiling of the room,\n"
-                    "providing a warm glow to the entirety of the large space. Several female worker ants are milling about the room, tending to the different egg clusters and largely ignoring you.\n"
+                    "You go down the left tunnel for some distance before it opens into a large open cavernous space with several large pillars.\n"
+                    "Along the walls and floor of the room are several oblong pill-shaped objects with distinct silhouettes wriggling around inside of them.\n"
+                    "\"Eggs,\" you think to yourself before hesitantly crossing the threshold into the room. The room is lit with several organic-looking lanterns embedded in the ceiling,\n"
+                    "providing a warm glow to the entirety of the large space. Several female worker ants are milling about, tending to the different egg clusters and largely ignoring you.\n"
                     "However, if you get a little too close to any one egg, a distinct hiss is heard from any that are nearby. You make haste and search the room without setting off the worker ant's aggression.\n"
                     "Unfortunately, you could find nothing of importance in the room and head back through the tunnel to the Queen's Chambers.\n";
             explored_left_tunnel = true;
