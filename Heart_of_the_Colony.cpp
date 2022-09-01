@@ -89,14 +89,34 @@ void hotc_explore_nest(){
                     "and you are free to explore to your heart's content. You make sure not to disturb the giant spire though, as moving one thing out of place may just cause\n"
                     "the whole thing to collapse. After searching for some time, you decide the room does not contain what you are looking for and leave, trekking back through\n"
                     "the tunnel to the Queen's Chambers.\n";
-                explored_middle_tunnel = true;
-                hotc_explore_nest();
+            explored_middle_tunnel = true;
+            hotc_explore_nest();
         }
     }
     else if(choice == 'C' || choice == 'c'){
         print_line();
-        cout << "You decide to explore the right tunnel.\n";
-        // Add a room dedicated to expanded the lore of this area.
+        if(explored_right_tunnel){
+            cout << "You look down the right tunnel, where the history of the colony was written on the walls of a large chamber.\n"
+                    "It was an otherwise empty room. You look back towards the other tunnels.\n";
+            hotc_explore_nest();
+        }
+        else{
+            cout << "You decide to explore the right tunnel.\n"
+                    "After walking for several minutes, you arrive at a large room covered in hieroglyphics.\n"
+                    "Taking a closer look at some of the nearby glyphs, from what can be gathered, they appear\n"
+                    "to tell the history of the \"Worldwalkers\" and the ants of this colony. Several of the hieroglyphs\n"
+                    "are also written in areas unreachable to you. Looking up at the ceiling, you see that the ants didn't\n"
+                    "waste any area, as even the ceiling is covered. You can't see what the story is told from those, but you\n"
+                    "can imagine it tells the story of the colony, starting from the first generation and probably the first Queen.\n"
+                    "Following the curve of the hieroglyphs, it appears the circle the room in a spiral, coming down from the center\n"
+                    "of the ceiling, to near your head height.\n"
+                    "You would search the room, but there is no need to, since the only purpose\n"
+                    "the room seems to serve is as a record of the history of the colony, it lays purposefully empty.\n"
+                    "After giving one final look around the room, you head back down the tunnel.\n";
+            explored_right_tunnel = true;
+            hotc_explore_nest();
+        }
+
     }
     else if(choice == 'D' || choice == 'd'){
         print_line();
