@@ -96,10 +96,12 @@ void hotc_explore_nest(){
     else if(choice == 'C' || choice == 'c'){
         print_line();
         cout << "You decide to explore the right tunnel.\n";
+        // Add a room dedicated to expanded the lore of this area.
     }
     else if(choice == 'D' || choice == 'd'){
         print_line();
         cout << "You decide to explore the Queen's Chambers.\n";
+        // Hide the object here. Finding it triggers hostility from the ants and the Queen.
     }
     else{
         try_again();
