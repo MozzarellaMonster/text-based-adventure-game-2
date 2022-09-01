@@ -11,5 +11,6 @@ extern void the_queens_chambers();
 
 extern bool explored_left_tunnel;
 extern bool explored_middle_tunnel;
+extern bool explored_right_tunnel;
 
 #endif
