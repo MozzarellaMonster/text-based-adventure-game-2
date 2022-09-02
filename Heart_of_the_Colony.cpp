@@ -120,8 +120,19 @@ void hotc_explore_nest(){
     }
     else if(choice == 'D' || choice == 'd'){
         print_line();
-        cout << "You decide to explore the Queen's Chambers.\n";
-        // Hide the object here. Finding it triggers hostility from the ants and the Queen.
+        cout << "You decide to explore the Queen's Chambers.\n"
+                "The ants that escorted you down the tunnel have now left the chamber, leaving you alone with the Queen, her guards, and one other ant.\n"
+                "The guards stare you down as the Queen busily attends to what appears to be a map of the nest and converses with the other ant.\n"
+                "Looking about the room, you notice something strange. There appears to be a pile of what appears to be junk in one corner of the room.\n"
+                "You approach it and look through the rubble. Soon, you come across what appears to be a broken piece of amber with a strange claw embedded within.\n"
+                "\"Take it,\" you hear in your head. You lift the large piece of amber out of the rubble and tuck it under your arm. Almost immediately, a portal opens up.\n"
+                "\"WHAT ARE YOU DOING?!\" a voice booms in your head. \"DO NOT TOUCH THOSE.\" Your head spins around to see the guards closing in on you and the\n"
+                "glaring angrily at you. \"MY CONQUEST ITEMS ARE NOT FOR YOU TO TAKE!\" Quickly, you make a mad dash for the open portal and narrowly dodge multiple ants\n"
+                "that attempt to stop you, even stepping on one to avoid two others.\n"
+                "You leap into the portal but not before the Queen lets out one last enraged shriek in your head. You close your eyes against the pain and tumble out onto the floor of the temple.\n"
+                "A cold breeze embraces you as you open your eyes and pick yourself up. A mild throbbing in your cranium soon follows as you stagger slightly but quickly right yourself and proceed\n"
+                "to put the amber piece in the stone obelisk. That's another one down. You turn back to the archways.\n\n";
+        temple_second_room();
     }
     else{
         try_again();
