@@ -33,9 +33,6 @@ extern void the_desert_of_the_dead();
 extern void the_heart_of_the_colony_text();
 extern void the_heart_of_the_colony();
 
-extern void the_glowing_cave_text();
-extern void the_glowing_cave();
-
 extern void the_garden();
 extern void the_whistling_gorge();
 extern void the_silken_throne();
