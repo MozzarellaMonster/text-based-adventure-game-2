@@ -3,6 +3,7 @@
 #define FUNCTIONS_HPP
 
 #include <string>
+#include<vector>
 
 using namespace std;
 
@@ -10,7 +11,7 @@ extern void print_line();
 extern void try_again();
 extern void reset();
 extern void retry();
-extern void retry(void *func);
+extern void retry(void (*func)());
 extern void present_options(vector<string> option_names, vector<string> dialogue, void (*func)());
 extern void archway(string message, string name, bool archway_read, void (*func)());
 extern void deposit(string key);
