@@ -102,13 +102,45 @@ void gc_left_tunnel_text(){
             "The light from the mushroom gradually fades as it falls into the abyss, confirming your suspicions that the canyon is, in fact, very deep. Deep enough that you'd be falling for some time before you inevitably die.\n"
             "You look back up across the bridge and spy a flickering orange light in the distance. Squinting, you think you see shadows move back and forth in front of the light. A bonfire, perhaps? If that's a bonfire, then the\n"
             "shadows must be people, right? Maybe they can help you find what you're looking for. You look back down to the bridge and weigh your options.\n"
-            "Either you can risk crossing the bridge, which is not only barely wide enough for two people to walk across, but completely soaked, or you can simply try to get the attention of the figures on the other side of the chamber.\n";
+            "Either you can risk crossing the bridge, which is not only barely wide enough for two people to walk across but completely soaked, or you can simply try to get the attention of the figures on the other side of the chamber.\n";
     
     gc_left_tunnel();
 }
 
 void gc_left_tunnel(){
-    // To be filled in...
+    char choice;
+    print_line();
+    cout << "What would you like to do?\n";
+    cout << "A. Cross the bridge\n";
+    cout << "B. Try to get the attention of the \"figures\"\n";
+    cout << "C. Go back through the tunnel\n";
+    print_line();
+    cin >> choice;
+
+    if(choice == 'a' || choice == 'A'){
+        cout << "You decide to try and cross the bridge.\n"
+                "You take a tentative step forward, cautious of the slickness of the water-beaten stone. Small clumps of glowing pink moss help to identify the borders of the bridge and offer minor footholds\n"
+                "as you make your dangerous trek forwards. Spreading your arms out and keeping your legs steady, you slowly make your way forward, keeping your eyes firmly rooted to the path in front of you and\n"
+                "avoiding looking at the pitch black abyss below you at all costs. Step by cautious step, you make your way across the bridge. Puddles glint in the faint light of the moss and shine like stars reflecting\n"
+                "the spray of the waterfall to the left of you. Finally, you're about halfway across the bridge and getting comfortable in your stride when your shoe finally gives way, surrendering to the slippery stone.\n"
+                "You wave your arms frantically in the air, trying to maintain balance, but only succeed in further dislodging yourself from relatively safe footholds. You fall and slide down the side of the bridge, clawing\n"
+                "desperately at the pink moss that reliquishes its own grip far too easily. The tumble down is quick, but the fall is long. So, so long. The darkness swallows you up like a ravenous beast slurping up the remains\n"
+                "of its recent kill. All that is left are the echoes of your screams, until that too is drowned out by the incessant roar of the waterfall.\n";
+
+        cout << "\n\nEnding 10: Water Fall";
+        print_line();
+        retry(&gc_left_tunnel);
+    }
+    else if(choice == 'b' || choice == 'B'){
+        // To be filled in...
+    }
+    else if(choice == 'c' || choice == 'C'){
+        // To be filled in...
+    }
+    else{
+        try_again();
+        gc_left_tunnel();
+    }
 };
 
 void gc_right_tunnel(){
