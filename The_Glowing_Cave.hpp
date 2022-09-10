@@ -10,6 +10,8 @@ extern bool gc_explored_left_tunnel;
 extern bool gc_explored_right_tunnel;
 extern bool gc_explored_path;
 
+extern bool attention_seeker;
+
 extern void the_glowing_cave_text();
 extern void the_glowing_cave();
 extern void gc_left_tunnel_text();

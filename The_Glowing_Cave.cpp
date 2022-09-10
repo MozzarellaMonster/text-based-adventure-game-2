@@ -12,6 +12,8 @@ bool gc_explored_left_tunnel = false;
 bool gc_explored_right_tunnel = false;
 bool gc_explored_path = false;
 
+bool attention_seeker = false;
+
 void the_glowing_cave_text(){
     print_line();
     cout << "Bracing yourself, you close your eyes and take a step into the portal.\n"
@@ -33,6 +35,16 @@ void the_glowing_cave_text(){
 }
 
 void the_glowing_cave(){
+
+    if(attention_seeker){
+        print_line();
+        cout << "You burst back into the chamber, the echoing screech of the monster coming out of the tunnel. You fall to your knees and gasp for breath, tears welling up in your eyes.\n"
+                "Your arms are like jelly, and you struggle to not collapse onto the floor entirely and assume the fetal position.\n"
+                "After several minutes, the screeching finally stops and the cave falls silent. You take some shaky breaths and push yourself into a sitting position, just letting yourself process what you just saw.\n"
+                "After a while, you notice that the bats have gone, probably fled the chamber after the screeching started. You sigh loudly and stand back up. Well, you still have to find what you're looking for.\n";
+        attention_seeker = false;
+    }
+
     char choice;
     print_line();
     cout << "What would you like to do?\n";
@@ -43,8 +55,13 @@ void the_glowing_cave(){
     cin >> choice;
     if(choice == 'A' || choice == 'a'){
         print_line();
-        if(gc_explored_left_tunnel){
-            // To be filled in...
+        if(gc_explored_left_tunnel && attention_seeker){
+            cout << "No. There's no way you're going back there.\n";
+            the_glowing_cave();
+        }
+        else if(gc_explored_left_tunnel){
+            cout << "You've already tried that path.\n";
+            the_glowing_cave();
         }
         else{
             cout << "You decide to explore the left tunnel.\n"
@@ -108,6 +125,7 @@ void gc_left_tunnel_text(){
 }
 
 void gc_left_tunnel(){
+    gc_explored_left_tunnel = true;
     char choice;
     print_line();
     cout << "What would you like to do?\n";
@@ -132,7 +150,26 @@ void gc_left_tunnel(){
         retry(&gc_left_tunnel);
     }
     else if(choice == 'b' || choice == 'B'){
-        // To be filled in...
+        if(!attention_seeker){
+            cout << "You decide to try and get the attention of the figures on the other side of the chasm. You look around for something to signal them with. All there really seems to be are some smooth pebbles and\n"
+                    "the bioluminescent foliage growing out of the walls and bridge near the entrance. Even if they're glowing, they're way too dim to be very noticeable, especially considering that the light is reflecting\n"
+                    "off the mist from the waterfall. You look around some more and notice something that you didn't before - there's something stuck in a puddle of mud near the tunnel entrance. You dig through the mud and\n"
+                    "pull out the object - a slingshot. You test the strength of the sling and notice that, despite its exposure to the water, the slingshot is still in good condition. You pick up some of the larger smooth\n"
+                    "stones and load them into the sling. You take aim towards the flickering light and let it fly. Nothing. You load another stone and take aim again, then fire the second stone. This time, it hits.\n"
+                    "Specifically, it hits the light dead-on. You watch in stunned bewilderment as the stone bounces off the surface of something slightly translucent, behind which the glow emanates. Then, the \"bonfire\" moves.\n"
+                    "The glow moves up, and as it moves you hear the echoes of crashing rocks. The glow rotates and comes closer to you, so close you can see that there's a strange organic-looking membrane covering the source of the glow,\n"
+                    " which appears to be a fleshy bulb of some kind. You stare at the strange, flickering glow and feel a unusual urge to get even closer. You take a small step forward before realizing how close you are to the edge of the\n"
+                    "and pull back, adrenaline flooding your veins. It is then you hear it - a low rumble gradually getting louder. You look back towards the bulb, but notice movement behind it - two large opal globes.\n"
+                    "You squint in confusion, but then your blood runs cold.\n"
+                    "Eyes. Those globes are eyes. A giant reptilian visage suddenly engulfs the chamber, so close the bioluminescent fungi has no trouble lighting it up. You fall back in shock and quickly start dragging yourself backwards.\n"
+                    "All the while, you're still staring at the monstrous face and when it hears you scuffle against the floor of the tunnel, it leaps forward, trying desperately to attack and consume its prey. You scream, turn around\n"
+                    "and run back through the tunnel.\n";
+            attention_seeker = true;
+            the_glowing_cave();
+        }
+        else{
+            // To be filled in...
+        }
     }
     else if(choice == 'c' || choice == 'C'){
         // To be filled in...
