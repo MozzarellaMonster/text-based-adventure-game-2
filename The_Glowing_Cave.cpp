@@ -110,7 +110,7 @@ void the_glowing_cave(){
 }
 
 void gc_left_tunnel_text(){
-    // Natural land bridge and waterfall - dangerous balancing game
+    // Natural land bridge and waterfall - dangerous balancing game and hidden horror
     print_line();
     cout << "You find yourself in a large cavern, a narrow, natural land bridge stretching across a massive canyon splitting the chamber in two. A large waterfall cascades down from above and to the left of the land bridge,\n"
             "completely soaking the bridge to the point that puddles have formed on it, giving the illusion of holes. Were it not for the constant spray sending ripples through the puddles, you'd believe the illusion.\n"
@@ -162,8 +162,7 @@ void gc_left_tunnel(){
                     "and pull back, adrenaline flooding your veins. It is then you hear it - a low rumble gradually getting louder. You look back towards the bulb, but notice movement behind it - two large opal globes.\n"
                     "You squint in confusion, but then your blood runs cold.\n"
                     "Eyes. Those globes are eyes. A giant reptilian visage suddenly engulfs the chamber, so close the bioluminescent fungi has no trouble lighting it up. You fall back in shock and quickly start dragging yourself backwards.\n"
-                    "All the while, you're still staring at the monstrous face and when it hears you scuffle against the floor of the tunnel, it leaps forward, trying desperately to attack and consume its prey. You scream, turn around\n"
-                    "and run back through the tunnel.\n";
+                    "All the while, you're still staring at the monstrous face and when it hears you scuffle against the floor of the tunnel, it leaps forward with its mouth agape. You scream, turn around and run back through the tunnel.\n";
             attention_seeker = true;
             the_glowing_cave();
         }
@@ -185,7 +184,22 @@ void gc_right_tunnel(){
     print_line();
 }
 
+void gc_pathway_text(){
+    print_line();
+}
+
 void gc_pathway(){
     // Evidence of Worldwalkers - abandoned basket and/or cart in clearing - journal
     print_line();
+    cout << "You follow the trail for some distance before arriving in a small clearing in the forest of fungi. A portion of the dirt here is tilled, but dry Small, dead sprouts of an unknown plant line\n"
+            "the ground. Nearby is a wooden cart with a missing wheel, tilted at an angle where you can easily see into the back of it. In the back of the cart are intricately-woven baskets with decayed\n"
+            "remnants of the plant inside them. You approach the cart and look inside the baskets. It looks as though this cave served as a small farm of sorts for whatever plant the Worldwalkers had grown\n"
+            "here. Lining the walls of the cart are several luxuriously designed blankets made of a thick, shiny material. Gold trim accents the blankets, with an embossed geometric pattern making up the\n"
+            "center of the blanket. You feel the material, and are surprised to feel it react to your touch. A feeling of warmth immediately embraces your hand, providing a small comfort despite the damp nature\n"
+            "of the cave. The feel of the blanket is so comforting, you wish you could take it with you. Unfortunately, you don't exactly have anywhere to store it, so you leave it be. You take a step back and examine\n"
+            "the cart as a whole. From what you can make of the damage, it appears the wheel had broken away from the axle and been left alongside the cart. You look back over the whole scene before you.\n"
+            "Whoever had left this cart here had been meaning to return for it, you decide. Given the nature of the objects and the state of the cart, it appears that whoever owned it was intent on returning, but never did.\n"
+            "Why? It is then you notice what appears to be a parchment or scroll of some king partially hidden between two of the baskets. You pull it out and open it. At first, the unusual text is illegible, but then the effect\n"
+            "of the knife causes the meaning of it to appear. It's an inventory order of some kind. Evidently, this cart belonged to a merchant and this farm was used to produce a good used for trade.\n";
+    // To be continued...
 }
