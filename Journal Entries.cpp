@@ -6,19 +6,19 @@ using namespace std;
 
 string journal_entry_1 = "\n\t6/7/01\n"
                          "\tThe archeological dig has done tremendous work,\n"
-                         "\tI really must stop by the excavation director’s tent and commend him for his excellent service.\n\n"
+                         "\tI really must stop by the excavation director's tent and commend him for his excellent service.\n\n"
                          "\tThe dig team has uncovered a relic most peculiar.\n"
                          "\tIt appears to be a carved stone ring inset with unusual hieroglyphic markings carved around the circumference of the ring.\n"
                          "\tI have taken it into my tent for further study.\n\n";
 
 string journal_entry_2 = "\n\t6/27/01\n"
                          "\tI have received word back from Marilyn at the university. She has never seen symbols quite like those present on the mystery stone ring, either.\n"
-                         "\tThe closest comparison we have is ancient Egyptian, but there’s enough differences between the two to rule out any cultural mixing.\n"
+                         "\tThe closest comparison we have is ancient Egyptian, but there's enough differences between the two to rule out any cultural mixing.\n"
                          "\tI will need to study this artifact more.\n\n";
 
 string journal_entry_3 = "\n\t7/14/05\n"
                          "\tThe ring has responded to my actions. There is now a thinly opaque layer of liquid-like energy in the middle of the ring.\n"
-                         "\tI will need to calibrate the machine even further. These old records are a massive pain to translate, but I’m definitely on to something here.\n"
+                         "\tI will need to calibrate the machine even further. These old records are a massive pain to translate, but I'm definitely on to something here.\n"
                          "\tI will solve the mystery of this stone ring.\n\n";
 
 string journal_entry_4 = "\n\t11/13/08\n"
