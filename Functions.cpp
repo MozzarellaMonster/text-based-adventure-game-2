@@ -6,6 +6,7 @@
 #include "Functions.hpp"
 #include "Items.hpp"
 #include "Trackers.hpp"
+#include "Journal Entries.hpp"
 #include "Heart_of_the_Colony.hpp"
 
 using namespace std;
@@ -58,7 +59,7 @@ void retry(void (*func)()){
     }
 }
 
-// Function for handling the player options
+// Function for handling the player options, to be added to later
 void present_options(vector<string> option_names, vector<string> dialogue, void (*func)()){
     char choice;
     print_line();
@@ -276,11 +277,9 @@ void temple_entrance(){
                 "The old map is nearly useless, as it is so worn and faded that all you can really see are faint gridlines and the border.\n"
                 "The broken watch is even more useless since the casing seemingly broke open long ago and all the internal mechanisms have now fallen completely apart.\n"
                 "The piece of paper is actually the most interesting of the junk you find. There's something written on it in in crooked, barely legible script.\n"
-                "It reads:\n\n\t11/13/07\n\tI've done it! After trying another combination of glyphs, I've finally opened a doorway to another dimension.\n"
-                "\tI've yet to try anything more than sending several test items through. None have returned, but that is to be expected. I'm gonna try to get an image next.\n"
-                "\tSuccess! I now have a photograph of the other side of the doorway. However, what I did not expect was...\n\n"
-                "The rest of the message is torn off.\n"
-                "You fold up the piece of paper and stash it on your person.\n";
+                "It reads:\n";
+        cout << journal_entry_1;
+        cout << "You fold up the piece of paper and stash it on your person.\n";
         inventory.push_back(first_note);
         cout << "You head back to the temple entrance and step inside.\n";
         temple_first_room_text();
@@ -436,9 +435,9 @@ void temple_first_room(){
                     "You look closer at the symbols on the walls: there's the wind symbol on the left wall, the water symbol on the wall directly opposite you and the fire symbol on the right wall.\n"
                     "Other than the fact that the symbols seemed to be etched out of the wall itself, there doesn't seem to be anything else interesting about them.\n"
                     "You also examine the pedestal in the center of the room and notice that there is a little piece of paper sticking out from a small crack between the pedestal and the floor.\n"
-                    "You gently pull it out and read what it says:\n\n\tThe riddle is different for everyone. Be aware that there will be many winding paths throughout this temple.\n"
-                    "\tMake each choice you come across carefully, the temple is testing you. If you fail even one, the price will be your life.\n"
-                    "\nYou flip the paper over and examine the back, but there is nothing else to read.\n"
+                    "You gently pull it out and read what it says:\n\n";
+            cout << hint;
+            cout << "\nYou flip the paper over and examine the back, but there is nothing else to read.\n"
                     "You gently fold the piece of paper up and look back to the room.\n";
             first_room_explored = true;
             temple_first_room();
@@ -743,12 +742,9 @@ void the_desert_of_the_dead(){
         else{
             cout << "You go to the raised platform in the middle of the room and look at the large stone tablet again, trying to locate the Crimson Leaf family name.\n"
                     "While you're looking through the names, something else catches your eye: a piece of paper folded and tucked in a crack on the side of the stone tablet.\n"
-                    "Curious, you take the piece of paper out of the crack and unfold it. It reads:\n\n"
-                    "\n\t7/08/09\n\tI've brought back more specimens from my trips through the Gates. I cannot help myself, I must study them. My curiosity for the worlds I've been to\n"
-                    "knows no bounds. I'm so intrigued by every new thing I've learned and discovered, I have to document and learn about them. I've acquired some organic growths that\n"
-                    "are incredibly similar to mold from our world except that their growth and spread is heavily accelerated due to the much harsher conditions of their world.\n"
-                    "Further study is required.\n"
-                    "You fold up the piece of paper and stuff it in your pocket.\n"
+                    "Curious, you take the piece of paper out of the crack and unfold it. It reads:\n\n";
+            cout << journal_entry_4;
+            cout << "You fold up the piece of paper and stuff it in your pocket.\n"
                     "Your attention returns to the large stone tablet and you once again skim the text for the Crimson Leaf family name.\n"
                     "Finally, after several long moments, you find it near the bottom right of the stone tablet. Assuming the layout of the sarcophaguses are the same as presented on the stone tablet,\n"
                     "you jump off from the raised platform and run towards the bottom right end of the tombs.\n"
