@@ -4,12 +4,15 @@
 
 #include <string>
 
+using namespace std;
+
 extern void hotc_explore_nest_text();
 extern void hotc_explore_nest();
 extern void hotc_tunnel_options();
 extern void the_queens_chambers();
 
-extern bool explored_left_tunnel;
-extern bool explored_middle_tunnel;
+extern bool hotc_explored_left_tunnel;
+extern bool hotc_explored_middle_tunnel;
+extern bool hotc_explored_right_tunnel;
 
 #endif

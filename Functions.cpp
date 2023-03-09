@@ -8,6 +8,7 @@
 #include "Trackers.hpp"
 #include "Journal Entries.hpp"
 #include "Heart_of_the_Colony.hpp"
+#include "The_Glowing_Cave.hpp"
 
 using namespace std;
 
@@ -876,7 +877,7 @@ void the_heart_of_the_colony(){
                 "as your fate waits to be written. Soon, you see the source of the noise and the light: several large ants, one of them carrying an\n"
                 "unusual organic-looking lantern on its back. The ants stop and look at you, seemingly bemused at your sudden appearance, but then quickly move in,\n"
                 "surrounding you on all sides while one behind you nips at your heels with its huge jaws, urging you forward. Hesitantly, you move forward, keeping pace with\n"
-                "the huge insects.\n"
+                "the huge insects.\n";
 
         the_queens_chambers();
     }
@@ -896,10 +897,6 @@ void the_heart_of_the_colony(){
         try_again();
         the_heart_of_the_colony();
     }
-}
-
-void the_glowing_cave(){
-    retry();
 }
 
 void the_garden(){
