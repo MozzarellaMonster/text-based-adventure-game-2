@@ -461,7 +461,7 @@ void temple_second_room_text(){
     cout << "You step into the much larger room and look around.\n"
             "Spaced evenly around the perimeter of the room are seven stone archways.\n"
             "All of the archways have intricate carvings adorning them, each of them depicting different scenes.\n"
-            "One archway appears to have faces carved into the smooth, black stone. The room appears to be named \"The Desert of the Dea\".\n"
+            "One archway appears to have faces carved into the smooth, black stone. The room appears to be named \"The Desert of the Dead\".\n"
             "Another appears to be adorned with carvings of insects and reads \"The Room of the Swarm\".\n"
             "There are more rooms, but they are too far away to clearly read the names of them.\n"
             "Instead, you focus on the center of the room where an imposing stone obelisk stands.\n"
@@ -497,7 +497,7 @@ void temple_second_room(){
         cout << "C. Approach the Third Archway\n";
     }
     if(fourth_archway_read){
-        cout << "D. Approach The Labyrinth\n";
+        cout << "D. Approach The End\n";
     }
     else{
         cout << "D. Approach the Fourth Archway\n";
@@ -515,7 +515,7 @@ void temple_second_room(){
         cout << "F. Approach the Sixth Archway\n";
     }
     if(seventh_archway_read){
-        cout << "G. Approach The Silken Throne\n";
+        cout << "G. Approach The Swamp\n";
     }
     else{
         cout << "G. Approach the Seventh Archway\n";
@@ -560,7 +560,7 @@ void temple_second_room(){
         archway(message, "The Glowing Cave", &third_archway_read, &the_glowing_cave);
     }
     else if(choice == 'D' || choice == 'd'){
-        // The Fourth Archway - The Labyrinth - entrance to next area, will not be available until the other rooms are completed
+        // The Fourth Archway - The Labyrinth - the final challenge, will not be unlocked until all the other worlds have been completed.
         if(!fourth_archway_read){
             print_line();
             cout << "You approach the Fourth Archway. As you approach, the name of the Archway becomes clear: \"The Labyrinth\"\n"
@@ -631,14 +631,14 @@ void temple_second_room(){
         archway(message, "The Whistling Gorge", &sixth_archway_read, &the_whistling_gorge);
     }
     else if(choice == 'G' || choice == 'g'){
-        // The Seventh Archway - The Silken Throne
-        string message = "You approach the Seventh Archway. As you approach, the name of the Archway becomes clear: \"The Silken Throne\"\n"
-                        "The archway appears to be covered in several sheets of fabric. Then you take a closer look.\n"
-                        "You then realize that the archway is actually made of stone, realistically carved to resemble draped fabric.\n"
+        // The Seventh Archway - The Swamp
+        string message = "You approach the Seventh Archway. As you approach, the name of the Archway becomes clear: \"The Swamp\"\n"
+                        "The archway appears to be covered in several overlapping layers of moss and lichen.\n"
+                        "You then realize that the archway is actually made of stone, realistically carved to resemble such growths.\n"
                         "You take a closer look at the exquisitely carved archway, it appears to be made of one smooth, unbroken piece of marble.\n"
                         "You finally stop admiring the handiwork of the archway and read the message beneath the archway name:\n"
-                        "\n\tOnly those of noble blood may trade, but visitors are tolerated. Act honorably or you will never leave.\n\n"
-                        "A strange mixture of feelings overcomes you - pleasure and pain. But it passes quickly, like silk over skin.\n"
+                        "\n\tThe Swamp harbors many creatures, ensure your footing and maintain your steps, lest you are never seen again.\n\n"
+                        "A musty, humid breeze blows through the archway. On it, a strange smell. A smell that sends a small shiver down your spine.\n"
                         "You look to the entrance of the archway.\n";
         
         archway(message, "The Silken Throne", &seventh_archway_read, &the_silken_throne);
