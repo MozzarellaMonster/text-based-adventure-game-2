@@ -35,7 +35,7 @@ string journal_entry_5 = "\n\t7/08/09\n"
                          "\tMy curiosity for the worlds I've been to knows no bounds. I'm so intrigued by every new thing I've learned and discovered,\n"
                          "\tI have to study them more. I've acquired some organic growths that are incredibly similar to mold from our world, except that\n"
                          "\ttheir growth and spread is remarkably higher in comparison to ours.\n"
-                         "\tFurther study is required.\n\n";
+                         "\tI've put several samples in my refrigerator for further study.\n\n";
 
 string journal_entry_6 = "";
 
