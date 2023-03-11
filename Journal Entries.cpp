@@ -37,6 +37,10 @@ string journal_entry_5 = "\n\t7/08/09\n"
                          "\ttheir growth and spread is remarkably higher in comparison to ours.\n"
                          "\tFurther study is required.\n\n";
 
+string journal_entry_6 = "";
+
+string journal_entry_7 = "";
+
 string hint = "\n\tThe riddle is different for everyone. Be aware that there will be many worlds connected to this temple.\n"
               "\tEach one with their own unique perils. Stay swift on your feet and keep a clear head.\n"
               "\tMake each choice you come across carefully, the temple is testing you. If you fail even one, the price will be your life.\n";
