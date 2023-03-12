@@ -11,9 +11,9 @@ string third_note = "Note 3";
 
 string keys[7] = {the_desert_of_the_dead_key, the_heart_of_the_colony_key, the_glowing_cave_key, the_oasis_key, the_whistling_gorge_key, the_silken_throne_key};
 
-string the_desert_of_the_dead_key = "Ruby Skull";
-string the_heart_of_the_colony_key = "Amber Stone";
-string the_glowing_cave_key = "Fossil";
-string the_oasis_key = "Sapphire Flower";
-string the_whistling_gorge_key = "Twisted Bone Key";
-string the_silken_throne_key = "Crystal Thorax";
+string the_desert_of_the_dead_key = "The Ruby Skull";
+string the_heart_of_the_colony_key = "The Amber Eye";
+string the_glowing_cave_key = "The Fossil";
+string the_oasis_key = "The Shimmering Leaf";
+string the_whistling_gorge_key = "Twisted Bone";
+string the_swamplands_key = "The Black Heart";
