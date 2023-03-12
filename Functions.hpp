@@ -36,7 +36,7 @@ extern void the_heart_of_the_colony();
 
 extern void the_garden();
 extern void the_whistling_gorge();
-extern void the_silken_throne();
+extern void the_swamplands();
 extern void the_labyrinth();
 
 #endif

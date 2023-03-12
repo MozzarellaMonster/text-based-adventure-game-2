@@ -515,7 +515,7 @@ void temple_second_room(){
         cout << "F. Approach the Sixth Archway\n";
     }
     if(seventh_archway_read){
-        cout << "G. Approach The Swamp\n";
+        cout << "G. Approach The Swamplands\n";
     }
     else{
         cout << "G. Approach the Seventh Archway\n";
@@ -631,17 +631,17 @@ void temple_second_room(){
         archway(message, "The Whistling Gorge", &sixth_archway_read, &the_whistling_gorge);
     }
     else if(choice == 'G' || choice == 'g'){
-        // The Seventh Archway - The Swamp
-        string message = "You approach the Seventh Archway. As you approach, the name of the Archway becomes clear: \"The Swamp\"\n"
+        // The Seventh Archway - The Swamplands
+        string message = "You approach the Seventh Archway. As you approach, the name of the Archway becomes clear: \"The Swamplands\"\n"
                         "The archway appears to be covered in several overlapping layers of moss and lichen.\n"
                         "You then realize that the archway is actually made of stone, realistically carved to resemble such growths.\n"
                         "You take a closer look at the exquisitely carved archway, it appears to be made of one smooth, unbroken piece of marble.\n"
                         "You finally stop admiring the handiwork of the archway and read the message beneath the archway name:\n"
-                        "\n\tThe Swamp harbors many creatures, ensure your footing and maintain your steps, lest you are never seen again.\n\n"
+                        "\n\tThe Swamplands harbor many creatures, ensure your footing and maintain your steps, lest you are never seen again.\n\n"
                         "A musty, humid breeze blows through the archway. On it, a strange smell. A smell that sends a small shiver down your spine.\n"
                         "You look to the entrance of the archway.\n";
         
-        archway(message, "The Silken Throne", &seventh_archway_read, &the_silken_throne);
+        archway(message, "The Swamplands", &seventh_archway_read, &the_swamplands);
     }
     else{
         try_again();
@@ -907,7 +907,7 @@ void the_whistling_gorge(){
     retry();
 }
 
-void the_silken_throne(){
+void the_swamplands(){
     retry();
 }
 
