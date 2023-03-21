@@ -212,7 +212,6 @@ void gc_right_tunnel(){
     }
     else
     {
-        print_line();
         cout << "You lean your head into the tunnel and listen. You can't hear any bats so you proceed further in. When you enter into the cave, you find no bats.\n"
                 "Instead, you see a hole in the ceiling that you didn't see before. You assume the bats must have escaped through there. You are free to explore this cave more thoroughly now.\n"
                 "You walk around the cave, taking a closer look at the artifacts around the altar. You also find a folded paper partially hidden underneath a larger piece of vase.\n"
@@ -228,7 +227,7 @@ void gc_pathway_text(){
 }
 
 void gc_pathway(){
-    // Evidence of Worldwalkers - abandoned basket and/or cart in clearing - journal
+    // Evidence of Worldwalkers - abandoned basket and/or cart in clearing
     print_line();
     cout << "You follow the trail for some distance before arriving in a small clearing in the forest of fungi. A portion of the dirt here is tilled, but dry Small, dead sprouts of an unknown plant line\n"
             "the ground. Nearby is a wooden cart with a missing wheel, tilted at an angle where you can easily see into the back of it. In the back of the cart are intricately-woven baskets with decayed\n"
