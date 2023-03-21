@@ -1,10 +1,11 @@
 // File containing functions for The Glowing Cave passage
 #include<iostream>
 #include<string>
-#include"The_Glowing_Cave.hpp"
-#include"Functions.hpp"
-#include"Trackers.hpp"
-#include"Items.hpp"
+#include "The_Glowing_Cave.hpp"
+#include "Journal Entries.hpp"
+#include "Functions.hpp"
+#include "Trackers.hpp"
+#include "Items.hpp"
 
 using namespace std;
 
@@ -27,7 +28,7 @@ void the_glowing_cave_text(){
             "With the mushrooms providing the only light in the otherwise dark and dank cave, you slowly take a step forward.\n"
             "You accidentally step into a deep puddle you were trying to avoid and end up making a large splash sound that echoes a bit within the confines of the cave.\n"
             "You suddenly hear an odd shuffling noise. Unsettled, you slowly look up and can barely make out large shapes spread out across the ceiling of the underground chamber.\n"
-            "Bats. Very large bats. You stand stock still, your shoe now completely soaked, but you dare not wake the flying mammal."
+            "Bats. Very large bats. You stand stock still, your shoe now completely soaked, but you dare not wake the flying mammals."
             "After the bat settles down, you quietly sigh in relief. Looking back toward the ground level of the cave, you see two tunnels branching off from the chamber you're in directly ahead of you.\n"
             "There is also another path on the opposite side of the wall, between some large mushrooms you see a well-tread path leading further into the cave.\n\n";
     
@@ -182,19 +183,44 @@ void gc_left_tunnel(){
 };
 
 void gc_right_tunnel(){
-    // Large chamber full of bats - being quiet is necessary
-    cout << "You go through the dry tunnel. The air flowing past your body as you head further in.\n"
-            "Soon, you come across a much larger cave, dim light pouring in through a crevice in the ceiling of the chamber.\n"
-            "You look up and instantly freeze, even more bats are present in this cave than the one you were just in.\n"
-            "Thankfully, these bats seem to be deep asleep, with very little movements coming from the furry horde.\n"
-            "You adjust your movements accordingly, ensuring that you don't make any loud noises. You carefully make your way across the chamber to the wall opposite the entrance.\n"
-            "On this wall are numerous cave paintings, distinct from the usual style of the Worldwalkers. From what you can make out, it depicts an intelligent humanoid species\n"
-            "encountering what appears to be the Worldwalkers coming from the cave. The paintings continue on to show that an agreement was struck to barter and trade between the two groups.\n"
-            "Some time passes before something affects the agreement, the Worldwalkers appear less in the paintings until they no longer show at all.\n"
-            "The rest of the paintings are cut off by large boulders blocking what appears to be the exit to the outside world.\n"
-            "Something caused the native humanoids to want to cut off contact with the Worldwalkers. And something caused the Worldwalkers to stop trade with the native humanoids.\n"
-            "It is then you find something poking out from ";
     print_line();
+    if(!gc_explored_right_tunnel){
+        cout << "You go through the dry tunnel. The air flowing past your body as you head further in.\n"
+                "Soon, you come across a much larger cave, dim light pouring in through a crevice in the ceiling of the chamber.\n"
+                "You look up and instantly freeze, even more bats are present in this cave than the one you were just in.\n"
+                "Thankfully, these bats seem to be deep asleep, with very little movements coming from the furry horde.\n"
+                "You adjust your movements accordingly, ensuring that you don't make any loud noises. You carefully make your way across the chamber to the wall opposite the entrance.\n"
+                "On this wall are numerous cave paintings, distinct from the usual style of the Worldwalkers. From what you can make out, it depicts an intelligent humanoid species\n"
+                "encountering what appears to be the Worldwalkers coming from the cave. The paintings continue on to show that an agreement was struck to barter and trade between the two groups.\n"
+                "Some time passes before something affects the agreement, the Worldwalkers appear less in the paintings until they no longer show at all.\n"
+                "The rest of the paintings are cut off by large boulders blocking what appears to be the exit to the outside world.\n"
+                "Something caused the native humanoids to want to cut off contact with the Worldwalkers. And something caused the Worldwalkers to stop trade with the native humanoids.\n"
+                "It is then you find an interesting assortment of rocks. The rocks are stacked in a peculiar way that suggests they served as an altar of sorts. Unfortunately, most of the\n"
+                "altar was smashed in whatever caused the avalanche that blocked off the entrance. Most of what appear to be valuable artifacts are either shattered or broken in some other way.\n"
+                "Looking around, you find a strange-looking fossil that appears to have fallen off the altar, pieces of a smashed vase laying around it. You pick it up.\n"
+                "Immediately, your ears pop and you find that your hearing has become extremely acute. In fact, you can even hear the quiet snoring of the bats hanging above you.\n"
+                "The effect is so sudden, you end up dropping the fossil. It clatters loudly on the cave floor and the effect disappears. You quickly snatch it up and your acute hearing returns.\n"
+                "It is then you notice something has changed - you can't hear the snoring of the bats anymore.\n"
+                "Hesitantly, you stiffly lean your head up towards the ceiling of the cave. What you see makes your stomach drop - you see at least a hundred beady black eyes staring down at you.\n"
+                "You pause, and for a moment, nothing happens. Then, a drop of water falls off a nearby stalactite and like a starting pistol, you take off in a mad sprint toward the tunnel.\n"
+                "Immediately, the bats take to the air in a mammalian cyclone, screeching and diving towards you. Strangely, you can hear them coming towards you so well it allows you to dodge them before\n"
+                "they can attack you. In fact, with the addition of the screeching, it feels as though you can sense the entirety of the cave around you. You move around in it, dodging the bats as if\n"
+                "it was the most well-lit gym in the world and you were a star dodgeball player.\n"
+                "You make it to the tunnel and run through, an angry bat trying to claw its way in, but can't due to its size.\n"
+                "You smile, your newfound power helping you through the darkness, and you soon burst back out into the previous area. You look up towards the ceiling, but there are no bats to be found.\n";
+        gc_explored_right_tunnel = true;
+    }
+    else
+    {
+        print_line();
+        cout << "You lean your head into the tunnel and listen. You can't hear any bats so you proceed further in. When you enter into the cave, you find no bats.\n"
+                "Instead, you see a hole in the ceiling that you didn't see before. You assume the bats must have escaped through there. You are free to explore this cave more thoroughly now.\n"
+                "You walk around the cave, taking a closer look at the artifacts around the altar. You also find a folded paper partially hidden underneath a larger piece of vase.\n"
+                "You pick it up and read it:\n\n";
+        cout << journal_entry_2;
+        cout << "You fold the paper up and pocket it. Searching the cave further, you find nothing of interest and head back through the tunnel.\n\n";
+    }
+    the_glowing_cave();
 }
 
 void gc_pathway_text(){
