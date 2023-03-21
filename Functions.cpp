@@ -696,10 +696,10 @@ void the_desert_of_the_dead(){
             the_desert_of_the_dead();
         }
         else if(dod_investigated_platform){
-            cout << "You wander around, looking at the names of tombs you pass, looking for the Crimson Leaf family name.\n"
+            cout << "You wander around, looking at the names of tombs you pass, looking for the Crimson Head family name.\n"
                     "As you move, you hear something - a shuffling noise, but every time you look you don't see anything.\n"
                     "You continue to move along between the rows of tombs. The sandstorm persists outside the building.\n"
-                    "You are about halfway through the rows of tombs, still looking for the Crimson Leaf family name when something grabs your foot.\n"
+                    "You are about halfway through the rows of tombs, still looking for the Crimson Head family name when something grabs your foot.\n"
                     "You quickly look down to see the head of a mummified corpse poking out of the sand, its soulless eyes staring straight up at you and its hand grabbing your foot.\n"
                     "It then roars an unearthly low growl that resonates throughout the chamber."
                     "There is a moment of absolute silence before a chorus of unearthly screams erupt from every tomb in the room.\n"
@@ -732,7 +732,7 @@ void the_desert_of_the_dead(){
                     "On it lies a large stone tablet, several thousand names are inscribed on it.\n"
                     "It is then you hear the voice in your head again.\n"
                     "\"Here the dead rest, returned to their families and undisturbed by the common rabble of life.\""
-                    "\"Retrieve the Ruby Skull held by the head of the Crimson Leaf family, and you will be permitted to return.\""
+                    "\"Retrieve the Ruby Skull held by the head of the Crimson Head family, and you will be permitted to return.\""
                     "\"If you do not, prepare to join the dead, though you will be... unwelcome.\""
                     "As if on cue, you hear a shuffling noise somewhere ahead of you.\n"
                     "Your head snaps up to look in the direction of the noise, but you see nothing.\n"
@@ -744,12 +744,12 @@ void the_desert_of_the_dead(){
             the_desert_of_the_dead();
         }
         else{
-            cout << "You go to the raised platform in the middle of the room and look at the large stone tablet again, trying to locate the Crimson Leaf family name.\n"
+            cout << "You go to the raised platform in the middle of the room and look at the large stone tablet again, trying to locate the Crimson Head family name.\n"
                     "While you're looking through the names, something else catches your eye: a piece of paper folded and tucked in a crack on the side of the stone tablet.\n"
                     "Curious, you take the piece of paper out of the crack and unfold it. It reads:\n\n";
             cout << journal_entry_4;
             cout << "You fold up the piece of paper and stuff it in your pocket.\n"
-                    "Your attention returns to the large stone tablet and you once again skim the text for the Crimson Leaf family name.\n"
+                    "Your attention returns to the large stone tablet and you once again skim the text for the Crimson Head family name.\n"
                     "Finally, after several long moments, you find it near the bottom right of the stone tablet. Assuming the layout of the sarcophaguses are the same as presented on the stone tablet,\n"
                     "you jump off from the raised platform and run towards the bottom right end of the tombs.\n"
                     "It is only when you're nearly halfway there that you start to hear groaning and see motion out of the corner of your eye.\n"
@@ -770,7 +770,6 @@ void the_desert_of_the_dead(){
             inventory.push_back(third_note);
             inventory.push_back(the_desert_of_the_dead_key);
             temple_second_room();
-            // return to room to insert obelisk key
         }
     }
     else if(choice == 'C' || choice == 'c'){
