@@ -282,7 +282,7 @@ void temple_entrance(){
                 "It reads:\n";
         cout << journal_entry_1;
         cout << "You fold up the piece of paper and stash it on your person.\n";
-        inventory.push_back(first_note);
+        inventory.push_back(first_journal_entry);
         cout << "You head back to the temple entrance and step inside.\n";
         temple_first_room_text();
     }
@@ -439,7 +439,7 @@ void temple_first_room(){
                     "Other than the fact that the symbols seemed to be etched out of the wall itself, there doesn't seem to be anything else interesting about them.\n"
                     "You also examine the pedestal in the center of the room and notice that there is a little piece of paper sticking out from a small crack between the pedestal and the floor.\n"
                     "You gently pull it out and read what it says:\n\n";
-            cout << hint;
+            cout << hint_1;
             cout << "\nYou flip the paper over and examine the back, but there is nothing else to read.\n"
                     "You gently fold the piece of paper up and look back to the room.\n";
             first_room_explored = true;
@@ -730,11 +730,10 @@ void the_desert_of_the_dead(){
         if(!dod_investigated_platform){
             cout << "You head up to the raised platform in the center of the room.\n"
                     "On it lies a large stone tablet, several thousand names are inscribed on it.\n"
-                    "It is then you hear the voice in your head again.\n"
-                    "\"Here the dead rest, returned to their families and undisturbed by the common rabble of life.\""
-                    "\"Retrieve the Ruby Skull held by the head of the Crimson Head family, and you will be permitted to return.\""
-                    "\"If you do not, prepare to join the dead, though you will be... unwelcome.\""
-                    "As if on cue, you hear a shuffling noise somewhere ahead of you.\n"
+                    "Next to it, lays a note with a stone weighing it down.\n"
+                    "You remove the stone and pick up the note. It reads:\n";
+            cout << hint_2;
+            cout << "As if on cue, you hear a shuffling noise somewhere ahead of you.\n"
                     "Your head snaps up to look in the direction of the noise, but you see nothing.\n"
                     "It is then you notice the world growing darker. You quickly glance toward the ceiling windows.\n"
                     "A sandstorm has started outside, the wind howling and blocking out the sun. Now, only the feeble light of the torches remains.\n"
@@ -767,7 +766,7 @@ void the_desert_of_the_dead(){
                     "There's a sickening tearing sound as the mummy's arms rip at the elbows and you go flying through the Gate.\n"
                     "You land hard on your back in the temple room with the Ruby Skull still clutched hard against your chest.\n"
                     "You remain laying on the floor, taking a moment to catch your breath before you hesitantly pick yourself back up.\n";
-            inventory.push_back(third_note);
+            inventory.push_back(fourth_journal_entry);
             inventory.push_back(the_desert_of_the_dead_key);
             temple_second_room();
         }
