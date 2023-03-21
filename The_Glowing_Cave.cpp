@@ -75,7 +75,9 @@ void the_glowing_cave(){
     else if(choice == 'B' || choice == 'b'){
         print_line();
         if(gc_explored_right_tunnel){
-            // To be filled in...
+            cout << "You approach the right tunnel, lean your head in and listen. You can't hear any bats so you proceed further in.\n";
+
+            gc_right_tunnel();
         }
         else{
             cout << "You decide to explore the right tunnel.\n"
@@ -212,7 +214,7 @@ void gc_right_tunnel(){
     }
     else
     {
-        cout << "You lean your head into the tunnel and listen. You can't hear any bats so you proceed further in. When you enter into the cave, you find no bats.\n"
+        cout << "When you enter into the cave, you find no bats.\n"
                 "Instead, you see a hole in the ceiling that you didn't see before. You assume the bats must have escaped through there. You are free to explore this cave more thoroughly now.\n"
                 "You walk around the cave, taking a closer look at the artifacts around the altar. You also find a folded paper partially hidden underneath a larger piece of vase.\n"
                 "You pick it up and read it:\n\n";
