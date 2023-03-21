@@ -41,6 +41,21 @@ string journal_entry_6 = "";
 
 string journal_entry_7 = "";
 
-string hint = "\n\tThe riddle is different for everyone. Be aware that there will be many worlds connected to this temple.\n"
-              "\tEach one with their own unique perils. Stay swift on your feet and keep a clear head.\n"
-              "\tMake each choice you come across carefully, the temple is testing you. If you fail even one, the price will be your life.\n";
+string hint_1 = "\n\tThe riddle is different for everyone. Be aware that there will be many worlds connected to this temple.\n"
+                "\tEach one with their own unique perils. Stay swift on your feet and keep a clear head.\n"
+                "\tMake each choice you come across carefully, the temple is testing you.\n"
+                "\tIf you fail even one, the price will be your life.\n";
+
+string hint_2 = "\n\tThis is the burial ground for an ancient race that ruled over this world with superior technology.\n"
+                "\tAccording to the records I've managed to find about the history of the Worldwalkers, this world was one of the first ones they found.\n"
+                "\tIn fact, most of what the Worldwalkers knew about traversing the different worlds was learned from the remnants of this civlization.\n"
+                "\tIt also allowed me to figure out what happened to this extinct race. At least, just what the Worldwalkers themselves knew.\n"
+                "\tThe desert you see around you? It wasn't there before. A periodic climate change occurs every few millennia in this world.\n"
+                "\tEven with their vastly superior technology, they could not escape it. The Gate technology was their last option.\n"
+                "\tThey invested more time in achieving 'perfect' Gate technology rather than 'stoop' to making physical space travel.\n"
+                "\tAnd they could not perfect it in time. In the end, it was their own stubborn pride that ultimately led to their extinction.\n"
+                "\tHowever, it was this perfectionism that gave valuable insight to the Worldwalkers that allowed them to fine-tune their own Gates.\n"
+                "\tI still don't know the true origin of the Gates. All I know is that the Worldwalkers were not the progenitors of the technology.\n"
+                "\tNor were they the first, or the last, to use them.\n\n"
+                "\tYou will need to find the Ruby Skull held by the head of the Crimson Head family, and the temple will permit you to return.\n"
+                "\tBeware traveler, this people's stubborn pride persists even in death.\n";

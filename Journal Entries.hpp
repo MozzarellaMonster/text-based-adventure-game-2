@@ -14,6 +14,7 @@ extern string journal_entry_5;
 extern string journal_entry_6;
 extern string journal_entry_7;
 
-extern string hint;
+extern string hint_1;
+extern string hint_2;
 
 #endif
