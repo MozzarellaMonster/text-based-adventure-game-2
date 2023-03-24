@@ -102,7 +102,7 @@ void the_glowing_cave(){
                     "despite the fact that this whole thing is entirely new to you. A small smile plays across your lips as you confidently walk down the path that so many others have tread upon before you.\n"
                     "Following in the footprints of the Worldwalkers.\n";
             
-            gc_pathway();
+            gc_pathway_text();
         }
     }
     else{
@@ -226,12 +226,7 @@ void gc_right_tunnel(){
 
 void gc_pathway_text(){
     print_line();
-}
-
-void gc_pathway(){
-    // Evidence of Worldwalkers - abandoned basket and/or cart in clearing
-    print_line();
-    cout << "You follow the trail for some distance before arriving in a small clearing in the forest of fungi. A portion of the dirt here is tilled, but dry Small, dead sprouts of an unknown plant line\n"
+    cout << "You follow the trail for some distance before arriving in a small clearing in the forest of fungi. A portion of the dirt here is tilled, but small, dead sprouts of an unknown plant line\n"
             "the ground. Nearby is a wooden cart with a missing wheel, tilted at an angle where you can easily see into the back of it. In the back of the cart are intricately-woven baskets with decayed\n"
             "remnants of the plant inside them. You approach the cart and look inside the baskets. It looks as though this cave served as a small farm of sorts for whatever plant the Worldwalkers had grown\n"
             "here. Lining the walls of the cart are several luxuriously designed blankets made of a thick, shiny material. Gold trim accents the blankets, with an embossed geometric pattern making up the\n"
@@ -241,5 +236,12 @@ void gc_pathway(){
             "Whoever had left this cart here had been meaning to return for it, you decide. Given the nature of the objects and the state of the cart, it appears that whoever owned it was intent on returning, but never did.\n"
             "Why? It is then you notice what appears to be a parchment or scroll of some king partially hidden between two of the baskets. You pull it out and open it. At first, the unusual text is illegible, but then the effect\n"
             "of the knife causes the meaning of it to appear. It's an inventory order of some kind. Evidently, this cart belonged to a merchant and this farm was used to produce a good used for trade.\n";
+    gc_pathway();
+}
+
+void gc_pathway(){
+    // Evidence of Worldwalkers - abandoned basket and/or cart in clearing
+    print_line();
+    cout << "";
     // To be continued...
 }
