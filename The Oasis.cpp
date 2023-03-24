@@ -8,3 +8,7 @@
 
 using namespace std;
 
+void the_oasis_text()
+{
+    
+};

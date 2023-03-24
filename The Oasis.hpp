@@ -6,6 +6,6 @@
 
 using namespace std;
 
-
+extern void the_oasis_text();
 
 #endif
