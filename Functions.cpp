@@ -9,6 +9,7 @@
 #include "Journal Entries.hpp"
 #include "Heart_of_the_Colony.hpp"
 #include "The_Glowing_Cave.hpp"
+#include "The Whistling Gorge.hpp"
 
 using namespace std;
 
