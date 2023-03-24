@@ -10,6 +10,7 @@
 #include "Heart_of_the_Colony.hpp"
 #include "The_Glowing_Cave.hpp"
 #include "The Whistling Gorge.hpp"
+#include "The Oasis.hpp"
 
 using namespace std;
 
@@ -500,13 +501,13 @@ void temple_second_room(){
         cout << "C. Approach the Third Archway\n";
     }
     if(fourth_archway_read){
-        cout << "D. Approach The End\n";
+        cout << "D. Approach The Labyrinth\n";
     }
     else{
         cout << "D. Approach the Fourth Archway\n";
     }
     if(fifth_archway_read){
-        cout << "E. Approach The Garden\n";
+        cout << "E. Approach The Oasis\n";
     }
     else{
         cout << "E. Approach the Fifth Archway\n";
@@ -535,7 +536,7 @@ void temple_second_room(){
                          "A cold chill runs down your spine as your thumb drags over the closed eye of the stone face.\n"
                          "You look to the entrance.\n";
 
-        archway(message, "The Desert of the Dead", &first_archway_read, &the_desert_of_the_dead);
+        archway(message, "The Desert of the Dead", &first_archway_read, &the_desert_of_the_dead_text);
     }
     else if(choice == 'B' || choice == 'b'){
         // The Second Archway - the Heart of the Colony
@@ -548,7 +549,7 @@ void temple_second_room(){
                         "You swiftly turn around, but there is nothing there.\n"
                         "You look back to the entrance.\n";
 
-        archway(message, "the Heart of the Colony", &second_archway_read, &the_heart_of_the_colony);
+        archway(message, "the Heart of the Colony", &second_archway_read, &the_heart_of_the_colony_text);
     }
     else if(choice == 'C' || choice == 'c'){
         // The Third Archway - The Glowing Cave
@@ -559,7 +560,7 @@ void temple_second_room(){
                         "You run your hand over the archway. Unlike the others, this archway is not carved and appears roughly hewn from the stone.\n"
                         "You pull your hand away, taking notice of how damp it is. A faint glow appears to be emanating from the entrance.\n";
 
-        archway(message, "The Glowing Cave", &third_archway_read, &the_glowing_cave);
+        archway(message, "The Glowing Cave", &third_archway_read, &the_glowing_cave_text);
     }
     else if(choice == 'D' || choice == 'd'){
         // The Fourth Archway - The Labyrinth - the final challenge, will not be unlocked until all the other worlds have been completed.
@@ -590,7 +591,7 @@ void temple_second_room(){
                     cout << "You have traveled the six paths and have collected the keys from each one.\n"
                             "With the stone guarding the entrance gone, you can now enter The Labyrinth.\n"
                             "You take a step forward.\n";
-                    the_labyrinth();
+                    the_labyrinth_text();
                 }
                 else{
                     cout << "You cannot go through the archway because you do not have all the keys for the stone obelisk.\n"
@@ -609,18 +610,18 @@ void temple_second_room(){
         }
     }
     else if(choice == 'E' || choice == 'e'){
-        // The Fifth Archway - The Garden
-        string message = "You approach the Fifth Archway. As you approach, the name of the Archway becomes clear: \"The Garden\"\n"
+        // The Fifth Archway - The Oasis
+        string message = "You approach the Fifth Archway. As you approach, the name of the Archway becomes clear: \"The Oasis\"\n"
                         "This stone archway is covered in beautiful carvings of delicate-looking flowers, exotic plants, and a waterfall.\n"
                         "The message beneath the name of the archway reads:\n"
-                        "\n\tDo not be deceived by the beauty of the Garden, hidden dangers prey on the unwary.\n\n"
+                        "\n\tDo not be deceived by the beauty of The Oasis, hidden dangers prey on the unwary.\n\n"
                         "You gently brush the intricate carvings on the archway. A sense of calm rushes through your body, but a lingering fear remains.\n"
-                        "You try to relax and close your eyes, to fade into the imagined natural sounds of the Garden. Your body slowly releases tension.\n"
+                        "You try to relax and close your eyes, to fade into the imagined natural sounds of The Oasis. Your body slowly releases tension.\n"
                         "Then you hear a loud groan of wood snapping above you.\n"
                         "Immediately, your eyes shoot open and you look up, but you see nothing but the ceiling of the temple room.\n"
                         "After a short moment, you look back to the entrance.\n";
         
-        archway(message, "The Garden", &fifth_archway_read, &the_garden);
+        archway(message, "The Oasis", &fifth_archway_read, &the_oasis_text);
     }
     else if(choice == 'F' || choice == 'f'){
         // The Sixth Archway - The Whistling Gorge
@@ -632,7 +633,7 @@ void temple_second_room(){
                         "A long, mournful whistling wail cuts through the still air of the temple. A cold dread fills your stomach as you take an involutary step backward.\n"
                         "After a long moment, you walk back up to the entrance.\n";
 
-        archway(message, "The Whistling Gorge", &sixth_archway_read, &the_whistling_gorge);
+        archway(message, "The Whistling Gorge", &sixth_archway_read, &the_whistling_gorge_text);
     }
     else if(choice == 'G' || choice == 'g'){
         // The Seventh Archway - The Swamplands
@@ -645,7 +646,7 @@ void temple_second_room(){
                         "A musty, humid breeze blows through the archway. On it, a strange smell. A smell that sends a small shiver down your spine.\n"
                         "You look to the entrance of the archway.\n";
         
-        archway(message, "The Swamplands", &seventh_archway_read, &the_swamplands);
+        archway(message, "The Swamplands", &seventh_archway_read, &the_swamplands_text);
     }
     else{
         try_again();
@@ -899,20 +900,4 @@ void the_heart_of_the_colony(){
         try_again();
         the_heart_of_the_colony();
     }
-}
-
-void the_garden(){
-    retry();
-}
-
-void the_whistling_gorge(){
-    retry();
-}
-
-void the_swamplands(){
-    retry();
-}
-
-void the_labyrinth(){
-    retry();
 }
