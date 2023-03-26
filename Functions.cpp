@@ -737,6 +737,7 @@ void the_desert_of_the_dead(){
             cout << hint_2;
             cout << "As if on cue, you hear a shuffling noise somewhere ahead of you.\n"
                     "Your head snaps up to look in the direction of the noise, but you see nothing.\n"
+                    "You fold up the piece of paper and stuff it in your pockets.\n"
                     "It is then you notice the world growing darker. You quickly glance toward the ceiling windows.\n"
                     "A sandstorm has started outside, the wind howling and blocking out the sun. Now, only the feeble light of the torches remains.\n"
                     "You head back to the entrance of the building.\n";
