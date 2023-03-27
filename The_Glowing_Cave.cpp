@@ -12,6 +12,8 @@ using namespace std;
 bool gc_explored_left_tunnel = false;
 bool gc_explored_right_tunnel = false;
 bool gc_explored_path = false;
+bool gc_pathway_key = false;
+bool gc_found_journal = false;
 
 bool attention_seeker = false;
 
@@ -175,7 +177,7 @@ void gc_left_tunnel(){
         }
     }
     else if(choice == 'c' || choice == 'C'){
-        cout << "You turn around and head back through the tunnel.\n";
+        cout << "You turn around and head back through the tunnel.\n\n";
         the_glowing_cave();
     }
     else{
@@ -209,7 +211,7 @@ void gc_right_tunnel(){
                 "they can attack you. In fact, with the addition of the screeching, it feels as though you can sense the entirety of the cave around you. You move around in it, dodging the bats as if\n"
                 "it was the most well-lit gym in the world and you were a star dodgeball player.\n"
                 "You make it to the tunnel and run through, an angry bat trying to claw its way in, but can't due to its size.\n"
-                "You smile, your newfound power helping you through the darkness, and you soon burst back out into the previous area. You look up towards the ceiling, but there are no bats to be found.\n";
+                "You smile, your newfound power helping you through the darkness, and you soon burst back out into the previous area. You look up towards the ceiling, but there are no bats to be found.\n\n";
         gc_explored_right_tunnel = true;
     }
     else
@@ -226,22 +228,80 @@ void gc_right_tunnel(){
 
 void gc_pathway_text(){
     print_line();
-    cout << "You follow the trail for some distance before arriving in a small clearing in the forest of fungi. A portion of the dirt here is tilled, but small, dead sprouts of an unknown plant line\n"
-            "the ground. Nearby is a wooden cart with a missing wheel, tilted at an angle where you can easily see into the back of it. In the back of the cart are intricately-woven baskets with decayed\n"
-            "remnants of the plant inside them. You approach the cart and look inside the baskets. It looks as though this cave served as a small farm of sorts for whatever plant the Worldwalkers had grown\n"
-            "here. Lining the walls of the cart are several luxuriously designed blankets made of a thick, shiny material. Gold trim accents the blankets, with an embossed geometric pattern making up the\n"
-            "center of the blanket. You feel the material, and are surprised to feel it react to your touch. A feeling of warmth immediately embraces your hand, providing a small comfort despite the damp nature\n"
-            "of the cave. The feel of the blanket is so comforting, you wish you could take it with you. Unfortunately, you don't exactly have anywhere to store it, so you leave it be. You take a step back and examine\n"
-            "the cart as a whole. From what you can make of the damage, it appears the wheel had broken away from the axle and been left alongside the cart. You look back over the whole scene before you.\n"
+    cout << "You follow the trail for some distance before arriving in a small clearing in the forest of fungi. A portion of the dirt here is tilled and small, dead sprouts of an unknown plant line\n"
+            "the ground. Nearby, a wooden cart with a missing wheel lays tilted at an angle. In the back of the cart are intricately-woven baskets with decayed remnants of the plant inside them.\n"
+            "You approach the cart and look inside the baskets. It looks as though this cave served as a small farm of sorts for whatever plant the Worldwalkers had grown here.\n"
+            "Lining the walls of the cart are several luxuriously designed blankets made of a thick, shiny material. Gold trim accents the blankets, with an embossed geometric pattern making up the center."
+            "You feel the material, and are surprised to feel it react to your touch. A feeling of warmth immediately embraces your hand, providing a small comfort despite the damp nature of the cave.\n"
+            "The feel of the blanket is so comforting, you wish you could take it with you. Unfortunately, you don't have anywhere to store it, so you leave it be. You take a step back and examine\n"
+            "the cart as a whole. From what you can make of the damage, it appears the wheel had broken off of the axle and been left alongside the cart. You look back over scene before you.\n"
             "Whoever had left this cart here had been meaning to return for it, you decide. Given the nature of the objects and the state of the cart, it appears that whoever owned it was intent on returning, but never did.\n"
-            "Why? It is then you notice what appears to be a parchment or scroll of some king partially hidden between two of the baskets. You pull it out and open it. At first, the unusual text is illegible, but then the effect\n"
-            "of the knife causes the meaning of it to appear. It's an inventory order of some kind. Evidently, this cart belonged to a merchant and this farm was used to produce a good used for trade.\n";
+            "Why? It is then you notice what appears to be a parchment or scroll of some kind partially hidden between two of the baskets. You pull it out and open it. At first, the unusual text is illegible, but then it translates\n"
+            "before your very eyes. It's an inventory order of some kind. Evidently, this cart belonged to a merchant and this farm was used to produce a good used for trade.\n"
+            "You look back to the blanket on the wall of the cart. Perhaps this farm was used to grow some material to make blankets? You put the scroll back in the cart and move to the middle of the clearing.\n\n";
     gc_pathway();
 }
 
 void gc_pathway(){
     // Evidence of Worldwalkers - abandoned basket and/or cart in clearing
+    char choice;
     print_line();
-    cout << "";
-    // To be continued...
+    cout << "What would you like to do?\n";
+    cout << "A. Examine the cart further\n";
+    cout << "B. Examine the tilled earth\n";
+    cout << "C. Explore the clearing\n";
+    cout << "D. Return to the cave\n";
+    print_line();
+    
+    cin >> choice;
+    if(choice == 'A' || choice == 'a')
+    {
+        if(gc_pathway_key)
+        {
+            cout << "You briefly look in the cart, but find nothing else of interest, so you return to the center of the clearing.\n\n";
+            gc_pathway();
+        }
+        else{
+            cout << "You go back to the cart and examine it closer. After looking near where you found the scroll earlier, you find a small lockbox. Surprisingly, it doesn't seem to be locked.\n"
+                    "You open it to find a strange looking device vaguely resembling a metallic USB drive. You pocket it and return to searching the cart. Finding nothing else, you return to the middle of the clearing.\n\n";
+            gc_pathway_key = true;
+            gc_pathway();
+        }
+    }
+    else if(choice == 'B' || choice == 'b')
+    {
+        cout << "You go back to the small tilled section of earth and start scanning the area. Other than the blackened dead sprouts in some areas of the tilled earth, there isn't anything of note in the area.\n"
+                "Giving the area a brief once-over again, you return to the center of the clearing.\n\n";
+        gc_pathway();
+    }
+    else if(choice == 'C' || choice == 'c')
+    {
+        if(gc_found_journal)
+        {
+            cout << "You decide to explore the clearing more. You walk along the perimeter of the clearing until you happen upon a large mushroom with a small mound of out-of-place earth beneath it.\n"
+                    "Stooping low, you dig your hands into the densely-packed mound and slowly break it down, making slow progress so as to not overlook any object that may reside within.\n"
+                    "After making your way halfway through the mound, your hands clasp around a solid weight. Pulling it out, you find you're holding a small wooden box of unknown origin.\n"
+                    "The wood had a distinctly dark color to it, though you are unable to tell if it is the natural color of the wood or it is discoloration caused by the soil.\n"
+                    "You gently open the box, the hinges squeaking loudly. Inside, you find a neatly folded piece of paper. You take it out of the box and unfold it. It reads:\n\n";
+            cout << journal_entry_2;
+            cout << "You carefully fold the paper back up and pocket it as you walk back to the center of the clearing.\n\n";
+            gc_found_journal = true;
+            gc_pathway();
+        }
+        else
+        {
+            cout << "You quickly scan the area, looking for anything you may have overlooked, but find nothing else of interest. You return to the center of the clearing.\n\n";
+            gc_pathway();
+        }
+    }
+    else if(choice == 'D' || choice == 'd')
+    {
+        cout << "You turn around and head back through the forest of glowing fungi.\n\n";
+        the_glowing_cave();
+    }
+    else
+    {
+        try_again();
+        gc_pathway();
+    }
 }
