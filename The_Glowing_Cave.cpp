@@ -95,7 +95,17 @@ void the_glowing_cave(){
     else if(choice == 'C' || choice == 'c'){
         print_line();
         if(gc_explored_path){
-            // To be filled in...
+            if(gc_pathway_key && gc_found_journal)
+            {
+                cout << "You look down the well-tread path, now with your added footsteps. You smile a bit at the idea of having added your footsteps to those of the Worldwalkers, but ultimately decide against\n"
+                        "going down the path again.\n\n";
+                the_glowing_cave();
+            }
+            else
+            {
+                cout << "You once again make your way down the well-tread path through the forest of fungi.\n\n";
+                gc_pathway();
+            }
         }
         else{
             cout << "You decide to explore the well-tread path on the opposite side of the cavern.\n"
@@ -103,7 +113,6 @@ void the_glowing_cave(){
                     "You approach the well-tread path stretching between the fluorescent fungi, smaller mushrooms growing on either side of the pathway, giving the whole thing a comforting feeling of familiarity,\n"
                     "despite the fact that this whole thing is entirely new to you. A small smile plays across your lips as you confidently walk down the path that so many others have tread upon before you.\n"
                     "Following in the footprints of the Worldwalkers.\n";
-            
             gc_pathway_text();
         }
     }
@@ -246,6 +255,7 @@ void gc_pathway(){
     // Evidence of Worldwalkers - abandoned basket and/or cart in clearing
     char choice;
     print_line();
+    cout << "Standing in the center of the small clearing in the middle of the fungi forest, you look around.\n";
     cout << "What would you like to do?\n";
     cout << "A. Examine the cart further\n";
     cout << "B. Examine the tilled earth\n";
