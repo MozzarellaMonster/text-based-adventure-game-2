@@ -12,6 +12,88 @@ bool hotc_explored_left_tunnel = false;
 bool hotc_explored_middle_tunnel = false;
 bool hotc_explored_right_tunnel = false;
 
+// Massive changes to this file to come
+
+void the_heart_of_the_colony_text()
+{
+    print_line();
+    cout << "You brace yourself, but fall to your hands and knees anyway as you go through the entrance.\n"
+            "Immediately, you notice something odd about the atmosphere here. The air is thick, yet strangely dry.\n"
+            "The floor beneath your hands is composed of chalky, moist soil. You look up to see that you are in a large, dimly lit tunnel.\n"
+            "Imperfectly circular, the tunnel runs for some distance ahead and behind you. Again, the portal from the temple has disappeared.\n"
+            "Suddenly, you hear a distant familiar chittering that is gradually getting closer. A bright yellow light accompanies the source of the sound.\n"
+            "You look around for a hiding spot, but find none. You can either run away from the chittering sound,\n"
+            "or you can wait to see what is approaching you.\n\n";
+
+    the_heart_of_the_colony();
+}
+
+void the_heart_of_the_colony()
+{
+    char choice;
+    print_line();
+    cout << "What would you like to do?\n";
+    cout << "A. Run away from the sound\n";
+    cout << "B. Wait\n";
+    cout << "C. Look around some more\n";
+    print_line();
+    cin >> choice;
+
+    if(choice == 'A' || choice == 'a'){
+        print_line();
+        cout << "You turn tail and run away from the approaching chittering sounds.\n"
+                "Almost immediately, the chittering sounds increase in volume and urgency.\n"
+                "You hear rapidly approaching scurrying sounds and quickly look behind you.\n"
+                "You are greeted with the sight of multiple giant ants the size of horses chasing you,\n"
+                "their enormous mandibles snapping and compound eyes seemingly bright with anger and bloodlust.\n"
+                "They quickly gain ground, their huge jaws snapping shut just inches behind your ankles.\n"
+                "You attempt to pick up speed yourself, but instead one of the ants catches your left foot in its jaws.\n"
+                "Pain shoots up your leg as its mandibles pierce through the walls of your shoe and into your ankle.\n"
+                "You trip and fall face-first into the dirt floor of the tunnel. Dazed, you barely have to time to register\n"
+                "you're on the ground when you start to get pulled away. You panic and claw at the dirt, trying to pull yourself\n"
+                "free of the giant ant's grip. It is no use however, as the huge insect easily drags you back towards it.\n"
+                "Finally, after dragging you a few meters away from where you were, it releases its grip and you roll over to see\n"
+                "that you're surrounded on all sides by the giant arthropods. For a moment, you simply look at them, and they at you,\n"
+                "before the one that was dragging you swiftly closes the distance and locks its jaws around your throat. You gasp,\n"
+                "trying to pull against the iron grip of the huge ant's jaws. It is no use however, as you stare into the dead compound eyes,\n"
+                "it slowly clamps its jaws harder and harder around your throat. As your eyes roll up and you gasp for air, you feel\n"
+                "blood pouring from your punctured neck and soon a sickening crunch is heard as your neck is broken.\n"
+                "The last thing you hear before your limp body falls to the ground is triumphant chittering.\n"
+                "Soon the chittering fades away, and you are left staring at the tunnel floor, awaiting death.\n"
+                "It cannot arrive soon enough.\n";
+                
+        cout << "\n\nEnding 7: Crunch";
+        print_line();
+        retry(&the_heart_of_the_colony_text);
+    }
+    else if(choice == 'B' || choice == 'b'){
+        print_line();
+        cout << "You wait, facing the oncoming chittering noises. You nervously grip the loose fabric of your pants, anxiety slowly increasing\n"
+                "as your fate waits to be written. Soon, you see the source of the noise and the light: several large ants, one of them carrying an\n"
+                "unusual organic-looking lantern on its back. The ants stop and look at you, seemingly bemused at your sudden appearance, but then quickly move in,\n"
+                "surrounding you on all sides while one behind you nips at your heels with its huge jaws, urging you forward. Hesitantly, you move forward, keeping pace with\n"
+                "the huge insects.\n";
+
+        the_queens_chambers();
+    }
+    else if(choice == 'C' || choice == 'c'){
+        print_line();
+        cout << "You quickly look around the tunnel again, looking for anything you might have missed before.\n"
+                "It is then you notice an impression in one side of the tunnel, something you missed before due to the dim lighting.\n"
+                "It looks as though someone tried digging out another tunnel, but stopped for some reason. It looks like you could hide in there, if you positioned yourself a certain way.\n"
+                "The chittering grows louder, it's now or never. You quickly jump into the impression and flatten yourself against the wall as much as possible.\n"
+                "You remain still as several huge ants pass by you, the chittering remaining uninterrupted. However, one stops where you dropped from the portal, causing the others to take notice.\n"
+                "Its antennae dance around the tunnel floor where you were on your knees, it chitters at the others and soon all of them are looking for you.\n"
+                "You could either run away, surrender, or try to fight. After all, you have a momentary advantage over them with a surprise attack.\n";
+
+        hotc_tunnel_options();
+    }
+    else{
+        try_again();
+        the_heart_of_the_colony();
+    }
+}
+
 void the_queens_chambers(){
     cout << "Eventually, the tunnel opens up into a large chamber where you spy a distinct silhouette facing away from you: the Ant Queen.\n"
             "Not completely unexpected, you think to yourself.\n"

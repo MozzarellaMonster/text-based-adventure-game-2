@@ -6,6 +6,8 @@
 
 using namespace std;
 
+extern void the_heart_of_the_colony_text();
+extern void the_heart_of_the_colony();
 extern void hotc_explore_nest_text();
 extern void hotc_explore_nest();
 extern void hotc_tunnel_options();
