@@ -12,6 +12,7 @@
 #include "The_Glowing_Cave.hpp"
 #include "The Whistling Gorge.hpp"
 #include "The Oasis.hpp"
+#include "The Swamplands.hpp"
 
 using namespace std;
 
@@ -125,7 +126,6 @@ void archway(string message, string name, bool *archway_read, void (*func)()){
 
 void deposit(){
     string key;
-    print_line();
     for(int i = 0; i < inventory.size(); i++){
         for(int j = 0; j < sizeof(keys); j++){
             if(inventory[i] == keys[j]){
@@ -451,7 +451,7 @@ void temple_first_room(){
     }
     else if(choice == 'C' || choice == 'c'){
         print_line();
-        cout << "You look back to the entryway. The huge stone slab remains, sealing you in the temple.\n";
+        cout << "You look back to the entryway. The huge stone slab remains, sealing you in the temple.\n"
                 "You sigh and turn back to the room.\n";
         temple_first_room();
     }
@@ -471,7 +471,7 @@ void temple_second_room_text(){
             "There are more rooms, but they are too far away to clearly see the carvings on them.\n"
             "Instead, you focus on the center of the room where an imposing stone obelisk stands.\n"
             "You approach the obelisk and are able to make out the few lines of text on it.\n\n"
-            "\tBring forth six tokens from the six paths. Present them to face the final test.\n\n"
+            "\tBring forth six keys from the six paths. Present them to face the final test.\n\n"
             "You look to the seven archways, all but one are open. The largest one in the center of all the archways is closed off by a large stone.\n"
             "You look back to the obelisk where six recesses are arranged in a hexagonal pattern.\n"
             "You scan the different open archways again.\n";
@@ -647,7 +647,7 @@ void temple_second_room(){
                         "A musty, humid breeze blows through the archway. On it, a strange smell. A smell that sends a small shiver down your spine.\n"
                         "You look to the entrance of the archway.\n";
         
-        //archway(message, "The Swamplands", &seventh_archway_read, &the_swamplands_text); - Will add "the_swamplands_text()" later
+        archway(message, "The Swamplands", &seventh_archway_read, &the_swamplands_text);
     }
     else{
         try_again();
