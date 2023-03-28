@@ -122,7 +122,8 @@ void archway(string message, string name, bool *archway_read, void (*func)()){
         }
 }
 
-void deposit(string key){
+void deposit(){
+    string key;
     print_line();
     for(int i = 0; i < inventory.size(); i++){
         for(int j = 0; j < sizeof(keys); j++){
@@ -262,7 +263,7 @@ void temple_entrance(){
     cout << "After making your choice, you turn back to the now-open temple entrance.\n"
             "Something catches your eye however, and you turn to look at the pedestal holding the bowl of fire.\n"
             "Somehow, the symbols now make sense to you.\n"
-            "The engraved text reads:\n\n\tAn offering needed to gain insight and entrance\n\n";
+            "The engraved text reads:\n\n\tAn offering needed to gain insight and entrance.\n\n";
     print_line();
     cout << "Will you go into the temple? Y/N: ";
     cin >> choice;
@@ -471,7 +472,7 @@ void temple_second_room_text(){
             "You approach the obelisk and are able to make out the few lines of text on it.\n\n"
             "\tBring forth six tokens from the six paths. Present them to face the final test.\n\n"
             "You look to the seven archways, all but one are open. The largest one in the center of all the archways is closed off by a large stone.\n"
-            "You look back to the obelisk where six recesses are arranged in a hexagonal pattern.\n";
+            "You look back to the obelisk where six recesses are arranged in a hexagonal pattern.\n"
             "You scan the different open archways again.\n";
     temple_second_room();
 }
@@ -590,7 +591,7 @@ void temple_second_room(){
                     cout << "You have traveled the six paths and have collected the keys from each one.\n"
                             "With the stone guarding the entrance gone, you can now enter The Labyrinth.\n"
                             "You take a step forward.\n";
-                    the_labyrinth_text();
+                    //the_labyrinth_text(); - Will add later
                 }
                 else{
                     cout << "You cannot go through the archway because you do not have all the keys for the stone obelisk.\n"
@@ -645,7 +646,7 @@ void temple_second_room(){
                         "A musty, humid breeze blows through the archway. On it, a strange smell. A smell that sends a small shiver down your spine.\n"
                         "You look to the entrance of the archway.\n";
         
-        archway(message, "The Swamplands", &seventh_archway_read, &the_swamplands_text);
+        //archway(message, "The Swamplands", &seventh_archway_read, &the_swamplands_text); - Will add "the_swamplands_text()" later
     }
     else{
         try_again();
@@ -796,7 +797,7 @@ void the_desert_of_the_dead(){
             the_desert_of_the_dead();
         }
         else{
-            cout << "Despite the brutal heat and the extreme isolation, you head out into the desert.\n";
+            cout << "Despite the brutal heat and the extreme isolation, you head out into the desert.\n"
                     "Within minutes, you are severely sweating and overwhelmingly hot.\n"
                     "You turn to head back to the building, but don't see it anymore.\n"
                     "Turning wildly, you scan the horizon, but the building is nowhere in sight.\n"
