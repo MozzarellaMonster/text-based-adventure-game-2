@@ -7,6 +7,8 @@
 
 using namespace std;
 
+extern vector<string> inventory;
+
 extern void print_line();
 extern void try_again();
 extern void reset();
