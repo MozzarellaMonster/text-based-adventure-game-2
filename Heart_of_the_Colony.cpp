@@ -45,14 +45,14 @@ void the_heart_of_the_colony()
                 "Almost immediately, the chittering sounds increase in volume and urgency.\n"
                 "You hear rapidly approaching scurrying sounds and quickly look behind you.\n"
                 "You are greeted with the sight of multiple giant ants the size of horses chasing you,\n"
-                "their enormous mandibles snapping and compound eyes seemingly bright with anger and bloodlust.\n"
+                "their enormous mandibles snapping and compound eyes bright with anger and bloodlust.\n"
                 "They quickly gain ground, their huge jaws snapping shut just inches behind your ankles.\n"
                 "You attempt to pick up speed yourself, but instead one of the ants catches your left foot in its jaws.\n"
                 "Pain shoots up your leg as its mandibles pierce through the walls of your shoe and into your ankle.\n"
                 "You trip and fall face-first into the dirt floor of the tunnel. Dazed, you barely have to time to register\n"
                 "you're on the ground when you start to get pulled away. You panic and claw at the dirt, trying to pull yourself\n"
                 "free of the giant ant's grip. It is no use however, as the huge insect easily drags you back towards it.\n"
-                "Finally, after dragging you a few meters away from where you were, it releases its grip and you roll over to see\n"
+                "Finally, after dragging you a few meters away, it releases its grip and you roll over to see\n"
                 "that you're surrounded on all sides by the giant arthropods. For a moment, you simply look at them, and they at you,\n"
                 "before the one that was dragging you swiftly closes the distance and locks its jaws around your throat. You gasp,\n"
                 "trying to pull against the iron grip of the huge ant's jaws. It is no use however, as you stare into the dead compound eyes,\n"
@@ -84,7 +84,7 @@ void the_heart_of_the_colony()
                 "The chittering grows louder, it's now or never. You quickly jump into the impression and flatten yourself against the wall as much as possible.\n"
                 "You remain still as several huge ants pass by you, the chittering remaining uninterrupted. However, one stops where you dropped from the portal, causing the others to take notice.\n"
                 "Its antennae dance around the tunnel floor where you were on your knees, it chitters at the others and soon all of them are looking for you.\n"
-                "You could either run away, surrender, or try to fight. After all, you have a momentary advantage over them with a surprise attack.\n";
+                "You could either run away, surrender, or try to fight. After all, you have a momentary advantage over them if you go with a surprise attack.\n";
 
         hotc_tunnel_options();
     }
@@ -96,28 +96,42 @@ void the_heart_of_the_colony()
 
 void the_queens_chambers(){
     cout << "Eventually, the tunnel opens up into a large chamber where you spy a distinct silhouette facing away from you: the Ant Queen.\n"
-            "Not completely unexpected, you think to yourself.\n"
-            "\"No, I suppose it is not, human.\", you suddenly hear in your head.\n"
-            "Your eyes widen at the intrusion of the distinctly feminine voice within your thoughts.\n"
-            "\"But your sudden unannounced appearance before my Court is. Now, state your reason for visiting.\"\n"
-            "The huge ant queen turns to face you, looking down upon you with a terrible intelligence in its multifaceted eyes.\n"
-            "You stare, dumbstruck for a moment. Then, regaining your composure, you speak back at it with your thoughts.\n"
-            "\"I apologize. I only wish to travel back to my world, and I must find a token here to do so.\", you think.\n"
-            "\"I see. You are but another contestant for the game of the Worldwalkers. Unfortunately for you, not even I am aware of the location of your token.\"\n"
-            "The Ant Queen turns back away from you. \"You are free to look, but should you attempt to bring harm upon any of my subjects or overstay your welcome,\"\n"
-            "The Ant Queen looks back at you, \"I will feed you to them.\"\n"
-            "A cold shiver runs down your spine, and you quickly nod in acknowledgement.\n"
-            "\"Now, leave my chambers and hasten your search, for my patience is limited.\"\n"
-            "You get up quickly and leave, noticing the ants around you have stopped escorting you.\n";
+            "\"It's been decades, Travelers. Have you found me a suitable mate, yet?\" a distinctly feminine voice enters your mind.\n"
+            "You say, and think, nothing back at it. Soon, the large form turns around and looks directly at you.\n"
+            "\"Well, you're not a Traveler. You're more akin to that scholar that came by years ago.\"\n"
+            "This grabs your attention. \"You know about writer of the journals? Where is he?\" you ask out loud to her.\n"
+            "The queen looks a bit put-off by your sudden question. \"He didn't stay very long here, as he seemed to be more interested in matters of his own mortality.\"\n"
+            "This just makes you more confused. \"What? What do you mean by that?\" you ask.\n"
+            "\"Enough!\" the Queen yells into your head, \"Tell me about the Travelers. Have they any any progress on their search?\" the Queen asks, a slight hopeful tone in her \"voice\".\n"
+            // Maybe expand this a bit - add interactive dialogue options based on what the player has learned so far?
+            "\"Uh, I don't know. There's no Worldwalkers around to ask. They disappeared a long time ago, I think.\"\n"
+            "The Queen is somewhat taken aback by this. \"Have they retreated? And they didn't notify me?! We had an agreement!\" she thought-yells as she stomps the ground.\n"
+            "There is a minor tremor from this as she turns back around away from you. \"I need to know what happened to them.\" she thought-says, more to herself than to you.\n"
+            "She then holds out what seems to be an amber orb of some kind, roughly carved into an approximation of a sphere. Inside, you can just make out a yellow orb within through the roughly hewn surface.\n"
+            "The Queen ant stares intently into the orb, her antennae waving frantically in the air before her before suddenly coming to a halt. For several moments, nothing happens and you fidget uncomfortably\n"
+            "before the Queen suddenly moves again and turns to you. \"I've seen their end. And your's as well.\" You snap your attention to her, \"What?!\"\n"
+            "The Queen is silent for a moment before continuing, \"You travel from place to place with little regard for the strain on your mortal husk.\" she approaches you and you tilt your head back as she towers over you.\n"
+            "\"So did the Travelers, and they paid the ultimate price for it.\" After a pause, she walks back towards the center of the room.\n"
+            "\"Now leave, you've taken enough of my time.\" Still confused by the interaction, you clumsily take a step towards her before being harshly stopped by the ants that escorted you through the tunnel.\n"
+            "\"I c-can't.\", you say. \"And why is that?\" she thought-speaks to you, clutching the amber orb close to her thorax. \"I have to find something here before the Gate reopens.\""
+            "\"And just what is it you seek?\" she asks, clutching the orb even closer to herself. \"I don't know, all I know is that it holds some significance to the Worldwalkers.\""
+            "The Queen's antennae twitch in thought as she mulls over what you say. After a pregnant pause, she finally thought-speaks, \"The Worldwalkers rarely stayed here longer than necessary, but when they did,\n"
+            "they spent the most time in our archives. \'Historians\' and \'archaeologists,\' they called themselves.\" She slowly draws a claw over the surface of the orb, \"But I know they had other intentions.\"\n"
+            "She says as her compound eyes narrow. \"You share no such intentions, you merely wish to return home. Because of this, I will allow you to search through my hive, but be forewarned,\"\n"
+            "her tone gains a threatening edge as she steps towards you and lowers her head to stare straight into your eyes, \"if you bring harm to any of my subjects, I will use your bones to stir my soup.\"\n"
+            "You give an involuntary shudder at this. This seems to please her, as she stands back up to her full height and backs up to the center of the room, \"Go now, the sooner you find what it is you seek, the better.\"\n"
+            "As she turns away from you, the ants around you disperse and head down another tunnel.\n\n";
 
     hotc_explore_nest_text();
 }
 
+
+// Redo the options here to fit with the new flow of this passage's story
 void hotc_explore_nest_text(){
     print_line();
-    cout << "You are now free to explore the ant nest as you please, however keep in mind the warnings the Ant Queen gave you:\n"
-            "\n\t\"[S]hould you attempt to to bring harm upon any of my subjects or overstay your welcome, I will feed you to them.\"\n\n"
-            "You shiver slightly from the memory, but clear your head and focus on the matter at hand. You need to explore the nest and find\n"
+    cout << "You are now free to explore the ant hive as you please, however keep in mind the warnings the Ant Queen gave you:\n"
+            "\"[I]f you bring harm to any of my subjects, I will use your bones to stir my soup.\"\n"
+            "You shiver slightly from the memory, but clear your head and focus on the matter at hand. You need to explore the hive and find\n"
             "the token you will need before you can return to the temple.\n"
             "From where you stand, you can see three different tunnels before you that lead away from the Queen's Chambers.\n"
             "First, there is the middle tunnel where you were first found but never found out what was at the other end, then there is the\n"
@@ -205,7 +219,7 @@ void hotc_explore_nest(){
         print_line();
         cout << "You decide to explore the Queen's Chambers.\n"
                 "The ants that escorted you down the tunnel have now left the chamber, leaving you alone with the Queen, her guards, and one other ant.\n"
-                "The guards stare you down as the Queen busily attends to what appears to be a map of the nest and converses with the other ant.\n"
+                "The guards stare you down as the Queen busily attends to what appears to be a map of the hive and converses with the other ant.\n"
                 "Looking about the room, you notice something strange. There appears to be a pile of what appears to be junk in one corner of the room.\n"
                 "You approach it and look through the rubble. Soon, you come across what appears to be a broken piece of amber with a strange claw embedded within.\n"
                 "\"Take it,\" you hear in your head. You lift the large piece of amber out of the rubble and tuck it under your arm. Almost immediately, a portal opens up.\n"
