@@ -13,6 +13,9 @@ bool hotc_explored_left_tunnel = false;
 bool hotc_explored_middle_tunnel = false;
 bool hotc_explored_right_tunnel = false;
 bool hotc_explored_archives = false;
+bool hotc_found_hint = false;
+bool hotc_heard_history = false;
+bool hotc_ask_orb = false;
 
 // Massive changes to this file to come
 
@@ -179,6 +182,7 @@ void hotc_explore_nest(){
             cout << hint_3;
             cout << "You stare at the paper for a moment, parsing what you just read, before slowly folding it up and placing it in your pocket.\n"
                     "\"This is not going to be easy,\" you think to yourself as you make your way back out of the chamber and into the tunnel.\n";
+            hotc_found_hint = true;
             hotc_explored_left_tunnel = true;
             hotc_explore_nest();
         }   
@@ -253,7 +257,7 @@ void hotc_explore_nest(){
     }
 }
 
-void hotc_archives()
+void hotc_archives_text()
 {
     print_line();
     cout << "You approach the stone pedestal in the center of the room. Unlike the other chambers you've been in so far, this one appears to be close to the surface.\n"
@@ -267,7 +271,100 @@ void hotc_archives()
             "and more humanoid, with a stretched thorax and a pair of arms, resembling the Queen more than the workers you saw earlier. It stands on four legs and walks slowly toward you, revealing\n"
             "more of itself as it towers over you, but not nearly to the height of the Queen.\n"
             "\"And I also want to know who you are,\" it says as it points towards you with an insectile hand, \"because you're definitely not a Traveler.\""
-            "";
+            "\"No,\" you reply, \"I am not one of your \'Travelers\', I am simply trying to make my way back home, and I must find and bring something back from this place to do so.\"\n"
+            "\"I see,\" the Librarian says, \"and you think this archive may help with that?\"\n"
+            "\"Yes,\" you reply.\n"
+            "\"Alright, if you have any questions, you can just ask me.\"\n\n";
+    hotc_archives();
+}
+
+void hotc_archives()
+{
+    cout << "\"If you have any questions, feel free to ask me,\" the Librarian says in your mind.\n";
+    char choice;
+    print_line();
+    cout << "What would you like to do?\n";
+    cout << "A. Ask about the book on the pedestal\n";
+    cout << "B. Ask about the history of the colony\n";
+    cout << "C. Ask about the Queen's orb\n";
+    cout << "D. Leave the archives\n";
+    cin >> choice;
+    if(choice == 'A' || choice == 'a')
+    {
+        cout << "\"What is this book here?\" you ask, gesturing towards the book on the pedestal.\n"
+                "\"Ah, that is a record of all our accumulated knowledge. The Queen and the colony have learned much from Her conquests.\"\n"
+                "";
+                // Need to finish
+    }
+    else if(choice == 'B' || choice == 'b')
+    {
+        cout << "\"I'd like to know more about the history of the colony itself.\n\" you say."
+                "\"Well, it all started several millennia ago...\" begins the Librarian."
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
+                "      ONE HOUR LATER\n"
+                "XXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
+                "\"...and that brings us up to the present, where you now sit.\"\n"
+                "You jump to your feet, having been a little too enthralled with the story of the giant insects.\n"
+                "Sadly, that didn't help you much with what you were looking for.\n";
+        hotc_heard_history = true;
+        hotc_archives();
+    }
+    else if(choice == 'C' || choice == 'c')
+    {
+        if(hotc_ask_orb)
+        {
+            cout << "\"The Librarian tilts his head bemusedly, \"You already asked about that, it's just a normal hunk of amber.\"\n";
+            hotc_archives();
+        }
+        else
+        {
+            if(hotc_found_hint)
+            {
+                cout << "Given what you just learned from the piece of paper, you decide it wouldn't be wise to ask about the orb directly.\n"
+                        "\"I saw the Queen handling a strange amber orb earlier,\" you say, \"is that to help her concentrate?\"\n"
+                        "The Libarian stiffens a bit at the mention of the orb, but relaxes once you finish with your question.\n"
+                        "\"Oh no, the Queen simply likes the feel of it, I believe. It's just a normal chunk of amber she has taken a liking to.\n";
+                        "I personally think it calms her down a bit. She hasn't been quite the same since learning of her... inability.\" he responds.\n"
+                        "The Librarian looks visibly uncomfortable.\n"
+                        "\"Playing it safe,\" you think to yourself.\n"
+                        "If the Librarian heard what you thought, he gives no reaction.\n";
+                hotc_ask_orb = true;
+                hotc_archives();
+            }
+            else
+            {
+                cout << "\"What is that orb the Queen carries around with her? It seems like it's pretty important.\" you ask.\n"
+                        "The Librarian stiffens, and his antennae move quickly for a moment before settling down.\n"
+                        "\"Oh, that's nothing,\" he says, \"She just likes to hold it every now and then.\"\n"
+                        "His tone is guarded now however, yet you persist.\n"
+                        "\"Really? Why does she hold it so close to her though? She acts like it's a child or something. It's important that I know exactly what it is.\"\n"
+                        "It is then that several worker ants arrive and quickly surround you. You turn around in surprise, seeing the angry glint in their compound eyes.\n"
+                        "The Librarian simply says, \"You think that Her orb may hold the key to your escape, but I cannot allow you to take it.\"\n"
+                        "You are then herded out of the archives and placed before the Queen herself.\n"
+                        "\"So, you want to know what it is I have here,\" you hear in your head, as she holds the orb up for you to see.\n"
+                        "\"And not only that, but you believe that it may help you get out of here,\" she says, amused.\n"
+                        "\"Well, you cannot have it,\" she thought-speaks, \"and now you will never leave.\n"
+                        "You are then escorted out and imprisoned in a cell set high into a wall.\n"
+                        "You are kept there for weeks, months, and eventually, years.\n"
+                        "The ants take good care of you, all things considered, and you even get to help out every now and then if you behave.\n"
+                        "Oh, but the food is awful.\n";
+
+                cout << "\n\nEnding 10: Prisoner";
+                print_line();
+                retry(&hotc_archives);
+            }
+        }
+    }
+    else if(choice == 'D' || choice == 'd')
+    {
+        cout << "You leave the archives and head back down the tunnel.\n";
+        the_queens_chambers();
+    }
+    else
+    {
+        try_again();
+        hotc_archives();
+    }
 }
 
 void hotc_tunnel_options(){
