@@ -9,8 +9,8 @@ using namespace std;
 
 extern vector<string> inventory;
 
-extern inline void print_line();
-extern inline void try_again();
+extern void print_line();
+extern void try_again();
 extern void reset();
 extern void retry();
 extern void retry(void (*func)());
