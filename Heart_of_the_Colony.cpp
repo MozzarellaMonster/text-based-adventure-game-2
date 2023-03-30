@@ -5,12 +5,14 @@
 #include "Functions.hpp"
 #include "Items.hpp"
 #include "Trackers.hpp"
+#include "Journal Entries.hpp"
 
 using namespace std;
 
 bool hotc_explored_left_tunnel = false;
 bool hotc_explored_middle_tunnel = false;
 bool hotc_explored_right_tunnel = false;
+bool hotc_explored_archives = false;
 
 // Massive changes to this file to come
 
@@ -96,6 +98,8 @@ void the_heart_of_the_colony()
 
 void the_queens_chambers(){
     cout << "Eventually, the tunnel opens up into a large chamber where you spy a distinct silhouette facing away from you: the Ant Queen.\n"
+            "It doesn't look like the typical ant, it is much bigger and has a distinctly semi-humanoid upper torso attached to the thorax,\n"
+            "complete with chitin-covered humanoid hands and arms, giving it a very centaur-like appearance.\n"
             "\"It's been decades, Travelers. Have you found me a suitable mate, yet?\" a distinctly feminine voice enters your mind.\n"
             "You say, and think, nothing back at it. Soon, the large form turns around and looks directly at you.\n"
             "\"Well, you're not a Traveler. You're more akin to that scholar that came by years ago.\"\n"
@@ -118,7 +122,7 @@ void the_queens_chambers(){
             "The Queen's antennae twitch in thought as she mulls over what you say. After a pregnant pause, she finally thought-speaks, \"The Worldwalkers rarely stayed here longer than necessary, but when they did,\n"
             "they spent the most time in our archives. \'Historians\' and \'archaeologists,\' they called themselves.\" She slowly draws a claw over the surface of the orb, \"But I know they had other intentions.\"\n"
             "She says as her compound eyes narrow. \"You share no such intentions, you merely wish to return home. Because of this, I will allow you to search through my hive, but be forewarned,\"\n"
-            "her tone gains a threatening edge as she steps towards you and lowers her head to stare straight into your eyes, \"if you bring harm to any of my subjects, I will use your bones to stir my soup.\"\n"
+            "her tone gains a threatening edge as she steps towards you and lowers her head to stare straight into your eyes, \"if you bring harm to any of my subjects, your bones will line my walls.\"\n"
             "You give an involuntary shudder at this. This seems to please her, as she stands back up to her full height and backs up to the center of the room, \"Go now, the sooner you find what it is you seek, the better.\"\n"
             "As she turns away from you, the ants around you disperse and head down another tunnel.\n\n";
 
@@ -126,15 +130,16 @@ void the_queens_chambers(){
 }
 
 
-// Redo the options here to fit with the new flow of this passage's story
+// Redo the options here to fit with the new direction of this passage's story
+// Find a specific root to burn to put the Queen and hive to sleep
 void hotc_explore_nest_text(){
     print_line();
     cout << "You are now free to explore the ant hive as you please, however keep in mind the warnings the Ant Queen gave you:\n"
-            "\"[I]f you bring harm to any of my subjects, I will use your bones to stir my soup.\"\n"
+            "\"[I]f you bring harm to any of my subjects, your bones will line my walls.\"\n"
             "You shiver slightly from the memory, but clear your head and focus on the matter at hand. You need to explore the hive and find\n"
             "the token you will need before you can return to the temple.\n"
             "From where you stand, you can see three different tunnels before you that lead away from the Queen's Chambers.\n"
-            "First, there is the middle tunnel where you were first found but never found out what was at the other end, then there is the\n"
+            "First, there is the middle tunnel where you were first found but never found out what was at the other end, then there are the\n"
             "two tunnels to the left and right that remain unexplored.\n";
     hotc_explore_nest();
 }
@@ -163,31 +168,41 @@ void hotc_explore_nest(){
                     "You go down the left tunnel for some distance before it opens into a large open cavernous space with several large pillars.\n"
                     "Along the walls and floor of the room are several oblong pill-shaped objects with distinct silhouettes wriggling around inside of them.\n"
                     "\"Eggs,\" you think to yourself before hesitantly crossing the threshold into the room. The room is lit with several organic-looking lanterns embedded in the ceiling,\n"
-                    "providing a warm glow to the entirety of the large space. Several female worker ants are milling about, tending to the different egg clusters and largely ignoring you.\n"
-                    "However, if you get a little too close to any one egg, a distinct hiss is heard from any that are nearby. You make haste and search the room without setting off the worker ant's aggression.\n"
-                    "Unfortunately, you could find nothing of importance in the room and head back through the tunnel to the Queen's Chambers.\n";
+                    "providing a warm glow to the entirety of the large space. Several female worker ants are milling about, tending to the different egg clusters and occasionally throwing wary glances in your direction.\n"
+                    "You begin to explore the room, scanning between piles of eggs without actually touching any. The first time you tried to look more thoroughly into a pile, several of the ants in the room let out loud warning\n"
+                    "hisses, and you thought it better to not test their patience. After looking for some time, you finally manage to come across something interesting - a folded piece of paper stuck in a hole in a pillar\n"
+                    "close to the entrance of the room. It is rather unnoticeable, and basically unretrievable for the ants of the hive, lest they were to actually destroy the pillar itself to find it.\n"
+                    "You reach into the hole and bring out the piece of paper. Unfolding it, you begin to read:\n\n";
+            cout << journal_entry_4;
+            cout << "Folding it back up, you pocket the piece of paper, before noticing another one in the same hole.\n"
+                    "Curious, you bring it out and read it:\n\n";
+            cout << hint_3;
+            cout << "You stare at the paper for a moment, parsing what you just read, before slowly folding it up and placing it in your pocket.\n"
+                    "\"This is not going to be easy,\" you think to yourself as you make your way back out of the chamber and into the tunnel.\n";
             hotc_explored_left_tunnel = true;
             hotc_explore_nest();
         }   
     }
     else if(choice == 'B' || choice == 'b'){
         print_line();
-        if(hotc_explored_middle_tunnel){
-            cout << "You look back towards the middle tunnel, remembering how it leads back to the colony's food storage chamber.\n"
-                    "There was nothing of note in there. You look back to the other tunnels.\n";
+        if(hotc_explored_archives){
+            cout << "You look back towards the middle tunnel, remembering that it led to the archive.\n"
+                    "You explored the area pretty thoroughly and found the information that you were looking for,\n"
+                    "so there is really no reason to head back there.\n";
             hotc_explore_nest();
+        }
+        else if(hotc_explored_middle_tunnel)
+        {
+            cout << "You make your way through the tunnel into the archives.\n\n";
+            hotc_archives();
         }
         else{
             cout << "You decide to explore the middle tunnel.\n"
-                    "You go down the middle tunnel for quite a distance before eventually you find yourself in a large circular room with a high ceiling.\n"
-                    "The room is lit with organic-looking lanterns hung in even distances along the circumference of the room. In the middle of the room stands a\n"
-                    "large spire of various objects. It takes you a moment before you realize that this room contains all of the colony's collected food. Large, seed-like\n"
-                    "objects are collected in a huge mound and stacked carefully in the center of the room. Surprisingly, there are nearly no ants at all in this room\n"
-                    "and you are free to explore to your heart's content. You make sure not to disturb the giant spire though, as moving one thing out of place may just cause\n"
-                    "the whole thing to collapse. After searching for some time, you decide the room does not contain what you are looking for and leave, trekking back through\n"
-                    "the tunnel to the Queen's Chambers.\n";
+                    "Carefully making your way down the mostly dark tunnel, you soon find yourself in a large cavern somewhat resembling a library,\n"
+                    "with awkward, organic-looking shelves placed in a circle around a large stone pedestal in the center of the room.\n"
+                    "You have found the archives.\n\n";
             hotc_explored_middle_tunnel = true;
-            hotc_explore_nest();
+            hotc_archives();
         }
     }
     else if(choice == 'C' || choice == 'c'){
@@ -217,6 +232,7 @@ void hotc_explore_nest(){
     }
     else if(choice == 'D' || choice == 'd'){
         print_line();
+        // Redo this one to better suit new direction in story
         cout << "You decide to explore the Queen's Chambers.\n"
                 "The ants that escorted you down the tunnel have now left the chamber, leaving you alone with the Queen, her guards, and one other ant.\n"
                 "The guards stare you down as the Queen busily attends to what appears to be a map of the hive and converses with the other ant.\n"
@@ -235,6 +251,23 @@ void hotc_explore_nest(){
         try_again();
         hotc_explore_nest();
     }
+}
+
+void hotc_archives()
+{
+    print_line();
+    cout << "You approach the stone pedestal in the center of the room. Unlike the other chambers you've been in so far, this one appears to be close to the surface.\n"
+            "You look up towards the circular hole in the roof of the chamber where sunlight pours through unhindered, it shines directly down on the stone pedestal.\n"
+            "You move your gaze downwards onto the pedestal, on it lies a book. The book itself appears to be made of a coarse material, with pages thicker than that of printer paper.\n"
+            "The binding and cover of the book appears to be made of a strong, compressed collection of leaves, making for an interesting pattern on both the inside and outside of the covers.\n"
+            "\"You're an unusual one,\" you hear in your mind. Surprised, you look around in the bookshelves until you find strange being staring back at you from the shadows to your left.\n"
+            "\"Who are you?\" you ask the shadow.\n"
+            "\"I am the Librarian,\" it says, stepping out of the shadow and further into the circle of light, \"and I keep the records for the colony here, where they are protected and treasured.\"\n"
+            "As it steps further into the light, you notice several differences between this creature and the work ants you ran into when you first came through the Gate. Notably, this one is taller\n"
+            "and more humanoid, with a stretched thorax and a pair of arms, resembling the Queen more than the workers you saw earlier. It stands on four legs and walks slowly toward you, revealing\n"
+            "more of itself as it towers over you, but not nearly to the height of the Queen.\n"
+            "\"And I also want to know who you are,\" it says as it points towards you with an insectile hand, \"because you're definitely not a Traveler.\""
+            "";
 }
 
 void hotc_tunnel_options(){
@@ -290,7 +323,7 @@ void hotc_tunnel_options(){
                 "Blood fills your throat as the pain becomes unbearable. You stare at the tunnel ceiling, past the gaze of the ant still looking down at you with your jaw in its own as blood drips from it\n"
                 "into your face. The other ant then enters your view and moves closer, its antennae moving over your destroyed visage. You can do nothing except let it happen.\n"
                 "Eventually, the ant stops and works together with the other to drag what's left of you down the tunnel. Slowly, your vision fades as you watch the tunnel ceiling pass by and you realize you've lost a lot of blood.\n"
-                "One thought strikes you as funny before you eventually die: that you decided to fight an enemy that you knew nothing about and that clearly outnumbered you.\n";
+                "One thought strikes you as oddly funny before you eventually die: that you decided to fight an enemy that you knew nothing about and that clearly outnumbered you.\n";
 
         cout << "\n\nEnding 9: Belligerence";
         print_line();
