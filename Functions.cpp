@@ -18,11 +18,11 @@ using namespace std;
 
 vector<string> inventory;
 
-void print_line(){
+inline void print_line(){
     cout << "\n==============================================================================================\n";
 }
 
-void try_again(){
+inline void try_again(){
     cout << "\nSorry, that is not a valid option, please try again.\n";
 }
 
