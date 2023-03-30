@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// Found outside the temple
 string journal_entry_1 = "\n\t06/07/01\n"
                          "\tThe archeological dig has done tremendous work,\n"
                          "\tI really must stop by the excavation director's tent and commend him for his excellent service.\n\n"
@@ -11,6 +12,7 @@ string journal_entry_1 = "\n\t06/07/01\n"
                          "\tIt appears to be a carved stone ring inset with unusual hieroglyphic markings carved around the circumference of the ring.\n"
                          "\tI have taken it into my tent for further study.\n\n";
 
+// Found in The Glowing Cave
 string journal_entry_2 = "\n\t06/27/01\n"
                          "\tI have received word back from Marilyn at the university. She has never seen symbols quite like those present on the mystery stone ring, either.\n"
                          "\tThe closest comparison we have is ancient Egyptian, but there's enough differences between the two to rule out any cultural mixing.\n"
@@ -21,6 +23,7 @@ string journal_entry_3 = "\n\t07/14/05\n"
                          "\tI will need to calibrate the machine even further. These old records are a massive pain to translate, but I'm definitely on to something here.\n"
                          "\tI will solve the mystery of this stone ring.\n\n";
 
+// Found in the Heart of the Colony
 string journal_entry_4 = "\n\t11/13/08\n"
                          "\tI've done it! After trying another combination of glyphs, I've finally opened a doorway to another dimension.\n"
                          "\tI've yet to try anything more than sending several test items through. None have returned, but that is to be expected.\n"
@@ -59,3 +62,21 @@ string hint_2 = "\n\tThis is the burial ground for an ancient race that ruled ov
                 "\tNor were they the first, or the last, to use them.\n\n"
                 "\tYou will need to find the Ruby Skull held by the head of the Crimson Head family, and the temple will permit you to return.\n"
                 "\tBeware traveler, this people's stubborn pride persists even in death.\n";
+
+string hint_3 = "\n\tWhen the Worldwalkers first came through the Gate into this world, they were immediately met with hostility from the ants.\n"
+                "It was only through the superior intelligence and communication with the survivors of the first party here that a deal was struck.\n"
+                "A deal in which the Worldwalkers agreed to look for a compatible mate for the Queen and she will, in turn, allow them to continue\n"
+                "traveling through the Gate and exploring the surrounding region. It turns out, although the giant ants of this world live very long lives,\n"
+                "especially the Queen, her life and reign, is coming to an end. If she were to find a suitable mate that were to give her a princess,\n"
+                "then her reign would continue by proxy and she would then allow herself to die. If the Worldwalkers hold up their end of the deal,\n"
+                "then she has agreed to lend military aid to the Worldwalkers should they ever need it. And since that deal, an uneasy peace has been established.\n\n"
+                "However, after learning more about the hive and the world they inhabited, the Worldwalkers soon found that the Queen had nearly a complete takeover of the known portions\n"
+                "of this world. This world has no intelligent species beyond that of the hive, according to the Queen. However, there is evidence to the contrary.\n"
+                "It appears that other civilizations had been previously been established in some portions of this world, but were seemingly exterminated by the hive.\n"
+                "When questioned, the Queen is unwilling to discuss it and claims she had no knowledge of this, and has forbidden the Worldwalkers from any further\n"
+                "exploration of the surrounding area. Through further investigation and a little espionage, it is believed that the Queen is in possession of a powerful\n"
+                "artifact that gives her the ability see future and past events, as well as minor telepathy. The Worldwalkers believe that she used this artifact in her\n"
+                "conquest of this world.\n\n"
+                "It is this artifact that you must find. The Queen is not so easy to contend with however, and she has numerous guards as well as an entire army at her beck and call.\n"
+                "You will have to be clever and possibly find a non-hostile method of retrieval. Outright trickery is unlikely to work, as she can read your mind and the future as she pleases.\n"
+                "I would suggest looking in the archive, as it holds much information about the ants and their history.\n\n";
