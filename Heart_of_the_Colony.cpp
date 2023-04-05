@@ -12,9 +12,9 @@ using namespace std;
 bool hotc_explored_left_tunnel = false;
 bool hotc_explored_middle_tunnel = false;
 bool hotc_explored_right_tunnel = false;
-bool hotc_explored_archives = false;
 bool hotc_found_hint = false;
 bool hotc_heard_history = false;
+bool hotc_read_book = false;
 bool hotc_ask_orb = false;
 
 // Massive changes to this file to come
@@ -167,6 +167,7 @@ void hotc_explore_nest(){
             hotc_explore_nest();
         }
         else{
+            // Redo this one to better suit new direction in story
             cout << "You decide to explore the left tunnel.\n"
                     "You go down the left tunnel for some distance before it opens into a large open cavernous space with several large pillars.\n"
                     "Along the walls and floor of the room are several oblong pill-shaped objects with distinct silhouettes wriggling around inside of them.\n"
@@ -189,13 +190,7 @@ void hotc_explore_nest(){
     }
     else if(choice == 'B' || choice == 'b'){
         print_line();
-        if(hotc_explored_archives){
-            cout << "You look back towards the middle tunnel, remembering that it led to the archive.\n"
-                    "You explored the area pretty thoroughly and found the information that you were looking for,\n"
-                    "so there is really no reason to head back there.\n";
-            hotc_explore_nest();
-        }
-        else if(hotc_explored_middle_tunnel)
+        if(hotc_explored_middle_tunnel)
         {
             cout << "You make your way through the tunnel into the archives.\n\n";
             hotc_archives();
@@ -224,7 +219,7 @@ void hotc_explore_nest(){
                     "are also written in areas unreachable to you. Looking up at the ceiling, you see that the ants didn't\n"
                     "waste any area, as even the ceiling is covered. You can't see what the story is told from those, but you\n"
                     "can imagine it tells the story of the colony, starting from the first generation and probably the first Queen.\n"
-                    "Following the curve of the hieroglyphs, it appears the circle the room in a spiral, coming down from the center\n"
+                    "Following the curve of the hieroglyphs, it appears they circle the room in a spiral, coming down from the center\n"
                     "of the ceiling, to near your head height.\n"
                     "You would search the room, but there is no need to, since the only purpose\n"
                     "the room seems to serve is as a record of the history of the colony, it lays purposefully empty.\n"
@@ -291,10 +286,27 @@ void hotc_archives()
     cin >> choice;
     if(choice == 'A' || choice == 'a')
     {
-        cout << "\"What is this book here?\" you ask, gesturing towards the book on the pedestal.\n"
-                "\"Ah, that is a record of all our accumulated knowledge. The Queen and the colony have learned much from Her conquests.\"\n"
-                "";
-                // Need to finish
+        if(hotc_read_book)
+        {
+            cout << "You look back at the book. There is nothing more to learn from it, you know to look for a particular root that can put the ants to sleep.\n"
+                    "You look back to the librarian.\n";
+            hotc_archives();
+        }
+        else
+        {
+            cout << "\"What is this book here?\" you ask, gesturing towards the book on the pedestal.\n"
+                    "\"Ah, that is a record of all our accumulated knowledge. The Queen and the colony have learned much from Her conquests.\"\n"
+                    "\"May I?\" you ask, gesturing to the book. \"Oh yes, of course!\" responds the Librarian, \"I appreciate the thirst for knowledge you have.\"\n"
+                    "You turn back to the book and begin to look through it.\n"
+                    "After flipping through the majority of the book, scanning the giant ant's knowledge in different areas - architecture, mathematics, and even pottery,\n"
+                    "you come across something interesting - alchemy.\n"
+                    "Upon going through much of the section, you finally come across some information that could help in your quest: a sleeping concoction made from the root of a\n"
+                    "particular plant. You take note of the way the root looks, then put the book back on the pedestal.\n"
+                    "Unsurprisingly, there is no mention of the amber orb the Queen holds in the book. She clearly doesn't want anyone to know about it.\n"
+                    "You turn back to the librarian.\n";
+            hotc_read_book = true;
+            hotc_archives();
+        }
     }
     else if(choice == 'B' || choice == 'b')
     {
