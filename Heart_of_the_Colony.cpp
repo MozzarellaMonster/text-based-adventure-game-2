@@ -13,6 +13,7 @@ bool hotc_explored_left_tunnel = false;
 bool hotc_explored_middle_tunnel = false;
 bool hotc_explored_right_tunnel = false;
 bool hotc_heard_history = false;
+bool hotc_queens_story = false;
 bool hotc_found_hint = false;
 bool hotc_found_root = false;
 bool hotc_read_book = false;
@@ -152,9 +153,30 @@ void hotc_explore_nest(){
     char choice;
     print_line();
     cout << "What would you like to do?\n";
-    cout << "A. Explore the left tunnel\n";
-    cout << "B. Explore the middle tunnel\n";
-    cout << "C. Explore the right tunnel\n";
+    if(hotc_explored_left_tunnel)
+    {
+        cout << "A. Explore the Hatchery\n";
+    }
+    else
+    {
+        cout << "A. Explore the left tunnel\n";
+    }
+    if(hotc_explored_middle_tunnel)
+    {
+        cout << "B. Explore the Archives\n";
+    }
+    else
+    {
+        cout << "B. Explore the middle tunnel\n";    
+    }
+    if(hotc_explored_right_tunnel)
+    {
+        cout << "C. Explore the storage chamber"
+    }
+    else
+    {
+        cout << "C. Explore the right tunnel\n";
+    }
     cout << "D. Explore the Queen's Chambers\n";
     print_line();
     cin >> choice;
@@ -163,9 +185,15 @@ void hotc_explore_nest(){
     {
         print_line();
         if(hotc_explored_left_tunnel){
-            cout << "You look back to the tunnel that leads to the egg room, and shake your head.\n"
+            cout << "You look back to the tunnel that leads to the Hatchery, and shake your head.\n"
                     "You did not find the token there, it would be unlikely to be there now.\n"
                     "You look back to the options before you.\n";
+        }
+        else if(hotc_explored_left_tunnel && hotc_found_root)
+        {
+            cout << "You return to the Hatchery, hoping to find some of the root you need.\n"
+                    "Unfortunately, after a much more thorough investigation of the room, you do not find anything of the sort.\n"
+                    "Slightly disappointed, you exit the room and go back down the tunnel.\n";
         }
         else{
             cout << "You decide to explore the left tunnel.\n"
@@ -234,33 +262,62 @@ void hotc_explore_nest(){
         }
         hotc_explore_nest();
     }
-    else if(choice == 'D' || choice == 'd'){
+    else if(choice == 'D' || choice == 'd')
+    {
         print_line();
         if(hotc_read_book)
         {
-            cout << "You arrive back in the Queen's Chambers.";
+            cout << "Upon finding out that you need a particular root to help in your quest to return, you quickly scan the room, paying particular attention to the alcove of objects, but find no evidence of the root.\n"
+                    "Sighing, but making sure not to attract the suspicion of the Queen, you return to the center of the room.\n";
         }
         else if(hotc_found_root)
         {
-            cout << "";
+            cout << "You return to the Queen's chambers with root in hand. Upon arrival, you find that the Queen has her back to you and is staring intently at the amber orb in her possession.\n"
+                    "Quickly, you begin work on the root, peeling off the top layer of it, exposing the soft inner flesh. You reach into your pockets and grab your lighter. Carefully, you slowly light the tip of the\n"
+                    "smallest branch of the root. After some time, the root begins to burn, offering up a thick gray smoke with a slightly purplish tinge to it.\n"
+                    "Carefully, quietly, you approach the Queen and hold the burning root beneath her chin, the smoke quickly enveloping her face.\n"
+                    "After a few moments, you notice the Queen's compound eyes fluttering until she breaks out of her reverie and quickly turns to look at you.\n"
+                    "\"THE AUDACITY!\" she screams into your mind. You cringe, holding your head between your hands and dropping the burning root to the ground.\n"
+                    "The Queen quickly steps on the burning root and grounds it beneath her feet, extinguishing it.\n"
+                    "She looks back up at you and your heart plummets into your stomach when you see the seething rage behind those compound eyes. Her antennae twitch violently, and you start to hear what sounds like distant thunder from the tunnels.\n"
+                    "The Hive is coming. She then lunges at you, but her movements are slowed, sluggish. It seems as though the root may not have put her to sleep, but it definitely made her a little drowsy.\n"
+                    "Seizing the opportunity, you make a grab for the amber orb she is clutching in her other hand. But she pulls away just in time, throwing her weight off in the process and losing balance.\n"
+                    "She teeters back and slams her massive body in the alcove of objects, sending them tumbling down, dropping the amber orb in the process.\n"
+                    "\"NO!\" you hear her scream, as she bends down to search through the mess on the floor, seemingly having forgotten about you.\n"
+                    "You take the shovel you saw earlier and raise it above her head. She notices this and tries to shield herself with her segmented arms, but is too slow and the shovel makes contact with a loud thunk.\n"
+                    "She collapses on the pile of objects, unconscious. You drop the shovel and hurriedly dig through the exposed section of objects, looking for the amber orb.\n"
+                    "Steadily, the thunderous sounds from the tunnels grow louder. You dig and dig, searching through the objects, until at last you find the orb and grab it.\n"
+                    "You body suddenly seizes as multiple images flash in your mind, scenes from the House, the Temple, and finally, here.\n"
+                    "You suck in a breath as you drop the orb back on the floor, your mind reeling. The thunderous sounds are deafening now, and you spy multiple ants charging down the tunnels towards you.\n"
+                    "You quickly snatch the orb back up and notice the floating Gate that has opened to the right of the last tunnel, and pull yourself up to run towards it.\n"
+                    "But you are stopped as the Queen's hand grips your foot. \"You're not going anywhere!\" you hear her scream into your mind.\n"
+                    "Your head snaps forward to the tunnels, whose walls, floor, and ceiling are covered with ants, their madibles dripping with saliva and rage in their eyes.\n"
+                    "You then bring your free foot down on the Queen's hand, crushing it. She lets out a loud screech, vocally this time and releases you.\n"
+                    "You take off at a full sprint towards the Gate, jumping in just as the room floods with the entirety of the Hive, their mandibles snapping madly at you.\n"
+                    "You land hard on the floor of the temple, rolling several feet away from Gate. You suck in a shuddering breath, your chest hurting from landing on the amber orb in your hands.\n"
+                    "You roll over and lay on the floor of the temple for a while, catching your breath as your heartbeat slowly settles back down.\n"
+                    "After a while, you get back up and face the room of the temple, amber orb in hand\n\n";
+            temple_second_room();
+        }
+        else if(hotc_queens_story)
+        {
+            cout << "You look around the Queen's chamber, but aside from the alcove of conquest objects, there is nothing else to see.\n"
+                    "You turn back to the tunnels.\n";
         }
         else
         {
-            // Redo this one to better suit new direction in story
-            cout << "You decide to explore the Queen's Chambers.\n"
-                    "The ants that escorted you down the tunnel have now left the chamber, leaving you alone with the Queen, her guards, and one other ant.\n"
-                    "The guards stare you down as the Queen busily attends to what appears to be a map of the hive and converses with the other ant.\n"
-                    "Looking about the room, you notice something strange. There appears to be a pile of what appears to be junk in one corner of the room.\n"
-                    "You approach it and look through the rubble. Soon, you come across what appears to be a broken piece of amber with a strange claw embedded within.\n"
-                    "\"Take it,\" you hear in your head. You lift the large piece of amber out of the rubble and tuck it under your arm. Almost immediately, a portal opens up.\n"
-                    "\"WHAT ARE YOU DOING?!\" a voice booms in your head. \"DO NOT TOUCH THOSE.\" Your head spins around to see the guards closing in on you and the\n"
-                    "glaring angrily at you. \"MY CONQUEST ITEMS ARE NOT FOR YOU TO TAKE!\" Quickly, you make a mad dash for the open portal and narrowly dodge multiple ants\n"
-                    "that attempt to stop you, even stepping on one to avoid two others.\n"
-                    "You leap into the portal but not before the Queen lets out one last enraged shriek in your head. You close your eyes against the pain and tumble out onto the floor of the temple.\n"
-                    "A cold breeze embraces you as you open your eyes and pick yourself up. A mild throbbing in your cranium soon follows as you stagger slightly but quickly right yourself and proceed\n"
-                    "to put the amber piece in the stone obelisk. That's another one down. You turn back to the archways.\n\n";
-            hotc_explore_nest();
+            cout << "You decide to explore the Queen's Chambers. While looking around you notice various items displayed on a burrowed-out alcove in the wall of the chamber opposite the entrances to the tunnels.\n"
+                    "The items vary greatly in design and apparent use, some even look to be tools designed to be used by a humanoid biped. Most of the tools resemble things you're already used to seeing, such as\n"
+                    "shovels, books, and jewelry boxes. However, there are a fair few whose function remain elusive. Perhaps these were spoils of war from the Queen's many conquests.\n"
+                    "You approach the alcove hestitantly, unsure if the area was off-limits to you or not. Sensing your approach, the Queen turns around to face you, giving you even more uncertainty and you take a sheepish step back.\n"
+                    "\"You are correct in feeling trepidation, for multiple reasons,\" says the Queen in her thought-speak, \"but you are not one of the Travelers, so I see no reason why I should withhold this information from you.\n"
+                    "The Queen then turns back around to face the alcove of objects. \"Come forward lost one, and feast your eyes upon my treasures,\" she says, beckoning you towards her.\n"
+                    "You step forward and the Queen explains to you how she conquered much of the known land of her world until the giant ants were the only intelligent species left.\n"
+                    "After her story, you and her return to your previous positions in the room. As interesting as the Queen's story was, you didn't find what you were looking for.\n"
+                    "You look at the tunnels before you.\n";
+            hotc_queens_story = true;
         }
+        hotc_explore_nest();
     }
     else{
         try_again();
