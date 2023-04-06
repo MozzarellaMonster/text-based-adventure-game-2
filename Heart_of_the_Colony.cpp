@@ -19,8 +19,6 @@ bool hotc_found_root = false;
 bool hotc_read_book = false;
 bool hotc_ask_orb = false;
 
-// Massive changes to this file to come
-
 void the_heart_of_the_colony_text()
 {
     print_line();
@@ -112,8 +110,7 @@ void the_queens_chambers(){
             "The queen looks a bit put-off by your sudden question. \"He didn't stay very long here, as he seemed to be more interested in matters of his own mortality.\"\n"
             "This just makes you more confused. \"What? What do you mean by that?\" you ask.\n"
             "\"Enough!\" the Queen yells into your head, \"Tell me about the Travelers. Have they any any progress on their search?\" the Queen asks, a slight hopeful tone in her \"voice\".\n"
-            // Maybe expand this a bit - add interactive dialogue options based on what the player has learned so far?
-            "\"Uh, I don't know. There's no Worldwalkers around to ask. They disappeared a long time ago, I think.\"\n"
+            "\"Uh, I don't know. There's no Worldwalkers around to ask. They disappeared a long time ago.\"\n"
             "The Queen is somewhat taken aback by this. \"Have they retreated? And they didn't notify me?! We had an agreement!\" she thought-yells as she stomps the ground.\n"
             "There is a minor tremor from this as she turns back around away from you. \"I need to know what happened to them.\" she thought-says, more to herself than to you.\n"
             "She then holds out what seems to be an amber orb of some kind, roughly carved into an approximation of a sphere. Inside, you can just make out a yellow orb within through the roughly hewn surface.\n"
@@ -135,8 +132,6 @@ void the_queens_chambers(){
 }
 
 
-// Redo the options here to fit with the new direction of this passage's story
-// Find a specific root to burn to put the Queen and hive to sleep
 void hotc_explore_nest_text(){
     print_line();
     cout << "You are now free to explore the ant hive as you please, however keep in mind the warnings the Ant Queen gave you:\n"
@@ -171,7 +166,7 @@ void hotc_explore_nest(){
     }
     if(hotc_explored_right_tunnel)
     {
-        cout << "C. Explore the storage chamber"
+        cout << "C. Explore the storage chamber\n";
     }
     else
     {
@@ -434,7 +429,7 @@ void hotc_archives()
                         "The ants take good care of you, all things considered, and you even get to help out every now and then if you behave.\n"
                         "Oh, but the food is awful.\n";
 
-                cout << "\n\nEnding 10: Prisoner";
+                cout << "\n\nEnding 10: Prisoner\n";
                 print_line();
                 retry(&hotc_archives);
             }
@@ -475,7 +470,7 @@ void hotc_tunnel_options(){
                 "of the insect, trying to unclamp them, but they remain in place like a steel vice. It then dawns on you this is how you die - foolishly. Your eyes go wide\n"
                 "when you hear a sickening crunch as your skull gives way, then all is black.\n";
 
-        cout << "\n\nEnding 8: Migraine";
+        cout << "\n\nEnding 8: Migraine\n";
         print_line();
         retry(&hotc_tunnel_options);
     }
@@ -509,7 +504,7 @@ void hotc_tunnel_options(){
                 "Eventually, the ant stops and works together with the other to drag what's left of you down the tunnel. Slowly, your vision fades as you watch the tunnel ceiling pass by and you realize you've lost a lot of blood.\n"
                 "One thought strikes you as oddly funny before you eventually die: that you decided to fight an enemy that you knew nothing about and that clearly outnumbered you.\n";
 
-        cout << "\n\nEnding 9: Belligerence";
+        cout << "\n\nEnding 9: Belligerence\n";
         print_line();
         retry(&hotc_tunnel_options);
     }
