@@ -12,8 +12,9 @@ using namespace std;
 bool hotc_explored_left_tunnel = false;
 bool hotc_explored_middle_tunnel = false;
 bool hotc_explored_right_tunnel = false;
-bool hotc_found_hint = false;
 bool hotc_heard_history = false;
+bool hotc_found_hint = false;
+bool hotc_found_root = false;
 bool hotc_read_book = false;
 bool hotc_ask_orb = false;
 
@@ -158,16 +159,15 @@ void hotc_explore_nest(){
     print_line();
     cin >> choice;
 
-    if(choice == 'A' || choice == 'a'){
+    if(choice == 'A' || choice == 'a')
+    {
         print_line();
         if(hotc_explored_left_tunnel){
             cout << "You look back to the tunnel that leads to the egg room, and shake your head.\n"
                     "You did not find the token there, it would be unlikely to be there now.\n"
                     "You look back to the options before you.\n";
-            hotc_explore_nest();
         }
         else{
-            // Redo this one to better suit new direction in story
             cout << "You decide to explore the left tunnel.\n"
                     "You go down the left tunnel for some distance before it opens into a large open cavernous space with several large pillars.\n"
                     "Along the walls and floor of the room are several oblong pill-shaped objects with distinct silhouettes wriggling around inside of them.\n"
@@ -185,15 +185,14 @@ void hotc_explore_nest(){
                     "\"This is not going to be easy,\" you think to yourself as you make your way back out of the chamber and into the tunnel.\n";
             hotc_found_hint = true;
             hotc_explored_left_tunnel = true;
-            hotc_explore_nest();
-        }   
+        }
+        hotc_explore_nest();
     }
     else if(choice == 'B' || choice == 'b'){
         print_line();
         if(hotc_explored_middle_tunnel)
         {
             cout << "You make your way through the tunnel into the archives.\n\n";
-            hotc_archives();
         }
         else{
             cout << "You decide to explore the middle tunnel.\n"
@@ -201,50 +200,67 @@ void hotc_explore_nest(){
                     "with awkward, organic-looking shelves placed in a circle around a large stone pedestal in the center of the room.\n"
                     "You have found the archives.\n\n";
             hotc_explored_middle_tunnel = true;
-            hotc_archives();
         }
+        hotc_archives();
     }
     else if(choice == 'C' || choice == 'c'){
         print_line();
-        if(hotc_explored_right_tunnel){
-            cout << "You look down the right tunnel, where the history of the colony was written on the walls of a large chamber.\n"
-                    "It was an otherwise empty room. You look back towards the other tunnels.\n";
-            hotc_explore_nest();
+        if(hotc_explored_right_tunnel && hotc_found_root){
+            cout << "You look down the right tunnel, where the storage room was. You've already found what you needed from there.\n"
+                    "You look back towards the other tunnels.\n";
+        }
+        else if(hotc_explored_right_tunnel && hotc_read_book)
+        {
+            cout << "Excitedly, you head down the right tunnel until you arrive in the storage room. This time, like the bustling ants around you, you move with purpose.\n"
+                    "You head straight for the pile of roots and search through them until you find the one you need. From there, you simply take what you need and leave.\n"
+                    "No ants try to stop you or even question what you're doing, they're all too busy with their own jobs to notice.\n"
+                    "You walk briskly to the exit and make your way back down the tunnel.\n";
+            hotc_found_root = true;
+        }
+        else if(hotc_explored_right_tunnel)
+        {
+            cout << "You go down the right tunnel until you arrive in the storage room again, but there's nothing of significance in here.\n"
+                    "You head back down the tunnel.\n";
         }
         else{
             cout << "You decide to explore the right tunnel.\n"
-                    "After walking for several minutes, you arrive at a large room covered in hieroglyphics.\n"
-                    "Taking a closer look at some of the nearby glyphs, from what can be gathered, they appear\n"
-                    "to tell the history of the \"Worldwalkers\" and the ants of this colony. Several of the hieroglyphs\n"
-                    "are also written in areas unreachable to you. Looking up at the ceiling, you see that the ants didn't\n"
-                    "waste any area, as even the ceiling is covered. You can't see what the story is told from those, but you\n"
-                    "can imagine it tells the story of the colony, starting from the first generation and probably the first Queen.\n"
-                    "Following the curve of the hieroglyphs, it appears they circle the room in a spiral, coming down from the center\n"
-                    "of the ceiling, to near your head height.\n"
-                    "You would search the room, but there is no need to, since the only purpose\n"
-                    "the room seems to serve is as a record of the history of the colony, it lays purposefully empty.\n"
-                    "After giving one final look around the room, you head back down the tunnel.\n";
-            hotc_explored_right_tunnel = true;
-            hotc_explore_nest();
+                    "After walking for a few minutes, you come to a room full of various piles of objects.\n"
+                    "Some resembled construction materials such as logs of wood, what appears to be lumps of clay, and a sticky glob of resin.\n"
+                    "Other piles had seeds of all kinds, various strange vegetables, and unusual fruits of differing colors.\n"
+                    "Here the ants moved in an organized, purposeful manner, restocking various piles and taking from others, all while avoiding you standing awkwardly among them.\n"
+                    "You looked around, staring at the piles of items. Roots, fabrics, and surprisingly, even some tools. Perhaps items of conquest?\n"
+                    "Besides the piles of items and bustling activity, you don't find anything that may help you figure out what you're looking for and decide to leave back down the tunnel.\n";
+            hotc_explored_right_tunnel();
         }
-
+        hotc_explore_nest();
     }
     else if(choice == 'D' || choice == 'd'){
         print_line();
-        // Redo this one to better suit new direction in story
-        cout << "You decide to explore the Queen's Chambers.\n"
-                "The ants that escorted you down the tunnel have now left the chamber, leaving you alone with the Queen, her guards, and one other ant.\n"
-                "The guards stare you down as the Queen busily attends to what appears to be a map of the hive and converses with the other ant.\n"
-                "Looking about the room, you notice something strange. There appears to be a pile of what appears to be junk in one corner of the room.\n"
-                "You approach it and look through the rubble. Soon, you come across what appears to be a broken piece of amber with a strange claw embedded within.\n"
-                "\"Take it,\" you hear in your head. You lift the large piece of amber out of the rubble and tuck it under your arm. Almost immediately, a portal opens up.\n"
-                "\"WHAT ARE YOU DOING?!\" a voice booms in your head. \"DO NOT TOUCH THOSE.\" Your head spins around to see the guards closing in on you and the\n"
-                "glaring angrily at you. \"MY CONQUEST ITEMS ARE NOT FOR YOU TO TAKE!\" Quickly, you make a mad dash for the open portal and narrowly dodge multiple ants\n"
-                "that attempt to stop you, even stepping on one to avoid two others.\n"
-                "You leap into the portal but not before the Queen lets out one last enraged shriek in your head. You close your eyes against the pain and tumble out onto the floor of the temple.\n"
-                "A cold breeze embraces you as you open your eyes and pick yourself up. A mild throbbing in your cranium soon follows as you stagger slightly but quickly right yourself and proceed\n"
-                "to put the amber piece in the stone obelisk. That's another one down. You turn back to the archways.\n\n";
-        temple_second_room();
+        if(hotc_read_book)
+        {
+            cout << "You arrive back in the Queen's Chambers.";
+        }
+        else if(hotc_found_root)
+        {
+            cout << "";
+        }
+        else
+        {
+            // Redo this one to better suit new direction in story
+            cout << "You decide to explore the Queen's Chambers.\n"
+                    "The ants that escorted you down the tunnel have now left the chamber, leaving you alone with the Queen, her guards, and one other ant.\n"
+                    "The guards stare you down as the Queen busily attends to what appears to be a map of the hive and converses with the other ant.\n"
+                    "Looking about the room, you notice something strange. There appears to be a pile of what appears to be junk in one corner of the room.\n"
+                    "You approach it and look through the rubble. Soon, you come across what appears to be a broken piece of amber with a strange claw embedded within.\n"
+                    "\"Take it,\" you hear in your head. You lift the large piece of amber out of the rubble and tuck it under your arm. Almost immediately, a portal opens up.\n"
+                    "\"WHAT ARE YOU DOING?!\" a voice booms in your head. \"DO NOT TOUCH THOSE.\" Your head spins around to see the guards closing in on you and the\n"
+                    "glaring angrily at you. \"MY CONQUEST ITEMS ARE NOT FOR YOU TO TAKE!\" Quickly, you make a mad dash for the open portal and narrowly dodge multiple ants\n"
+                    "that attempt to stop you, even stepping on one to avoid two others.\n"
+                    "You leap into the portal but not before the Queen lets out one last enraged shriek in your head. You close your eyes against the pain and tumble out onto the floor of the temple.\n"
+                    "A cold breeze embraces you as you open your eyes and pick yourself up. A mild throbbing in your cranium soon follows as you stagger slightly but quickly right yourself and proceed\n"
+                    "to put the amber piece in the stone obelisk. That's another one down. You turn back to the archways.\n\n";
+            hotc_explore_nest();
+        }
     }
     else{
         try_again();
@@ -275,9 +291,9 @@ void hotc_archives_text()
 
 void hotc_archives()
 {
+    print_line();
     cout << "\"If you have any questions, feel free to ask me,\" the Librarian says in your mind.\n";
     char choice;
-    print_line();
     cout << "What would you like to do?\n";
     cout << "A. Ask about the book on the pedestal\n";
     cout << "B. Ask about the history of the colony\n";
@@ -286,11 +302,11 @@ void hotc_archives()
     cin >> choice;
     if(choice == 'A' || choice == 'a')
     {
+        print_line();
         if(hotc_read_book)
         {
             cout << "You look back at the book. There is nothing more to learn from it, you know to look for a particular root that can put the ants to sleep.\n"
                     "You look back to the librarian.\n";
-            hotc_archives();
         }
         else
         {
@@ -305,11 +321,12 @@ void hotc_archives()
                     "Unsurprisingly, there is no mention of the amber orb the Queen holds in the book. She clearly doesn't want anyone to know about it.\n"
                     "You turn back to the librarian.\n";
             hotc_read_book = true;
-            hotc_archives();
         }
+        hotc_archives();
     }
     else if(choice == 'B' || choice == 'b')
     {
+        print_line();
         cout << "\"I'd like to know more about the history of the colony itself.\n\" you say."
                 "\"Well, it all started several millennia ago...\" begins the Librarian."
                 "XXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
@@ -323,10 +340,10 @@ void hotc_archives()
     }
     else if(choice == 'C' || choice == 'c')
     {
+        print_line();
         if(hotc_ask_orb)
         {
             cout << "\"The Librarian tilts his head bemusedly, \"You already asked about that, it's just a normal hunk of amber.\"\n";
-            hotc_archives();
         }
         else
         {
@@ -341,7 +358,6 @@ void hotc_archives()
                         "\"Playing it safe,\" you think to yourself.\n"
                         "If the Librarian heard what you thought, he gives no reaction.\n";
                 hotc_ask_orb = true;
-                hotc_archives();
             }
             else
             {
@@ -366,9 +382,11 @@ void hotc_archives()
                 retry(&hotc_archives);
             }
         }
+        hotc_archives();
     }
     else if(choice == 'D' || choice == 'd')
     {
+        print_line();
         cout << "You leave the archives and head back down the tunnel.\n";
         the_queens_chambers();
     }

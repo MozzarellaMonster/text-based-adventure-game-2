@@ -9,8 +9,9 @@ using namespace std;
 extern bool hotc_explored_left_tunnel;
 extern bool hotc_explored_middle_tunnel;
 extern bool hotc_explored_right_tunnel;
-extern bool hotc_found_hint;
 extern bool hotc_heard_history;
+extern bool hotc_found_hint;
+extern bool hotc_found_root;
 extern bool hotc_read_book;
 extern bool hotc_ask_orb;
 
