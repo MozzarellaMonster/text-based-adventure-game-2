@@ -253,7 +253,7 @@ void hotc_explore_nest(){
                     "Here the ants moved in an organized, purposeful manner, restocking various piles and taking from others, all while avoiding you standing awkwardly among them.\n"
                     "You looked around, staring at the piles of items. Roots, fabrics, and surprisingly, even some tools. Perhaps items of conquest?\n"
                     "Besides the piles of items and bustling activity, you don't find anything that may help you figure out what you're looking for and decide to leave back down the tunnel.\n";
-            hotc_explored_right_tunnel();
+            hotc_explored_right_tunnel = true;
         }
         hotc_explore_nest();
     }
