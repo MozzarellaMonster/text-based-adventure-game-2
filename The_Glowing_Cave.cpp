@@ -158,7 +158,7 @@ void gc_left_tunnel(){
                 "desperately at the pink moss that reliquishes its own grip far too easily. The tumble down is quick, but the fall is long. So, so long. The darkness swallows you up like a ravenous beast slurping up the remains\n"
                 "of its recent kill. All that is left are the echoes of your screams, until that too is drowned out by the incessant roar of the waterfall.\n";
 
-        cout << "\n\nEnding 10: Water Fall";
+        cout << "\n\nEnding 11: Water Fall";
         print_line();
         retry(&gc_left_tunnel);
     }
