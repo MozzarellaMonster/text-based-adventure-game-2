@@ -18,6 +18,7 @@ string journal_entry_2 = "\n\t06/27/01\n"
                          "\tThe closest comparison we have is ancient Egyptian, but there's enough differences between the two to rule out any cultural mixing.\n"
                          "\tI will need to study this artifact more.\n\n";
 
+// Found in The Whistling Gorge
 string journal_entry_3 = "\n\t07/14/05\n"
                          "\tThe ring has responded to my actions. There is now a thinly opaque layer of liquid-like energy in the middle of the ring.\n"
                          "\tI will need to calibrate the machine even further. These old records are a massive pain to translate, but I'm definitely on to something here.\n"
@@ -33,6 +34,7 @@ string journal_entry_4 = "\n\t11/13/08\n"
                          "\tThe next few experiments will involve me sending some organic lifeforms through, I need to ensure safe passage.\n"
                          "\tI wish to see this temple with up close with my own eyes.\n\n";
 
+
 string journal_entry_5 = "\n\t07/08/09\n"
                          "\tI've brought back more specimens from my trips through the Gates. I cannot help myself, I must study them.\n"
                          "\tMy curiosity for the worlds I've been to knows no bounds. I'm so intrigued by every new thing I've learned and discovered,\n"
@@ -40,7 +42,9 @@ string journal_entry_5 = "\n\t07/08/09\n"
                          "\ttheir growth and spread is remarkably higher in comparison to ours.\n"
                          "\tI've put several samples in my refrigerator for further study.\n\n";
 
+
 string journal_entry_6 = "";
+
 
 string journal_entry_7 = "";
 
