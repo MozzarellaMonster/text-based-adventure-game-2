@@ -93,42 +93,42 @@ void fruit_options()
 {
     char option;
     print_line();
-        cout << "Eat the fruit? Y/N: ";
-        cin >> option;
-        cout << "\n";
+    cout << "Eat the fruit? Y/N: ";
+    cin >> option;
+    cout << "\n";
 
-        if(option == 'Y' || option == 'y')
-        {
-            cout << "Despite your better judgement, you reach up, pluck some berries off a low-hanging branch, and pop them into your mouth.\n"
-                    "Immediately, your mouth foams up as the berries hit your saliva. You choke and fall to your knees, leaning forward and trying desperately to spit them out, to no avail.\n"
-                    "The berries dissolve immediately and combine with your saliva to become a highly corrosive acid.\n"
-                    "Your tongue burns as the taste of blood appears for a second before your taste buds are burned away, followed by the rest of your tongue.\n"
-                    "The acid makes its way down your throat, dissolving your esophagus and exposing your throat to the parched air of the gorge.\n"
-                    "Blood spills down the front of your clothes and your lower jaw hangs loose as you finally fall forward, taking in wheezing breaths through the gaping hole in your neck.\n"
-                    "You lie on the parched white earth, succumbing to the pain, as everything around you fades to black.\n";
+    if(option == 'Y' || option == 'y')
+    {
+        cout << "Despite your better judgement, you reach up, pluck some berries off a low-hanging branch, and pop them into your mouth.\n"
+                "Immediately, your mouth foams up as the berries hit your saliva. You choke and fall to your knees, leaning forward and trying desperately to spit them out, to no avail.\n"
+                "The berries dissolve immediately and combine with your saliva to become a highly corrosive acid.\n"
+                "Your tongue burns as the taste of blood appears for a second before your taste buds are burned away, followed by the rest of your tongue.\n"
+                "The acid makes its way down your throat, dissolving your esophagus and exposing your throat to the parched air of the gorge.\n"
+                "Blood spills down the front of your clothes and your lower jaw hangs loose as you finally fall forward, taking in wheezing breaths through the gaping hole in your neck.\n"
+                "You lie on the parched white earth, succumbing to the pain, as everything around you fades to black.\n";
             
-            cout << "\n\nEnding 12: Dissolved\n";
-            print_line();
-            retry(&the_whistling_gorge);
-        }
-        else if(option == 'N' || option == 'n')
+        cout << "\n\nEnding 12: Dissolved\n";
+        print_line();
+        retry(&the_whistling_gorge);
+    }
+    else if(option == 'N' || option == 'n')
+    {
+        if(denied_fruit)
         {
-            if(denied_fruit)
-            {
-                cout << "You look at the fruit and your stomach churns. Disgusted, you turn away from it, grateful you did not eat it and head back into the grove.\n";
-            }
-            else
-            {
-                cout << "Wisely, you decide not to take the fruit and turn around, heading back into the grove.\n";
-                denied_fruit = true;
-            }
-            the_whistling_gorge();
+            cout << "You look at the fruit and your stomach churns. Disgusted, you turn away from it, grateful you did not eat it and head back into the grove.\n";
         }
         else
         {
-            try_again();
-            fruit_options();
+            cout << "Wisely, you decide not to take the fruit and turn around, heading back into the grove.\n";
+            denied_fruit = true;
         }
+        the_whistling_gorge();
+    }
+    else
+    {
+        try_again();
+        fruit_options();
+    }
 }
 
 void branch_options()
