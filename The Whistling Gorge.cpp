@@ -1,10 +1,11 @@
 // File containing functions for The Whistling Gorge passage
-#include<iostream>
-#include<string>
-#include"The Whistling Gorge.hpp"
-#include"Functions.hpp"
-#include"Trackers.hpp"
-#include"Items.hpp"
+#include <iostream>
+#include <string>
+#include "The Whistling Gorge.hpp"
+#include "Functions.hpp"
+#include "Journal Entries.hpp"
+#include "Trackers.hpp"
+#include "Items.hpp"
 
 using namespace std;
 
@@ -44,46 +45,77 @@ void the_whistling_gorge()
     char choice;
     print_line();
     cout << "What would you like to do?\n";
-    cout << "A. Take the path on the left";
-    cout << "B. Take the path on the right";
-    cout << "C. Look around where you are";
-    cout << "D. Go back";
+    cout << "A. Take the path on the left\n";
+    cout << "B. Take the path on the right\n";
+    cout << "C. Look around where you are\n";
+    cout << "D. Go back\n";
     print_line();
     cin >> choice;
 
     if (choice == 'A' || choice == 'a')
     {
-        char option;
         print_line();
         cout << "You decide to take the path on the left. You walk forward and come to a small hill, where there is another dead tree\n"
                 "planted on the very crest of the hill. This tree however, bears fruit. Small, shriveled berries grow in clusters along\n"
                 "several of the branches. Some of which are within reach.\n\n";
-        print_line(); // Maybe make this it's own separate function?
-        cout << "Eat the fruit? Y/N\n";
-        cout << "Yes\n";
-        cout << "No\n";
-        print_line();
-        cin >> option;
+        fruit_options();
+    }
+    else if(choice == 'B' || choice == 'b')
+    {
+        cout << "You head down the path on the right. As you walk down the path, you notice the trees here seem to be getting bigger. Unusual, given that you would think dead trees wouldn't grow.\n"
+            "Soon, the path leads to a small clearing with a large black tree in the center, surrounded on all sides by a dense scattering of trees.\n"
+            "The branches of said trees reach over the clearing, creating a domed roof that the sunlight is barely able to penetrate and casting the entire area into a gloomy shade.\n"
+            "It is then you notice the hole in the center of the trunk of the large black tree, dimly glowing a shade of red, and the white twisted branch in the center of the hole.\n";
+        branch_options();
+    }
+    else if(choice == 'C' || choice == 'c')
+    {
+        cout << "You decide to look around where you are first before settling on a path. After a few seconds of looking over the area, you find a stone between the paths that looks as though it was recently disturbed.\n"
+                "You look around it first and finding nothing, lift the stone up. Underneath, you find a folded piece of paper. Rolling the stone aside, you pick up the paper and begin to read:\n\n";
+        cout << journal_entry_3;
+        cout << "You pocket the paper and walk back to your previous position. Once again, the paths lay before you.\n";
+        the_whistling_gorge();
+    }
+    else if(choice == 'D' || choice == 'd')
+    {
+        cout << "You look back from where you came, but remember that solid rock that made up the way out - you weren't getting out of here until you found what you needed.\n";
+                "You turn back to the paths ahead of you.\n"
+        the_whistling_gorge();
+    }
+    else
+    {
+        try_again();
+        the_whistling_gorge();
+    }
+}
 
-        if(option == 'y' || option == 'Y')
+void fruit_options()
+{
+    char option;
+    print_line();
+        cout << "Eat the fruit? Y/N: ";
+        cin >> option;
+        cout << "\n";
+
+        if(option == 'Y' || option == 'y')
         {
             cout << "Despite your better judgement, you reach up, pluck some berries off a low-hanging branch, and pop them into your mouth.\n"
-                    "Immediately, your mouth foams up as the berries hit your saliva. You choke and fall to your knees, leaning forward to try and desperately spit them out, to no avail.\n"
+                    "Immediately, your mouth foams up as the berries hit your saliva. You choke and fall to your knees, leaning forward and trying desperately to spit them out, to no avail.\n"
                     "The berries dissolve immediately and combine with your saliva to become a highly corrosive acid.\n"
                     "Your tongue burns as the taste of blood appears for a second before your taste buds are burned away, followed by the rest of your tongue.\n"
                     "The acid makes its way down your throat, dissolving your esophagus and exposing your throat to the parched air of the gorge.\n"
                     "Blood spills down the front of your clothes and your lower jaw hangs loose as you finally fall forward, taking in wheezing breaths through the gaping hole in your neck.\n"
                     "You lie on the parched white earth, succumbing to the pain, as everything around you fades to black.\n";
             
-            cout << "\n\nEnding 12: Dissolved";
+            cout << "\n\nEnding 12: Dissolved\n";
             print_line();
             retry(&the_whistling_gorge);
         }
-        else if(option == 'n' || option == 'N')
+        else if(option == 'N' || option == 'n')
         {
             if(denied_fruit)
             {
-                cout << "You look at the fruit and your stomach churns. Disgusted, you turn away from it, grateful you did not eat it.\n";
+                cout << "You look at the fruit and your stomach churns. Disgusted, you turn away from it, grateful you did not eat it and head back into the grove.\n";
             }
             else
             {
@@ -95,7 +127,59 @@ void the_whistling_gorge()
         else
         {
             try_again();
-            the_whistling_gorge();
+            fruit_options();
         }
+}
+
+void branch_options()
+{
+    char option;
+    print_line();
+    cout << "Take the branch? Y/N: ";
+    cin >> option;
+    cout << "\n";
+
+    print_line();
+    if(option == 'Y' || option == 'y')
+    {
+        cout << "You slowly approach the tree and reach towards the branch in the trunk, expecting something horrible to happen to you before you can actually grab it.\n"
+                "But nothing does, and you retrieve it successfully. Holding the twisted branch closer, you notice there are holes along the length of it and a larger one at one end.\n"
+                "It's a flute, you realize. A slight breeze picks up and creates a low tune in the flute and in some of the surrounding trees.\n"
+                "A cold chill creeps up your spine as a slight dizzying spell assaults you. You quickly regain your composure, put the flute away, and head back through the now open Gate.\n";
+        temple_second_room();
+    }
+    else if(option == 'N' || option == 'n')
+    {
+            cout << "You decide not to take the branch and instead head around the tree and travel further into the forest. Several minutes pass until you realize you're hopelessly lost.\n"
+                    "You spin around in place, hoping to spot some familiar landmarks, but see nothing.\n"
+                    "It is then a strong wind stirs up and you once again hear the strange whistling sound fill the air around you…\n"
+                    "When you come to, you can't move. You spin your head and look up to see a hole with a view of the sky above, it is now nighttime.\n"
+                    "Dirt fully encases your body from the neck down, completely immobilizing you. You scream, but soon stop, realizing how fruitless it is.\n"
+                    "It is then you feel something wriggling in the dirt around you. Fear floods your body as you hear the earth shifting around you. You try desperately to wriggle around,\n"
+                    "to try and escape, but it is hopeless. Roots burst from the surrounding soil, wrapping themselves around your limbs and forcing themselves into your orifices.\n"
+                    "You choke as the roots force their way down your throat, you grow deaf as your eardrums are ruptured, and blinded as your eyes are crushed within their sockets.\n"
+                    "Pain erupts in your skull as the roots invade your cranium. Somehow, pitifully, you are kept alive. You feel the roots dig into your skin, invade your arteries, and pierce your muscles.\n"
+                    "It is then you hear the sickening crunch of bone as the roots permeate them. Your existence is nothing but pain, and you soon black out…\n\n"
+                    "Dry.\n"
+                    "Desiccate.\n"
+                    "Dead.\n"
+                    "Your limbs splay out, aching for moisture, reaching towards the sky that never grants rain.\n"
+                    "Your ribs and spine gruesomely twisted into a trunk, patterned with holes down the length of your new body.\n"
+                    "Your toes grown beyond anything humanly possible, planted firmly into the ground, writhing in eternal anticipation.\n"
+                    "Everything that was human about you is now gone, as your mind fades away into eternity.\n"
+                    "The wind blows and you hear it rise from the others around you, joining in yourself later. The whistle.\n"
+                    "You join in the accursed chorus until the wind settles down and your song ends.\n"
+                    "Soon.\n"
+                    "Soon someone will come. And then you can feed again.\n";
+
+            cout << "\n\nEnding 13: Dry\n";
+
+            print_line();
+            retry(&the_whistling_gorge);
+    }
+    else
+    {
+        try_again();
+        branch_options();
     }
 }

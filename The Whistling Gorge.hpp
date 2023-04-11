@@ -14,6 +14,7 @@ extern bool denied_fruit;
 
 extern void the_whistling_gorge_text();
 extern void the_whistling_gorge();
-
+extern void fruit_options();
+extern void branch_options();
 
 #endif
