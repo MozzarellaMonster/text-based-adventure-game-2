@@ -79,7 +79,7 @@ void the_whistling_gorge()
     else if(choice == 'D' || choice == 'd')
     {
         cout << "You look back from where you came, but remember that solid rock that made up the way out - you weren't getting out of here until you found what you needed.\n";
-                "You turn back to the paths ahead of you.\n"
+                "You turn back to the paths ahead of you.\n";
         the_whistling_gorge();
     }
     else
