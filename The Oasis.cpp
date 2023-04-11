@@ -3,6 +3,7 @@
 #include <string>
 #include "The Oasis.hpp"
 #include "Functions.hpp"
+#include "Journal Entries.hpp"
 #include "Trackers.hpp"
 #include "Items.hpp"
 
