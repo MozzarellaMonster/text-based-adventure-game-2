@@ -7,5 +7,6 @@
 using namespace std;
 
 extern void the_oasis_text();
+extern void the_oasis();
 
 #endif
