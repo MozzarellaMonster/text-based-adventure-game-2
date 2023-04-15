@@ -6,7 +6,10 @@
 
 using namespace std;
 
+extern bool middle_path_intro;
+
 extern void the_oasis_text();
 extern void the_oasis();
+extern void pond_options();
 
 #endif
