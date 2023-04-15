@@ -66,10 +66,11 @@ void retry(void (*func)()){
 }
 
 // Function for handling the player options, to be added to later
-void present_options(vector<string> option_names, vector<string> dialogue, void (*func)())
+void present_options(vector<string> option_names, vector<string> dialogue)
 {
     char choice;
     print_line();
+    cout << "What would you like to do?\n";
     cout << "A. " << option_names[0];
     cout << "B. " << option_names[1];
     cout << "C. " << option_names[2];
@@ -86,16 +87,19 @@ void present_options(vector<string> option_names, vector<string> dialogue, void 
     
     case 'b':
         cout << dialogue[1];
+        break;
     
     case 'c':
         cout << dialogue[2];
+        break;
     
     case 'd':
         cout << dialogue[3];
+        break;
 
     default:
         try_again();
-        func();
+        present_options(option_names, dialogue);
         break;
     }
 }
