@@ -66,7 +66,8 @@ void retry(void (*func)()){
 }
 
 // Function for handling the player options, to be added to later
-void present_options(vector<string> option_names, vector<string> dialogue, void (*func)()){
+void present_options(vector<string> option_names, vector<string> dialogue, void (*func)())
+{
     char choice;
     print_line();
     cout << "A. " << option_names[0];
