@@ -69,24 +69,33 @@ void retry(void (*func)()){
 void present_options(vector<string> option_names, vector<string> dialogue, void (*func)()){
     char choice;
     print_line();
-    cout << "A." << option_names[0];
-    cout << "B." << option_names[1];
-    cout << "C." << option_names[2];
+    cout << "A. " << option_names[0];
+    cout << "B. " << option_names[1];
+    cout << "C. " << option_names[2];
+    cout << "D. " << option_names[3];
     print_line();
     cin >> choice;
+    choice = choice.tolower();
 
-    if(choice == 'a' || choice == 'A'){
+    switch (choice)
+    {
+    case 'a':
+        cout << dialogue[0];
+        break;
+    
+    case 'b':
+        cout << dialogue[1];
+    
+    case 'c':
+        cout << dialogue[2];
+    
+    case 'd':
+        cout << dialogue[3];
 
-    }
-    else if(choice == 'b' || choice == 'B'){
-
-    }
-    else if(choice == 'c' || choice == 'C'){
-
-    }
-    else{
+    default:
         try_again();
         func();
+        break;
     }
 }
 
