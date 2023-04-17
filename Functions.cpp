@@ -77,7 +77,7 @@ void present_options(vector<string> option_names, vector<string> dialogue)
     cout << "D. " << option_names[3];
     print_line();
     cin >> choice;
-    choice = choice.tolower();
+    choice = tolower(choice);
 
     switch (choice)
     {
