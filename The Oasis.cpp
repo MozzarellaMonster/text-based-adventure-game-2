@@ -125,8 +125,9 @@ void pond_options()
         break;
 
     case 'd':
-        cout << "You decide to go back through the jungle.\n";
-                // Go back
+        cout << "You decide to go back through the jungle.\n"
+                "Turning around, you head back through the trees.\n";
+        the_oasis();
         break;
     
     default:
