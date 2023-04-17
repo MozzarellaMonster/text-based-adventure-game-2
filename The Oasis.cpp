@@ -103,8 +103,20 @@ void pond_options()
         break;
     
     case 'b':
-        cout << "You decide to investigate the overgrown log.\n";
-                // Death - mold from first game
+        cout << "You decide to investigate the overgrown log.\n"
+                "You approach the log and look it over. It is covered in moss and mushrooms, a few strange-looking insects crawl slowly over the surface of the moss.\n"
+                "Bending down, you brush away some moss hanging over the entrance to the hollow center of the log. Peering in, you don't see much besides darkness.\n"
+                "Then, as your eyes finally adjust, you make out a furry shape stuck to inside wall of the log. Getting closer, you realize it's a lump of mold.\n"
+                "Suddenly, the mold violently expels spores towards your face. Instantly, your eyes burn and your breath catches as you breathe it in.\n"
+                "Your lungs itch and your vision grows black as your run your hands over them, feeling hair grow rapidly over the surface of them.\n"
+                "Pain erupts from your lungs and you cough up blood, your skin becomes horribly itchy, and your eyes feel like they're on fire.\n"
+                "The pain and itching is so terrible, you scratch deeply, trying to be rid of the horrid itching. You stumble around, blind, until you eventually trip over the log itself.\n"
+                "Your body erupts in more pain as it hits the hard rock, but you're too busy clawing your eyes out. Blood pours from the empty sockets until you feel the mold invade them as well.\n"
+                "You continue to scratch, your motions becoming slowed as your consciousness finally fades away and the mold consumes the remainder of your body.\n";
+
+        cout << "\n\nEnding 15: Rot Mk. II\n";
+        print_line();
+        retry(&pond_options);
         break;
     
     case 'c':
