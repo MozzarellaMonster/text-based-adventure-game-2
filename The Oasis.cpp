@@ -131,6 +131,8 @@ void pond_options()
         break;
     
     default:
+        try_again();
+        retry(&pond_options);
         break;
     }
 }
