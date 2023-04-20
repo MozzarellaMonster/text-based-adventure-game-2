@@ -120,8 +120,26 @@ void pond_options()
         break;
     
     case 'c':
-        cout << "You decide to go through the waterfall.\n";
-                // Entry into new area
+        cout << "You decide to go through the waterfall.\n"
+                "You pull your jacket over your head as you quickly go through the waterfall in a futile attempt to keep from getting soaked.\n"
+                "You shake and wring out what water you can from your clothes before taking in your surroundings, you are in a small cave with a tunnel heading even deeper into the rock wall.\n"
+                "Hesitating only slightly, you head into the tunnel. After a brief walk you find yourself in a vast open-ceiling cave with a huge beautiful tree growing in the middle, bathed in the sunlight\n"
+                "pouring through the opening of the cave. Massive roots penetrate the floor of the cave and small flowers can be seen around the base of the tree. A collage of colorful lights dance around on\n"
+                "the walls of the cave. You look to the source of the dancing lights - reflections off the leaves of the giant tree. Curious, you make your way to the base of the giant tree. Looking up,\n"
+                "you're surprised to see a staircase going around the circumference of the tree leading all the way to the top. After climbing it for several minutes, you come to a small platform at the\n"
+                "top of the tree where all the branches meet. From your central position, you can see several structures resembling handrails on each of the major branches of the tree. You also see a large\n"
+                "basket nearby filled with tight, strongly woven rope. Putting two and two together, you tie the rope around yourself and slowly make your way out on one of the larger branches of the tree.\n"
+                "After going several meters, you tie one end of the rope securely to the handrail structure and make your way out onto a smaller branch off the main branch you're on. Taking cautious steps,\n"
+                "you eventually reach a part of the branch close of a cluster of flowers and leaves. Reaching out after having tied yourself off yet again to a sturdy-looking branch on the opposite side,\n"
+                "you just manage to grab a leaf a pull it off. You quickly pull yourself back in and head back to the handrail structure before finally taking a moment to look closer at your prize.\n"
+                "The leaf shines brilliantly in the light, with a slight rainbow iridesence, and is somewhat transparent from a distance. Squinting, you bring the leaf closer to your face and peer0 through it.\n"
+                "The image is somewhat blurred, but you can see interesting waves in the air, as if seeing vibrations from noise. You look towards the tunnel leading out of the cave to the back of the waterfall.\n"
+                "The waves you see through the leaf appear to be emanating from that spot. You bring the leaf back down and the waves disappear. Interested, you complete your journey off the branch and back onto\n"
+                "the sturdy platform in the center of the tree. Taking the leaf back out of your pocket, you once again bring it to your face and peer through it. This time, instead of soundwaves, you see the\n"
+                "various temperatures of objects within the surrounding area. Bringing the leaf down to your hand, you wonder if you can see through your skin with the leaf.\n"
+                "Remarkably, you can. You can see the fuzzy outline of your bones through the translucent flesh of the leaf. Flexing your digits, you see your finger bones move as well.\n"
+                "Pocketing the leaf, you head back down the tree, through the waterfall and back through the portal.\n";
+        temple_second_room();
         break;
 
     case 'd':
