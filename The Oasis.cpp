@@ -119,7 +119,7 @@ void pond_options()
         }
         else
         {
-            cout << "You look to the now dismantled pile of rocks. Besides the papers you found, there was nothing helpful there. You look back to the shoreline.\n"
+            cout << "You look to the now dismantled pile of rocks. Besides the papers you found, there was nothing helpful there. You look back to the shoreline.\n";
         }
         pond_options();
         break;
