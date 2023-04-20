@@ -10,6 +10,7 @@
 using namespace std;
 
 bool middle_path_intro = false;
+bool pond_hint = false;
 
 void the_oasis_text()
 {
@@ -66,15 +67,14 @@ void the_oasis()
                     "Several moments later, after taking one final deep breath, you finally open your eyes and return to your previous mindset: looking for what you need.\n";
             middle_path_intro = true;
         }
-        cout << "You stand on the shoreline of the small pond the roaring waterfall pours into. To your left, you see a pile of rocks set against a cliff wall next to the waterfall,\n"
-                "to your left lies a log overgrown with mushrooms and moss, but appears hollow inside, and directly ahead of you lies the waterfall, which would definitely conceal some kind of hidden area\n"
-                "if this was some kind of text adventure game.\n";
+        cout << "You stand on the shoreline of the small pond the roaring waterfall pours into. To your left, you see an unusually neatly stacked pile of rocks set against a cliff wall next to the waterfall,\n"
+                "to your left lies a log overgrown with mushrooms and moss, but appears hollow inside, and directly ahead of you lies the waterfall.\n";
         pond_options();
     }
     else if(choice == 'C' || choice == 'c')
     {
-        cout << "You decide to explore the right path.";
-        // Cliffside?
+        cout << "You decide to explore the right path.\n"
+                "";
     }
     else
     {
@@ -90,16 +90,38 @@ void pond_options()
     cout << "What would you like to do?\n";
     cout << "A. Investigate the pile of rocks\n";
     cout << "B. Investigate the overgrown log\n";
-    cout << "C. Go through the waterfall\n";
-    cout << "D. Go back\n";
+    if(pond_hint)
+    {
+        cout << "C. Go through the waterfall\n";
+        cout << "D. Go back\n";
+    }
+    else
+    {
+        cout << "C. Go back\n";
+    }
     cin >> choice;
     choice = tolower(choice);
 
     switch (choice)
     {
     case 'a':
-        cout << "You decide to investigate the pile of rocks next to the waterfall.\n";
-                // Find journal and hint here
+        if(!pond_hint)
+        {
+            cout << "You decide to investigate the pile of rocks next to the waterfall.\n"
+                    "You go up to the pile of rocks and after briefly looking them over, you carefully clear the stack until you find a two folded up pieces of paper.\n"
+                    "After unfolding one of them, you read:\n\n";
+            cout << journal_entry_5;
+            cout << "Folding that back up, you unfold the other and read:\n\n";
+            cout << hint_4;
+            cout << "For a long moment, you stare at the words of a dying man, processing what you just read. But you eventually fold the paper back up and put it in your pocket.\n"
+                    "You then head back to the shoreline of the pond, the roar of the waterfall signalling your return.\n";
+            pond_hint = true;
+        }
+        else
+        {
+            cout << "You look to the now dismantled pile of rocks. Besides the papers you found, there was nothing helpful there. You look back to the shoreline.\n"
+        }
+        pond_options();
         break;
     
     case 'b':
@@ -120,32 +142,49 @@ void pond_options()
         break;
     
     case 'c':
-        cout << "You decide to go through the waterfall.\n"
-                "You pull your jacket over your head as you quickly go through the waterfall in a futile attempt to keep from getting soaked.\n"
-                "You shake and wring out what water you can from your clothes before taking in your surroundings, you are in a small cave with a tunnel heading even deeper into the rock wall.\n"
-                "Hesitating only slightly, you head into the tunnel. After a brief walk you find yourself in a vast open-ceiling cave with a huge beautiful tree growing in the middle, bathed in the sunlight\n"
-                "pouring through the opening of the cave. Massive roots penetrate the floor of the cave and small flowers can be seen around the base of the tree. A collage of colorful lights dance around on\n"
-                "the walls of the cave. You look to the source of the dancing lights - reflections off the leaves of the giant tree. Curious, you make your way to the base of the giant tree. Looking up,\n"
-                "you're surprised to see a staircase going around the circumference of the tree leading all the way to the top. After climbing it for several minutes, you come to a small platform at the\n"
-                "top of the tree where all the branches meet. From your central position, you can see several structures resembling handrails on each of the major branches of the tree. You also see a large\n"
-                "basket nearby filled with tight, strongly woven rope. Putting two and two together, you tie the rope around yourself and slowly make your way out on one of the larger branches of the tree.\n"
-                "After going several meters, you tie one end of the rope securely to the handrail structure and make your way out onto a smaller branch off the main branch you're on. Taking cautious steps,\n"
-                "you eventually reach a part of the branch close of a cluster of flowers and leaves. Reaching out after having tied yourself off yet again to a sturdy-looking branch on the opposite side,\n"
-                "you just manage to grab a leaf a pull it off. You quickly pull yourself back in and head back to the handrail structure before finally taking a moment to look closer at your prize.\n"
-                "The leaf shines brilliantly in the light, with a slight rainbow iridesence, and is somewhat transparent from a distance. Squinting, you bring the leaf closer to your face and peer0 through it.\n"
-                "The image is somewhat blurred, but you can see interesting waves in the air, as if seeing vibrations from noise. You look towards the tunnel leading out of the cave to the back of the waterfall.\n"
-                "The waves you see through the leaf appear to be emanating from that spot. You bring the leaf back down and the waves disappear. Interested, you complete your journey off the branch and back onto\n"
-                "the sturdy platform in the center of the tree. Taking the leaf back out of your pocket, you once again bring it to your face and peer through it. This time, instead of soundwaves, you see the\n"
-                "various temperatures of objects within the surrounding area. Bringing the leaf down to your hand, you wonder if you can see through your skin with the leaf.\n"
-                "Remarkably, you can. You can see the fuzzy outline of your bones through the translucent flesh of the leaf. Flexing your digits, you see your finger bones move as well.\n"
-                "Pocketing the leaf, you head back down the tree, through the waterfall and back through the portal.\n";
-        temple_second_room();
+        if(pond_hint)
+        {
+            cout << "You decide to go through the waterfall.\n"
+                    "You pull your jacket over your head as you quickly go through the waterfall in a futile attempt to keep from getting soaked.\n"
+                    "You shake and wring out what water you can from your clothes before taking in your surroundings, you are in a small cave with a tunnel heading even deeper into the rock wall.\n"
+                    "Hesitating only slightly, you head into the tunnel. After a brief walk you find yourself in a vast open-ceiling cave with a huge beautiful tree growing in the middle, bathed in the sunlight\n"
+                    "pouring through the opening of the cave. Massive roots penetrate the floor of the cave and small flowers can be seen around the base of the tree. A collage of colorful lights dance around on\n"
+                    "the walls of the cave. You look to the source of the dancing lights - reflections off the leaves of the giant tree. Curious, you make your way to the base of the giant tree. Looking up,\n"
+                    "you're surprised to see a staircase going around the circumference of the tree leading all the way to the top. After climbing it for several minutes, you come to a small platform at the\n"
+                    "top of the tree where all the branches meet. From your central position, you can see several structures resembling handrails on each of the major branches of the tree. You also see a large\n"
+                    "basket nearby filled with tight, strongly woven rope. Putting two and two together, you tie the rope around yourself and slowly make your way out on one of the larger branches of the tree.\n"
+                    "After going several meters, you tie one end of the rope securely to the handrail structure and make your way out onto a smaller branch off the main branch you're on. Taking cautious steps,\n"
+                    "you eventually reach a part of the branch close of a cluster of flowers and leaves. Reaching out after having tied yourself off yet again to a sturdy-looking branch on the opposite side,\n"
+                    "you just manage to grab a leaf a pull it off. You quickly pull yourself back in and head back to the handrail structure before finally taking a moment to look closer at your prize.\n"
+                    "The leaf shines brilliantly in the light, with a slight rainbow iridesence, and is somewhat transparent from a distance. Squinting, you bring the leaf closer to your face and peer0 through it.\n"
+                    "The image is somewhat blurred, but you can see interesting waves in the air, as if seeing vibrations from noise. You look towards the tunnel leading out of the cave to the back of the waterfall.\n"
+                    "The waves you see through the leaf appear to be emanating from that spot. You bring the leaf back down and the waves disappear. Interested, you complete your journey off the branch and back onto\n"
+                    "the sturdy platform in the center of the tree. Taking the leaf back out of your pocket, you once again bring it to your face and peer through it. This time, instead of soundwaves, you see the\n"
+                    "various temperatures of objects within the surrounding area. Bringing the leaf down to your hand, you wonder if you can see through your skin with the leaf.\n"
+                    "Remarkably, you can. You can see the fuzzy outline of your bones through the translucent flesh of the leaf. Flexing your digits, you see your finger bones move as well.\n"
+                    "Pocketing the leaf, you head back down the tree, through the waterfall and back through the portal.\n";
+            temple_second_room();
+        }
+        else
+        {
+            cout << "You decide to go back through the jungle.\n"
+                    "Turning around, you head back through the trees.\n";
+            the_oasis();
+        }
         break;
 
     case 'd':
-        cout << "You decide to go back through the jungle.\n"
-                "Turning around, you head back through the trees.\n";
-        the_oasis();
+        if(pond_hint)
+        {
+            cout << "You decide to go back through the jungle.\n"
+                    "Turning around, you head back through the trees.\n";
+            the_oasis();
+        }
+        else
+        {
+            try_again();
+            retry(&pond_options);    
+        }
         break;
     
     default:
