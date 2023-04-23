@@ -21,10 +21,37 @@ void the_swamplands_text()
             "lack of large trees mostly consisting of tall grass and waist-high water, and the final area making up the majority of the swamp with large trees and very deep water you would need a boat to go through.\n"
             "Thankfully, from your high position, you spot a dock with a small boat anchored to it. Climbing down, you make your way to the dock where you find a barrel of rope with a piece of folded paper nested within.\n"
             "Unfolding the piece of paper, you read:\n\n";
-    cout << ;
+    cout << journal_entry_5; // Not finished
+    cout << "";
 }
 
 void the_swamplands()
 {
-    cout << "";
+    char choice;
+    print_line();
+    cout << "A. Explore the tall grass\n";
+    cout << "B. Explore the shady area\n";
+    cout << "C. Explore the deep area\n";
+    cin >> choice;
+    choice = tolower(choice);
+
+    switch (choice)
+    {
+    case 'a':
+        cout << "";
+        break;
+
+    case 'b':
+        cout << "";
+        break;
+
+    case 'c':
+        cout << "";
+        break;
+    
+    default:
+        try_again();
+        the_swamplands();
+        break;
+    }
 }
