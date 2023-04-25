@@ -8,5 +8,8 @@ using namespace std;
 
 extern void the_swamplands_text();
 extern void the_swamplands();
+extern void grasslands();
+extern void tall_trees();
+extern void islands();
 
 #endif
