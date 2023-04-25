@@ -101,9 +101,14 @@ string hint_4 = "\n\t\"This is one of the newer dimensions the Worldwalkers foun
                 "\t\"Get the leaf, gather the keys, solve the Labyrinth, and get home. Stay home. Don't follow in my footsteps, destroy my Gate. I don't want anyone to find it and come here either. Playing the game of a dead civilization.\n"
                 "\t\nThey say that curiosity killed the cat, and that satisfaction brought it back, but there's no coming back from what I've done. The least I can do is to prevent anyone else from sharing my fate. Good luck, traveler.\"\n\n";
 
-// For the swamplands - reveal the last artifact to be found - the Black Heart, warn player of danger in swamplands, and reveal that the current possesser of the Black Heart is a Worldwalker
 string hint_5 = "\n\t\"The Swamplands - a place even the Worldwalkers did not dare to linger in for fear of all the dangers lurking here. Make no mistake traveler, there is more than your physical form at risk here.\n"
-                "\tYour very sanity hangs in the balance. I too find myself afraid of coming back here every time and have not explored much of this world. I think even the Worldwalkers didn't explore much past what\n"
-                "\tyou can already see. There are many dangers here, some familiar, others alien. These things are not to be trifled with, not that everything you've already encountered is anything to scoff at, its\n"
+                "\tYour very sanity hangs in the balance. I too find myself afraid of coming back here and as a result, have not explored much of this world. I think even the Worldwalkers didn't explore much past what\n"
+                "\tyou can already see. There are many dangers here, some familiar, others alien. These things are not to be trifled with. Not that what you've already encountered is anything to scoff at, its\n"
                 "\tjust that the swamp... it KNOWS you. It knows what scares you, what makes you tick, and it exploits those things. The most important thing to remember here is to keep a clear head, and do not stay\n"
-                "\tin the swamp past nightfall. The darkness becomes absolute at night here, and everything comes out to play."; // Finish this
+                "\tin the swamp past nightfall. The darkness becomes absolute at night here, and everything comes out to play. You'll need to obtain what the Worldwalkers refer to as \"Nightflesh\", but what I like to\n"
+                "\tcall \"The Black Heart\". It is exactly what it sounds like - dark, cursed flesh that one can use to change form into whatever they please. However, this is not some fun toy to play with, the power\n"
+                "\tit grants you has a heavy cost. The longer you are in possession of The Black Heart, the more your sanity will whittle away. If you stay in contact with Nightflesh for longer than 12 hours, you will\n"
+                "\tlose all semblance of humanity and be nothing more that a rage-filled violent beast. Once you find The Black Heart, you'll need to limit direct contact with it, but be forewarned - it tempts you.\n"
+                "\tAside from the dangers of Nightflesh, the swamp is home to a menagerie of deadly creatures. Everything from venomous snakes and hungry alligators to terrifying Totems and cannibalistic Headhunters.\n"
+                "\tOh, and one more thing. The last individual to become a slave to the evil of The Black Heart was a Worldwalker, which would have been your first and only direct experience with them, were it not for\n"
+                "\tThe Black Heart twisting them into a horrific amalgamation of flesh. Beware traveler, and pray night does not come soon.\n";
