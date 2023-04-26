@@ -7,6 +7,7 @@
 using namespace std;
 
 extern bool explored_grasslands;
+extern bool explored_tall_trees;
 
 extern void the_swamplands_text();
 extern void the_swamplands();

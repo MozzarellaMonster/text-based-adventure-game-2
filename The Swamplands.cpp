@@ -10,6 +10,7 @@
 using namespace std;
 
 bool explored_grasslands = false;
+bool explored_tall_trees = false;
 
 void the_swamplands_text()
 {
@@ -63,9 +64,12 @@ void the_swamplands()
         break;
 
     case 'b':
-        // Alligators, 'living hive' death, and The Black Heart
+        // 'Living hive' death, and The Black Heart
         cout << "You decide to explore the area with the tall trees.\n"
-                "";
+                "Getting into the boat, you paddle your way straight towards the deep swamp littered with numerous tall trees. As you approach, the sun hides behind the thick canopy, effectively darkening the entire area.\n"
+                "Slowing the boat, you look around the deep swamp. The lack of light makes it hard to see, but you can just make out two paths ahead of you - the left path leads into a darker, older part of the swamp\n"
+                "with much more densely packed and larger trees, whereas the other simply leads further into the swamp.\n";
+        tall_trees();
         break;
 
     case 'c':
@@ -133,6 +137,7 @@ void grasslands()
                 "crocodile grabs one of them in its huge jaws. Its screams cut through the air as the others try to help free their companion, and the crocodile pulls it under the water. In all the commotion,\n"
                 "you are quickly forgotten and manage to run along the shoreline back around the field of tall grass to the small dock where the boat is anchored. You quickly untie the boat from the piling\n"
                 "and return to the main dock where you found the boat.\n";
+        the_swamplands();
         break;
     
     default:
@@ -147,13 +152,20 @@ void tall_trees()
     char choice;
     print_line();
     cout << "What would you like to do?\n";
-    cout << "";
+    cout << "A. Go into the darker part of the swamp\n";
+    cout << "B. Go further into the swamp\n";
     cin >> choice;
     choice = tolower(choice);
 
     switch (choice)
     {
     case 'a':
+        // 'Living hive' death
+        cout << "Against your better judgement, you decide to head into the darker part of the forest.\n"
+                "";
+        break;
+
+    case 'b':
         cout << "";
         break;
     
@@ -179,6 +191,10 @@ void islands()
         cout << "";
         break;
     
+    case 'b':
+        cout << "";
+        break;
+
     default:
         try_again();
         islands();
