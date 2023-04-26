@@ -9,6 +9,8 @@
 
 using namespace std;
 
+bool explored_grasslands = false;
+
 void the_swamplands_text()
 {
     cout << "You stumble out of the Gate and immediately get your foot stuck in a deep puddle of mud. The mud sucks at your shoes as you desperately try to free your foot without falling over.\n"
@@ -41,15 +43,23 @@ void the_swamplands()
     switch (choice)
     {
     case 'a':
-        // Headhunters
-        cout << "You decide to explore the tall grasslands.\n"
-                "Getting into the boat, you paddle your way to the left area where tall grasslands greet you on thankfully solid ground. Reaching a smaller, more decrepit dock, you tie your boat to a piling\n"
-                "and climb out. As expected, the grass is much higher than what you initially expected, well above your full height. With deep trepidation, yet equally deep determination, you step into the grasslands.\n"
-                "Several minutes pass before you come across anything within the field. Even traveling in a straight line, you're pleasantly surprised that nothing has actually tried to kill you yet.\n"
-                "Unexpectedly however, the monotony is dropped once you come across an unusual sight - a small camp of wooden and straw huts. And small is not an exaggeration, the huts are barely above knee-height.\n"
-                "You stoop low to look inside one of them - empty. Eventually, you spot several small footprints on the ground leading away from every hut and into the tall grass. You now have two options - follow the\n"
-                "footprints further into the grass or go in a separate direction away from them.\n";
-        grasslands();
+        if(explored_grasslands)
+        {
+            cout << "You look toward the tall grasslands, but remember that you didn't find anything there. You look back to the options before you.\n";
+            the_swamplands();
+        }
+        else
+        {
+            cout << "You decide to explore the tall grasslands.\n"
+                    "Getting into the boat, you paddle your way to the left area where tall grasslands greet you on thankfully solid ground. Reaching a smaller, more decrepit dock, you tie your boat to a piling\n"
+                    "and climb out. As expected, the grass is much higher than what you initially expected, well above your full height. With deep trepidation, yet equally deep determination, you step into the grasslands.\n"
+                    "Several minutes pass before you come across anything within the field. Even traveling in a straight line, you're pleasantly surprised that nothing has actually tried to kill you yet.\n"
+                    "Unexpectedly however, the monotony is dropped once you come across an unusual sight - a small camp of wooden and straw huts. And small is not an exaggeration, the huts are barely above knee-height.\n"
+                    "You stoop low to look inside one of them - empty. Eventually, you spot several small footprints on the ground leading away from every hut and into the tall grass. You now have two options - follow the\n"
+                    "footprints further into the grass or go in a separate direction away from them.\n";
+            explored_grasslands = true;
+            grasslands();
+        }
         break;
 
     case 'b':
@@ -102,7 +112,7 @@ void grasslands()
                 "Slowly, one of the members starts to chant and the others soon join in. You pull against the bonds, flexing your muscles, trying everything you can to loosen them.\n"
                 "Their chanting grows louder and the one holding the axe slowly raises it above your neck. You try to scream but it only comes out as a muffled moan against the rag\n"
                 "tied over your mouth. You scream as the chanting grows ever louder until suddenly they stop, the axe held high. You look up, surprised. Then the one holding the axe\n"
-                "breaks out in a gleeful smile and yells maniacly, bringing the axe down swiftly on your exposed neck.\n";
+                "breaks out in a gleeful smile and yells maniacally, bringing the axe down swiftly on your exposed neck.\n";
 
         cout << "\n\nEnding 17: Beheaded\n";
         print_line();
@@ -110,7 +120,19 @@ void grasslands()
         break;
 
     case 'b':
-        cout << "You decide to head in a separate direction away from the footprints.\n";
+        cout << "You decide to head in a separate direction away from the footprints.\n"
+                "Turning away from the trail of footprints, you walk back into the tall grass. After traveling some ways, you hear running water. Exiting the tall grass, you find yourself\n"
+                "on the shoreline of a river. Looking up and down the shore, you don't see any easy way to cross it, nor is there a dock or boat. Turning away, you hear some water sloshing\n"
+                "and look behind you to find a crocodile running at you. Terrified, you run into the tall grass as fast as you can. After a moment, you stop to catch your breath and notice\n"
+                "that you've outrun the crocodile. As you heartrate returns to normal, you find that you're on a small mound and are able to look above the tall grass. Looking around, you notice\n"
+                "a strange small humanoid figure atop a pole above the tall grass. Unfortunately, it also spots you and climbs down the pole with purpose. Almost immediately, you hear high-pitched\n"
+                "yells and see the grass moving excitedly as multiple small hominids run towards you. Frantically, you turn around and run in the opposite direction, back towards the river. You run\n"
+                "as fast as you can, back through the tall grass. Soon, you see the river through the thinning grass and remember the crocodiles. At the same time, you hear the small hominids gaining\n"
+                "ground on you. Thinking quickly, you run to the very edge of the shoreline just before the water and make a sharp turn. Unfortunately, you slip on the wet mud and fall down just as the\n"
+                "hominids catch up to you. It is then you hear the water sloshing as a crocodile surfaces. You quickly roll out of the way, and the small hominids are met with a nasty surprise as the\n"
+                "crocodile grabs one of them in its huge jaws. Its screams cut through the air as the others try to help free their companion, and the crocodile pulls it under the water. In all the commotion,\n"
+                "you are quickly forgotten and manage to run along the shoreline back around the field of tall grass to the small dock where the boat is anchored. You quickly untie the boat from the piling\n"
+                "and return to the main dock where you found the boat.\n";
         break;
     
     default:
@@ -131,7 +153,7 @@ void tall_trees()
 
     switch (choice)
     {
-    case '':
+    case 'a':
         cout << "";
         break;
     
@@ -153,7 +175,7 @@ void islands()
 
     switch (choice)
     {
-    case '':
+    case 'a':
         cout << "";
         break;
     
