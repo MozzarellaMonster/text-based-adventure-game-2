@@ -111,6 +111,7 @@ void grasslands()
                 "into your neck. Instantly, you shake him off, but he only whoops in triumph as he digs his sharp little claws through your clothing and into your skin.\n"
                 "After a few seconds, the world starts to blur around you and your movement becomes sluggish and slow. Eventually, your leg muscles give in and you fall\n"
                 "to the ground, unconscious.\n"
+                "                                                                   *****                                                                                \n"
                 "The smell of a crackling fire awakens you and you find that you're now back in at the small camp you found earlier, tied securely to a log and the five small\n"
                 "hominids are gathered around you. One is standing next to your head, brandishing a crude wood and bone axe. Your eyes widen as you realize what's about to happen.\n"
                 "Slowly, one of the members starts to chant and the others soon join in. You pull against the bonds, flexing your muscles, trying everything you can to loosen them.\n"
@@ -160,13 +161,40 @@ void tall_trees()
     switch (choice)
     {
     case 'a':
-        // 'Living hive' death
         cout << "Against your better judgement, you decide to head into the darker part of the forest.\n"
-                "";
+                "You slowly aim the boat towards the left path and paddle at a steady pace towards it. As you travel further down the path, the darker the swamp around you becomes.\n"
+                "You continue onwards until you come to a massive tree with a thick trunk on a small island in the center of a clearing. Tall trees encircle the island at a considerable distance away,\n"
+                "giving the entire area a sense of forboding. Slowing the boat down to a crawl, you stare at the massive tree ahead of you. It's a large dead tree, the wood is split and uneven\n"
+                "yet, there appears to be large leaves swaying on the branches. As you draw nearer, the water reflects some light onto the island tree, giving it an eerie sense of motion.\n"
+                "With a small jolt, the boat hits the shore of the island and breaks you out of your small reverie. Getting out and pulling the boat securely onto the sandy shore, you take in more\n"
+                "of your surroundings. The island consists mainly of sand with more solid ground towards the center of the island, where the tree stands tall and wide. As you finish pulling the boat onshore,\n"
+                "you get a better look at the tree closer. Immediately, you shudder as you notice that the reflections from the water isn't the primary reason the tree looks like it's moving, you spy\n"
+                "and can now hear multiple soft clicking noises from several thousand insects crawling over each other on the tree. You then hear a small buzzing towards the top of the tree and look up.\n"
+                "It is then you realize that the 'leaves' are not leaves, but are instead multiple winged insects holding onto the branches of the tree. Creeped out but curious, you take another step closer\n"
+                "and proceed to trip as your foot catches on a large root of the tree protruding out of the sand. As you free your entangled foot, the root breaks open. Your eyes widen in horror. Inside the root\n"
+                "is a dark shriveled hand, slowly moving and feeling around the edges of the hole in the root. As you stare in morbid shock, a large insect crawls out of a hole covered by a flap of skin on the\n"
+                "wrist of the hand. Now terrified and disgusted, you look back to the massive 'tree.' How many bodies...\n"
+                "You jump up, intent on getting off the island as fast as possible. However, your quick actions not only break even more of the root, but alert the insects resting on the surface of the tree-like\n"
+                "structure. The buzzing sounds grow incredibly loud and you look up from pushing the boat back in the water. The winged insects have taken flight and several thousand of the crawling insects are\n"
+                "now crawling towards you. Insects pour from the hole in the root, while others stay and visibly start to patch the hole up. Desperately, you push the boat back in the water and attempt to jump in\n"
+                "but can feel several of the insects crawling over you. Unable to resist, you stop and brush off as many as you can. But as you brush off a few, hundreds more crawl onto you. You soon realize the\n"
+                "futility of your actions and try to jump into the boat, but the weight of the insects makes your movements sluggish and you fall into the shallow water. You shake off as many as possible,\n"
+                "but soon feel several thousand pinpricks as the insects bite you and pump you full of venom. Your movements slow even more and your vision blurs. You eventually cannot move anymore and are dimly\n"
+                "aware of being dragged back toward the tree-like nest...\n"
+                "                                                                                         *****                                                                                                     \n"
+                "It's been several days now. You don't know which part of the tree-nest they stuffed you in, nor can you move as they continue to pump you full of their paralyzing venom. Somehow, you're still aware\n"
+                "of what's happening to you. It's so dark that you can't see much, but you can see the dry stretched-out face in front of you, a good foot away from you. The face is locked in a perpetual scream.\n"
+                "Every day, you watch the insects crawl in and out of the eye sockets and wide open mouth of the agonized visage. And you know that you will soon share the same fate, because after two days,\n"
+                "you lost feeling in your legs before regaining it. You wish you didn't however, as you can feel the insects crawling in and out of holes in your flesh, burrowing out tunnels for them to crawl through.\n"
+                "And you can feel them as they slowly but surely burrow upward, drying your meat of blood but somehow keeping you alive in this accursed existence.\n"
+                "That's not the worst thing, however. The worst thing is the fact that the face is slowly coming closer... and it's starting to smile.\n";
+        cout << "\n\nEnding 18: Hive\n";
+        print_line();
+        retry(&tall_trees);
         break;
 
     case 'b':
-        cout << "";
+        cout << "You decide to stay the course and head further into the swamp, away from the darker part of it.\n";
         break;
     
     default:
