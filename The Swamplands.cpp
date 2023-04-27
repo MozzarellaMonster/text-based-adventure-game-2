@@ -188,13 +188,18 @@ void tall_trees()
                 "you lost feeling in your legs before regaining it. You wish you didn't however, as you can feel the insects crawling in and out of holes in your flesh, burrowing out tunnels for them to crawl through.\n"
                 "And you can feel them as they slowly but surely burrow upward, drying your meat of blood but somehow keeping you alive in this accursed existence.\n"
                 "That's not the worst thing, however. The worst thing is the fact that the face is slowly coming closer... and it's starting to smile.\n";
+        
         cout << "\n\nEnding 18: Hive\n";
         print_line();
         retry(&tall_trees);
         break;
 
     case 'b':
-        cout << "You decide to stay the course and head further into the swamp, away from the darker part of it.\n";
+        cout << "You decide to stay the course and head further into the swamp, away from the darker part of it.\n"
+                "Keeping the boat going at a steady pace, you maneuver away from the darker part of the forest and continue into the swamp. As you head deeper into the swamp, you notice the trees grow noticeably thicker\n"
+                "and more densely crowded. Some time later, the boat inevitably gets stuck on a large cluster of roots. Balancing carefully, you move to dislodge the boat from the cluster of roots. During the process,\n"
+                "you notice the swamp grow eeriely silent, void of the buzzing of insects and croaking of frogs. In fact, it is so silent that your breathing sounds amplified. Unintentionally, your heartrate speeds up\n"
+                "and you start to feel anxious. Somehow, the silence only deepens and your stomach twists in dread. Somehow, you just know, something is watching you.\n"; // To be finished later
         break;
     
     default:
