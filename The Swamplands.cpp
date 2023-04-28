@@ -202,7 +202,8 @@ void tall_trees()
                 "and you start to feel anxious. Somehow, the silence only deepens and your stomach twists in dread and you just know something is watching you. Slowly, so as to not draw suspicion, you continue to work\n"
                 "to dislodge the boat from the roots, all the while listening out for something... anything that will break the deafening silence and stealthily looking around and keeping an eye on your periphery. Finally,\n"
                 "after a long moment, you hear the natural sounds of the swamp return just as you finish dislodging the boat. Feeling your dread evaporate, you stand up to your full height and look around, but see nothing\n"
-                "out of the ordinary.\n";
+                "out of the ordinary. With a shuddering breath, you return to paddling the boat further into the swamp. After some time, you come across an interesting sight: a decrepit house on stilts standing above the\n"
+                "water of the swamp, with a small dock leading up to the raised porch of the house.\n"; // First encounter with Black Heart possessor
         break;
     
     default:
