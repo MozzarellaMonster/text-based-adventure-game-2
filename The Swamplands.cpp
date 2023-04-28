@@ -199,7 +199,10 @@ void tall_trees()
                 "Keeping the boat going at a steady pace, you maneuver away from the darker part of the forest and continue into the swamp. As you head deeper into the swamp, you notice the trees grow noticeably thicker\n"
                 "and more densely crowded. Some time later, the boat inevitably gets stuck on a large cluster of roots. Balancing carefully, you move to dislodge the boat from the cluster of roots. During the process,\n"
                 "you notice the swamp grow eeriely silent, void of the buzzing of insects and croaking of frogs. In fact, it is so silent that your breathing sounds amplified. Unintentionally, your heartrate speeds up\n"
-                "and you start to feel anxious. Somehow, the silence only deepens and your stomach twists in dread. Somehow, you just know, something is watching you.\n"; // To be finished later
+                "and you start to feel anxious. Somehow, the silence only deepens and your stomach twists in dread and you just know something is watching you. Slowly, so as to not draw suspicion, you continue to work\n"
+                "to dislodge the boat from the roots, all the while listening out for something... anything that will break the deafening silence and stealthily looking around and keeping an eye on your periphery. Finally,\n"
+                "after a long moment, you hear the natural sounds of the swamp return just as you finish dislodging the boat. Feeling your dread evaporate, you stand up to your full height and look around, but see nothing\n"
+                "out of the ordinary.\n";
         break;
     
     default:
