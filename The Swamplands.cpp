@@ -11,7 +11,10 @@ using namespace std;
 
 bool explored_grasslands = false;
 bool explored_tall_trees = false;
+bool hunt_start = false;
 
+// Revisit areas here to find ways to kill BH possessor and obtain Black Heart
+// Include timed-events
 void the_swamplands_text()
 {
     cout << "You stumble out of the Gate and immediately get your foot stuck in a deep puddle of mud. The mud sucks at your shoes as you desperately try to free your foot without falling over.\n"
@@ -203,7 +206,18 @@ void tall_trees()
                 "to dislodge the boat from the roots, all the while listening out for something... anything that will break the deafening silence and stealthily looking around and keeping an eye on your periphery. Finally,\n"
                 "after a long moment, you hear the natural sounds of the swamp return just as you finish dislodging the boat. Feeling your dread evaporate, you stand up to your full height and look around, but see nothing\n"
                 "out of the ordinary. With a shuddering breath, you return to paddling the boat further into the swamp. After some time, you come across an interesting sight: a decrepit house on stilts standing above the\n"
-                "water of the swamp, with a small dock leading up to the raised porch of the house.\n"; // First encounter with Black Heart possessor
+                "water of the swamp, with a small dock leading up to the raised porch of the house. Climbing up the short stairs, you stop to knock, but immediately hear a strange sound - a muffled rhythmic thudding noise,\n"
+                "coming from the other side of the door. Curious, you put your ear up to the door and after a few seconds you can hear it come from the other side. Slowly, you push open the door, careful to minimize noise.\n"
+                "You then spy a large hole in the floor of the house several feet in front of you. In the hole, you spy a swirling black shape. You see expose muscles fibers shining like black licorice moving in a slow,\n"
+                "serpentine fashion around an exposed center. And in that very center lies a black pulsating heart. A heart with a slow, muted heartbeat every few seconds. You slowly approach the hole, watching the exposed\n"
+                "muscle fibers shift and weave around hypnotically. As you draw near, you become dimly aware of the lack of noise that has once again pervaded the atmosphere. The silence grows as you draw nearer, the only thing\n"
+                "that you can still hear is the beating of the heart. You are now mere inches away from the hole, reaching toward the pulsating organ with enraptured fascination before the loose floorboard beneath you suddenly\n"
+                "way and you almost fall completely into the hole before catching the sides, bringing you to a complete halt. Immediately, the black mass directly below you rapidly transforms into a large teeth-lined gaping maw.\n"
+                "Shocked, you scream as you push yourself up from the hole just in time before a mass of black explodes straight up past you through the ceiling, emitting an unearthly raspy screech all the while. Adrenaline floods\n"
+                "your veins as you turn and run back through the door, down the short stairs and practically dive into the boat, kicking off the small dock and paddling as fast as you can. As you paddle away, you can hear multiple\n"
+                "cracks and snaps from all different directions above you as small pieces of wood and leaves ran down from the canopy. Pushing hard on the paddle, a small roar grows louder behind you until it is almost deafening.\n"
+                "It is a loud, reverberating roar signalling not only the awakening of a monster, but the start of its hunt. And you are its prey."; // First encounter with Black Heart possessor
+        hunt_start = true;
         break;
     
     default:
