@@ -78,7 +78,11 @@ void the_swamplands()
     case 'c':
         // Totems - wooden entities that stalk the player through the water of the swamps, only moves when the player is not looking directly at them.
         cout << "You decide to explore the cluster of small islands.\n"
-                "";
+                "Getting into the boat, you point it in the direction of the cluster of islands and begin to paddle your way there. Unlike the other areas, this are further away.\n"
+                "After paddling for a long while, you finally arrive at the first of the islands. A dense fog has collected around the islands, making it hard to see in particular areas.\n"
+                "From what you can make out, it seems as though there are two areas that seem to be worth exploring - a large island with a collection of large boulders in the middle of it and another area\n"
+                "filled with several broken and rotting wooden structures that may have been a village at some point in the past.\n";
+        islands();
         break;
     
     default:
@@ -216,7 +220,7 @@ void tall_trees()
                 "Shocked, you scream as you push yourself up from the hole just in time before a mass of black explodes straight up past you through the ceiling, emitting an unearthly raspy screech all the while. Adrenaline floods\n"
                 "your veins as you turn and run back through the door, down the short stairs and practically dive into the boat, kicking off the small dock and paddling as fast as you can. As you paddle away, you can hear multiple\n"
                 "cracks and snaps from all different directions above you as small pieces of wood and leaves ran down from the canopy. Pushing hard on the paddle, a small roar grows louder behind you until it is almost deafening.\n"
-                "It is a loud, reverberating roar signalling not only the awakening of a monster, but the start of its hunt. And you are its prey."; // First encounter with Black Heart possessor
+                "It is a loud, reverberating roar signalling not only the awakening of a monster, but the start of its hunt. And you are its prey.\n"; // First encounter with Black Heart possessor
         hunt_start = true;
         break;
     
@@ -232,18 +236,20 @@ void islands()
     char choice;
     print_line();
     cout << "What would you like to do?\n";
-    cout << "";
+    cout << "A. Explore the large island with several large boulders\n";
+    cout << "B. Explore the abandoned village\n";
     cin >> choice;
     choice = tolower(choice);
 
     switch (choice)
     {
     case 'a':
-        cout << "";
+        cout << "You decide to explore the large island with the pile of large boulders on it.\n";
         break;
     
     case 'b':
-        cout << "";
+        // Totems attack here
+        cout << "You decide to explore the abandoned village.\n";
         break;
 
     default:
