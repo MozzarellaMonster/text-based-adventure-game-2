@@ -372,6 +372,7 @@ void rock_island()
                 "back to the start of the paths.\n";
         crab = true;
         islands();
+        break;
 
     default:
         try_again();
