@@ -270,11 +270,18 @@ void islands()
     {
     case 'a':
         print_line();
-        cout << "You decide to explore the large island with the pile of large boulders on it.\n"
+        if(crab)
+        {
+            cout << "You look toward the island and shudder a bit as you see the boulder-like shell of the giant crab you saw there. You shake your head and turn back to the options before you.\n";
+            islands();
+        }
+        else{
+            cout << "You decide to explore the large island with the pile of large boulders on it.\n"
                 "Pointing your boat in the direction of the island, you paddle your way over until you breach the shore and stop. Getting out, you secure the boat and approach the rocks.\n"
                 "Looking through them, you don't seem to find anything of interest and get up to leave until you hear something. A noise. Some kind of faint clicking, coming from in-between two rocks.\n"
                 "Could it be a device of some kind? Something that could help you? Would it be worth it to find out?\n";
-        rock_island();
+            rock_island();
+        }
         break;
     
     case 'b':
@@ -357,23 +364,14 @@ void rock_island()
         break;
         
     case 'b':
-        if(crab)
-        {
-            print_line();
-            cout << "You look toward the island and shudder a bit as you see the boulder-like shell of the giant crab you saw there. You shake your head and turn back to the options before you.\n";
-            islands();
-        }
-        else
-        {
-            print_line();
-            cout << "You decide it would not be worth it to find out. You get up and return to the boat. The clicking noise increases in frequency, but you ignore it. Suddenly, the biggest rock in the pile gets up and turns towards you.\n"
-                    "It's not a rock at all, but a giant crab. You watch as it clicks its mandibles together, reproducing the clicking noise you heard. You stare in shock for a moment before the crabs starts crawling rapidly towards you.\n"
-                    "You turn and run, jumping into the boat and pushing off the shore, paddling as fast as you can. The crab soon reaches the shore and watches you for a moment before turning back around and settling back into its divet,\n"
-                    "its shell blending in and looking just like a boulder. You watch in stunned fascination as you slow your paddling and your heartbeat. \"It's a good thing I didn't reach in-between those rocks\", you think as you paddle\n"
-                    "back to the start of the paths.\n";
-            crab = true;
-            islands();
-        }
+        print_line();
+        cout << "You decide it would not be worth it to find out. You get up and return to the boat. The clicking noise increases in frequency, but you ignore it. Suddenly, the biggest rock in the pile gets up and turns towards you.\n"
+                "It's not a rock at all, but a giant crab. You watch as it clicks its mandibles together, reproducing the clicking noise you heard. You stare in shock for a moment before the crabs starts crawling rapidly towards you.\n"
+                "You turn and run, jumping into the boat and pushing off the shore, paddling as fast as you can. The crab soon reaches the shore and watches you for a moment before turning back around and settling back into its divet,\n"
+                "its shell blending in and looking just like a boulder. You watch in stunned fascination as you slow your paddling and your heartbeat. \"It's a good thing I didn't reach in-between those rocks\", you think as you paddle\n"
+                "back to the start of the paths.\n";
+        crab = true;
+        islands();
 
     default:
         try_again();
@@ -383,7 +381,7 @@ void rock_island()
 
     void the_hunt()
     {
-
+        // Fill in this.
     }
         
 }
