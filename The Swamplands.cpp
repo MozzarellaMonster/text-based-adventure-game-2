@@ -50,15 +50,14 @@ void the_swamplands()
     switch (choice)
     {
     case 'a':
+        print_line();
         if(explored_grasslands)
         {
-            print_line();
             cout << "You look toward the tall grasslands, but remember that you didn't find anything there. You look back to the options before you.\n";
             the_swamplands();
         }
         else
         {
-            print_line();
             cout << "You decide to explore the tall grasslands.\n"
                     "Getting into the boat, you paddle your way to the left area where tall grasslands greet you on thankfully solid ground. Reaching a smaller, more decrepit dock, you tie your boat to a piling\n"
                     "and climb out. As expected, the grass is much higher than what you initially expected, well above your full height. With deep trepidation, yet equally deep determination, you step into the grasslands.\n"
@@ -82,12 +81,20 @@ void the_swamplands()
 
     case 'c':
         print_line();
-        cout << "You decide to explore the cluster of small islands.\n"
-                "Getting into the boat, you point it in the direction of the cluster of islands and begin to paddle your way there. Unlike the other areas, this area is further away.\n"
-                "After paddling for a long while, you finally arrive at the first of the islands. A dense fog has collected around the islands, making it hard to see in particular areas.\n"
-                "From what you can make out, it seems as though there are two areas that seem to be worth exploring - a large island with a collection of large boulders in the middle of it and another area\n"
-                "filled with several broken and rotting wooden structures that may have been a village at some point in the past.\n";
-        islands();
+        if(explored_islands)
+        {
+            cout << "You look towards the islands and think about what you saw there, then look back towards the options in front of you.\n";
+            the_swamplands();
+        }
+        else
+        {
+            cout << "You decide to explore the cluster of small islands.\n"
+                    "Getting into the boat, you point it in the direction of the cluster of islands and begin to paddle your way there. Unlike the other areas, this area is further away.\n"
+                    "After paddling for a long while, you finally arrive at the first of the islands. A dense fog has collected around the islands, making it hard to see in particular areas.\n"
+                    "From what you can make out, it seems as though there are two areas that seem to be worth exploring - a large island with a collection of large boulders in the middle of it and another area\n"
+                    "filled with several broken and rotting wooden structures that may have been a village at some point in the past.\n";
+            islands();
+        }
         break;
     
     default:
