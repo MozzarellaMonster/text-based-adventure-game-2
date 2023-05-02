@@ -287,7 +287,7 @@ void islands()
                 "Your eyes flick between the two as you back up until your back hits a wall, keeping both of them in view. Behind you, you hear wood creaking just beyond the surface of the wall and a new pounding starts behind your back,\n"
                 "vibrating your entire body with every hit. You slowly start to accept the reality of the situation and hopelessly fall to the floor. Tears well up in your eyes, but you refuse to blink or wipe them away as the pounding stops once\n"
                 "you spy a bit of wooden mask-like face poking through a new hole in the wall above you, carved with a solemn, stoic expression. You eyes are burning now, the faces mere inches away, and you struggle hard to keep them open, but you can't.\n"
-                "And taking a deep breath, clutching the now-useless dagger, you relent and close your eyes one final time. The wooden creaking and three very quiet voices giggling is the last thing you hear.\n";
+                "And taking a deep breath, clutching the now-useless dagger, you relent and close your eyes one final time. The wooden creaking and three very quiet voices whispering is the last thing you hear.\n";
         
         cout << "\n\nEnding 20: Totems\n";
         print_line();
