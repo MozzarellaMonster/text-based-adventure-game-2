@@ -12,7 +12,7 @@ using namespace std;
 bool explored_grasslands = false;
 bool explored_tall_trees = false;
 bool explored_islands = false;
-bool hunt_start = false;
+bool hunt = false;
 bool crab = false;
 
 // Revisit areas here to find ways to kill BH possessor and obtain Black Heart
@@ -164,79 +164,87 @@ void grasslands()
 
 void tall_trees()
 {
-    char choice;
-    print_line();
-    cout << "What would you like to do?\n";
-    cout << "A. Go into the darker part of the swamp\n";
-    cout << "B. Go further into the swamp\n";
-    cin >> choice;
-    choice = tolower(choice);
-
-    switch (choice)
+    if(hunt)
     {
-    case 'a':
+        the_hunt();
+    }
+    else
+    {
+        char choice;
         print_line();
-        cout << "Against your better judgement, you decide to head into the darker part of the forest.\n"
-                "You slowly aim the boat towards the left path and paddle at a steady pace towards it. As you travel further down the path, the darker the swamp around you becomes.\n"
-                "You continue onwards until you come to a massive tree with a thick trunk on a small island in the center of a clearing. Tall trees encircle the island at a considerable distance away,\n"
-                "giving the entire area a sense of forboding. Slowing the boat down to a crawl, you stare at the massive tree ahead of you. It's a large dead tree, the wood is split and uneven\n"
-                "yet, there appears to be large leaves swaying on the branches. As you draw nearer, the water reflects some light onto the island tree, giving it an eerie sense of motion.\n"
-                "With a small jolt, the boat hits the shore of the island and breaks you out of your small reverie. Getting out and pulling the boat securely onto the sandy shore, you take in more\n"
-                "of your surroundings. The island consists mainly of sand with more solid ground towards the center of the island, where the tree stands tall and wide. As you finish pulling the boat onshore,\n"
-                "you get a better look at the tree closer. Immediately, you shudder as you notice that the reflections from the water isn't the primary reason the tree looks like it's moving, you spy\n"
-                "and can now hear multiple soft clicking noises from several thousand insects crawling over each other on the tree. You then hear a small buzzing towards the top of the tree and look up.\n"
-                "It is then you realize that the 'leaves' are not leaves, but are instead multiple winged insects holding onto the branches of the tree. Creeped out but curious, you take another step closer\n"
-                "and proceed to trip as your foot catches on a large root of the tree protruding out of the sand. As you free your entangled foot, the root breaks open. Your eyes widen in horror. Inside the root\n"
-                "is a dark shriveled hand, slowly moving and feeling around the edges of the hole in the root. As you stare in morbid shock, a large insect crawls out of a hole covered by a flap of skin on the\n"
-                "wrist of the hand. Now terrified and disgusted, you look back to the massive 'tree.' How many bodies...\n"
-                "You jump up, intent on getting off the island as fast as possible. However, your quick actions not only break even more of the root, but alert the insects resting on the surface of the tree-like\n"
-                "structure. The buzzing sounds grow incredibly loud and you look up from pushing the boat back in the water. The winged insects have taken flight and several thousand of the crawling insects are\n"
-                "now crawling towards you. Insects pour from the hole in the root, while others stay and visibly start to patch the hole up. Desperately, you push the boat back in the water and attempt to jump in\n"
-                "but can feel several of the insects crawling over you. Unable to resist, you stop and brush off as many as you can. But as you brush off a few, hundreds more crawl onto you. You soon realize the\n"
-                "futility of your actions and try to jump into the boat, but the weight of the insects makes your movements sluggish and you fall into the shallow water. You shake off as many as possible,\n"
-                "but soon feel several thousand pinpricks as the insects bite you and pump you full of venom. Your movements slow even more and your vision blurs. You eventually cannot move anymore and are dimly\n"
-                "aware of being dragged back toward the tree-like nest...\n"
-                "                                                                                         *****                                                                                                     \n"
-                "It's been several days now. You don't know which part of the tree-nest they stuffed you in, nor can you move as they continue to pump you full of their paralyzing venom. Somehow, you're still aware\n"
-                "of what's happening to you. It's so dark that you can't see much, but you can see the dry stretched-out face in front of you, a good foot away from you. The face is locked in a perpetual scream.\n"
-                "Every day, you watch the insects crawl in and out of the eye sockets and wide open mouth of the agonized visage. And you know that you will soon share the same fate, because after two days,\n"
-                "you lost feeling in your legs before regaining it. You wish you didn't however, as you can feel the insects crawling in and out of holes in your flesh, burrowing out tunnels for them to crawl through.\n"
-                "And you can feel them as they slowly but surely burrow upward, drying your meat of blood but somehow keeping you alive in this accursed existence.\n"
-                "That's not the worst thing, however. The worst thing is the fact that the face is slowly coming closer... and it's starting to smile.\n";
-        
-        cout << "\n\nEnding 18: Hive\n";
-        print_line();
-        retry(&tall_trees);
-        break;
+        cout << "What would you like to do?\n";
+        cout << "A. Go into the darker part of the swamp\n";
+        cout << "B. Go further into the swamp\n";
+        cin >> choice;
+        choice = tolower(choice);
 
-    case 'b':
-        print_line();
-        cout << "You decide to stay the course and head further into the swamp, away from the darker part of it.\n"
-                "Keeping the boat going at a steady pace, you maneuver away from the darker part of the forest and continue into the swamp. As you head deeper into the swamp, you notice the trees grow noticeably thicker\n"
-                "and more densely crowded. Some time later, the boat inevitably gets stuck on a large cluster of roots. Balancing carefully, you move to dislodge the boat from the cluster of roots. During the process,\n"
-                "you notice the swamp grow eeriely silent, void of the buzzing of insects and croaking of frogs. In fact, it is so silent that your breathing sounds amplified. Unintentionally, your heartrate speeds up\n"
-                "and you start to feel anxious. Somehow, the silence only deepens and your stomach twists in dread and you just know something is watching you. Slowly, so as to not draw suspicion, you continue to work\n"
-                "to dislodge the boat from the roots, all the while listening out for something... anything that will break the deafening silence and stealthily looking around and keeping an eye on your periphery. Finally,\n"
-                "after a long moment, you hear the natural sounds of the swamp return just as you finish dislodging the boat. Feeling your dread evaporate, you stand up to your full height and look around, but see nothing\n"
-                "out of the ordinary. With a shuddering breath, you return to paddling the boat further into the swamp. After some time, you come across an interesting sight: a decrepit house on stilts standing above the\n"
-                "water of the swamp, with a small dock leading up to the raised porch of the house. Climbing up the short stairs, you stop to knock, but immediately hear a strange sound - a muffled rhythmic thudding noise,\n"
-                "coming from the other side of the door. Curious, you put your ear up to the door and after a few seconds you can hear it come from the other side. Slowly, you push open the door, careful to minimize noise.\n"
-                "You then spy a large hole in the floor of the house several feet in front of you. In the hole, you spy a swirling black shape. You see expose muscles fibers shining like black licorice moving in a slow,\n"
-                "serpentine fashion around an exposed center. And in that very center lies a black pulsating heart. A heart with a slow, muted heartbeat every few seconds. You slowly approach the hole, watching the exposed\n"
-                "muscle fibers shift and weave around hypnotically. As you draw near, you become dimly aware of the lack of noise that has once again pervaded the atmosphere. The silence grows as you draw nearer, the only thing\n"
-                "that you can still hear is the beating of the heart. You are now mere inches away from the hole, reaching toward the pulsating organ with enraptured fascination before the loose floorboard beneath you suddenly\n"
-                "way and you almost fall completely into the hole before catching the sides, bringing you to a complete halt. Immediately, the black mass directly below you rapidly transforms into a large teeth-lined gaping maw.\n"
-                "Shocked, you scream as you push yourself up from the hole just in time before a mass of black explodes straight up past you through the ceiling, emitting an unearthly raspy screech all the while. Adrenaline floods\n"
-                "your veins as you turn and run back through the door, down the short stairs and practically dive into the boat, kicking off the small dock and paddling as fast as you can. As you paddle away, you can hear multiple\n"
-                "cracks and snaps from all different directions above you as small pieces of wood and leaves ran down from the canopy. Pushing hard on the paddle, a small roar grows louder behind you until it is almost deafening.\n"
-                "It is a loud, reverberating roar signalling not only the awakening of a monster, but the start of its hunt. And you are its prey.\n"; // First encounter with Black Heart possessor
-        hunt_start = true;
-        break;
-    
-    default:
-        try_again();
-        tall_trees();
-        break;
+        switch (choice)
+        {
+        case 'a':
+            print_line();
+            cout << "Against your better judgement, you decide to head into the darker part of the forest.\n"
+                    "You slowly aim the boat towards the left path and paddle at a steady pace towards it. As you travel further down the path, the darker the swamp around you becomes.\n"
+                    "You continue onwards until you come to a massive tree with a thick trunk on a small island in the center of a clearing. Tall trees encircle the island at a considerable distance away,\n"
+                    "giving the entire area a sense of forboding. Slowing the boat down to a crawl, you stare at the massive tree ahead of you. It's a large dead tree, the wood is split and uneven\n"
+                    "yet, there appears to be large leaves swaying on the branches. As you draw nearer, the water reflects some light onto the island tree, giving it an eerie sense of motion.\n"
+                    "With a small jolt, the boat hits the shore of the island and breaks you out of your small reverie. Getting out and pulling the boat securely onto the sandy shore, you take in more\n"
+                    "of your surroundings. The island consists mainly of sand with more solid ground towards the center of the island, where the tree stands tall and wide. As you finish pulling the boat onshore,\n"
+                    "you get a better look at the tree closer. Immediately, you shudder as you notice that the reflections from the water isn't the primary reason the tree looks like it's moving, you spy\n"
+                    "and can now hear multiple soft clicking noises from several thousand insects crawling over each other on the tree. You then hear a small buzzing towards the top of the tree and look up.\n"
+                    "It is then you realize that the 'leaves' are not leaves, but are instead multiple winged insects holding onto the branches of the tree. Creeped out but curious, you take another step closer\n"
+                    "and proceed to trip as your foot catches on a large root of the tree protruding out of the sand. As you free your entangled foot, the root breaks open. Your eyes widen in horror. Inside the root\n"
+                    "is a dark shriveled hand, slowly moving and feeling around the edges of the hole in the root. As you stare in morbid shock, a large insect crawls out of a hole covered by a flap of skin on the\n"
+                    "wrist of the hand. Now terrified and disgusted, you look back to the massive 'tree.' How many bodies...\n"
+                    "You jump up, intent on getting off the island as fast as possible. However, your quick actions not only break even more of the root, but alert the insects resting on the surface of the tree-like\n"
+                    "structure. The buzzing sounds grow incredibly loud and you look up from pushing the boat back in the water. The winged insects have taken flight and several thousand of the crawling insects are\n"
+                    "now crawling towards you. Insects pour from the hole in the root, while others stay and visibly start to patch the hole up. Desperately, you push the boat back in the water and attempt to jump in\n"
+                    "but can feel several of the insects crawling over you. Unable to resist, you stop and brush off as many as you can. But as you brush off a few, hundreds more crawl onto you. You soon realize the\n"
+                    "futility of your actions and try to jump into the boat, but the weight of the insects makes your movements sluggish and you fall into the shallow water. You shake off as many as possible,\n"
+                    "but soon feel several thousand pinpricks as the insects bite you and pump you full of venom. Your movements slow even more and your vision blurs. You eventually cannot move anymore and are dimly\n"
+                    "aware of being dragged back toward the tree-like nest...\n"
+                    "                                                                                         *****                                                                                                     \n"
+                    "It's been several days now. You don't know which part of the tree-nest they stuffed you in, nor can you move as they continue to pump you full of their paralyzing venom. Somehow, you're still aware\n"
+                    "of what's happening to you. It's so dark that you can't see much, but you can see the dry stretched-out face in front of you, a good foot away from you. The face is locked in a perpetual scream.\n"
+                    "Every day, you watch the insects crawl in and out of the eye sockets and wide open mouth of the agonized visage. And you know that you will soon share the same fate, because after two days,\n"
+                    "you lost feeling in your legs before regaining it. You wish you didn't however, as you can feel the insects crawling in and out of holes in your flesh, burrowing out tunnels for them to crawl through.\n"
+                    "And you can feel them as they slowly but surely burrow upward, drying your meat of blood but somehow keeping you alive in this accursed existence.\n"
+                    "That's not the worst thing, however. The worst thing is the fact that the face is slowly coming closer... and it's starting to smile.\n";
+            
+            cout << "\n\nEnding 18: Hive\n";
+            print_line();
+            retry(&tall_trees);
+            break;
+
+        case 'b':
+            print_line();
+            cout << "You decide to stay the course and head further into the swamp, away from the darker part of it.\n"
+                    "Keeping the boat going at a steady pace, you maneuver away from the darker part of the forest and continue into the swamp. As you head deeper into the swamp, you notice the trees grow noticeably thicker\n"
+                    "and more densely crowded. Some time later, the boat inevitably gets stuck on a large cluster of roots. Balancing carefully, you move to dislodge the boat from the cluster of roots. During the process,\n"
+                    "you notice the swamp grow eeriely silent, void of the buzzing of insects and croaking of frogs. In fact, it is so silent that your breathing sounds amplified. Unintentionally, your heartrate speeds up\n"
+                    "and you start to feel anxious. Somehow, the silence only deepens and your stomach twists in dread and you just know something is watching you. Slowly, so as to not draw suspicion, you continue to work\n"
+                    "to dislodge the boat from the roots, all the while listening out for something... anything that will break the deafening silence and stealthily looking around and keeping an eye on your periphery. Finally,\n"
+                    "after a long moment, you hear the natural sounds of the swamp return just as you finish dislodging the boat. Feeling your dread evaporate, you stand up to your full height and look around, but see nothing\n"
+                    "out of the ordinary. With a shuddering breath, you return to paddling the boat further into the swamp. After some time, you come across an interesting sight: a decrepit house on stilts standing above the\n"
+                    "water of the swamp, with a small dock leading up to the raised porch of the house. Climbing up the short stairs, you stop to knock, but immediately hear a strange sound - a muffled rhythmic thudding noise,\n"
+                    "coming from the other side of the door. Curious, you put your ear up to the door and after a few seconds you can hear it come from the other side. Slowly, you push open the door, careful to minimize noise.\n"
+                    "You then spy a large hole in the floor of the house several feet in front of you. In the hole, you spy a swirling black shape. You see expose muscles fibers shining like black licorice moving in a slow,\n"
+                    "serpentine fashion around an exposed center. And in that very center lies a black pulsating heart. A heart with a slow, muted heartbeat every few seconds. You slowly approach the hole, watching the exposed\n"
+                    "muscle fibers shift and weave around hypnotically. As you draw near, you become dimly aware of the lack of noise that has once again pervaded the atmosphere. The silence grows as you draw nearer, the only thing\n"
+                    "that you can still hear is the beating of the heart. You are now mere inches away from the hole, reaching toward the pulsating organ with enraptured fascination before the loose floorboard beneath you suddenly\n"
+                    "way and you almost fall completely into the hole before catching the sides, bringing you to a complete halt. Immediately, the black mass directly below you rapidly transforms into a large teeth-lined gaping maw.\n"
+                    "Shocked, you scream as you push yourself up from the hole just in time before a mass of black explodes straight up past you through the ceiling, emitting an unearthly raspy screech all the while. Adrenaline floods\n"
+                    "your veins as you turn and run back through the door, down the short stairs and practically dive into the boat, kicking off the small dock and paddling as fast as you can. As you paddle away, you can hear multiple\n"
+                    "cracks and snaps from all different directions above you as small pieces of wood and leaves ran down from the canopy. Pushing hard on the paddle, a small roar grows louder behind you until it is almost deafening.\n"
+                    "It is a loud, reverberating roar signalling not only the awakening of a monster, but the start of its hunt. And you are its prey.\n"; // First encounter with Black Heart possessor
+            hunt = true;
+            tall_trees();
+            break;
+        
+        default:
+            try_again();
+            tall_trees();
+            break;
+        }
     }
 }
 
@@ -364,6 +372,11 @@ void rock_island()
         try_again();
         islands();
         break;
+    }
+
+    void the_hunt()
+    {
+
     }
         
 }
