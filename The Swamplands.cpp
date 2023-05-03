@@ -173,7 +173,7 @@ void tall_trees()
 {
     if(hunt)
     {
-        the_hunt();
+        // To be filled in...
     }
     else
     {
@@ -244,7 +244,7 @@ void tall_trees()
                     "cracks and snaps from all different directions above you as small pieces of wood and leaves ran down from the canopy. Pushing hard on the paddle, a small roar grows louder behind you until it is almost deafening.\n"
                     "It is a loud, reverberating roar signalling not only the awakening of a monster, but the start of its hunt. And you are its prey.\n"; // First encounter with Black Heart possessor
             hunt = true;
-            tall_trees();
+            the_hunt();
             break;
         
         default:
@@ -275,11 +275,12 @@ void islands()
             cout << "You look toward the island and shudder a bit as you see the boulder-like shell of the giant crab you saw there. You shake your head and turn back to the options before you.\n";
             islands();
         }
-        else{
+        else
+        {
             cout << "You decide to explore the large island with the pile of large boulders on it.\n"
-                "Pointing your boat in the direction of the island, you paddle your way over until you breach the shore and stop. Getting out, you secure the boat and approach the rocks.\n"
-                "Looking through them, you don't seem to find anything of interest and get up to leave until you hear something. A noise. Some kind of faint clicking, coming from in-between two rocks.\n"
-                "Could it be a device of some kind? Something that could help you? Would it be worth it to find out?\n";
+                    "Pointing your boat in the direction of the island, you paddle your way over until you breach the shore and stop. Getting out, you secure the boat and approach the rocks.\n"
+                    "Looking through them, you don't seem to find anything of interest and get up to leave until you hear something. A noise. Some kind of faint clicking, coming from in-between two rocks.\n"
+                    "Could it be a device of some kind? Something that could help you? Would it be worth it to find out?\n";
             rock_island();
         }
         break;
@@ -380,9 +381,48 @@ void rock_island()
         break;
     }
 
-    void the_hunt()
-    {
-        // Fill in this.
-    }
+}
         
+void the_hunt()
+{
+    print_line();
+    cout << "Going back to the starting position, you look around quickly, taking in your surroundings and looking for anything that might make a good makeshift weapon. The Nightflesh monster will be here any minute now,\n"
+            "and you only have the dagger on you for protection. There are a few sizable rocks laying in a pool nearby, a large broken-off branch that could make a good makeshift club lying against the trunk of a tree,\n"
+            "and of course, the paddle for the boat. Using the dagger, you could sharpen one end of the paddle into a makeshift spear, but that would cost precious time, and that is not something you have a whole lot of.\n"
+            "Alternatively, you could just wait for the creature to arrive and fend it off with only the dagger. Whatever choice you make right now will be your final decision before the final confrontation,\n"
+            "so you better make a good decision and make it fast.\n\n";
+
+    char choice;
+    print_line();
+    cout << "What would you like to do?\n";
+    cout << "A. Pick up the rocks\n";
+    cout << "B. Pick up the large branch\n";
+    cout << "C. Sharpen the paddle into a spear\n";
+    cout << "D. Make do with the dagger\n";
+    cin >> choice;
+    choice = tolower(choice);
+
+    switch (choice)
+    {
+    case 'a':
+        cout << "You decide to pick up the rocks.\n";
+        break;
+    
+    case 'b':
+        cout << "You decide to pick up the large branch.\n";
+        break;
+
+    case 'c':
+        cout << "You decide to sharpen the paddle into a spear.\n";
+        break;
+
+    case 'd':
+        cout << "You decide to make do with the dagger.\n";
+        break;
+
+    default:
+        try_again();
+        the_hunt();
+        break;
+    }
 }
