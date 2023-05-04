@@ -242,7 +242,7 @@ void tall_trees()
                     "Shocked, you scream as you push yourself up from the hole just in time before a mass of black explodes straight up past you through the ceiling, emitting an unearthly raspy screech all the while. Adrenaline floods\n"
                     "your veins as you turn and run back through the door, down the short stairs and practically dive into the boat, kicking off the small dock and paddling as fast as you can. As you paddle away, you can hear multiple\n"
                     "cracks and snaps from all different directions above you as small pieces of wood and leaves ran down from the canopy. Pushing hard on the paddle, a small roar grows louder behind you until it is almost deafening.\n"
-                    "It is a loud, reverberating roar signalling not only the awakening of a monster, but the start of its hunt. And you are its prey.\n"; // First encounter with Black Heart possessor
+                    "It is a loud, reverberating roar signalling not only the awakening of a monster, but the start of its hunt. And you are its prey.\n";
             hunt = true;
             the_hunt();
             break;
@@ -405,11 +405,37 @@ void the_hunt()
     switch (choice)
     {
     case 'a':
-        cout << "You decide to pick up the rocks.\n";
+        cout << "You decide to pick up the rocks.\n"
+                "You start digging through the puddle, grabbing the larger of the rocks and bringing them onto the boat. Soon after grabbing a few of the rocks, you suddenly feel the hairs on the back of your neck stand up.\n"
+                "Your slowly lift your head up and notice that the swamp has grown silent all around you. It is so quiet in fact, that you can hear your own heartbeat and shallow breathing. Then it returns, that feeling of being watched.\n"
+                "Except now you know exactly what it is that is watching you. You hurriedly, grab some rocks and get in position to throw them as soon as you see the Nightflesh afflicted. Keeping your eyes peeled, you look all\n"
+                "around the silent swamp. The boat rocking back and forth from your motions. Then you hear it, a growing roar directly above you. Immediately, you look up. The Possessor of the Black Heart looks down from the canopy\n"
+                "of trees, spread out like a spider's web with a multitude of eyes all along the strands. You scream and immediately throw a rock up towards it, hitting of its eyes. The thing roars in anger and falls down towards you\n"
+                "at breakneck speed. You get off one more shot with a rock before it is upon you, now in humanoid form, gripping your throat in its strong claws. You beat at it with a large rock in one hand while the other claws at the\n"
+                "vice-like grip it has on your throat. Soon, your lungs scream for air and you try to suck in what you can while your strength wanes and your hits with the rocks falter. The thing, sensing your situation, lifts you up\n"
+                "by the neck and holds you. You drop the rock you were holding and pry desperately at the ferociously strong grip it has on your neck, your face now turning blue. It brings you closer, looking at you with numerous eyes\n"
+                "on its slick black flesh where a face should be. Soon, darkness creeps in at the edges of your vision as the thing's face morphs into several rows of jagged shark-like teeth and takes a large bite of your head.\n";
+        
+        cout << "\n\nEnding 21A: The End of the Hunt - Stones\n";
+        print_line();
+        retry(&the_hunt);
         break;
     
     case 'b':
-        cout << "You decide to pick up the large branch.\n";
+        cout << "You decide to pick up the large branch.\n"
+                "You paddle towards the large branch leaning against one of the tall swamp trees and position yourself to pull it out of the stagnant swamp water. Balancing carefully, you hoist the large branch up out of the water\n"
+                "and into your hands. It's nearly a yard long and hefty. You give a few practice swings and find yourself nearly falling out of the boat. You squat back down, grabbing the sides of the boat as it gradually settles back down,\n"
+                "dropping the branch in the process. After stilling the boat, you stand back up but immediately notice a change in the atmosphere of the swamp. Everything has gone silent, so quiet that the only thing making noise is you.\n"
+                "Immediately, you fumble for the branch as you feel eyes on you and stand back up, goosebumps breaking out on your skin. Then you see it, the Black Heart possessor, crawling on the side of a tree and looking down at you\n"
+                "with numerous eyes pockmarking its slick pitch-black skin all across its humanoid head. You reach down and grab the branch, trying to steady yourself in the rocking boat. All at once, the thing's face morphs into a large\n"
+                "mouth as it roars and dives at you. You raise the branch just in time for it to absorb most of the impact of the beast before tumbling into the water with it as the boat rolls over. Under the water, you struggle against\n"
+                "its much larger mass as it pulls you deeper and deeper. Changing the orientation of the branch, you shove the larger end of it into the thing's face, breaking its hold on you as you start to swim back to the surface.\n"
+                "Breaking free of the surface of the water for just a moment, you take a big gulp of air before you are pulled under yet again. This time, the thing has the branch and hits you with it across the cheek, causing you to lose\n"
+                "your breath and see stars. It then pulls you deeper as you struggle to regain your composure, pulling you towards a collection of large boulders. There, with great strength it throws you against the largest boulder.\n"
+                "You hear a sickening crack in your back and breathe in a lungful of dirty water as the wind is knocked out of you. Then, the Nightflesh being lifts the branch with one hand and with a mighty thrust, impales the smaller end\n"
+                "of the branch through your abdomen and into a large crack in the boulder. Bloods pours out of you and darkens the water as the Nightflesh being swims closer to look in your eyes one more time before swimming away,\n"
+                "leaving you to die under the water.\n";
+        cout << "\n\nEnding 21B: The End of the Hunt - Branch\n";
         break;
 
     case 'c':
