@@ -436,10 +436,28 @@ void the_hunt()
                 "of the branch through your abdomen and into a large crack in the boulder. Bloods pours out of you and darkens the water as the Nightflesh being swims closer to look in your eyes one more time before swimming away,\n"
                 "leaving you to die under the water.\n";
         cout << "\n\nEnding 21B: The End of the Hunt - Branch\n";
+        print_line();
+        retry(&the_hunt);
         break;
 
     case 'c':
-        cout << "You decide to sharpen the paddle into a spear.\n";
+        cout << "You decide to sharpen the paddle into a spear.\n"
+                "Paddling towards a small raised piece of land nearby, you stop the boat on it and steady yourself as you take out the dagger and carefully start to whittle away the rounded end of the handle into a sharp point.\n"
+                "After some time, you develop a nice sharp point that could do some real damage. Putting the dagger away, you stand up and practice a few jabs with the sharpened paddle, making sure not to dislodge the boat while you're at it.\n"
+                "Soon, you realize that the swamp has fallen silent, with you being the only source of noise. Save for one thing, the sound of a slowed heartbeat, beating with an unearthly sound in your skull. You grip your makeshift spear\n"
+                "and look around for the source, keeping a keen eye on your periphery. After several seconds you finally spot it standing between two large bushes, almost unnoticeable in its rigid posture, poised like an animal ready to strike.\n"
+                "As soon as you see it, several eyes pop open all over its body, look at you with unrestrained hatred and malice. You stand firm, the spear giving you some degree of confidence despite your pounding heart and fear flooding through\n"
+                "your veins. Suddenly it rears back and lets loose a deafening roar before plunging through the bushes towards you. You brace yourself the best you can in the still boat, your spear pointed towards the charging beast.\n"
+                "Loud thuds can be heard with the creature's every step as it hurtles towards you, its mostly humanoid silhouette changing shape at random. Soon, it is upon you tearing at your clothes. You thrust the spear into it with all your might,\n"
+                "grinding it in and twisting the handle as you go. To your dismay however, it doesn't seem phased, proceeding to simply absorb the spear into its form with a sickening sucking sound before pulling it out the other side. You watch\n"
+                "in stunned silence as it lifts and holds the spear inches from its 'face', inspecting it. Then, it simply tosses your makeshift weapon into the waters with contempt. It then looks at you and you feel your stomach sink with despair.\n"
+                "Oh, you've gone and done it now. With blinding speed, the Nightflesh creature impales you on one of its sharply twisted limbs. Pain floods your system as you feel your feet lift off the ground. The taste of blood fills your mouth as it\n"
+                "raises you above it with one arm and lets out a loud raspy choking sound that you soon realize is its laughter, its form writhing with glee. Unbearable pain soon gives way to a growing numbness as you realize your inevitable fate, and as\n"
+                "your vision fades, you feel the thing retract its sharp, twisted limb and your form fall to the floor of the boat. The last thing you see is its multitude of eyes staring at you as your vision fades to black, like an unblinking slice of night sky.\n";
+        
+        cout << "\n\nEnding 21C: The End of the Hunt - Spear\n";
+        print_line();
+        retry(&the_hunt);
         break;
 
     case 'd':
