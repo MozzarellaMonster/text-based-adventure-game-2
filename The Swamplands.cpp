@@ -404,6 +404,7 @@ void the_hunt()
 
     switch (choice)
     {
+        print_line();
     case 'a':
         cout << "You decide to pick up the rocks.\n"
                 "You start digging through the puddle, grabbing the larger of the rocks and bringing them onto the boat. Soon after grabbing a few of the rocks, you suddenly feel the hairs on the back of your neck stand up.\n"
