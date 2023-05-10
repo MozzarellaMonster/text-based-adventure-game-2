@@ -408,7 +408,7 @@ void the_hunt()
         cout << "You decide to pick up the rocks.\n"
                 "You start digging through the puddle, grabbing the larger of the rocks and bringing them onto the boat. Soon after grabbing a few of the rocks, you suddenly feel the hairs on the back of your neck stand up.\n"
                 "Your slowly lift your head up and notice that the swamp has grown silent all around you. It is so quiet in fact, that you can hear your own heartbeat and shallow breathing. Then it returns, that feeling of being watched.\n"
-                "Except now you know exactly what it is that is watching you. You hurriedly, grab some rocks and get in position to throw them as soon as you see the Nightflesh afflicted. Keeping your eyes peeled, you look all\n"
+                "Except now you know exactly what it is that is watching you. You hurriedly grab some rocks and get in position to throw them as soon as you see the Nightflesh creature. Keeping your eyes peeled, you look all\n"
                 "around the silent swamp. The boat rocking back and forth from your motions. Then you hear it, a growing roar directly above you. Immediately, you look up. The Possessor of the Black Heart looks down from the canopy\n"
                 "of trees, spread out like a spider's web with a multitude of eyes all along the strands. You scream and immediately throw a rock up towards it, hitting of its eyes. The thing roars in anger and falls down towards you\n"
                 "at breakneck speed. You get off one more shot with a rock before it is upon you, now in humanoid form, gripping your throat in its strong claws. You beat at it with a large rock in one hand while the other claws at the\n"
@@ -426,14 +426,14 @@ void the_hunt()
                 "You paddle towards the large branch leaning against one of the tall swamp trees and position yourself to pull it out of the stagnant swamp water. Balancing carefully, you hoist the large branch up out of the water\n"
                 "and into your hands. It's nearly a yard long and hefty. You give a few practice swings and find yourself nearly falling out of the boat. You squat back down, grabbing the sides of the boat as it gradually settles back down,\n"
                 "dropping the branch in the process. After stilling the boat, you stand back up but immediately notice a change in the atmosphere of the swamp. Everything has gone silent, so quiet that the only thing making noise is you.\n"
-                "Immediately, you fumble for the branch as you feel eyes on you and stand back up, goosebumps breaking out on your skin. Then you see it, the Black Heart possessor, crawling on the side of a tree and looking down at you\n"
+                "Immediately, you fumble for the branch as you feel eyes on you and stand back up, goosebumps breaking out on your skin. Then you see it, the Nightflesh creature, crawling on the side of a tree and looking down at you\n"
                 "with numerous eyes pockmarking its slick pitch-black skin all across its humanoid head. You reach down and grab the branch, trying to steady yourself in the rocking boat. All at once, the thing's face morphs into a large\n"
                 "mouth as it roars and dives at you. You raise the branch just in time for it to absorb most of the impact of the beast before tumbling into the water with it as the boat rolls over. Under the water, you struggle against\n"
                 "its much larger mass as it pulls you deeper and deeper. Changing the orientation of the branch, you shove the larger end of it into the thing's face, breaking its hold on you as you start to swim back to the surface.\n"
                 "Breaking free of the surface of the water for just a moment, you take a big gulp of air before you are pulled under yet again. This time, the thing has the branch and hits you with it across the cheek, causing you to lose\n"
                 "your breath and see stars. It then pulls you deeper as you struggle to regain your composure, pulling you towards a collection of large boulders. There, with great strength it throws you against the largest boulder.\n"
-                "You hear a sickening crack in your back and breathe in a lungful of dirty water as the wind is knocked out of you. Then, the Nightflesh being lifts the branch with one hand and with a mighty thrust, impales the smaller end\n"
-                "of the branch through your abdomen and into a large crack in the boulder. Bloods pours out of you and darkens the water as the Nightflesh being swims closer to look in your eyes one more time before swimming away,\n"
+                "You hear a sickening crack in your back and breathe in a lungful of dirty water as the wind is knocked out of you. Then, the Nightflesh creature lifts the branch with one hand and with a mighty thrust, impales the smaller end\n"
+                "of the branch through your abdomen and into a large crack in the boulder. Bloods pours out of you and darkens the water as the Nightflesh creature swims closer to look in your eyes one more time before swimming away,\n"
                 "leaving you to die under the water.\n";
         cout << "\n\nEnding 21B: The End of the Hunt - Branch\n";
         print_line();
@@ -461,7 +461,33 @@ void the_hunt()
         break;
 
     case 'd':
-        cout << "You decide to make do with the dagger.\n";
+        cout << "You decide to make do with the dagger.\n"
+                "Taking it out, you examine it closer. Surprisingly, the red jewel embedded into the guard of the dagger is glowing slightly.\n"
+                "Taking time to examine it fully, you find that the dagger also has some intricate carvings on the guard and pommel, somewhat resembling the artwork found around the gates in the temple.\n"
+                "As you continue to inspect it, you notice the glowing of the jewel slowly growing brighter. Then, you notice that the swamp in slowly growing quieter simultaneously.\n"
+                "Gripping the dagger in your right hand, you stand up in the boat and take in the now silent swamp. Somehow, you feel as though your senses have grown slightly more keen, and your head\n"
+                "snaps up and catches the form of the Nightflesh creature flash by overhead as it leaps from tree to tree before finally coming to a rest above you. Looking down, it's seems somewhat surprised\n"
+                "to see that you've already spotted it. Recovering quickly, it roars loudly, giving you time to prepare and set your feet into position, assumging a stance ready to receive a charge from the creature.\n"
+                "And it does, jumping from its position on the tree to the boat. As it lands, the boat shudders violently and a loud crack can be heard as it splits into two. You jump off the boat and onto a small\n"
+                "nearby island supported by roots of a nearby tree and again, get ready for another charge by the creature. The creature quickly surfaces and jumps onto the land, snarling and circling around you.\n"
+                "Now in its humanoid form, the face of the creature is taken up by a huge mouth spread from ear-to-ear with long sharp dagger-like teeth as its body is covered with numerous blinking eyes.\n"
+                "Taking your steps carefully, you mirror the movements of the creature, keeping the dagger pointed at it while making your own circle on the island. Finally, after several moments, the creature lashes\n"
+                "out at you with a huge clawed hand but you manage to just avoid it and slice the dagger across its arm. It howls with pain and rage as the slash visibly bubbles the flesh around it, acting like a severe\n"
+                "chemical burn. Noticing this, you quickly look at the dagger and notice the glyphs on the blade and the jewel inset into the guard are now glowing bright red. So bright in fact, that you expect the dagger\n"
+                "to be red-hot, and you realize, it might just be to the creature. Placing its hand on its cut, the creature appears to be confused as to why its flesh remains scarred, and unchanging as the flesh around it\n"
+                "morphs and shifts in-place. It then looks back up to you and roars angrily. It pushes off the ground and charges at you once again at remarkable speed. Dodging the otherwise supernatural strike easily with\n"
+                "your own newfound speed, you stab the dagger into the back of the creature and cut a deep slash across its back. It roars in pain and falters mid-charge, stumbling away from you quickly. You jump back equally\n"
+                "as quickly and brandish the dagger before you. The creature stumbles, the flesh of its back bubbling violently as it lets out a pained roar and falls to the ground, clawing at the earth. Taking advantage\n"
+                "of the situation, you quickly close the distance and turn the lightly thrashing beast over, exposing the heart surrounded by writhing muscle. You lift the dagger up and plunge it into the connecting tissue.\n"
+                "The creature lets out a pained howl and claws at you, drawing blood. You yelp and jump back, but kick the creature down again as it slowly tries to get up. Keeping the creature's good arm pinned beneath your\n"
+                "own, you again plunge the knife into the muscle surrounding the Black Heart, cutting it away from the creature. It writhes and snarls at you, hissing but yowling in pain whenever you cut more of its tissue.\n"
+                "Eventually, its movements slow and grow weak as you cut the final strands away and lift the slowly beating organ out of its chest. As the final strand snaps like taut rubber band, the creature's body turns\n"
+                "a ghostly white and it soldifies into a chalky white dust, blowing away at a slight breeze. The swamp comes alive again, somehow with more fervor than before. You stand there panting, the dagger still gripped\n"
+                "in your right hand but no longer glowing. The Black Heart slowly beating in your left. It's not long before you start to hear it - a low whisper in your mind. Promises of power, strength, and abilities beyond\n"
+                "your wildest dreams manifest in your mind. Quickly, you stow the heart away in your pocket, but can still feel its whispers, though more faintly now. Taking note of you predicament, you make your way back towards\n"
+                "the house you first found the Nightflesh creature in, you're sure you saw a spare boat nearby, albeit a somewhat decrepit one. Time to head back to the Temple before you really start to listen to what the Black\n"
+                "Heart has to say. After several minutes, you find the boat you were looking for and make your way back to the now open Gate.\n";
+        temple_second_room();
         break;
 
     default:
