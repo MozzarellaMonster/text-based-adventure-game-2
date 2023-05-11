@@ -17,7 +17,8 @@ bool gc_found_journal = false;
 
 bool attention_seeker = false;
 
-void the_glowing_cave_text(){
+void the_glowing_cave_text()
+{
     print_line();
     cout << "Bracing yourself, you close your eyes and take a step into the portal.\n"
             "However, you are met with an eerie silence, followed by a sudden feeling of moisture in the air.\n"
@@ -37,9 +38,11 @@ void the_glowing_cave_text(){
     the_glowing_cave();
 }
 
-void the_glowing_cave(){
+void the_glowing_cave()
+{
 
-    if(attention_seeker){
+    if(attention_seeker)
+    {
         print_line();
         cout << "You burst back into the chamber, the echoing screech of the monster coming out of the tunnel. You fall to your knees and gasp for breath, tears welling up in your eyes.\n"
                 "Your arms are like jelly, and you struggle to not collapse onto the floor entirely and assume the fetal position.\n"
@@ -55,74 +58,86 @@ void the_glowing_cave(){
     cout << "C. Explore the well-tread path\n";
     print_line();
     cin >> choice;
-    if(choice == 'A' || choice == 'a'){
-        print_line();
-        if(gc_explored_left_tunnel && attention_seeker){
-            cout << "No. There's no way you're going back there.\n";
-            the_glowing_cave();
-        }
-        else if(gc_explored_left_tunnel){
-            cout << "You've already tried that path.\n";
-            the_glowing_cave();
-        }
-        else{
-            cout << "You decide to explore the left tunnel.\n"
-                    "After approaching the left tunnel, you lift your hand to brush away the faintly glowing pink moss swaying over the entrance and feel a damp breeze coming from the opening.\n"
-                    "A muffled roaring noise accompanies the slight mist spraying from the entrance, giving you the image of rushing water. The mist gently dampens your face as if to verify your thoughts.\n"
-                    "You take a cautious step into the tunnel.\n";
-            
-            gc_left_tunnel();
-        }
-    }
-    else if(choice == 'B' || choice == 'b'){
-        print_line();
-        if(gc_explored_right_tunnel){
-            cout << "You approach the right tunnel, lean your head in and listen. You can't hear any bats so you proceed further in.\n";
+    choice = tolower(choice);
 
-            gc_right_tunnel();
-        }
-        else{
-            cout << "You decide to explore the right tunnel.\n"
-                    "You walk up to the right tunnel, noticing that this tunnel is darker in comparison to the other options, but not enough to keep you from seeing.\n"
-                    "The air here feels drier as well. In fact, it seems that the air from the chamber you're in is flowing out into the tunnel. Despite the fantastical and warm atmosphere of the cave so far,\n"
-                    "you feel a sudden surge of trepidation staring into the dim tunnel, as if you were staring down the throat of a large leviathan about to swallow you whole.\n"
-                    "Closing your eyes and taking a deep breath, you brace yourself and grip the handle of the dagger, the cold metal bringing you some degree of comfort.\n"
-                    "After a while, you open your eyes and make your way down the tunnel.\n";
-            
-            gc_right_tunnel();
-        }
-    }
-    else if(choice == 'C' || choice == 'c'){
-        print_line();
-        if(gc_explored_path){
-            if(gc_pathway_key && gc_found_journal)
+    print_line();
+    switch(choice)
+    {
+        case 'a':
+            if(gc_explored_left_tunnel && attention_seeker)
             {
-                cout << "You look down the well-tread path, now with your added footsteps. You smile a bit at the idea of having added your footsteps to those of the Worldwalkers, but ultimately decide against\n"
-                        "going down the path again.\n\n";
+                cout << "No. There's no way you're going back there.\n";
                 the_glowing_cave();
+            }
+            else if(gc_explored_left_tunnel)
+            {
+                cout << "You've already tried that path.\n";
+                the_glowing_cave();
+            }
+            else{
+                cout << "You decide to explore the left tunnel.\n"
+                        "After approaching the left tunnel, you lift your hand to brush away the faintly glowing pink moss swaying over the entrance and feel a damp breeze coming from the opening.\n"
+                        "A muffled roaring noise accompanies the slight mist spraying from the entrance, giving you the image of rushing water. The mist gently dampens your face as if to verify your thoughts.\n"
+                        "You take a cautious step into the tunnel.\n";
+                
+                gc_left_tunnel();
+            }
+            break;
+            
+        case 'b':
+            if(gc_explored_right_tunnel)
+            {
+                cout << "You approach the right tunnel, lean your head in and listen. You can't hear any bats so you proceed further in.\n";
+
+                gc_right_tunnel();
             }
             else
             {
-                cout << "You once again make your way down the well-tread path through the forest of fungi.\n\n";
-                gc_pathway();
+                cout << "You decide to explore the right tunnel.\n"
+                        "You walk up to the right tunnel, noticing that this tunnel is darker in comparison to the other options, but not enough to keep you from seeing.\n"
+                        "The air here feels drier as well. In fact, it seems that the air from the chamber you're in is flowing out into the tunnel. Despite the fantastical and warm atmosphere of the cave so far,\n"
+                        "you feel a sudden surge of trepidation staring into the dim tunnel, as if you were staring down the throat of a large leviathan about to swallow you whole.\n"
+                        "Closing your eyes and taking a deep breath, you brace yourself and grip the handle of the dagger, the cold metal bringing you some degree of comfort.\n"
+                        "After a while, you open your eyes and make your way down the tunnel.\n";
+                
+                gc_right_tunnel();
             }
-        }
-        else{
-            cout << "You decide to explore the well-tread path on the opposite side of the cavern.\n"
-                    "You turn your back to the two tunnels and quietly make your way across the cave, careful not to make too much noise.\n"
-                    "You approach the well-tread path stretching between the fluorescent fungi, smaller mushrooms growing on either side of the pathway, giving the whole thing a comforting feeling of familiarity,\n"
-                    "despite the fact that this whole thing is entirely new to you. A small smile plays across your lips as you confidently walk down the path that so many others have tread upon before you.\n"
-                    "Following in the footprints of the Worldwalkers.\n";
-            gc_pathway_text();
-        }
-    }
-    else{
-        try_again();
-        the_glowing_cave();
+            break;
+
+        case 'c':
+            if(gc_explored_path)
+            {
+                if(gc_pathway_key && gc_found_journal)
+                {
+                    cout << "You look down the well-tread path, now with your added footsteps. You smile a bit at the idea of having added your footsteps to those of the Worldwalkers, but ultimately decide against\n"
+                            "going down the path again.\n\n";
+                    the_glowing_cave();
+                }
+                else
+                {
+                    cout << "You once again make your way down the well-tread path through the forest of fungi.\n\n";
+                    gc_pathway();
+                }
+            }
+            else
+            {
+                cout << "You decide to explore the well-tread path on the opposite side of the cavern.\n"
+                        "You turn your back to the two tunnels and quietly make your way across the cave, careful not to make too much noise.\n"
+                        "You approach the well-tread path stretching between the fluorescent fungi, smaller mushrooms growing on either side of the pathway, giving the whole thing a comforting feeling of familiarity,\n"
+                        "despite the fact that this whole thing is entirely new to you. A small smile plays across your lips as you confidently walk down the path that so many others have tread upon before you.\n"
+                        "Following in the footprints of the Worldwalkers.\n";
+                gc_pathway_text();
+            }
+            break;
+
+        default:
+            try_again();
+            the_glowing_cave();
     }
 }
 
-void gc_left_tunnel_text(){
+void gc_left_tunnel_text()
+{
     // Natural land bridge and waterfall - dangerous balancing game and hidden horror
     print_line();
     cout << "You find yourself in a large cavern, a narrow, natural land bridge stretching across a massive canyon splitting the chamber in two. A large waterfall cascades down from above and to the left of the land bridge,\n"
@@ -147,57 +162,67 @@ void gc_left_tunnel(){
     cout << "C. Go back through the tunnel\n";
     print_line();
     cin >> choice;
+    choice = tolower(choice);
 
-    if(choice == 'a' || choice == 'A'){
-        cout << "You decide to try and cross the bridge.\n"
-                "You take a tentative step forward, cautious of the slickness of the water-beaten stone. Small clumps of glowing pink moss help to identify the borders of the bridge and offer minor footholds\n"
-                "as you make your dangerous trek forwards. Spreading your arms out and keeping your legs steady, you slowly make your way forward, keeping your eyes firmly rooted to the path in front of you and\n"
-                "avoiding looking at the pitch black abyss below you at all costs. Step by cautious step, you make your way across the bridge. Puddles glint in the faint light of the moss and shine like stars reflecting\n"
-                "the spray of the waterfall to the left of you. Finally, you're about halfway across the bridge and getting comfortable in your stride when your shoe finally gives way, surrendering to the slippery stone.\n"
-                "You wave your arms frantically in the air, trying to maintain balance, but only succeed in further dislodging yourself from relatively safe footholds. You fall and slide down the side of the bridge, clawing\n"
-                "desperately at the pink moss that reliquishes its own grip far too easily. The tumble down is quick, but the fall is long. So, so long. The darkness swallows you up like a ravenous beast slurping up the remains\n"
-                "of its recent kill. All that is left are the echoes of your screams, until that too is drowned out by the incessant roar of the waterfall.\n";
+    switch(choice)
+    {
+        case 'a':
+            cout << "You decide to try and cross the bridge.\n"
+                    "You take a tentative step forward, cautious of the slickness of the water-beaten stone. Small clumps of glowing pink moss help to identify the borders of the bridge and offer minor footholds\n"
+                    "as you make your dangerous trek forwards. Spreading your arms out and keeping your legs steady, you slowly make your way forward, keeping your eyes firmly rooted to the path in front of you and\n"
+                    "avoiding looking at the pitch black abyss below you at all costs. Step by cautious step, you make your way across the bridge. Puddles glint in the faint light of the moss and shine like stars reflecting\n"
+                    "the spray of the waterfall to the left of you. Finally, you're about halfway across the bridge and getting comfortable in your stride when your shoe finally gives way, surrendering to the slippery stone.\n"
+                    "You wave your arms frantically in the air, trying to maintain balance, but only succeed in further dislodging yourself from relatively safe footholds. You fall and slide down the side of the bridge, clawing\n"
+                    "desperately at the pink moss that reliquishes its own grip far too easily. The tumble down is quick, but the fall is long. So, so long. The darkness swallows you up like a ravenous beast slurping up the remains\n"
+                    "of its recent kill. All that is left are the echoes of your screams, until that too is drowned out by the incessant roar of the waterfall.\n";
 
-        cout << "\n\nEnding 11: Water Fall";
-        print_line();
-        retry(&gc_left_tunnel);
-    }
-    else if(choice == 'b' || choice == 'B'){
-        if(!attention_seeker){
-            cout << "You decide to try and get the attention of the figures on the other side of the chasm. You look around for something to signal them with. All there really seems to be are some smooth pebbles and\n"
-                    "the bioluminescent foliage growing out of the walls and bridge near the entrance. Even if they're glowing, they're way too dim to be very noticeable, especially considering that the light is reflecting\n"
-                    "off the mist from the waterfall. You look around some more and notice something that you didn't before - there's something stuck in a puddle of mud near the tunnel entrance. You dig through the mud and\n"
-                    "pull out the object - a slingshot. You test the strength of the sling and notice that, despite its exposure to the water, the slingshot is still in good condition. You pick up some of the larger smooth\n"
-                    "stones and load them into the sling. You take aim towards the flickering light and let it fly. Nothing. You load another stone and take aim again, then fire the second stone. This time, it hits.\n"
-                    "Specifically, it hits the light dead-on. You watch in stunned bewilderment as the stone bounces off the surface of something slightly translucent, behind which the glow emanates. Then, the \"bonfire\" moves.\n"
-                    "The glow moves up, and as it moves you hear the echoes of crashing rocks. The glow rotates and comes closer to you, so close you can see that there's a strange organic-looking membrane covering the source of the glow,\n"
-                    " which appears to be a fleshy bulb of some kind. You stare at the strange, flickering glow and feel a unusual urge to get even closer. You take a small step forward before realizing how close you are to the edge of the\n"
-                    "and pull back, adrenaline flooding your veins. It is then you hear it - a low rumble gradually getting louder. You look back towards the bulb, but notice movement behind it - two large opal globes.\n"
-                    "You squint in confusion, but then your blood runs cold.\n"
-                    "Eyes. Those globes are eyes. A giant reptilian visage suddenly engulfs the chamber, so close the bioluminescent fungi has no trouble lighting it up. You fall back in shock and quickly start dragging yourself backwards.\n"
-                    "All the while, you're still staring at the monstrous face and when it hears you scuffle against the floor of the tunnel, it leaps forward with its mouth agape. You scream, turn around and run back through the tunnel.\n";
-            attention_seeker = true;
+            cout << "\n\nEnding 11: Water Fall";
+            print_line();
+            retry(&gc_left_tunnel);
+            break;
+            
+        case 'b':
+            if(!attention_seeker)
+            {
+                cout << "You decide to try and get the attention of the figures on the other side of the chasm. You look around for something to signal them with. All there really seems to be are some smooth pebbles and\n"
+                        "the bioluminescent foliage growing out of the walls and bridge near the entrance. Even if they're glowing, they're way too dim to be very noticeable, especially considering that the light is reflecting\n"
+                        "off the mist from the waterfall. You look around some more and notice something that you didn't before - there's something stuck in a puddle of mud near the tunnel entrance. You dig through the mud and\n"
+                        "pull out the object - a slingshot. You test the strength of the sling and notice that, despite its exposure to the water, the slingshot is still in good condition. You pick up some of the larger smooth\n"
+                        "stones and load them into the sling. You take aim towards the flickering light and let it fly. Nothing. You load another stone and take aim again, then fire the second stone. This time, it hits.\n"
+                        "Specifically, it hits the light dead-on. You watch in stunned bewilderment as the stone bounces off the surface of something slightly translucent, behind which the glow emanates. Then, the \"bonfire\" moves.\n"
+                        "The glow moves up, and as it moves you hear the echoes of crashing rocks. The glow rotates and comes closer to you, so close you can see that there's a strange organic-looking membrane covering the source of the glow,\n"
+                        " which appears to be a fleshy bulb of some kind. You stare at the strange, flickering glow and feel a unusual urge to get even closer. You take a small step forward before realizing how close you are to the edge of the\n"
+                        "and pull back, adrenaline flooding your veins. It is then you hear it - a low rumble gradually getting louder. You look back towards the bulb, but notice movement behind it - two large opal globes.\n"
+                        "You squint in confusion, but then your blood runs cold.\n"
+                        "Eyes. Those globes are eyes. A giant reptilian visage suddenly engulfs the chamber, so close the bioluminescent fungi has no trouble lighting it up. You fall back in shock and quickly start dragging yourself backwards.\n"
+                        "All the while, you're still staring at the monstrous face and when it hears you scuffle against the floor of the tunnel, it leaps forward with its mouth agape. You scream, turn around and run back through the tunnel.\n";
+                attention_seeker = true;
+                the_glowing_cave();
+            }
+            else
+            {
+                cout << "You shouldn't be able to read this.\n"
+                        "Only death awaits those who dare try this path again.\n\n";
+                the_glowing_cave();
+            }
+            break;
+
+        case 'c':
+            cout << "You turn around and head back through the tunnel.\n\n";
             the_glowing_cave();
-        }
-        else{
-            cout << "You shouldn't be able to read this.\n"
-                    "Only death awaits those who dare try this path again.\n\n";
-            the_glowing_cave();
-        }
-    }
-    else if(choice == 'c' || choice == 'C'){
-        cout << "You turn around and head back through the tunnel.\n\n";
-        the_glowing_cave();
-    }
-    else{
-        try_again();
-        gc_left_tunnel();
+            break;
+
+        default:
+            try_again();
+            gc_left_tunnel();
     }
 };
 
-void gc_right_tunnel(){
+void gc_right_tunnel()
+{
     print_line();
-    if(!gc_explored_right_tunnel){
+    if(!gc_explored_right_tunnel)
+    {
         cout << "You go through the dry tunnel. The air flowing past your body as you head further in.\n"
                 "Soon, you come across a much larger cave, dim light pouring in through a crevice in the ceiling of the chamber.\n"
                 "You look up and instantly freeze, even more bats are present in this cave than the one you were just in.\n"
@@ -235,7 +260,8 @@ void gc_right_tunnel(){
     the_glowing_cave();
 }
 
-void gc_pathway_text(){
+void gc_pathway_text()
+{
     print_line();
     cout << "You follow the trail for some distance before arriving in a small clearing in the forest of fungi. A portion of the dirt here is tilled and small, dead sprouts of an unknown plant line\n"
             "the ground. Nearby, a wooden cart with a missing wheel lays tilted at an angle. In the back of the cart are intricately-woven baskets with decayed remnants of the plant inside them.\n"
@@ -251,8 +277,8 @@ void gc_pathway_text(){
     gc_pathway();
 }
 
-void gc_pathway(){
-    // Evidence of Worldwalkers - abandoned basket and/or cart in clearing
+void gc_pathway()
+{
     char choice;
     print_line();
     cout << "Standing in the center of the small clearing in the middle of the fungi forest, you look around.\n";
@@ -264,54 +290,58 @@ void gc_pathway(){
     print_line();
     
     cin >> choice;
-    if(choice == 'A' || choice == 'a')
+    choice = tolower(choice);
+    
+    switch(choice)
     {
-        if(gc_pathway_key)
-        {
-            cout << "You briefly look in the cart, but find nothing else of interest, so you return to the center of the clearing.\n\n";
+        case 'a':
+            if(gc_pathway_key)
+            {
+                cout << "You briefly look in the cart, but find nothing else of interest, so you return to the center of the clearing.\n\n";
+                gc_pathway();
+            }
+            else
+            {
+                cout << "You go back to the cart and examine it closer. After looking near where you found the scroll earlier, you find a small lockbox. Surprisingly, it doesn't seem to be locked.\n"
+                        "You open it to find a strange looking device vaguely resembling a metallic USB drive. You pocket it and return to searching the cart. Finding nothing else, you return to the middle of the clearing.\n\n";
+                gc_pathway_key = true;
+                gc_pathway();
+            }
+            break;
+            
+        case 'b':
+            cout << "You go back to the small tilled section of earth and start scanning the area. Other than the blackened dead sprouts in some areas of the tilled earth, there isn't anything of note in the area.\n"
+                    "Giving the area a brief once-over again, you return to the center of the clearing.\n\n";
             gc_pathway();
-        }
-        else{
-            cout << "You go back to the cart and examine it closer. After looking near where you found the scroll earlier, you find a small lockbox. Surprisingly, it doesn't seem to be locked.\n"
-                    "You open it to find a strange looking device vaguely resembling a metallic USB drive. You pocket it and return to searching the cart. Finding nothing else, you return to the middle of the clearing.\n\n";
-            gc_pathway_key = true;
+            break;
+
+        case 'c':
+            if(gc_found_journal)
+            {
+                cout << "You decide to explore the clearing more. You walk along the perimeter of the clearing until you happen upon a large mushroom with a small mound of out-of-place earth beneath it.\n"
+                        "Stooping low, you dig your hands into the densely-packed mound and slowly break it down, making slow progress so as to not overlook any object that may reside within.\n"
+                        "After making your way halfway through the mound, your hands clasp around a solid weight. Pulling it out, you find you're holding a small wooden box of unknown origin.\n"
+                        "The wood had a distinctly dark color to it, though you are unable to tell if it is the natural color of the wood or it is discoloration caused by the soil.\n"
+                        "You gently open the box, the hinges squeaking loudly. Inside, you find a neatly folded piece of paper. You take it out of the box and unfold it. It reads:\n\n";
+                cout << journal_entry_2;
+                cout << "You carefully fold the paper back up and pocket it as you walk back to the center of the clearing.\n\n";
+                gc_found_journal = true;
+                gc_pathway();
+            }
+            else
+            {
+                cout << "You quickly scan the area, looking for anything you may have overlooked, but find nothing else of interest. You return to the center of the clearing.\n\n";
+                gc_pathway();
+            }
+            break;
+
+        case 'd':
+            cout << "You turn around and head back through the forest of glowing fungi.\n\n";
+            the_glowing_cave();
+            break;
+
+        default:
+            try_again();
             gc_pathway();
-        }
-    }
-    else if(choice == 'B' || choice == 'b')
-    {
-        cout << "You go back to the small tilled section of earth and start scanning the area. Other than the blackened dead sprouts in some areas of the tilled earth, there isn't anything of note in the area.\n"
-                "Giving the area a brief once-over again, you return to the center of the clearing.\n\n";
-        gc_pathway();
-    }
-    else if(choice == 'C' || choice == 'c')
-    {
-        if(gc_found_journal)
-        {
-            cout << "You decide to explore the clearing more. You walk along the perimeter of the clearing until you happen upon a large mushroom with a small mound of out-of-place earth beneath it.\n"
-                    "Stooping low, you dig your hands into the densely-packed mound and slowly break it down, making slow progress so as to not overlook any object that may reside within.\n"
-                    "After making your way halfway through the mound, your hands clasp around a solid weight. Pulling it out, you find you're holding a small wooden box of unknown origin.\n"
-                    "The wood had a distinctly dark color to it, though you are unable to tell if it is the natural color of the wood or it is discoloration caused by the soil.\n"
-                    "You gently open the box, the hinges squeaking loudly. Inside, you find a neatly folded piece of paper. You take it out of the box and unfold it. It reads:\n\n";
-            cout << journal_entry_2;
-            cout << "You carefully fold the paper back up and pocket it as you walk back to the center of the clearing.\n\n";
-            gc_found_journal = true;
-            gc_pathway();
-        }
-        else
-        {
-            cout << "You quickly scan the area, looking for anything you may have overlooked, but find nothing else of interest. You return to the center of the clearing.\n\n";
-            gc_pathway();
-        }
-    }
-    else if(choice == 'D' || choice == 'd')
-    {
-        cout << "You turn around and head back through the forest of glowing fungi.\n\n";
-        the_glowing_cave();
-    }
-    else
-    {
-        try_again();
-        gc_pathway();
     }
 }
