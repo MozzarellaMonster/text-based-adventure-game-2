@@ -51,41 +51,44 @@ void the_whistling_gorge()
     cout << "D. Go back\n";
     print_line();
     cin >> choice;
+    choice = tolower(choice);
 
-    if (choice == 'A' || choice == 'a')
+    switch(choice)
     {
-        print_line();
-        cout << "You decide to take the path on the left. You walk forward and come to a small hill, where there is another dead tree\n"
-                "planted on the very crest of the hill. This tree however, bears fruit. Small, shriveled berries grow in clusters along\n"
-                "several of the branches. Some of which are within reach.\n\n";
-        fruit_options();
-    }
-    else if(choice == 'B' || choice == 'b')
-    {
-        cout << "You head down the path on the right. As you walk down the path, you notice the trees here seem to be getting bigger. Unusual, given that you would think dead trees wouldn't grow.\n"
-            "Soon, the path leads to a small clearing with a large black tree in the center, surrounded on all sides by a dense scattering of trees.\n"
-            "The branches of said trees reach over the clearing, creating a domed roof that the sunlight is barely able to penetrate and casting the entire area into a gloomy shade.\n"
-            "It is then you notice the hole in the center of the trunk of the large black tree, dimly glowing a shade of red, and the white twisted branch in the center of the hole.\n";
-        branch_options();
-    }
-    else if(choice == 'C' || choice == 'c')
-    {
-        cout << "You decide to look around where you are first before settling on a path. After a few seconds of looking over the area, you find a stone between the paths that looks as though it was recently disturbed.\n"
-                "You look around it first and finding nothing, lift the stone up. Underneath, you find a folded piece of paper. Rolling the stone aside, you pick up the paper and begin to read:\n\n";
-        cout << journal_entry_3;
-        cout << "You pocket the paper and walk back to your previous position. Once again, the paths lay before you.\n";
-        the_whistling_gorge();
-    }
-    else if(choice == 'D' || choice == 'd')
-    {
-        cout << "You look back from where you came, but remember that solid rock that made up the way out - you weren't getting out of here until you found what you needed.\n";
-                "You turn back to the paths ahead of you.\n";
-        the_whistling_gorge();
-    }
-    else
-    {
-        try_again();
-        the_whistling_gorge();
+        case 'a':
+            print_line();
+            cout << "You decide to take the path on the left. You walk forward and come to a small hill, where there is another dead tree\n"
+                    "planted on the very crest of the hill. This tree however, bears fruit. Small, shriveled berries grow in clusters along\n"
+                    "several of the branches. Some of which are within reach.\n\n";
+            fruit_options();
+            break;
+        
+        case 'b':
+            cout << "You head down the path on the right. As you walk down the path, you notice the trees here seem to be getting bigger. Unusual, given that you would think dead trees wouldn't grow.\n"
+                "Soon, the path leads to a small clearing with a large black tree in the center, surrounded on all sides by a dense scattering of trees.\n"
+                "The branches of said trees reach over the clearing, creating a domed roof that the sunlight is barely able to penetrate and casting the entire area into a gloomy shade.\n"
+                "It is then you notice the hole in the center of the trunk of the large black tree, dimly glowing a shade of red, and the white twisted branch in the center of the hole.\n";
+            branch_options();
+            break;
+        
+        case 'c':
+            cout << "You decide to look around where you are first before settling on a path. After a few seconds of looking over the area, you find a stone between the paths that looks as though it was recently disturbed.\n"
+                    "You look around it first and finding nothing, lift the stone up. Underneath, you find a folded piece of paper. Rolling the stone aside, you pick up the paper and begin to read:\n\n";
+            cout << journal_entry_3;
+            cout << "You pocket the paper and walk back to your previous position. Once again, the paths lay before you.\n";
+            the_whistling_gorge();
+            break;
+        
+        case 'd':
+            cout << "You look back from where you came, but remember that solid rock that made up the way out - you weren't getting out of here until you found what you needed.\n";
+                    "You turn back to the paths ahead of you.\n";
+            the_whistling_gorge();
+            break;
+        
+        default:
+        
+            try_again();
+            the_whistling_gorge();
     }
 }
 
