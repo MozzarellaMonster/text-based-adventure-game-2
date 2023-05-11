@@ -76,7 +76,6 @@ void retry(void (*func)())
     }
 }
 
-// Function for handling the player options, to be added to later
 void present_options(vector<string> option_names, vector<string> dialogue)
 {
     char choice;
@@ -346,7 +345,8 @@ void temple_entrance()
     }
 }
 
-void temple_first_room_text(){
+void temple_first_room_text()
+{
     determine_riddle();
     print_line();
     cout << "You enter the temple and find yourself in a dimly lit room.\n"
