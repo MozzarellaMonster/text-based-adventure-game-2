@@ -17,6 +17,8 @@ void the_oasis_text()
     print_line();
     cout << "You stumble out of the portal and quickly catch your balance as it closes behind you. Standing up straight, you take in your surroundings.\n"
             "You find yourself in a hot and humid jungle, large trees and exotic-looking plants surround you on all sides. The sun burns brightly through the canopy of trees.\n"
+            "Notably, this jungle is very different from the one you found the temple in, as this is much more humid and lively as birds chirp and insects buzz all around you.\n"
+            "As a result, this jungle has a much less somber atmosphere and the foliage is noticeably lighter green in color compared to the one you found the temple in.\n"
             "Although the jungle is dense and the undergrowth thick, you're just able to make out three pathways in front of you - one to your left, one directly ahead, and another to your right.\n"
             "Looking behind you, you see a carved stone archway with no active portal. You look back towards the three pathways in front of you.\n";
     the_oasis();
@@ -42,15 +44,17 @@ void the_oasis()
                 "These aren't twigs, they're bones. Your blood freezes as you drop the bones you're holding and turn to run. As you turn, a low growl rumbles all around you, and steadily grows louder.\n"
                 "You quickly turn to look at the entrance to the clearing, but you're met with a close-knit, intertwined collection of branches blocking the entrance. You're trapped here. The rumble is incredibly loud now.\n"
                 "It is then you hear wooden creaks as several branches are shifted away from the 'wall' of the clearing opposite the entrance, and a hideous gaping maw is shown in the space left behind.\n"
-                "Your heart gallops in your chest as the humid breath of the huge mouth hits you and several large tentacle-like tongues slowly wind their way down the gullet of the thing in the branches.\n"
-                "You desperately turn back to the entrance of the clearing and tear at the branches blocking your way, slivers and cuts be damned. You snap away as many of the branches as you can, but see through\n"
-                "the spaces between them that they are quickly replaced with more as the entrance is further barricaded, cutting off the dim light from the tunnel in the process and hopelessly sealing you in.\n"
-                "The tongues slither ever closer, taking their time to savor the moment - playing with their prey. You feel the breath of the thing grow in anticipation as one of the tongues finally wrap around your ankle,\n"
-                "another around your waist. As a final futile attempt at escape, you plunge your arm into the interwoven barricade of branches and grab one of them. Slowly, the tongue grows taut as the thing struggles to pull you in.\n"
+                "Your heart gallops in your chest as the humid breath of the huge mouth hits you and several large tentacle-like tongues slowly wind their way up through the gullet of the thing in the branches.\n"
+                "You desperately turn back to the entrance of the clearing and tear at the branches blocking your way, slivers and cuts be damned. Remembering the dagger, you bring it out and start cutting at the branches\n"
+                "only for you to clumsily drop it in the nest of bones. Stooping to search, you see the tongues move closer and decide there's no time as you stand back up and resume your escape attempt.\n"
+                "You snap away as many of the branches as you can, but see through the spaces between them that they are quickly replaced with more as the entrance is further barricaded,\n"
+                "cutting off the dim light from the tunnel in the process and hopelessly sealing you in. The tongues slither ever closer, taking their time to savor the moment - playing with their prey.\n"
+                "You feel the breath of the thing grow in anticipation as one of the tongues finally wraps itself around your ankle, another around your waist. As a final futile attempt at escape,\n"
+                "you plunge your arm into the interwoven barricade of branches and grab one of them. Slowly, the tongue grows taut as the thing struggles to pull you in.\n"
                 "It pulls and pulls, but you hold fast, pulling yourself away whenever the thing grows tired. Finally impatient with this tug-of-war, the thing's final tongue wraps around the shoulder of the arm planted in the\n"
                 "web of branches and with great force, pulls. You hear a sickening pop as your shoulder dislocates and you scream in pain, but the thing is not done. It pulls even harder and harder, the fabric of your clothes\n"
-                "tearing at the seams. The pain is unbearable. And with a final tug, the things pulls you free of the branches, several pieces of skin left behind on sharp thorns within. Tears flow freely now as your limp arm\n"
-                "drags behind you and you close your eyes in defeat as you enter the warm mouth of the thing.\n";
+                "tearing at the seams. The pain is unbearable. And with a final tug, the things pulls you free of the branches as you lose your grip, several pieces of skin left behind on sharp thorns within.\n"
+                "Tears flow freely now as your limp arm drags behind you and you close your eyes in defeat as you enter the warm mouth of the thing.\n";
         
         cout << "\n\nEnding 14: Eaten\n";
         print_line();
@@ -160,6 +164,7 @@ void pond_options()
     case 'c':
         if(pond_hint)
         {
+            // Add reference to journal entry and hint for continuity.
             cout << "You decide to go through the waterfall.\n"
                     "You pull your jacket over your head as you quickly go through the waterfall in a futile attempt to keep from getting soaked.\n"
                     "You shake and wring out what water you can from your clothes before taking in your surroundings, you are in a small cave with a tunnel heading even deeper into the rock wall.\n"
