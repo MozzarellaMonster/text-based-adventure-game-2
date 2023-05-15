@@ -166,8 +166,8 @@ void pond_options()
     case 'c':
         if(pond_hint)
         {
-            // Add reference to journal entry and hint for continuity.
             cout << "You decide to go through the waterfall.\n"
+                    "You remember what the piece of paper you found stated: that the tree with the special leaves can be found in a cave beyond the waterfall.\n"
                     "You pull your jacket over your head as you quickly go through the waterfall in a futile attempt to keep from getting soaked.\n"
                     "You shake and wring out what water you can from your clothes before taking in your surroundings, you are in a small cave with a tunnel heading even deeper into the rock wall.\n"
                     "Hesitating only slightly, you head into the tunnel. After a brief walk you find yourself in a vast open-ceiling cave with a huge beautiful tree growing in the middle, bathed in the sunlight\n"
@@ -177,9 +177,9 @@ void pond_options()
                     "top of the tree where all the branches meet. From your central position, you can see several structures resembling handrails on each of the major branches of the tree. You also see a large\n"
                     "basket nearby filled with tight, strongly woven rope. Putting two and two together, you tie the rope around yourself and slowly make your way out on one of the larger branches of the tree.\n"
                     "After going several meters, you tie one end of the rope securely to the handrail structure and make your way out onto a smaller branch off the main branch you're on. Taking cautious steps,\n"
-                    "you eventually reach a part of the branch close of a cluster of flowers and leaves. Reaching out after having tied yourself off yet again to a sturdy-looking branch on the opposite side,\n"
-                    "you just manage to grab a leaf a pull it off. You quickly pull yourself back in and head back to the handrail structure before finally taking a moment to look closer at your prize.\n"
-                    "The leaf shines brilliantly in the light, with a slight rainbow iridesence, and is somewhat transparent from a distance. Squinting, you bring the leaf closer to your face and peer0 through it.\n"
+                    "you eventually reach a part of the branch close to a cluster of flowers and leaves. Reaching out after having tied yourself off yet again to a sturdy-looking branch on the opposite side,\n"
+                    "you just manage to grab a leaf and pull it off. You quickly pull yourself back in and head back to the handrail structure before finally taking a moment to look closer at your prize.\n"
+                    "The leaf shines brilliantly in the light, with a slight rainbow iridesence, and is somewhat transparent from a distance. Squinting, you bring the leaf closer to your face and peer through it.\n"
                     "The image is somewhat blurred, but you can see interesting waves in the air, as if seeing vibrations from noise. You look towards the tunnel leading out of the cave to the back of the waterfall.\n"
                     "The waves you see through the leaf appear to be emanating from that spot. You bring the leaf back down and the waves disappear. Interested, you complete your journey off the branch and back onto\n"
                     "the sturdy platform in the center of the tree. Taking the leaf back out of your pocket, you once again bring it to your face and peer through it. This time, instead of soundwaves, you see the\n"
