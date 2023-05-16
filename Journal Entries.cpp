@@ -32,8 +32,7 @@ string journal_entry_4 = "\n\t11/13/08\n"
                          "\tHowever, what I did not expect was to see signs of intelligent life!\n"
                          "\tThere is a massive temple on the other side of the Gateway made of a smooth black stone.\n"
                          "\tThe next few experiments will involve me sending some organic lifeforms through, I need to ensure safe passage.\n"
-                         "\tI wish to see this temple with up close with my own eyes.\n\n";
-
+                         "\tI wish to see this temple up close with my own eyes.\n\n";
 
 // Found in The Oasis
 string journal_entry_5 = "\n\t07/08/09\n"
@@ -44,10 +43,22 @@ string journal_entry_5 = "\n\t07/08/09\n"
                          "\tI've put several samples in my refrigerator for further study.\n\n";
 
 
-string journal_entry_6 = "";
+string journal_entry_6 = "\n\t12/25/10\n"
+                         "\tThroughout my journeys, I have somehow glazed over the fact that I've never actually encountered any Worldwalkers, as I've come to call them.\n"
+                         "\tI see the remnents of their presence with the Temple, but it is remarkably empty. There's something really off about the fact that the Temple resides in a jungle\n"
+                         "\taway from any other buildings or signs of civilization. Even the jungle itself is empty, as I've been unable to find any signs of life besides plant life.\n"
+                         "\tWhy is the Temple away from anything else? Why do you have to pass a test to even go into the temple itself? What is it all for? I'm going to start looking into it.\n"
+                         "\tOh, and Merry Christmas.\n";
 
-
-string journal_entry_7 = "";
+// Found in The Labyrinth
+string journal_entry_7 = "\n\t02/15/10\n"
+                         "\tIt's a game. It's all a game to them. The Gates were originally used to actually conduct scientific research and study new worlds, but after some time passed and the effects\n"
+                         "\tof constant travel were starting to make themselves apparent, it all became a game to them. Rather than continue to suffer the consequences themselves, they forced other species\n"
+                         "\tthrough the Gates in a form of twisted entertainment. I regret ever feeling any sense of wonder at their achievements now, know how they ended up. I still don't know if there are\n"
+                         "\tany of them left. I thought at first that the degenerative illness the Gates inflict upon you was not contagious, but I have found new evidence that is not the case.\n"
+                         "\tIt is also my working theory that the illness is the cause of the Worldwalker's disappearance - either through extinction or self-imposed isolation of some sort. This also means\n"
+                         "\tthat I can never go home. If I were to do that, I wouldn't just be putting my family and friends at risk, but the whole world. This illness spreads through a means we do not currently\n"
+                         "\thave the technology to treat. It is very likely I would doom the entire human race because of it. I'll need to find another way to combat this illness, if not cure altogether.\n";
 
 string hint_1 = "\n\t\"The riddle is different for everyone. Be aware that there will be many worlds connected to this temple.\n"
                 "\tEach one with their own unique perils. Stay swift on your feet and keep a clear head.\n"
