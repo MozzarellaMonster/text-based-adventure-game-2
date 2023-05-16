@@ -65,19 +65,21 @@ string hint_1 = "\n\t\"The riddle is different for everyone. Be aware that there
                 "\tMake each choice you come across carefully, the temple is testing you.\n"
                 "\tIf you fail even one, the price will be your life.\"\n";
 
-string hint_2 = "\n\t\"This is the burial ground for an ancient race that ruled over this world with superior technology.\n"
+string hint_2 = "\n\t\"This is the burial ground for an ancient race that once thrived on this world,\n"
+                "\ttheir civilization marked by advanced technology and grand architecture.\n"
                 "\tAccording to the records I've managed to find about the history of the Worldwalkers, this world was one of the first ones they found.\n"
-                "\tIn fact, most of what the Worldwalkers knew about traversing the different worlds was learned from the remnants of this civlization.\n"
+                "\tIn fact, most of what the Worldwalkers knew about traversing the different worlds was learned from the remnants of this civilization.\n"
                 "\tIt also allowed me to figure out what happened to this extinct race. At least, just what the Worldwalkers themselves knew.\n"
-                "\tThe desert you see around you? It wasn't there before. A periodic climate change occurs every few million years in this world.\n"
-                "\tEven with their vastly superior technology, they could not escape it. The Gate technology was their last option.\n"
-                "\tThey invested more time in achieving 'perfect' Gate technology rather than 'stoop' to making physical space travel.\n"
-                "\tAnd they could not perfect it in time. In the end, it was their own stubborn pride that ultimately led to their extinction.\n"
-                "\tHowever, it was this perfectionism that gave valuable insight to the Worldwalkers that allowed them to fine-tune their own Gates.\n"
+                "\tThe desert you see around you? It wasn't there before. A cosmic calamity occurred near to this world that unleashed devastating energies\n"
+                "\tthat slowly eroded away all organic life, including this race of highly intelligent beings.\n"
+                "\tEven with their vastly superior technology, they could not escape it. With their few remaining numbers, they instead erected monuments\n"
+                "\tto honor their dead and record their achievements. These beings prized their scientific prowess and achievements above all else,\n"
+                "\tto a nigh-unattainable perfectionistic standard. It is one of these monuments that you now stand in.\n"
+                "\tHowever, it was this perfectionism that gave valuable insight to the Worldwalkers that allowed them to fine-tune their own Gate technology.\n"
                 "\tI still don't know the true origin of the Gates. All I know is that the Worldwalkers were not the progenitors of the technology.\n"
                 "\tNor were they the first, or the last, to use them.\n\n"
-                "\tYou will need to find the Ruby Skull held by the head of the Crimson Head family, and the temple will permit you to return.\n"
-                "\tBeware traveler, this people's stubborn pride persists even in death.\"\n";
+                "\tYou must find the Ruby Skull, held by the head of the Crimson Head family, and the temple will grant you passage back.\n"
+                "\tBut be cautious, for this ancient race's yearning for perfection persists even in death.\"\n";
 
 string hint_3 = "\n\t\"When the Worldwalkers first came through the Gate into this world, they were immediately met with hostility from the ants.\n"
                 "\tIt was only through the superior intelligence and communication with the survivors of the first party here that a deal was struck.\n"
