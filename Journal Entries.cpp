@@ -112,7 +112,8 @@ string hint_4 = "\n\t\"This is one of the newer dimensions the Worldwalkers foun
                 "\tover and over, it affects you. Deeply. It's like nothing I've ever seen before. I've put together something that might help reverse the effects, but I need more time. Something that I am already short on.\n\""
                 "\tMore drops of blood.\n"
                 "\t\"Get the leaf, gather the keys, solve the Labyrinth, and get home. Stay home. Don't follow in my footsteps, destroy my Gate. I don't want anyone to find it and come here either. Playing the game of a dead civilization.\n"
-                "\t\nThey say that curiosity killed the cat, and that satisfaction brought it back, but there's no coming back from what I've done. The least I can do is to prevent anyone else from sharing my fate. Good luck, traveler.\"\n\n";
+                "\t\nThey say that curiosity killed the cat, and that satisfaction brought it back, but there's no coming back from what's already done. The least I can do is to prevent anyone else from sharing my fate.\n"
+                "\tGood luck, traveler.\"\n\n";
 
 string hint_5 = "\n\t\"The Swamplands - a place even the Worldwalkers did not dare to linger in for fear of all the dangers lurking here. Make no mistake traveler, there is more than your physical form at risk here.\n"
                 "\tYour very sanity hangs in the balance. I too find myself afraid of coming back here and as a result, have not explored much of this world. I think even the Worldwalkers didn't explore much past what\n"
