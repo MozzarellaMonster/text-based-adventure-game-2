@@ -4,15 +4,17 @@
 
 using namespace std;
 
-string water_riddle = "\t\"Unhindered, I can destroy cities, yet tamed I supply them. I carve the very Earth, yet flesh does not yield.\n"
-                      "\tI reign over the many kingdoms of man, for I have seen them all. For millennia you have tried to control me,\n"
-                      "\tto confine me, yet you are the greatest prisoner, for you cannot live without me.\"";
+string water_riddle = "\t\"Unleashed, I ravage cities grand, yet harnessed, I nourish the land.\n"
+                      "\tI carve the earth with gentle might, defying flesh, both day and night.\n"
+                      "\tFrom realms of rain to ocean deep, I reign over man, a secret to keep.\"";
 
-string wind_riddle = "\t\"I roam the world, wild and free. Sailors and storms both rely on me.\n"
-                     "\tI can caress your skin and steal your breath away. Or I can tear your home apart and throw you away.\"";
+string wind_riddle = "\t\"I wander wild across the earth's expanse, a zephyr's dance, a tempest's trance.\n"
+                     "\tCarrying whispers, sowing seeds, I roam unbounded, meeting no needs.\n"
+                     "\tCaressing cheeks, stealing breath away, or razing homes in a furious display.\"";
 
-string fire_riddle = "\t\"A force to be reckoned with, it was I that gave man the power they possess. I am protection, I am light, but I have no loyalties.\n"
-                     "\tI devour fiercely, but have no thirst, for if I drink I will die.\"";
+string fire_riddle = "\t\"A force of power, the light I bestow, an ember's glow, a flickering show.\n"
+                     "\tI am warmth and light, a guardian true, yet loyalties, I have none for you.\n"
+                     "\tI consume with might, but thirst not within, lest I drink, and all shall end and thin.\"";
 
 string correct_riddle = "You walk up to the wall with the same symbol and gently touch it.\n"
                         "At first, nothing happens. Then, there's a low rumbling sound as the wall slowly slides up into the ceiling.\n"
