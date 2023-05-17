@@ -73,9 +73,11 @@ void the_whistling_gorge()
         
         case 'c':
             cout << "You decide to look around where you are first before settling on a path. After a few seconds of looking over the area, you find a stone between the paths that looks as though it was recently disturbed.\n"
-                    "You look around it first and finding nothing, lift the stone up. Underneath, you find a folded piece of paper. Rolling the stone aside, you pick up the paper and begin to read:\n\n";
+                    "You look around it first and finding nothing, lift the stone up. Underneath, you find two folded pieces of paper. Rolling the stone aside, you pick up the papers and begin to read:\n\n";
             cout << journal_entry_3;
-            cout << "You pocket the paper and walk back to your previous position. Once again, the paths lay before you.\n";
+            cout << "Folding it up, you open the other paper.\n";
+            cout << hint_6;
+            cout << "You pocket the papers and walk back to your previous position. Once again, the paths lay before you.\n";
             the_whistling_gorge();
             break;
         
