@@ -19,5 +19,6 @@ extern string hint_2;
 extern string hint_3;
 extern string hint_4;
 extern string hint_5;
+extern string hint_6;
 
 #endif

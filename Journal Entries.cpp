@@ -126,3 +126,20 @@ string hint_5 = "\n\t\"The Swamplands - a place even the Worldwalkers did not da
                 "\tAside from the dangers of Nightflesh, the swamp is home to a menagerie of deadly creatures. Everything from venomous snakes and hungry alligators to terrifying Totems and cannibalistic Headhunters.\n"
                 "\tOh, and one more thing. The last individual to become a slave to the evil of The Black Heart was a Worldwalker, which would have been your first and only direct experience with them, were it not for\n"
                 "\tThe Black Heart twisting them into a horrific amalgamation of flesh. Beware traveler, and pray night does not come soon.\n";
+
+string hint_6 = "\n\t\"This horrible place is what I like to refer to as The Whistling Gorge, for reasons that are obvious to you now. It is a barren, dead landscape with only horrible facsimiles of life present here.\n"
+                "\tAs one of the later worlds the Worldwalkers stumbled into, even with all the worlds they've encountered, they were as horrified as you and I are. There isn't much known about this world,\n"
+                "\tonly that the very soil of this place is cursed. Tainted with the blood of an exiled creature so vile and evil that its essence continues to corrupt every organism unfortunate enough to find itself here.\n"
+                "\tThese trees all around you? They're not trees, they're the warped, twisted bones of every living thing that dared to stay here long enough to fall victim to the whistle. When something \"dies\" here,\n"
+                "\tit doesn't really die. It just becomes part of the bigger collective of lost souls buried in the accursed earth. You lose all semblance of self, becoming less than an animal, your existence is only pain,\n"
+                "\tand the only temporary respite you get is when another organism falls prey to the whistle, its buried carcass providing needed but insufficient nutrients. And so, you lay in the ground, damned to eternal starvation\n"
+                "\tand thirst.\n"
+                "\tAt least, that's what the Worldwalkers have written down. Another take on the explanation is coined by one particular Worldwalker scientist I've grown fond of. He believes that since every \"tree\"\n"
+                "\tin this gorge is the distorted remains of every organism that died here with the ability to hear as a result of the first being to die here - an insectile predatory species that used its whistle to\n"
+                "\tstun and control prey that it would later feed off of or possibly, use as a living host for its young. These further details come as a result of further analysis of the oldest tree in this area having\n"
+                "\tchitinous features. How exactly is the tree-seeding a result of this organism simply dying? Well, it is believed that this particular predator was not native to this dimension and the trees were an\n"
+                "\tunintended side-effect of this creatures presence, a white-blood cell reaction from the dimension itself. Twisted Bone, as it has been dubbed, is a flute made from the trunk of said oldest tree in this gorge.\n"
+                "\tWhen this flute is played, regardless of whether or not the user has any musical ability at all, stuns all organisms within earshot of the sound. Strangely, it has been reported that the user themselves cannot\n"
+                "\thear the whistle and can only tell it is being played by the effect it has on those around them. Even with all their love for games, the Worldwalkers themselves saw Twisted Bone as being highly unethical and had\n"
+                "\tstarted talks of sealing off the Gate to this dimension, but had disappeared before then.\n"
+                "\tIt is this flute you must find. Find Twisted Bone and the Temple will let you back in, but do not stay long, the wind will start up, and you don't want to hang around when it does.\n";
