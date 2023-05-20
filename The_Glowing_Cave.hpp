@@ -11,6 +11,7 @@ extern bool gc_explored_right_tunnel;
 extern bool gc_explored_path;
 extern bool gc_pathway_key;
 extern bool gc_found_journal;
+extern bool gc_found_fossil;
 
 extern bool attention_seeker;
 

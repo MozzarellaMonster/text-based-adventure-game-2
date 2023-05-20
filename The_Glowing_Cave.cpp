@@ -14,6 +14,7 @@ bool gc_explored_right_tunnel = false;
 bool gc_explored_path = false;
 bool gc_pathway_key = false;
 bool gc_found_journal = false;
+bool gc_found_fossil = false;
 
 bool attention_seeker = false;
 
@@ -48,6 +49,12 @@ void the_glowing_cave()
                 "Your arms are like jelly, and you struggle to not collapse onto the floor entirely and assume the fetal position.\n"
                 "After several minutes, the screeching finally stops and the cave falls silent. You take some shaky breaths and push yourself into a sitting position, just letting yourself process what you just saw.\n"
                 "After a while, you notice that the bats have gone, probably fled the chamber after the screeching started. You sigh loudly and stand back up. Well, you still have to find what you're looking for.\n";
+    }
+    if(gc_explored_left_tunnel && gc_explored_right_tunnel && gc_explored_path && gc_found_journal && gc_pathway_key && gc_found_fossil)
+    {
+        print_line();
+        cout << "\nAfter exploring everything and finding the fossil, the Gate reopens and you head back into the temple.\n\n";
+        temple_second_room();
     }
 
     char choice;
@@ -138,7 +145,6 @@ void the_glowing_cave()
 
 void gc_left_tunnel_text()
 {
-    // Natural land bridge and waterfall - dangerous balancing game and hidden horror
     print_line();
     cout << "You find yourself in a large cavern, a narrow, natural land bridge stretching across a massive canyon splitting the chamber in two. A large waterfall cascades down from above and to the left of the land bridge,\n"
             "completely soaking the bridge to the point that puddles have formed on it, giving the illusion of holes. Were it not for the constant spray sending ripples through the puddles, you'd believe the illusion.\n"
@@ -246,6 +252,8 @@ void gc_right_tunnel()
                 "it was the most well-lit gym in the world and you were a star dodgeball player.\n"
                 "You make it to the tunnel and run through, an angry bat trying to claw its way in, but can't due to its size.\n"
                 "You smile, your newfound power helping you through the darkness, and you soon burst back out into the previous area. You look up towards the ceiling, but there are no bats to be found.\n\n";
+        gc_found_fossil = true;
+        inventory.push_back(the_glowing_cave_key);
         gc_explored_right_tunnel = true;
     }
     else
@@ -302,6 +310,7 @@ void gc_pathway()
             }
             else
             {
+                // The USB drive will be used in The Labyrinth - a video log of the previous explorer will be there
                 cout << "You go back to the cart and examine it closer. After looking near where you found the scroll earlier, you find a small lockbox. Surprisingly, it doesn't seem to be locked.\n"
                         "You open it to find a strange looking device vaguely resembling a metallic USB drive. You pocket it and return to searching the cart. Finding nothing else, you return to the middle of the clearing.\n\n";
                 gc_pathway_key = true;
