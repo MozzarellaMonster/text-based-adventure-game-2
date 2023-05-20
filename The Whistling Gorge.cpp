@@ -75,6 +75,7 @@ void the_whistling_gorge()
             cout << "You decide to look around where you are first before settling on a path. After a few seconds of looking over the area, you find a stone between the paths that looks as though it was recently disturbed.\n"
                     "You look around it first and finding nothing, lift the stone up. Underneath, you find two folded pieces of paper. Rolling the stone aside, you pick up the papers and begin to read:\n\n";
             cout << journal_entry_3;
+            journals.push_back(journal_entry_3);
             cout << "Folding it up, you open the other paper.\n";
             cout << hint_6;
             cout << "You pocket the papers and walk back to your previous position. Once again, the paths lay before you.\n";
@@ -151,6 +152,7 @@ void branch_options()
                 "But nothing does, and you retrieve it successfully. Holding the twisted branch closer, you notice there are holes along the length of it and a larger one at one end.\n"
                 "It's a flute, you realize. A slight breeze picks up and creates a low tune in the flute and in some of the surrounding trees.\n"
                 "A cold chill creeps up your spine as a slight dizzying spell assaults you. You quickly regain your composure, put the flute away, and head back through the now open Gate.\n";
+        inventory.push_back(the_whistling_gorge_key);
         temple_second_room();
     }
     else if(option == 'N' || option == 'n')
