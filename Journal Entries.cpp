@@ -42,7 +42,7 @@ string journal_entry_5 = "\n\t07/08/09\n"
                          "\ttheir growth and spread is remarkably higher in comparison to ours.\n"
                          "\tI've put several samples in my refrigerator for further study.\n\n";
 
-
+// Found in the Desert of the Dead
 string journal_entry_6 = "\n\t12/25/10\n"
                          "\tThroughout my journeys, I have somehow glazed over the fact that I've never actually encountered any Worldwalkers, as I've come to call them.\n"
                          "\tI see the remnents of their presence with the Temple, but it is remarkably empty. There's something really off about the fact that the Temple resides in a jungle\n"
