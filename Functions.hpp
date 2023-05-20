@@ -8,6 +8,7 @@
 using namespace std;
 
 extern vector<string> inventory;
+extern vector<string> journals;
 
 extern void print_line();
 extern void try_again();

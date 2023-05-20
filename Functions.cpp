@@ -17,6 +17,7 @@
 using namespace std;
 
 vector<string> inventory;
+vector<string> journals;
 
 inline void print_line()
 {
