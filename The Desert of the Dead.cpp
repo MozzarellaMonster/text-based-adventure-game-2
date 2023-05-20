@@ -139,6 +139,7 @@ void the_desert_of_the_dead()
                         "You remain laying on the floor, taking a moment to catch your breath before you hesitantly pick yourself back up.\n";
                 journals.push_back(journal_entry_6);
                 inventory.push_back(the_desert_of_the_dead_key);
+                dod_completed = true;
                 temple_second_room();
             }
             break;
