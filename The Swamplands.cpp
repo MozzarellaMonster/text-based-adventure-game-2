@@ -26,7 +26,8 @@ void the_swamplands_text()
             "lack of large trees mostly consisting of tall grass and waist-high water, and the final area making up the majority of the swamp with large trees and very deep water you would need a boat to go through.\n"
             "Thankfully, from your high position, you spot a dock with a small boat anchored to it. Climbing down, you make your way to the dock where you find a barrel of rope with a piece of folded paper nested within.\n"
             "Unfolding the piece of paper, you read:\n\n";
-    cout << journal_entry_5;
+    cout << journal_entry_7;
+    journals.push_back(journal_entry_7);
     cout << "Look back down into the barrel, you notice another folded piece of paper. Retrieving it and opening it up, you read:\n\n";
     cout << hint_5;
     cout << "Suddenly, you hear a loud roar erupt from the central area of the swamp, where the tall trees hide the source of it. Scared but determined, you stand before the options before you - you could explore\n"
@@ -478,6 +479,7 @@ void the_hunt()
                 "your wildest dreams manifest in your mind. Quickly, you stow the heart away in your pocket, but can still feel its whispers, though more faintly now. Taking note of you predicament, you make your way back towards\n"
                 "the house you first found the Nightflesh creature in, you're sure you saw a spare boat nearby, albeit a somewhat decrepit one. Time to head back to the Temple before you really start to listen to what the Black\n"
                 "Heart has to say. After several minutes, you find the boat you were looking for and make your way back to the now open Gate.\n";
+        inventory.push_back(the_swamplands_key);
         temple_second_room();
         break;
 
