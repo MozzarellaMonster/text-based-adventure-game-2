@@ -66,7 +66,7 @@ string video_log = "";
 string hint_1 = "\n\t\"The riddle is different for everyone. Be aware that there will be many worlds connected to this temple.\n"
                 "\tEach one with their own unique perils. Stay swift on your feet and keep a clear head.\n"
                 "\tMake each choice you come across carefully, the temple is testing you.\n"
-                "\tIf you fail even one, the price will be your life.\"\n";
+                "\tIf you fail even one, the price will be your life.\"\n\n";
 
 string hint_2 = "\n\t\"This is the burial ground for an ancient race that once thrived on this world,\n"
                 "\ttheir civilization marked by advanced technology and grand architecture.\n"
@@ -82,7 +82,7 @@ string hint_2 = "\n\t\"This is the burial ground for an ancient race that once t
                 "\tI still don't know the true origin of the Gates. All I know is that the Worldwalkers were not the progenitors of the technology.\n"
                 "\tNor were they the first, or the last, to use them.\n\n"
                 "\tYou must find the Ruby Skull, held by the head of the Crimson Head family, and the temple will grant you passage back.\n"
-                "\tBut be cautious, for this ancient race's yearning for perfection persists even in death.\"\n";
+                "\tBut be cautious, for this ancient race's yearning for perfection persists even in death.\"\n\n";
 
 string hint_3 = "\n\t\"When the Worldwalkers first came through the Gate into this world, they were immediately met with hostility from the ants.\n"
                 "\tIt was only through the superior intelligence and communication with the survivors of the first party here that a deal was struck.\n"
@@ -112,7 +112,7 @@ string hint_4 = "\n\t\"This is one of the newer dimensions the Worldwalkers foun
                 "\tIt is here you see some smeared drops of what appear to be blood.\n"
                 "\n\t\"I don't have much time, but I've been able to acquire some plants from this area and managed to put together a type of tonic that should slow down the sickness. Not stop it, but slow it down.\n"
                 "\tI'm telling you now traveler, stop using the Gates. It is this technology that caused the sickness that killed off the Worldwalkers, constantly being reconstituted, tearing and stitching back together\n"
-                "\tover and over, it affects you. Deeply. It's like nothing I've ever seen before. I've put together something that might help reverse the effects, but I need more time. Something that I am already short on.\n\""
+                "\tover and over, it affects you. Deeply. It's like nothing I've ever seen before. I've put together something that might help reverse the effects, but I need more time. Something that I am already short on.\"\n"
                 "\tMore drops of blood.\n"
                 "\t\"Get the leaf, gather the keys, solve the Labyrinth, and get home. Stay home. Don't follow in my footsteps, destroy my Gate. I don't want anyone to find it and come here either. Playing the game of a dead civilization.\n"
                 "\t\nThey say that curiosity killed the cat, and that satisfaction brought it back, but there's no coming back from what's already done. The least I can do is to prevent anyone else from sharing my fate.\n"
@@ -128,7 +128,7 @@ string hint_5 = "\n\t\"The Swamplands - a place even the Worldwalkers did not da
                 "\tlose all semblance of humanity and be nothing more that a rage-filled violent beast. Once you find The Black Heart, you'll need to limit direct contact with it, but be forewarned - it tempts you.\n"
                 "\tAside from the dangers of Nightflesh, the swamp is home to a menagerie of deadly creatures. Everything from venomous snakes and hungry alligators to terrifying Totems and cannibalistic Headhunters.\n"
                 "\tOh, and one more thing. The last individual to become a slave to the evil of The Black Heart was a Worldwalker, which would have been your first and only direct experience with them, were it not for\n"
-                "\tThe Black Heart twisting them into a horrific amalgamation of flesh. Beware traveler, and pray night does not come soon.\n";
+                "\tThe Black Heart twisting them into a horrific amalgamation of flesh. Beware traveler, and pray night does not come soon.\"\n\n";
 
 string hint_6 = "\n\t\"This horrible place is what I like to refer to as The Whistling Gorge, for reasons that are obvious to you now. It is a barren, dead landscape with only horrible facsimiles of life present here.\n"
                 "\tAs one of the later worlds the Worldwalkers stumbled into, even with all the worlds they've encountered, they were as horrified as you and I are. There isn't much known about this world,\n"
@@ -145,4 +145,4 @@ string hint_6 = "\n\t\"This horrible place is what I like to refer to as The Whi
                 "\tWhen this flute is played, regardless of whether or not the user has any musical ability at all, stuns all organisms within earshot of the sound. Strangely, it has been reported that the user themselves cannot\n"
                 "\thear the whistle and can only tell it is being played by the effect it has on those around them. Even with all their love for games, the Worldwalkers themselves saw Twisted Bone as being highly unethical and had\n"
                 "\tstarted talks of sealing off the Gate to this dimension, but had disappeared before then.\n"
-                "\tIt is this flute you must find. Find Twisted Bone and the Temple will let you back in, but do not stay long, the wind will start up, and you don't want to hang around when it does.\n";
+                "\tIt is this flute you must find. Find Twisted Bone and the Temple will let you back in, but do not stay long, the wind will start up, and you don't want to hang around when it does.\"\n\n";
