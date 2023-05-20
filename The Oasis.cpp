@@ -133,6 +133,7 @@ void pond_options()
                     "You go up to the pile of rocks and after briefly looking them over, you carefully clear the stack until you find a two folded up pieces of paper.\n"
                     "After unfolding one of them, you read:\n\n";
             cout << journal_entry_5;
+            journals.push_back(journal_entry_5);
             cout << "Folding that back up, you unfold the other and read:\n\n";
             cout << hint_4;
             cout << "For a long moment, you stare at the words of a dying man, processing what you just read. But you eventually fold the paper back up and put it in your pocket.\n"
@@ -186,6 +187,7 @@ void pond_options()
                     "various temperatures of objects within the surrounding area. Bringing the leaf down to your hand, you wonder if you can see through your skin with the leaf.\n"
                     "Remarkably, you can. You can see the fuzzy outline of your bones through the translucent flesh of the leaf. Flexing your digits, you see your finger bones move as well.\n"
                     "Pocketing the leaf, you head back down the tree, through the waterfall and back through the portal.\n";
+            inventory.push_back(the_oasis_key);
             temple_second_room();
         }
         else
