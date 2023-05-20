@@ -137,7 +137,7 @@ void the_desert_of_the_dead()
                         "There's a sickening tearing sound as the mummy's arms rip at the elbows and you go flying through the Gate.\n"
                         "You land hard on your back in the temple room with the Ruby Skull still clutched hard against your chest.\n"
                         "You remain laying on the floor, taking a moment to catch your breath before you hesitantly pick yourself back up.\n";
-                inventory.push_back(fourth_journal_entry);
+                journals.push_back(fourth_journal_entry);
                 inventory.push_back(the_desert_of_the_dead_key);
                 temple_second_room();
             }
