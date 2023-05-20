@@ -213,6 +213,7 @@ void hotc_explore_nest()
                         "close to the entrance of the room. It is rather unnoticeable, and basically unretrievable for the ants of the hive, lest they were to actually destroy the pillar itself to find it.\n"
                         "You reach into the hole and bring out the piece of paper. Unfolding it, you begin to read:\n\n";
                 cout << journal_entry_4;
+                journals.push_back(journal_entry_4);
                 cout << "Folding it back up, you pocket the piece of paper, before noticing another one in the same hole.\n"
                         "Curious, you bring it out and read it:\n\n";
                 cout << hint_3;
@@ -309,6 +310,7 @@ void hotc_explore_nest()
                         "You land hard on the floor of the temple, rolling several feet away from Gate. You suck in a shuddering breath, your chest hurting from landing on the amber orb in your hands.\n"
                         "You roll over and lay on the floor of the temple for a while, catching your breath as your heartbeat slowly settles back down.\n"
                         "After a while, you get back up and face the room of the temple, amber orb in hand\n\n";
+                inventory.push_back(the_heart_of_the_colony_key);
                 temple_second_room();
             }
             else if(hotc_queens_story)
