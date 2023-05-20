@@ -48,7 +48,7 @@ string journal_entry_6 = "\n\t12/25/10\n"
                          "\tI see the remnents of their presence with the Temple, but it is remarkably empty. There's something really off about the fact that the Temple resides in a jungle\n"
                          "\taway from any other buildings or signs of civilization. Even the jungle itself is empty, as I've been unable to find any signs of life besides plant life.\n"
                          "\tWhy is the Temple away from anything else? Why do you have to pass a test to even go into the temple itself? What is it all for? I'm going to start looking into it.\n"
-                         "\tOh, and Merry Christmas.\n";
+                         "\tOh, and Merry Christmas.\n\n";
 
 // Found in The Swamplands
 string journal_entry_7 = "\n\t02/15/10\n"
@@ -58,7 +58,7 @@ string journal_entry_7 = "\n\t02/15/10\n"
                          "\tany of them left. I thought at first that the degenerative illness the Gates inflict upon you was not contagious, but I have found new evidence that is not the case.\n"
                          "\tIt is also my working theory that the illness is the cause of the Worldwalker's disappearance - either through extinction or self-imposed isolation of some sort. This also means\n"
                          "\tthat I can never go home. If I were to do that, I wouldn't just be putting my family and friends at risk, but the whole world. This illness spreads through a means we do not currently\n"
-                         "\thave the technology to treat. It is very likely I would doom the entire human race because of it. I'll need to find another way to combat this illness, if not cure altogether.\n";
+                         "\thave the technology to treat. It is very likely I would doom the entire human race because of it. I'll need to find another way to combat this illness, if not cure altogether.\n\n";
 
 // Found in The Labyrinth
 string video_log = "";
