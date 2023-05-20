@@ -117,7 +117,7 @@ void the_desert_of_the_dead()
                 cout << "You go to the raised platform in the middle of the room and look at the large stone tablet again, trying to locate the Crimson Head family name.\n"
                         "While you're looking through the names, something else catches your eye: a piece of paper folded and tucked in a crack on the side of the stone tablet.\n"
                         "Curious, you take the piece of paper out of the crack and unfold it. It reads:\n\n";
-                cout << journal_entry_4;
+                cout << journal_entry_6;
                 cout << "You fold up the piece of paper and stuff it in your pocket.\n"
                         "Your attention returns to the large stone tablet and you once again skim the text for the Crimson Head family name.\n"
                         "Finally, after several long moments, you find it near the bottom right of the stone tablet. Assuming the layout of the sarcophaguses are the same as presented on the stone tablet,\n"
@@ -137,7 +137,7 @@ void the_desert_of_the_dead()
                         "There's a sickening tearing sound as the mummy's arms rip at the elbows and you go flying through the Gate.\n"
                         "You land hard on your back in the temple room with the Ruby Skull still clutched hard against your chest.\n"
                         "You remain laying on the floor, taking a moment to catch your breath before you hesitantly pick yourself back up.\n";
-                journals.push_back(fourth_journal_entry);
+                journals.push_back(journal_entry_6);
                 inventory.push_back(the_desert_of_the_dead_key);
                 temple_second_room();
             }
