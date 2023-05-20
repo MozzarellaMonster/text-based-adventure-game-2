@@ -6,10 +6,6 @@
 using namespace std;
 
 string dagger = "Jeweled Dagger";
-string first_journal_entry = "Journal Entry 1";
-string second_journal_entry = "Journal Entry 2";
-string third_journal_entry = "Journal Entry 3";
-string fourth_journal_entry = "Journal Entry 4";
 
 string keys[6] = {the_desert_of_the_dead_key, the_heart_of_the_colony_key, the_glowing_cave_key, the_oasis_key, the_whistling_gorge_key, the_swamplands_key};
 

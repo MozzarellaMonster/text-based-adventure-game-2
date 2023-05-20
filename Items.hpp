@@ -7,10 +7,6 @@
 using namespace std;
 
 extern string dagger;
-extern string first_journal_entry;
-extern string second_journal_entry;
-extern string third_journal_entry;
-extern string fourth_journal_entry;
 
 extern string keys[6];
 
