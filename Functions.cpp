@@ -77,7 +77,8 @@ void retry(void (*func)())
     }
 }
 
-void present_options(vector<string> option_names, vector<string> dialogue)
+// switch will not work
+/*void present_options(vector<string> option_names, vector<string> dialogue)
 {
     char choice;
     print_line();
@@ -113,7 +114,8 @@ void present_options(vector<string> option_names, vector<string> dialogue)
         present_options(option_names, dialogue);
         break;
     }
-}
+}*/
+
 
 void archway(string message, string name, bool *archway_read, void (*func)())
 {
