@@ -50,7 +50,7 @@ string journal_entry_6 = "\n\t12/25/10\n"
                          "\tWhy is the Temple away from anything else? Why do you have to pass a test to even go into the temple itself? What is it all for? I'm going to start looking into it.\n"
                          "\tOh, and Merry Christmas.\n";
 
-// Found in The Labyrinth
+// Found in The Swamplands
 string journal_entry_7 = "\n\t02/15/10\n"
                          "\tIt's a game. It's all a game to them. The Gates were originally used to actually conduct scientific research and study new worlds, but after some time passed and the effects\n"
                          "\tof constant travel were starting to make themselves apparent, it all became a game to them. Rather than continue to suffer the consequences themselves, they forced other species\n"
@@ -59,6 +59,9 @@ string journal_entry_7 = "\n\t02/15/10\n"
                          "\tIt is also my working theory that the illness is the cause of the Worldwalker's disappearance - either through extinction or self-imposed isolation of some sort. This also means\n"
                          "\tthat I can never go home. If I were to do that, I wouldn't just be putting my family and friends at risk, but the whole world. This illness spreads through a means we do not currently\n"
                          "\thave the technology to treat. It is very likely I would doom the entire human race because of it. I'll need to find another way to combat this illness, if not cure altogether.\n";
+
+// Found in The Labyrinth
+string video_log = "";
 
 string hint_1 = "\n\t\"The riddle is different for everyone. Be aware that there will be many worlds connected to this temple.\n"
                 "\tEach one with their own unique perils. Stay swift on your feet and keep a clear head.\n"
