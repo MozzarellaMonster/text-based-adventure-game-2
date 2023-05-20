@@ -335,7 +335,7 @@ void temple_entrance()
                 "It reads:\n";
         cout << journal_entry_1;
         cout << "You fold up the piece of paper and stash it on your person.\n";
-        inventory.push_back(first_journal_entry);
+        inventory.push_back(journal_entry_1);
         cout << "You head back to the temple entrance and step inside.\n";
         temple_first_room_text();
     }
