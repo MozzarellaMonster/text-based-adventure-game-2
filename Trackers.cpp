@@ -48,8 +48,8 @@ bool dod_completed = false;
 bool hotc_completed = false;
 bool tgc_completed = false;
 bool oasis_completed = false;
-bool wg_completed = false;
-bool sl_completed = false;
+bool twg_completed = false;
+bool tsl_completed = false;
 
 // Desert of the Dead
 bool dod_explored_room = false;

@@ -31,8 +31,8 @@ bool dod_completed;
 bool hotc_completed;
 bool tgc_completed;
 bool oasis_completed;
-bool wg_completed;
-bool sl_completed;
+bool twg_completed;
+bool tsl_completed;
 
 extern bool dod_explored_room;
 extern bool dod_looked_outside;
