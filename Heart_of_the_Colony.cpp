@@ -238,6 +238,7 @@ void hotc_explore_nest()
                         "with awkward, organic-looking shelves placed in a circle around a large stone pedestal in the center of the room.\n"
                         "You have found the archives.\n\n";
                 hotc_explored_middle_tunnel = true;
+                hotc_archives_text();
             }
             hotc_archives();
             break;
@@ -278,12 +279,7 @@ void hotc_explore_nest()
 
         case 'd':
             print_line();
-            if(hotc_read_book)
-            {
-                cout << "Upon finding out that you need a particular root to help in your quest to return, you quickly scan the room, paying particular attention to the alcove of objects, but find no evidence of the root.\n"
-                        "Sighing, but making sure not to attract the suspicion of the Queen, you return to the center of the room.\n";
-            }
-            else if(hotc_found_root)
+            if(hotc_found_root && hotc_read_book)
             {
                 cout << "You return to the Queen's chambers with root in hand. Upon arrival, you find that the Queen has her back to you and is staring intently at the amber orb in her possession.\n"
                         "Quickly, you begin work on the root, peeling off the top layer of it, exposing the soft inner flesh. You reach into your pockets and grab your lighter. Carefully, you slowly light the tip of the\n"
@@ -313,6 +309,11 @@ void hotc_explore_nest()
                 inventory.push_back(the_heart_of_the_colony_key);
                 hotc_completed = true;
                 temple_second_room();
+            }
+            else if(hotc_read_book && !hotc_found_root)
+            {
+                cout << "Upon finding out that you need a particular root to help in your quest to return, you quickly scan the room, paying particular attention to the alcove of objects, but find no evidence of the root.\n"
+                        "Sighing, but making sure not to attract the suspicion of the Queen, you return to the center of the room.\n";
             }
             else if(hotc_queens_story)
             {
@@ -372,6 +373,7 @@ void hotc_archives()
     cout << "B. Ask about the history of the colony\n";
     cout << "C. Ask about the Queen's orb\n";
     cout << "D. Leave the archives\n";
+    print_line();
     cin >> choice;
     choice = tolower(choice);
 
@@ -403,15 +405,22 @@ void hotc_archives()
 
         case 'b':
             print_line();
-            cout << "\"I'd like to know more about the history of the colony itself.\n\" you say."
-                    "\"Well, it all started several millennia ago...\" begins the Librarian."
-                    "XXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
-                    "      ONE HOUR LATER\n"
-                    "XXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
-                    "\"...and that brings us up to the present, where you now sit.\"\n"
-                    "You jump to your feet, having been a little too enthralled with the story of the giant insects.\n"
-                    "Sadly, that didn't help you much with what you were looking for.\n";
-            hotc_heard_history = true;
+            if(hotc_heard_history)
+            {
+                cout << "\"Didn't you already ask about that?\" the Librarian asks, tilting his head bemusedly.\n";
+            }
+            else
+            {
+                cout << "\"I'd like to know more about the history of the colony itself.\n\" you say."
+                        "\"Well, it all started several millennia ago...\" begins the Librarian.\n"
+                        "XXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
+                        "      ONE HOUR LATER\n"
+                        "XXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
+                        "\"...and that brings us up to the present, where you now sit.\"\n"
+                        "You jump to your feet, having been a little too enthralled with the story of the giant insects.\n"
+                        "Sadly, that didn't help you much with what you were looking for.\n";
+                hotc_heard_history = true;
+            }
             hotc_archives();
             break;
 
@@ -464,7 +473,7 @@ void hotc_archives()
         case 'd':
             print_line();
             cout << "You leave the archives and head back down the tunnel.\n";
-            the_queens_chambers();
+            hotc_explore_nest();
             break;
 
         default:
