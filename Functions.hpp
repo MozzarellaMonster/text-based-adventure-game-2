@@ -9,13 +9,14 @@ using namespace std;
 
 extern vector<string> inventory;
 extern vector<string> journals;
+extern vector<string> obslots;
 
 extern void print_line();
 extern void try_again();
 extern void reset();
 extern void retry();
 extern void retry(void (*func)());
-extern void present_options(vector<string> option_names, vector<string> dialogue);
+//extern void present_options(vector<string> option_names, vector<string> dialogue);
 extern void archway(string message, string name, bool *archway_read, void (*func)());
 extern void deposit();
 extern void determine_riddle();

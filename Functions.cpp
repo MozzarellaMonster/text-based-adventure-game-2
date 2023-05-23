@@ -18,6 +18,7 @@ using namespace std;
 
 vector<string> inventory;
 vector<string> journals;
+vector<string> obslots;
 
 inline void print_line()
 {
@@ -174,6 +175,12 @@ void deposit()
     if(key != "")
     {
         cout << "\nYou place the " << key << " into the monolith and turn back to the room.\n";
+        obslots.push_back(key);
+        cout << "\nThe Obelisk now contains: \n";
+        for(int i = 0; i < obslots.size(); i++)
+        {
+            cout << obslots.at(i) << "\n";
+        }
     }
     return;
 }
