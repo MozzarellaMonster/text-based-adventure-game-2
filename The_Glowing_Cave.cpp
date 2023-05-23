@@ -54,6 +54,7 @@ void the_glowing_cave()
     {
         print_line();
         cout << "\nAfter exploring everything and finding the fossil, the Gate reopens and you head back into the temple.\n\n";
+        tgc_completed = true;
         temple_second_room();
     }
 
@@ -312,7 +313,7 @@ void gc_pathway()
             {
                 // The USB drive will be used in The Labyrinth - a video log of the previous explorer will be there
                 cout << "You go back to the cart and examine it closer. After looking near where you found the scroll earlier, you find a small lockbox. Surprisingly, it doesn't seem to be locked.\n"
-                        "You open it to find a strange looking device vaguely resembling a metallic USB drive. You pocket it and return to searching the cart. Finding nothing else, you return to the middle of the clearing.\n\n";
+                        "You open it to find a metallic USB drive. You pocket it and return to searching the cart. Finding nothing else, you return to the middle of the clearing.\n\n";
                 gc_pathway_key = true;
                 gc_pathway();
             }

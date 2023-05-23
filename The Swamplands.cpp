@@ -480,6 +480,7 @@ void the_hunt()
                 "the house you first found the Nightflesh creature in, you're sure you saw a spare boat nearby, albeit a somewhat decrepit one. Time to head back to the Temple before you really start to listen to what the Black\n"
                 "Heart has to say. After several minutes, you find the boat you were looking for and make your way back to the now open Gate.\n";
         inventory.push_back(the_swamplands_key);
+        tsl_completed = true;
         temple_second_room();
         break;
 

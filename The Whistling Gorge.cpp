@@ -153,6 +153,7 @@ void branch_options()
                 "It's a flute, you realize. A slight breeze picks up and creates a low tune in the flute and in some of the surrounding trees.\n"
                 "A cold chill creeps up your spine as a slight dizzying spell assaults you. You quickly regain your composure, put the flute away, and head back through the now open Gate.\n";
         inventory.push_back(the_whistling_gorge_key);
+        twg_completed = true;
         temple_second_room();
     }
     else if(option == 'N' || option == 'n')

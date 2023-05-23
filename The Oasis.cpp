@@ -188,6 +188,7 @@ void pond_options()
                     "Remarkably, you can. You can see the fuzzy outline of your bones through the translucent flesh of the leaf. Flexing your digits, you see your finger bones move as well.\n"
                     "Pocketing the leaf, you head back down the tree, through the waterfall and back through the portal.\n";
             inventory.push_back(the_oasis_key);
+            oasis_completed = true;
             temple_second_room();
         }
         else

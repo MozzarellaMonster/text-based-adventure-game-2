@@ -311,6 +311,7 @@ void hotc_explore_nest()
                         "You roll over and lay on the floor of the temple for a while, catching your breath as your heartbeat slowly settles back down.\n"
                         "After a while, you get back up and face the room of the temple, amber orb in hand\n\n";
                 inventory.push_back(the_heart_of_the_colony_key);
+                hotc_completed = true;
                 temple_second_room();
             }
             else if(hotc_queens_story)
