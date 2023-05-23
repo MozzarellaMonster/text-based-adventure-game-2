@@ -27,6 +27,8 @@ string shimmer = "The same opaque liquid shimmer that you saw in the machine in 
                 "Though this particular one is much larger, encompassing the entire entrance of the archway with an oily appearance.\n"
                 "The shimmer also appears less active, like an undisturbed lake of water.\n";
 
+string completed_world = "You look to the now-sealed archway, unable to pass through. You return to the center of the room.\n\n";
+
 int jungle_repeat = 0;
 
 // First room

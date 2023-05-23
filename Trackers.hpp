@@ -12,6 +12,7 @@ extern string correct_riddle;
 extern string current_riddle;
 
 extern string shimmer;
+extern string completed_world;
 
 extern int jungle_repeat;
 extern int set_riddle;
