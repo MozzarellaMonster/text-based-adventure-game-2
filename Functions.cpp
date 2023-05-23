@@ -616,6 +616,7 @@ void temple_second_room()
         cout << "G. Approach the Seventh Archway\n";
     }
     
+    // Fix to include the use of the completed area trackers
     print_line();
     cin >> choice;
     choice = tolower(choice);
@@ -623,42 +624,66 @@ void temple_second_room()
     switch(choice)
     {
         case 'a':
-            // The First Archway - The Desert of the Dead
-            message = "You approach the First Archway. As you approach, the name of the Archway becomes clear: \"The Desert of the Dead\"\n"
-                            "The stone archway is covered in carvings of solemn, still faces. A message can be seen below the name of the room:\n"
-                            "\n\tDo not disturb the slumber of the dead, wanderer. They are weary of life and will take yours if they awaken.\n\n"
-                            "You gently touch the carved surface of the archway, running your hand over one of the carved faces.\n"
-                            "A cold chill runs down your spine as your thumb drags over the closed eye of the stone face.\n"
-                            "You look to the entrance.\n";
-
-            archway(message, "The Desert of the Dead", &first_archway_read, &the_desert_of_the_dead_text);
-            break;
+            if(dod_completed)
+            {
+                cout << completed_world;
+                temple_second_room();
+            }
+            else
+            {
+                // The First Archway - The Desert of the Dead
+                message = "You approach the First Archway. As you approach, the name of the Archway becomes clear: \"The Desert of the Dead\"\n"
+                                "The stone archway is covered in carvings of solemn, still faces. A message can be seen below the name of the room:\n"
+                                "\n\tDo not disturb the slumber of the dead, wanderer. They are weary of life and will take yours if they awaken.\n\n"
+                                "You gently touch the carved surface of the archway, running your hand over one of the carved faces.\n"
+                                "A cold chill runs down your spine as your thumb drags over the closed eye of the stone face.\n"
+                                "You look to the entrance.\n";
+                
+                archway(message, "The Desert of the Dead", &first_archway_read, &the_desert_of_the_dead_text);
+                break;
+            }
 
         case 'b':
-            // The Second Archway - the Heart of the Colony
-            message = "You approach the Second Archway. As you approach, the name of the Archway becomes clear: \"The Heart of the Colony\"\n"
-                            "The stone archway is noticeably older than the other archways and appears to be decorated with strange, distorted carvings of insect-like creatures.\n"
-                            "Your eyes glance towards the carved message beneath the name of the archway:\n"
-                            "\n\tThey are the masters of their domain. Respect is required if you wish to keep your life and freedom.\n\n"
-                            "You look closer at the carvings on the archway, an intricate framework of what appears to be tunnels and several thousand insects is depicted.\n"
-                            "A sudden, low chittering sound occurs right behind you.\n"
-                            "You swiftly turn around, but there is nothing there.\n"
-                            "You look back to the entrance.\n";
+            if(hotc_completed)
+            {
+                cout << completed_world;
+                temple_second_room();
+            }
+            else
+            {
+                // The Second Archway - the Heart of the Colony
+                message = "You approach the Second Archway. As you approach, the name of the Archway becomes clear: \"The Heart of the Colony\"\n"
+                                "The stone archway is noticeably older than the other archways and appears to be decorated with strange, distorted carvings of insect-like creatures.\n"
+                                "Your eyes glance towards the carved message beneath the name of the archway:\n"
+                                "\n\tThey are the masters of their domain. Respect is required if you wish to keep your life and freedom.\n\n"
+                                "You look closer at the carvings on the archway, an intricate framework of what appears to be tunnels and several thousand insects is depicted.\n"
+                                "A sudden, low chittering sound occurs right behind you.\n"
+                                "You swiftly turn around, but there is nothing there.\n"
+                                "You look back to the entrance.\n";
 
-            archway(message, "the Heart of the Colony", &second_archway_read, &the_heart_of_the_colony_text);
-            break;
+                archway(message, "the Heart of the Colony", &second_archway_read, &the_heart_of_the_colony_text);
+                break;
+            }
 
         case 'c':
-            // The Third Archway - The Glowing Cave
-            message = "You approach the Third Archway. As you approach, the name of the Archway becomes clear: \"The Glowing Cave\"\n"
-                            "This stone archway appears to be made of a different material than the others, it is much darker and surprisingly damp.\n"
-                            "You look up at the carved message underneath the name of the archway:\n"
-                            "\n\tThis cave is used only for gathering materials, but dangers still remain. Still your mind, lest you lose your way.\n\n"
-                            "You run your hand over the archway. Unlike the others, this archway is not carved and appears roughly hewn from the stone.\n"
-                            "You pull your hand away, taking notice of how damp it is. A faint glow appears to be emanating from the entrance.\n";
+            if(tgc_completed)
+            {
+                cout << completed_world;
+                temple_second_room();
+            }
+            else
+            {
+                // The Third Archway - The Glowing Cave
+                message = "You approach the Third Archway. As you approach, the name of the Archway becomes clear: \"The Glowing Cave\"\n"
+                                "This stone archway appears to be made of a different material than the others, it is much darker and surprisingly damp.\n"
+                                "You look up at the carved message underneath the name of the archway:\n"
+                                "\n\tThis cave is used only for gathering materials, but dangers still remain. Still your mind, lest you lose your way.\n\n"
+                                "You run your hand over the archway. Unlike the others, this archway is not carved and appears roughly hewn from the stone.\n"
+                                "You pull your hand away, taking notice of how damp it is. A faint glow appears to be emanating from the entrance.\n";
 
-            archway(message, "The Glowing Cave", &third_archway_read, &the_glowing_cave_text);
-            break;
+                archway(message, "The Glowing Cave", &third_archway_read, &the_glowing_cave_text);
+                break;
+            }
 
         case 'd':
             // The Fourth Archway - The Labyrinth - the final challenge, will not be unlocked until all the other worlds have been completed.
@@ -715,46 +740,70 @@ void temple_second_room()
             break;
 
         case 'e':
-            // The Fifth Archway - The Oasis
-            message = "You approach the Fifth Archway. As you approach, the name of the Archway becomes clear: \"The Oasis\"\n"
-                            "This stone archway is covered in beautiful carvings of delicate-looking flowers, exotic plants, and a waterfall.\n"
-                            "The message beneath the name of the archway reads:\n"
-                            "\n\tDo not be deceived by the beauty of The Oasis, hidden dangers prey on the unwary.\n\n"
-                            "You gently brush the intricate carvings on the archway. A sense of calm rushes through your body, but a lingering fear remains.\n"
-                            "You try to relax and close your eyes, to fade into the imagined natural sounds of The Oasis. Your body slowly releases tension.\n"
-                            "Then you hear a loud groan of wood snapping above you.\n"
-                            "Immediately, your eyes shoot open and you look up, but you see nothing but the ceiling of the temple room.\n"
-                            "After a short moment, you look back to the entrance.\n";
-        
-            archway(message, "The Oasis", &fifth_archway_read, &the_oasis_text);
-            break;
+            if(oasis_completed)
+            {
+                cout << completed_world;
+                temple_second_room();
+            }
+            else
+            {
+                // The Fifth Archway - The Oasis
+                message = "You approach the Fifth Archway. As you approach, the name of the Archway becomes clear: \"The Oasis\"\n"
+                                "This stone archway is covered in beautiful carvings of delicate-looking flowers, exotic plants, and a waterfall.\n"
+                                "The message beneath the name of the archway reads:\n"
+                                "\n\tDo not be deceived by the beauty of The Oasis, hidden dangers prey on the unwary.\n\n"
+                                "You gently brush the intricate carvings on the archway. A sense of calm rushes through your body, but a lingering fear remains.\n"
+                                "You try to relax and close your eyes, to fade into the imagined natural sounds of The Oasis. Your body slowly releases tension.\n"
+                                "Then you hear a loud groan of wood snapping above you.\n"
+                                "Immediately, your eyes shoot open and you look up, but you see nothing but the ceiling of the temple room.\n"
+                                "After a short moment, you look back to the entrance.\n";
+            
+                archway(message, "The Oasis", &fifth_archway_read, &the_oasis_text);
+                break;
+            }
 
         case 'f':
-            // The Sixth Archway - The Whistling Gorge
-            message = "You approach the Sixth Archway. As you approach, the name of the Archway becomes clear: \"The Whistling Gorge\"\n"
-                            "The archway is noticeably lighter in color than the other archways and is covered in carvings of strange-looking trees.\n"
-                            "A message beneath the name of the archway reads:\n"
-                            "\n\tA terrible place, the wails of the damned howl forever in this accursed land. Death is a welcome alternative.\n\n"
-                            "Suddenly, a strong gust of wind blows out of the entrance, nearly knocking you over.\n"
-                            "A long, mournful whistling wail cuts through the still air of the temple. A cold dread fills your stomach as you take an involutary step backward.\n"
-                            "After a long moment, you walk back up to the entrance.\n";
+            if(twg_completed)
+            {
+                cout << completed_world;
+                temple_second_room();
+            }
+            else
+            {
+                // The Sixth Archway - The Whistling Gorge
+                message = "You approach the Sixth Archway. As you approach, the name of the Archway becomes clear: \"The Whistling Gorge\"\n"
+                                "The archway is noticeably lighter in color than the other archways and is covered in carvings of strange-looking trees.\n"
+                                "A message beneath the name of the archway reads:\n"
+                                "\n\tA terrible place, the wails of the damned howl forever in this accursed land. Death is a welcome alternative.\n\n"
+                                "Suddenly, a strong gust of wind blows out of the entrance, nearly knocking you over.\n"
+                                "A long, mournful whistling wail cuts through the still air of the temple. A cold dread fills your stomach as you take an involutary step backward.\n"
+                                "After a long moment, you walk back up to the entrance.\n";
 
-            archway(message, "The Whistling Gorge", &sixth_archway_read, &the_whistling_gorge_text);
-            break;
+                archway(message, "The Whistling Gorge", &sixth_archway_read, &the_whistling_gorge_text);
+                break;
+            }
     
         case 'g':
-            // The Seventh Archway - The Swamplands
-            message = "You approach the Seventh Archway. As you approach, the name of the Archway becomes clear: \"The Swamplands\"\n"
-                            "The archway appears to be covered in several overlapping layers of moss and lichen.\n"
-                            "You then realize that the archway is actually made of stone, realistically carved to resemble such growths.\n"
-                            "You take a closer look at the exquisitely carved archway, it appears to be made of one smooth, unbroken piece of marble.\n"
-                            "You finally stop admiring the handiwork of the archway and read the message beneath the archway name:\n"
-                            "\n\tThe Swamplands harbor many creatures, ensure your footing and maintain your steps, lest you are never seen again.\n\n"
-                            "A musty, humid breeze blows through the archway. On it, a strange smell. A smell that sends a small shiver down your spine.\n"
-                            "You look to the entrance of the archway.\n";
-        
-            archway(message, "The Swamplands", &seventh_archway_read, &the_swamplands_text);
-            break;
+            if(tsl_completed)
+            {
+                cout << completed_world;
+                temple_second_room();
+            }
+            else
+            {
+                // The Seventh Archway - The Swamplands
+                message = "You approach the Seventh Archway. As you approach, the name of the Archway becomes clear: \"The Swamplands\"\n"
+                                "The archway appears to be covered in several overlapping layers of moss and lichen.\n"
+                                "You then realize that the archway is actually made of stone, realistically carved to resemble such growths.\n"
+                                "You take a closer look at the exquisitely carved archway, it appears to be made of one smooth, unbroken piece of marble.\n"
+                                "You finally stop admiring the handiwork of the archway and read the message beneath the archway name:\n"
+                                "\n\tThe Swamplands harbor many creatures, ensure your footing and maintain your steps, lest you are never seen again.\n\n"
+                                "A musty, humid breeze blows through the archway. On it, a strange smell. A smell that sends a small shiver down your spine.\n"
+                                "You look to the entrance of the archway.\n";
+            
+                archway(message, "The Swamplands", &seventh_archway_read, &the_swamplands_text);
+                break;
+            }
         
         default:
             try_again();
