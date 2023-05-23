@@ -46,7 +46,7 @@ bool saw_archway = false;
 
 bool dod_completed = false;
 bool hotc_completed = false;
-bool gc_completed = false;
+bool tgc_completed = false;
 bool oasis_completed = false;
 bool wg_completed = false;
 bool sl_completed = false;

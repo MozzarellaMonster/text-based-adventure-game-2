@@ -29,7 +29,7 @@ extern bool saw_archway;
 
 bool dod_completed;
 bool hotc_completed;
-bool gc_completed;
+bool tgc_completed;
 bool oasis_completed;
 bool wg_completed;
 bool sl_completed;
