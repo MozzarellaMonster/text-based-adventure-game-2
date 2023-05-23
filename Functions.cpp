@@ -166,7 +166,7 @@ void deposit()
             if(inventory[i] == keys[j])
             {
                 key = inventory[i];
-                inventory.erase(inventory.begin() + (i-1));
+                inventory.pop_back();
                 break;
             }
         }
@@ -616,7 +616,6 @@ void temple_second_room()
         cout << "G. Approach the Seventh Archway\n";
     }
     
-    // Fix to include the use of the completed area trackers
     print_line();
     cin >> choice;
     choice = tolower(choice);
@@ -628,6 +627,7 @@ void temple_second_room()
             {
                 cout << completed_world;
                 temple_second_room();
+                break;
             }
             else
             {
@@ -648,6 +648,7 @@ void temple_second_room()
             {
                 cout << completed_world;
                 temple_second_room();
+                break;
             }
             else
             {
@@ -670,6 +671,7 @@ void temple_second_room()
             {
                 cout << completed_world;
                 temple_second_room();
+                break;
             }
             else
             {
@@ -744,6 +746,7 @@ void temple_second_room()
             {
                 cout << completed_world;
                 temple_second_room();
+                break;
             }
             else
             {
@@ -767,6 +770,7 @@ void temple_second_room()
             {
                 cout << completed_world;
                 temple_second_room();
+                break;
             }
             else
             {
@@ -788,6 +792,7 @@ void temple_second_room()
             {
                 cout << completed_world;
                 temple_second_room();
+                break;
             }
             else
             {
