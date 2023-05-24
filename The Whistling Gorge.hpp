@@ -9,6 +9,7 @@ using namespace std;
 extern bool explored_left_path;
 extern bool explored_right_path;
 extern bool looked_around;
+extern bool twg_found_journal;
 
 extern bool denied_fruit;
 
