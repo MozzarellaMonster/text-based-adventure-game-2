@@ -12,9 +12,10 @@ using namespace std;
 bool gc_explored_left_tunnel = false;
 bool gc_explored_right_tunnel = false;
 bool gc_explored_path = false;
-bool gc_pathway_key = false;
+bool gc_usb_drive = false;
 bool gc_found_journal = false;
 bool gc_found_fossil = false;
+bool recovered = false;
 
 bool attention_seeker = false;
 
@@ -42,15 +43,16 @@ void the_glowing_cave_text()
 void the_glowing_cave()
 {
 
-    if(attention_seeker)
+    if(attention_seeker && !recovered)
     {
         print_line();
         cout << "You burst back into the chamber, the echoing screech of the monster coming out of the tunnel. You fall to your knees and gasp for breath, tears welling up in your eyes.\n"
                 "Your arms are like jelly, and you struggle to not collapse onto the floor entirely and assume the fetal position.\n"
                 "After several minutes, the screeching finally stops and the cave falls silent. You take some shaky breaths and push yourself into a sitting position, just letting yourself process what you just saw.\n"
                 "After a while, you notice that the bats have gone, probably fled the chamber after the screeching started. You sigh loudly and stand back up. Well, you still have to find what you're looking for.\n";
+        recovered = true;
     }
-    if(gc_explored_left_tunnel && gc_explored_right_tunnel && gc_explored_path && gc_found_journal && gc_pathway_key && gc_found_fossil)
+    if(gc_explored_left_tunnel && gc_explored_right_tunnel && gc_explored_path && gc_found_journal && gc_usb_drive && gc_found_fossil)
     {
         print_line();
         cout << "\nAfter exploring everything and finding the fossil, the Gate reopens and you head back into the temple.\n\n";
@@ -93,10 +95,14 @@ void the_glowing_cave()
             break;
             
         case 'b':
-            if(gc_explored_right_tunnel)
+            if(gc_explored_right_tunnel && gc_found_journal)
+            {
+                cout << "You look down the right tunnel but are sure you thoroughly searched it. You return to the center of the cave.\n";
+                the_glowing_cave();
+            }
+            else if(gc_explored_right_tunnel)
             {
                 cout << "You approach the right tunnel, lean your head in and listen. You can't hear any bats so you proceed further in.\n";
-
                 gc_right_tunnel();
             }
             else
@@ -107,7 +113,6 @@ void the_glowing_cave()
                         "you feel a sudden surge of trepidation staring into the dim tunnel, as if you were staring down the throat of a large leviathan about to swallow you whole.\n"
                         "Closing your eyes and taking a deep breath, you brace yourself and grip the handle of the dagger, the cold metal bringing you some degree of comfort.\n"
                         "After a while, you open your eyes and make your way down the tunnel.\n";
-                
                 gc_right_tunnel();
             }
             break;
@@ -115,7 +120,7 @@ void the_glowing_cave()
         case 'c':
             if(gc_explored_path)
             {
-                if(gc_pathway_key && gc_found_journal)
+                if(gc_usb_drive && gc_found_journal)
                 {
                     cout << "You look down the well-tread path, now with your added footsteps. You smile a bit at the idea of having added your footsteps to those of the Worldwalkers, but ultimately decide against\n"
                             "going down the path again.\n\n";
@@ -264,6 +269,8 @@ void gc_right_tunnel()
                 "You walk around the cave, taking a closer look at the artifacts around the altar. You also find a folded paper partially hidden underneath a larger piece of vase.\n"
                 "You pick it up and read it:\n\n";
         cout << journal_entry_2;
+        journals.push_back(journal_entry_2);
+        gc_found_journal = true;
         cout << "You fold the paper up and pocket it. Searching the cave further, you find nothing of interest and head back through the tunnel.\n\n";
     }
     the_glowing_cave();
@@ -275,7 +282,7 @@ void gc_pathway_text()
     cout << "You follow the trail for some distance before arriving in a small clearing in the forest of fungi. A portion of the dirt here is tilled and small, dead sprouts of an unknown plant line\n"
             "the ground. Nearby, a wooden cart with a missing wheel lays tilted at an angle. In the back of the cart are intricately-woven baskets with decayed remnants of the plant inside them.\n"
             "You approach the cart and look inside the baskets. It looks as though this cave served as a small farm of sorts for whatever plant the Worldwalkers had grown here.\n"
-            "Lining the walls of the cart are several luxuriously designed blankets made of a thick, shiny material. Gold trim accents the blankets, with an embossed geometric pattern making up the center."
+            "Lining the walls of the cart are several luxuriously designed blankets made of a thick, shiny material. Gold trim accents the blankets, with an embossed geometric pattern making up the center.\n"
             "You feel the material, and are surprised to feel it react to your touch. A feeling of warmth immediately embraces your hand, providing a small comfort despite the damp nature of the cave.\n"
             "The feel of the blanket is so comforting, you wish you could take it with you. Unfortunately, you don't have anywhere to store it, so you leave it be. You take a step back and examine\n"
             "the cart as a whole. From what you can make of the damage, it appears the wheel had broken off of the axle and been left alongside the cart. You look back over scene before you.\n"
@@ -288,6 +295,7 @@ void gc_pathway_text()
 
 void gc_pathway()
 {
+    gc_explored_path = true;
     char choice;
     print_line();
     cout << "Standing in the center of the small clearing in the middle of the fungi forest, you look around.\n";
@@ -304,19 +312,8 @@ void gc_pathway()
     switch(choice)
     {
         case 'a':
-            if(gc_pathway_key)
-            {
-                cout << "You briefly look in the cart, but find nothing else of interest, so you return to the center of the clearing.\n\n";
-                gc_pathway();
-            }
-            else
-            {
-                // The USB drive will be used in The Labyrinth - a video log of the previous explorer will be there
-                cout << "You go back to the cart and examine it closer. After looking near where you found the scroll earlier, you find a small lockbox. Surprisingly, it doesn't seem to be locked.\n"
-                        "You open it to find a metallic USB drive. You pocket it and return to searching the cart. Finding nothing else, you return to the middle of the clearing.\n\n";
-                gc_pathway_key = true;
-                gc_pathway();
-            }
+            cout << "You briefly look in the cart, but find nothing else of interest, so you return to the center of the clearing.\n\n";
+            gc_pathway();
             break;
             
         case 'b':
@@ -326,23 +323,21 @@ void gc_pathway()
             break;
 
         case 'c':
-            if(gc_found_journal)
+            if(gc_usb_drive)
+            {
+                cout << "You quickly scan the area, looking for anything you may have overlooked, but find nothing else of interest. You return to the center of the clearing.\n\n";
+            }
+            else
             {
                 cout << "You decide to explore the clearing more. You walk along the perimeter of the clearing until you happen upon a large mushroom with a small mound of out-of-place earth beneath it.\n"
                         "Stooping low, you dig your hands into the densely-packed mound and slowly break it down, making slow progress so as to not overlook any object that may reside within.\n"
                         "After making your way halfway through the mound, your hands clasp around a solid weight. Pulling it out, you find you're holding a small wooden box of unknown origin.\n"
                         "The wood had a distinctly dark color to it, though you are unable to tell if it is the natural color of the wood or it is discoloration caused by the soil.\n"
-                        "You gently open the box, the hinges squeaking loudly. Inside, you find a neatly folded piece of paper. You take it out of the box and unfold it. It reads:\n\n";
-                cout << journal_entry_2;
-                cout << "You carefully fold the paper back up and pocket it as you walk back to the center of the clearing.\n\n";
-                gc_found_journal = true;
-                gc_pathway();
+                        "You gently open the box, the hinges squeaking loudly. Inside, you find a metallic USB drive. You take it out of the box and pocket it.\n";
+                cout << "You carefully close the box back up and place it in the mound of dirt before walking back to the center of the clearing.\n\n";
+                gc_usb_drive = true;
             }
-            else
-            {
-                cout << "You quickly scan the area, looking for anything you may have overlooked, but find nothing else of interest. You return to the center of the clearing.\n\n";
-                gc_pathway();
-            }
+            gc_pathway();
             break;
 
         case 'd':

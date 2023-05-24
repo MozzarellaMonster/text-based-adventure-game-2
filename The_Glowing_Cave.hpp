@@ -9,9 +9,10 @@ using namespace std;
 extern bool gc_explored_left_tunnel;
 extern bool gc_explored_right_tunnel;
 extern bool gc_explored_path;
-extern bool gc_pathway_key;
+extern bool gc_usb_drive;
 extern bool gc_found_journal;
 extern bool gc_found_fossil;
+extern bool recovered;
 
 extern bool attention_seeker;
 
