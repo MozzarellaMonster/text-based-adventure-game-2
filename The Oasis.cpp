@@ -121,6 +121,7 @@ void pond_options()
     {
         cout << "C. Go back\n";
     }
+    print_line();
     cin >> choice;
     choice = tolower(choice);
 
