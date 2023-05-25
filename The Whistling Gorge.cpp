@@ -54,10 +54,10 @@ void the_whistling_gorge()
     cin >> choice;
     choice = tolower(choice);
 
+    print_line();
     switch(choice)
     {
         case 'a':
-            print_line();
             if(denied_fruit)
             {
                 cout << "You look down the path that lead to the fruit and your stomach churns. Disgusted, you turn away from it, grateful you chose not to eat it.\n"
@@ -74,7 +74,6 @@ void the_whistling_gorge()
             break;
         
         case 'b':
-            print_line();
             cout << "You head down the path on the right. As you walk down the path, you notice the trees here seem to be getting bigger.\n"
                 "Unusual, given that you would think dead trees wouldn't grow.\n"
                 "Soon, the path leads to a small clearing with a large black tree in the center, surrounded on all sides by a dense scattering of trees.\n"
@@ -86,7 +85,6 @@ void the_whistling_gorge()
             break;
         
         case 'c':
-            print_line();
             if(twg_found_journal)
             {
                 cout << "You briefly scan the area, but find nothing else of interest and turn back to the paths before you.\n";
@@ -109,7 +107,6 @@ void the_whistling_gorge()
             break;
         
         case 'd':
-            print_line();
             cout << "You look back from where you came, but remember that solid rock that made up the way out -\n"
                     "you weren't getting out of here until you found what you needed.\n";
                     "You turn back to the paths ahead of you.\n";
