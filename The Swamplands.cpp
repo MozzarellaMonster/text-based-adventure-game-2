@@ -33,6 +33,7 @@ void the_swamplands_text()
     cout << "Suddenly, you hear a loud roar erupt from the central area of the swamp, where the tall trees hide the source of it. Scared but determined, you stand before the options before you - you could explore\n"
             "the left area that consists of tall grassland higher than your shoulders, a central area that consists of tall trees and deep waters, or the right area that is made up of lots of little islands and\n"
             "several weeping willow trees.\n\n";
+    the_swamplands();
 }
 
 void the_swamplands()
@@ -43,6 +44,7 @@ void the_swamplands()
     cout << "A. Explore the tall grasslands\n";
     cout << "B. Explore the deep swamp with tall trees\n";
     cout << "C. Explore the clusters of tiny islands\n";
+    print_line();
     cin >> choice;
     choice = tolower(choice);
 
@@ -70,6 +72,7 @@ void the_swamplands()
         break;
 
     case 'b':
+        print_line();
         cout << "You decide to explore the area with the tall trees.\n"
                 "Getting into the boat, you paddle your way straight towards the deep swamp littered with numerous tall trees. As you approach, the sun hides behind the thick canopy, effectively darkening the entire area.\n"
                 "Slowing the boat, you look around the deep swamp. The lack of light makes it hard to see, but you can just make out two paths ahead of you - the left path leads into a darker, older part of the swamp\n"
@@ -109,6 +112,7 @@ void grasslands()
     cout << "What would you like to do?\n";
     cout << "A. Follow the footprints\n";
     cout << "B. Go in a separate direction\n";
+    print_line();
     cin >> choice;
     choice = tolower(choice);
 
@@ -123,14 +127,14 @@ void grasslands()
                 "of some kind of horned ungulate, cutting into the beast with pale daggers and speaking to each other in a strange harsh tongue. Slowly backing up,\n"
                 "you turn to leave. Suddenly, another one of the small hominids suddenly jumps out in front of you and screeches pointing a sharp spear at you.\n"
                 "Instantly, you hear the others stop what they're doing and race towards the both of you. You brandish the dagger and turn to the side to keep all\n"
-                "five of them in sight. It's no good however, as they split up and circle around you, ushering you further out of the tall grass and into the the\n"
-                "clearing you found them in. You grip the dagger tight, trying to keep as many as possible in your sight. It's futile however, as one of the distracts\n"
+                "five of them in sight. It's no good however, as they split up and circle around you, ushering you further out of the tall grass and into the\n"
+                "clearing you found them in. You grip the dagger tight, trying to keep as many as possible in your sight. It's futile however, as one of them distracts\n"
                 "you by coming a little too close and drawing your attention, allowing another to jump on your back and stick the tip of a small sharp wooden stick\n"
                 "into your neck. Instantly, you shake him off, but he only whoops in triumph as he digs his sharp little claws through your clothing and into your skin.\n"
-                "After a few seconds, the world starts to blur around you and your movement becomes sluggish and slow. Eventually, your leg muscles give in and you fall\n"
+                "After a few seconds, the world starts to blur around you and your movements become sluggish and slow. Eventually, your legs give in and you fall\n"
                 "to the ground, unconscious.\n"
                 "                                                                   *****                                                                                \n"
-                "The smell of a crackling fire awakens you and you find that you're now back in at the small camp you found earlier, tied securely to a log and the five small\n"
+                "The smell of a crackling fire awakens you and you find that you're now back in the small camp you found earlier, tied securely to a log and the five small\n"
                 "hominids are gathered around you. One is standing next to your head, brandishing a crude wood and bone axe. Your eyes widen as you realize what's about to happen.\n"
                 "Slowly, one of the members starts to chant and the others soon join in. You pull against the bonds, flexing your muscles, trying everything you can to loosen them.\n"
                 "Their chanting grows louder and the one holding the axe slowly raises it above your neck. You try to scream but it only comes out as a muffled moan against the rag\n"
@@ -174,6 +178,7 @@ void tall_trees()
     cout << "What would you like to do?\n";
     cout << "A. Go into the darker part of the swamp\n";
     cout << "B. Go further into the swamp\n";
+    print_line();
     cin >> choice;
     choice = tolower(choice);
 
@@ -183,9 +188,9 @@ void tall_trees()
         print_line();
         cout << "Against your better judgement, you decide to head into the darker part of the forest.\n"
                 "You slowly aim the boat towards the left path and paddle at a steady pace towards it. As you travel further down the path, the darker the swamp around you becomes.\n"
-                "You continue onwards until you come to a massive tree with a thick trunk on a small island in the center of a clearing. Tall trees encircle the island at a considerable distance away,\n"
-                "giving the entire area a sense of forboding. Slowing the boat down to a crawl, you stare at the massive tree ahead of you. It's a large dead tree, the wood is split and uneven\n"
-                "yet, there appears to be large leaves swaying on the branches. As you draw nearer, the water reflects some light onto the island tree, giving it an eerie sense of motion.\n"
+                "You continue onwards until you come to a massive tree with a thick trunk on a small island in the center of a clearing. Tall trees encircle the island a considerable distance away,\n"
+                "covering the entire area in shade and creating a sense of forboding. Slowing the boat down to a crawl, you stare at the massive tree ahead of you. It's a large dead tree,\n"
+                "the wood is split and uneven yet, there appears to be large leaves swaying on the branches. As you draw nearer, the water reflects some light onto the island tree, giving it an eerie sense of motion.\n"
                 "With a small jolt, the boat hits the shore of the island and breaks you out of your small reverie. Getting out and pulling the boat securely onto the sandy shore, you take in more\n"
                 "of your surroundings. The island consists mainly of sand with more solid ground towards the center of the island, where the tree stands tall and wide. As you finish pulling the boat onshore,\n"
                 "you get a better look at the tree closer. Immediately, you shudder as you notice that the reflections from the water isn't the primary reason the tree looks like it's moving, you spy\n"
@@ -193,7 +198,7 @@ void tall_trees()
                 "It is then you realize that the 'leaves' are not leaves, but are instead multiple winged insects holding onto the branches of the tree. Creeped out but curious, you take another step closer\n"
                 "and proceed to trip as your foot catches on a large root of the tree protruding out of the sand. As you free your entangled foot, the root breaks open. Your eyes widen in horror. Inside the root\n"
                 "is a dark shriveled hand, slowly moving and feeling around the edges of the hole in the root. As you stare in morbid shock, a large insect crawls out of a hole covered by a flap of skin on the\n"
-                "wrist of the hand. Now terrified and disgusted, you look back to the massive 'tree.' How many bodies...\n"
+                "wrist of the hand. Now terrified and disgusted, you look back to the massive 'tree.' How many bodies...\n\n"
                 "You jump up, intent on getting off the island as fast as possible. However, your quick actions not only break even more of the root, but alert the insects resting on the surface of the tree-like\n"
                 "structure. The buzzing sounds grow incredibly loud and you look up from pushing the boat back in the water. The winged insects have taken flight and several thousand of the crawling insects are\n"
                 "now crawling towards you. Insects pour from the hole in the root, while others stay and visibly start to patch the hole up. Desperately, you push the boat back in the water and attempt to jump in\n"
@@ -254,6 +259,7 @@ void islands()
     cout << "A. Explore the large island with several large boulders\n";
     cout << "B. Explore the abandoned village\n";
     cout << "C. Turn around and head back to the dock\n";
+    print_line();
     cin >> choice;
     choice = tolower(choice);
 
@@ -283,15 +289,15 @@ void islands()
                 "Getting off the boat, you are immediately hit with a strange feeling of being watched. You glance around quickly, but see nothing. Creeped out a bit, you hesitantly make your way towards the village.\n"
                 "Once there, you start to methodically search through the buildings, looking for anything that might help you. While searching the third house, you hear a strange creaking noise outside, like a wooden\n"
                 "branch swaying in a strong wind. That doesn't make any sense however, since there is no wind here at all. You make your way to the doorway and look around outside, listening for the source of the creaking\n"
-                "noise. The creaking noise is surprisingly absent however, and you don't see anything out of the ordinary either. On edge, you close the rotting door and turn around to begin searching again but hear the\n"
-                "creaking noise start up again. Turning back around and throwing the door open, you step outside and immediately scream, falling back into the house. Outside, you see a wooden statue with a carved mask-like\n"
+                "noise. The creaking noise is now absent however, and you don't see anything out of the ordinary either. On edge, you close the rotting door and turn around to begin searching again but hear the\n"
+                "creaking noise resume. Turning back around and throwing the door open, you step outside and immediately scream, falling back into the house. Outside, you see a wooden statue with a carved mask-like\n"
                 "face and one long twisted tree limb making up its body. It looms several feet away from the doorway, unmoving. Slowly, you get back up and approach it. Completely still, the statue does not move at all.\n"
-                "You take a closer look at its face and can make out the fine detail in the mask-like carving of it, with a large frowning face and hollowed-out eyes, it reminds you of a Greek tragedy mask. Quickly looking\n"
+                "You take a closer look at its face and can make out the fine detail in the mask-like carving of it, with a large frowning face and hollowed-out eyes, it reminds you of a tribal-style Greek tragedy mask. Quickly looking\n"
                 "side to side, you don't see anyone that could have moved the statue here. Apprehensively, you back into the doorway of the building while still looking at the statue before you. After one last long look at the\n"
                 "statue and a quick look around the immediate area, you once again close the door. As soon as the door hits the frame, you hear the wooden creaking noise again, alongside multiple others around the house.\n"
-                "Now terrified, you throw the door open, intent on running away, only to come face to face again with the wooden statue. You scream in surprise, as it face looms directly in front of you, its frown having\n"
+                "Now terrified, you throw the door open, intent on running away, only to come face to face again with the wooden statue. You scream in surprise, as its face looms directly in front of you, its frown having\n"
                 "somehow grown deeper. You stumble back from it and close the door again, moving a mostly-intact piece of furniture in front of it. It is then that loud pounding starts on the door, shaking the door in its frame.\n"
-                "You can now hear the wooden creaking noise all around you, surrounding the house you're in. You quickly run around the perimeter of the room you're in, looking through the windows to see even more wooden statues,\n"
+                "You can now hear the wooden creaking noise all around you, surrounding the house you're in. You quickly run around the perimeter of the room you're in, looking through the windows to see two more wooden statues,\n"
                 "each with its own uniquely carved face standing outside. All the while the front door starts to break and you soon hear pounding on other walls of the house. You cower in the center of the room, unsure what to do.\n"
                 "You cover your ears for a moment as the pounding all around you grows louder and close your eyes, taking a deep breath to try and calm yourself. You open your eyes again and scream as a carved face stares back at you,\n"
                 "itself connected to a long, thick wooden branch poking in through the open window. You crawl backwards, never taking your eyes off the carved face. It doesn't move as you manuever around it and make your way to the door.\n"
@@ -301,7 +307,7 @@ void islands()
                 "Your eyes flick between the two as you back up until your back hits a wall, keeping both of them in view. Behind you, you hear wood creaking just beyond the surface of the wall and a new pounding starts behind your back,\n"
                 "vibrating your entire body with every hit. You slowly start to accept the reality of the situation and hopelessly fall to the floor. Tears well up in your eyes, but you refuse to blink or wipe them away as the pounding stops once\n"
                 "you spy a bit of wooden mask-like face poking through a new hole in the wall above you, carved with a solemn, stoic expression. You eyes are burning now, the faces mere inches away, and you struggle hard to keep them open, but you can't.\n"
-                "And taking a deep breath, clutching the now-useless dagger, you relent and close your eyes one final time. The wooden creaking and three very quiet voices whispering is the last thing you hear.\n";
+                "And taking a deep breath, clutching the now-useless dagger, you relent and close your eyes one final time. The wooden creaking, now loud and close is the last thing you hear.\n";
         
         cout << "\n\nEnding 20: Totems\n";
         print_line();
@@ -329,6 +335,7 @@ void rock_island()
     cout << "What would you like to do?\n";
     cout << "A. Reach between the rocks\n";
     cout << "B. Return to the boat\n";
+    print_line();
     cin >> choice;
     choice = tolower(choice);
 
@@ -341,7 +348,7 @@ void rock_island()
                 "bleeding hand, pinching the severed stump in an attempt to stop the bleeding. It is then the biggest boulder in the pile moves. Momentarily forgotten, you look away from your missing finger and look\n"
                 "towards the moving rock. With growing horror, you watch as the 'rock' turns towards you and is revealed to be a giant crab, your missing finger still clutched in its giant claw. Bringing your finger\n"
                 "towards its mouth, it slowly chews it. Then, with terrifying speed, it approaches you and in desperation, you crawl backwards away from it. You're not fast enough however, and the crab soon grabs your\n"
-                "leg in its giant claw and pulls you closer. Kicking and hitting it with all your might, your soon stop as your fists start to bleed from impacts with the spikey shell of the crab. Resorting to only kicking,\n"
+                "leg in its giant claw and pulls you closer. Kicking and hitting it with all your might, your soon stop as your fists start to bleed from impacts with the spikey carapace of the crab. Resorting to only kicking,\n"
                 "you desperately flail at the crab, which seems to not be affected by your hits at all, only reacting in an annoyed manner to them. The crab then grabs your other leg mid-kick with its other claw and gives it\n"
                 "a hard squeeze. You cry out in pain as the pressure intensifies until you hear a sickening crack as your leg bone breaks, tears welling up in your eyes. The crab then drops both of your legs to the ground and\n"
                 "steps towards you. Adrenaline takes over and you once again try to back up, your elbows now sloshing in the shallow swamp water. The crab is not done, however. It grabs you by the shoulder with one of its claws\n"
@@ -358,9 +365,9 @@ void rock_island()
     case 'b':
         print_line();
         cout << "You decide it would not be worth it to find out. You get up and return to the boat. The clicking noise increases in frequency, but you ignore it. Suddenly, the biggest rock in the pile gets up and turns towards you.\n"
-                "It's not a rock at all, but a giant crab. You watch as it clicks its mandibles together, reproducing the clicking noise you heard. You stare in shock for a moment before the crabs starts crawling rapidly towards you.\n"
+                "It's not a rock at all, but a giant crab. You watch as it clicks its mandibles together, reproducing the clicking noise you heard. You stare in shock for a moment before the crab starts crawling rapidly towards you.\n"
                 "You turn and run, jumping into the boat and pushing off the shore, paddling as fast as you can. The crab soon reaches the shore and watches you for a moment before turning back around and settling back into its divet,\n"
-                "its shell blending in and looking just like a boulder. You watch in stunned fascination as you slow your paddling and your heartbeat. \"It's a good thing I didn't reach in-between those rocks\", you think as you paddle\n"
+                "its shell blending in and looking just like a boulder. You watch in stunned fascination as you slow your paddling and your heartbeat. \"It's a good thing I didn't reach between those rocks\", you think as you paddle\n"
                 "back to the start of the paths.\n";
         crab = true;
         islands();
@@ -390,6 +397,7 @@ void the_hunt()
     cout << "B. Pick up the large branch\n";
     cout << "C. Sharpen the paddle into a spear\n";
     cout << "D. Make do with the dagger\n";
+    print_line();
     cin >> choice;
     choice = tolower(choice);
 
@@ -414,6 +422,7 @@ void the_hunt()
         break;
     
     case 'b':
+        print_line();
         cout << "You decide to pick up the large branch.\n"
                 "You paddle towards the large branch leaning against one of the tall swamp trees and position yourself to pull it out of the stagnant swamp water. Balancing carefully, you hoist the large branch up out of the water\n"
                 "and into your hands. It's nearly a yard long and hefty. You give a few practice swings and find yourself nearly falling out of the boat. You squat back down, grabbing the sides of the boat as it gradually settles back down,\n"
@@ -433,6 +442,7 @@ void the_hunt()
         break;
 
     case 'c':
+        print_line();
         cout << "You decide to sharpen the paddle into a spear.\n"
                 "Paddling towards a small raised piece of land nearby, you stop the boat on it and steady yourself as you take out the dagger and carefully start to whittle away the rounded end of the handle into a sharp point.\n"
                 "After some time, you develop a nice sharp point that could do some real damage. Putting the dagger away, you stand up and practice a few jabs with the sharpened paddle, making sure not to dislodge the boat while you're at it.\n"
@@ -453,6 +463,7 @@ void the_hunt()
         break;
 
     case 'd':
+        print_line();
         cout << "You decide to make do with the dagger.\n"
                 "Taking it out, you examine it closer. Surprisingly, the red jewel embedded into the guard of the dagger is glowing slightly.\n"
                 "Taking time to examine it fully, you find that the dagger also has some intricate carvings on the guard and pommel, somewhat resembling the artwork found around the gates in the temple.\n"
