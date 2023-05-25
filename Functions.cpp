@@ -141,6 +141,19 @@ void deposit()
         {
             cout << obslots.at(i) << "\n";
         }
+        if(obslots.size() == 6)
+        {
+            for(int i = 0; i < obslots.size(); i++)
+            {
+                inventory.push_back(obslots[i]);
+            }
+            obslots.clear();
+            print_line();
+            cout << "With a deafening roar, the giant stone for the fourth archway opens, revealing the final portal.\n"
+                    "You hear a voice in your head: \"Congratulations, you have unlocked the final world. Use all that you've learned to pass the final test.\n";
+            second_room_obelisk_complete = true;
+            show_inventory();
+        }
     }
     return;
 }
@@ -161,6 +174,22 @@ void determine_riddle()
             break;
         default:
             current_riddle = water_riddle;
+    }
+}
+
+void show_inventory()
+{
+    cout << "Your inventory contains:\n";
+    for(int i = 0; i < inventory.size(); i++)
+    {
+        if(i == inventory.size() - 1)
+        {
+            cout << inventory.at(i) << "\n";
+        }
+        else
+        {
+            cout << inventory.at(i) << ", ";
+        }
     }
 }
 
