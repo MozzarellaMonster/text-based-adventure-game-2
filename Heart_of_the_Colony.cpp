@@ -45,10 +45,10 @@ void the_heart_of_the_colony()
     cin >> choice;
     choice = tolower(choice);
 
+    print_line();
     switch(choice)
     {
         case 'a':
-            print_line();
             cout << "You turn tail and run away from the approaching chittering sounds.\n"
                     "Almost immediately, the chittering sounds increase in volume and urgency.\n"
                     "You hear rapidly approaching scurrying sounds and quickly look behind you.\n"
@@ -76,7 +76,6 @@ void the_heart_of_the_colony()
             break;
 
         case 'b':
-            print_line();
             cout << "You wait, facing the oncoming chittering noises. You nervously grip the loose fabric of your pants, anxiety slowly increasing\n"
                     "as your fate waits to be written. Soon, you see the source of the noise and the light: several large ants, one of them carrying an\n"
                     "unusual organic-looking lantern on its back. The ants stop and look at you, seemingly bemused at your sudden appearance, but then quickly move in,\n"
@@ -87,7 +86,6 @@ void the_heart_of_the_colony()
             break;
 
         case 'c':
-            print_line();
             cout << "You quickly look around the tunnel again, looking for anything you might have missed before.\n"
                     "It is then you notice an impression in one side of the tunnel, something you missed before due to the dim lighting.\n"
                     "It looks as though someone tried digging out another tunnel, but stopped for some reason. It looks like you could hide in there, if you positioned yourself a certain way.\n"
@@ -186,10 +184,10 @@ void hotc_explore_nest()
     cin >> choice;
     choice = tolower(choice);
 
+    print_line();
     switch(choice)
     {
         case 'a':
-            print_line();
             if(hotc_explored_left_tunnel)
             {
                 cout << "You look back to the tunnel that leads to the Hatchery, and shake your head.\n"
@@ -227,7 +225,6 @@ void hotc_explore_nest()
             break;
 
         case 'b':
-            print_line();
             if(hotc_explored_middle_tunnel)
             {
                 cout << "You make your way through the tunnel into the archives.\n\n";
@@ -245,7 +242,6 @@ void hotc_explore_nest()
             break;
 
         case 'c':
-            print_line();
             if(hotc_explored_right_tunnel && hotc_found_root)
             {
                 cout << "You look down the right tunnel, where the storage room was. You've already found what you needed from there.\n"
@@ -279,7 +275,6 @@ void hotc_explore_nest()
             break;
 
         case 'd':
-            print_line();
             if(hotc_found_root && hotc_read_book)
             {
                 cout << "You return to the Queen's chambers with root in hand. Upon arrival, you find that the Queen has her back to you and is staring intently at the amber orb in her possession.\n"
@@ -378,10 +373,10 @@ void hotc_archives()
     cin >> choice;
     choice = tolower(choice);
 
+    print_line();
     switch(choice)
     {
         case 'a':
-            print_line();
             if(hotc_read_book)
             {
                 cout << "You look back at the book. There is nothing more to learn from it, you know to look for a particular root that can put the ants to sleep.\n"
@@ -405,7 +400,6 @@ void hotc_archives()
             break;
 
         case 'b':
-            print_line();
             if(hotc_heard_history)
             {
                 cout << "\"Didn't you already ask about that?\" the Librarian asks, tilting his head bemusedly.\n";
@@ -426,7 +420,6 @@ void hotc_archives()
             break;
 
         case 'c':
-            print_line();
             if(hotc_ask_orb)
             {
                 cout << "\"The Librarian tilts his head bemusedly, \"You already asked about that, it's just a normal hunk of amber.\"\n";
@@ -472,7 +465,6 @@ void hotc_archives()
             break;
 
         case 'd':
-            print_line();
             cout << "You leave the archives and head back down the tunnel.\n";
             hotc_explore_nest();
             break;
@@ -495,10 +487,10 @@ void hotc_tunnel_options()
     cin >> choice;
     choice = tolower(choice);
 
+    print_line();
     switch(choice)
     {
         case 'a':
-            print_line();
             cout << "Quickly, while the ant's attention is away from you, you sprint down the tunnel in the other direction.\n"
                     "Immediately, the ants turn around and give chase, chittering loudly all the while. You take a quick look back\n"
                     "to see them closing the distance. You try to pick up speed but only succeed in tripping, allowing the ants to catch up to you quickly.\n"
@@ -514,7 +506,6 @@ void hotc_tunnel_options()
             break;
 
         case 'b':
-            print_line();
             cout << "You decide just to surrender to the giant ants. You slowly walk out of the impression in the wall\n"
                     "with your hands up, showing your defenseless state. The ants quickly turn toward you, surround you,\n"
                     "and then herd you down the tunnel, all the while snapping at your legs with their huge mandibles if\n"
@@ -524,7 +515,6 @@ void hotc_tunnel_options()
             break;
 
         case 'c':
-            print_line();
             cout << "You decide to fight. You jump out brandishing the dagger and lunge at the first ant you see.\n"
                     "Quickly bringing the dagger down on the back of the ant, you put all your strength into making it a killing blow.\n"
                     "The dagger pierces the chitin and stabs the ant, bringing it down. It slumps to the ground, but does not appear dead.\n"
