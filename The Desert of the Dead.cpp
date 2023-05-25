@@ -44,10 +44,10 @@ void the_desert_of_the_dead()
     cin >> choice;
     choice = tolower(choice);
     
+    print_line();
     switch(choice)
     {
         case 'a':
-            print_line();
             if(!dod_explored_room)
             {
                 cout << "You walk between the rows of tombs, noticing the names inscribed on several of them.\n"
@@ -94,7 +94,6 @@ void the_desert_of_the_dead()
             break;
 
         case 'b':
-            print_line();
             if(!dod_investigated_platform)
             {
                 cout << "You head up to the raised platform in the center of the room.\n"
@@ -145,7 +144,6 @@ void the_desert_of_the_dead()
             break;
 
         case 'c':
-            print_line();
             if(!dod_looked_outside && !dod_sandstorm)
             {
                 cout << "You poke your head out of the doorway to the building you're in.\n"
