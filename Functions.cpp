@@ -718,7 +718,7 @@ void temple_second_room()
                     {
                         cout << "You have traveled the six paths and have collected the keys from each one.\n"
                                 "With the stone guarding the entrance gone, you can now enter The Labyrinth.\n"
-                                "You take a step forward.\n";
+                                "You take a step forward and enter the archway.\n";
                         the_labyrinth_text();
                     }
                     else
