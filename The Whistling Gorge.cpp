@@ -60,7 +60,8 @@ void the_whistling_gorge()
             print_line();
             if(denied_fruit)
             {
-                cout << "You look at the fruit and your stomach churns. Disgusted, you turn away from it, grateful you did not eat it and head back into the grove.\n";
+                cout << "You look down the path that lead to the fruit and your stomach churns. Disgusted, you turn away from it, grateful you chose not to eat it.\n"
+                        "You look back to the paths before you.\n";
                 the_whistling_gorge();
             }
             else
@@ -73,6 +74,7 @@ void the_whistling_gorge()
             break;
         
         case 'b':
+            print_line();
             cout << "You head down the path on the right. As you walk down the path, you notice the trees here seem to be getting bigger.\n"
                 "Unusual, given that you would think dead trees wouldn't grow.\n"
                 "Soon, the path leads to a small clearing with a large black tree in the center, surrounded on all sides by a dense scattering of trees.\n"
@@ -84,6 +86,7 @@ void the_whistling_gorge()
             break;
         
         case 'c':
+            print_line();
             if(twg_found_journal)
             {
                 cout << "You briefly scan the area, but find nothing else of interest and turn back to the paths before you.\n";
@@ -97,6 +100,7 @@ void the_whistling_gorge()
                         "Rolling the stone aside, you pick up the papers and begin to read:\n\n";
                 cout << journal_entry_3;
                 journals.push_back(journal_entry_3);
+                twg_found_journal = true;
                 cout << "Folding it up, you open the other paper.\n";
                 cout << hint_6;
                 cout << "You pocket the papers and walk back to your previous position. Once again, the paths lay before you.\n";
@@ -105,6 +109,7 @@ void the_whistling_gorge()
             break;
         
         case 'd':
+            print_line();
             cout << "You look back from where you came, but remember that solid rock that made up the way out -\n"
                     "you weren't getting out of here until you found what you needed.\n";
                     "You turn back to the paths ahead of you.\n";
