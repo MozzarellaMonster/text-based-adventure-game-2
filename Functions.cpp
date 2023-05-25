@@ -592,6 +592,7 @@ void temple_second_room()
         case 'a':
             if(dod_completed)
             {
+                print_line();
                 cout << completed_world;
                 temple_second_room();
                 break;
@@ -613,6 +614,7 @@ void temple_second_room()
         case 'b':
             if(hotc_completed)
             {
+                print_line();
                 cout << completed_world;
                 temple_second_room();
                 break;
@@ -636,6 +638,7 @@ void temple_second_room()
         case 'c':
             if(tgc_completed)
             {
+                print_line();
                 cout << completed_world;
                 temple_second_room();
                 break;
@@ -711,6 +714,7 @@ void temple_second_room()
         case 'e':
             if(oasis_completed)
             {
+                print_line();
                 cout << completed_world;
                 temple_second_room();
                 break;
@@ -735,6 +739,7 @@ void temple_second_room()
         case 'f':
             if(twg_completed)
             {
+                print_line();
                 cout << completed_world;
                 temple_second_room();
                 break;
@@ -757,6 +762,7 @@ void temple_second_room()
         case 'g':
             if(tsl_completed)
             {
+                print_line();
                 cout << completed_world;
                 temple_second_room();
                 break;
