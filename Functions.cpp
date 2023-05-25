@@ -149,7 +149,7 @@ void deposit()
             }
             obslots.clear();
             print_line();
-            cout << "With a deafening roar, the giant stone for the fourth archway opens, revealing the final portal.\n"
+            cout << "With a deafening roar, the giant stone blockingb the fourth archway opens, revealing the final portal.\n"
                     "You hear a voice in your head: \"Congratulations, you have unlocked the final world. Use all that you've learned to pass the final test.\n";
             second_room_obelisk_complete = true;
             show_inventory();
@@ -718,7 +718,7 @@ void temple_second_room()
                         cout << "You have traveled the six paths and have collected the keys from each one.\n"
                                 "With the stone guarding the entrance gone, you can now enter The Labyrinth.\n"
                                 "You take a step forward.\n";
-                        //the_labyrinth_text(); - Will add later
+                        the_labyrinth_text();
                     }
                     else
                     {
