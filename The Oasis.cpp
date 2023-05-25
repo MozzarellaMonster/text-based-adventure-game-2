@@ -36,10 +36,10 @@ void the_oasis()
     cin >> choice;
     choice = tolower(choice);
 
+    print_line();
     switch(choice)
     {
         case 'a':
-            print_line();
             cout << "You decide to explore the left path.\n"
                     "You look towards the left path. It lays in darkness, an overarching tunnel of branches that goes deeper into the jungle. You hesitate for just a moment, but step forward into the tunnel.\n"
                     "After several minutes, you find yourself in a small clearing. The floor of the clearing is littered with strange-looking twigs. Curious, you lean down and pick up a few of the twigs, rolling them between your fingers.\n"
@@ -65,7 +65,6 @@ void the_oasis()
             break;
             
         case 'b':
-            print_line();
             if(!middle_path_intro)
             {
                 cout << "You decide to explore the middle path.\n"
@@ -81,7 +80,6 @@ void the_oasis()
             break;
 
         case 'c':
-            print_line();
             cout << "You decide to explore the right path.\n"
                     "You go through the trees until you reach the foot of a hill. After a brief climb, you find yourself at the top of an enormous cliff looking out over a misty valley with miles and miles of jungle\n"
                     "all around. Stricken by the beauty of it all, you approach the edge of the cliff and slowly, carefully get to your knees and look over the edge of the cliff. Looking down, you can see a small waterfall\n"
@@ -128,10 +126,10 @@ void pond_options()
     cin >> choice;
     choice = tolower(choice);
 
+    print_line();
     switch (choice)
     {
     case 'a':
-        print_line();
         if(!pond_hint)
         {
             cout << "You decide to investigate the pile of rocks next to the waterfall.\n"
@@ -153,7 +151,6 @@ void pond_options()
         break;
     
     case 'b':
-        print_line();
         cout << "You decide to investigate the overgrown log.\n"
                 "You approach the log and look it over. It is covered in moss and mushrooms, a few strange-looking insects crawl slowly over the surface of the moss.\n"
                 "Bending down, you brush away some moss hanging over the entrance to the hollow center of the log. Peering in, you don't see much besides darkness.\n"
@@ -171,7 +168,6 @@ void pond_options()
         break;
     
     case 'c':
-        print_line();
         if(pond_hint)
         {
             cout << "You decide to go through the waterfall.\n"
@@ -207,7 +203,6 @@ void pond_options()
         break;
 
     case 'd':
-        print_line();
         if(pond_hint)
         {
             cout << "You decide to go back through the jungle.\n"
