@@ -35,10 +35,4 @@ extern bool oasis_completed;
 extern bool twg_completed;
 extern bool tsl_completed;
 
-extern bool dod_explored_room;
-extern bool dod_looked_outside;
-extern bool dod_investigated_platform;
-extern bool dod_sandstorm;
-extern bool dod_used_dagger;
-
 #endif

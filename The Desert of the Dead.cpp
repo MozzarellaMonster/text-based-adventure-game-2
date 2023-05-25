@@ -9,6 +9,12 @@
 
 using namespace std;
 
+bool dod_explored_room = false;
+bool dod_looked_outside = false;
+bool dod_investigated_platform = false;
+bool dod_sandstorm = false;
+bool dod_used_dagger = false;
+
 void the_desert_of_the_dead_text()
 {
     print_line();

@@ -52,10 +52,3 @@ bool tgc_completed = false;
 bool oasis_completed = false;
 bool twg_completed = false;
 bool tsl_completed = false;
-
-// Desert of the Dead
-bool dod_explored_room = false;
-bool dod_looked_outside = false;
-bool dod_investigated_platform = false;
-bool dod_sandstorm = false;
-bool dod_used_dagger = false;
