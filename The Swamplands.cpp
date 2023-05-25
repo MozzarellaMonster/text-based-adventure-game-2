@@ -48,10 +48,10 @@ void the_swamplands()
     cin >> choice;
     choice = tolower(choice);
 
+    print_line();
     switch (choice)
     {
     case 'a':
-        print_line();
         if(explored_grasslands)
         {
             cout << "You look toward the tall grasslands, but remember that you didn't find anything there. You look back to the options before you.\n";
@@ -72,7 +72,6 @@ void the_swamplands()
         break;
 
     case 'b':
-        print_line();
         cout << "You decide to explore the area with the tall trees.\n"
                 "Getting into the boat, you paddle your way straight towards the deep swamp littered with numerous tall trees. As you approach, the sun hides behind the thick canopy, effectively darkening the entire area.\n"
                 "Slowing the boat, you look around the deep swamp. The lack of light makes it hard to see, but you can just make out two paths ahead of you - the left path leads into a darker, older part of the swamp\n"
@@ -81,7 +80,6 @@ void the_swamplands()
         break;
 
     case 'c':
-        print_line();
         if(explored_islands)
         {
             cout << "You look towards the islands and think about what you saw there, then look back towards the options in front of you.\n";
@@ -116,10 +114,10 @@ void grasslands()
     cin >> choice;
     choice = tolower(choice);
 
+    print_line();
     switch (choice)
     {
     case 'a':
-        print_line();
         cout << "You decide to follow the footprints.\n"
                 "Approaching slowly, you follow the trail of footprints deeper into the tall grass, making sure to keep an ear out for anything that might\n"
                 "try to get the jump on you. After a few moments, you start to hear noise nearby where you see the tall grass thin out. Quietly, you approach\n"
@@ -147,7 +145,6 @@ void grasslands()
         break;
 
     case 'b':
-        print_line();
         cout << "You decide to head in a separate direction away from the footprints.\n"
                 "Turning away from the trail of footprints, you walk back into the tall grass. After traveling some ways, you hear running water. Exiting the tall grass, you find yourself\n"
                 "on the shoreline of a river. Looking up and down the shore, you don't see any easy way to cross it, nor is there a dock or boat. Turning away, you hear some water sloshing\n"
@@ -182,10 +179,10 @@ void tall_trees()
     cin >> choice;
     choice = tolower(choice);
 
+    print_line();
     switch (choice)
     {
     case 'a':
-        print_line();
         cout << "Against your better judgement, you decide to head into the darker part of the forest.\n"
                 "You slowly aim the boat towards the left path and paddle at a steady pace towards it. As you travel further down the path, the darker the swamp around you becomes.\n"
                 "You continue onwards until you come to a massive tree with a thick trunk on a small island in the center of a clearing. Tall trees encircle the island a considerable distance away,\n"
@@ -220,7 +217,6 @@ void tall_trees()
         break;
 
     case 'b':
-        print_line();
         cout << "You decide to stay the course and head further into the swamp, away from the darker part of it.\n"
                 "Keeping the boat going at a steady pace, you maneuver away from the darker part of the forest and continue into the swamp. As you head deeper into the swamp, you notice the trees grow noticeably thicker\n"
                 "and more densely crowded. Some time later, the boat inevitably gets stuck on a large cluster of roots. Balancing carefully, you move to dislodge the boat from the cluster of roots. During the process,\n"
@@ -263,10 +259,10 @@ void islands()
     cin >> choice;
     choice = tolower(choice);
 
+    print_line();
     switch (choice)
     {
     case 'a':
-        print_line();
         if(crab)
         {
             cout << "You look toward the island and shudder a bit as you see the boulder-like shell of the giant crab you saw there. You shake your head and turn back to the options before you.\n";
@@ -283,7 +279,6 @@ void islands()
         break;
     
     case 'b':
-        print_line();
         cout << "You decide to explore the abandoned village.\n"
                 "You paddle your way towards the broken and rotting wooden structures and tie off the boat on a small, equally decrepit but still functional dock nearby.\n"
                 "Getting off the boat, you are immediately hit with a strange feeling of being watched. You glance around quickly, but see nothing. Creeped out a bit, you hesitantly make your way towards the village.\n"
@@ -315,7 +310,6 @@ void islands()
         break;
 
     case 'c':
-        print_line();
         cout << "You turn the boat around and head back to the dock.\n";
         explored_islands = true;
         the_swamplands();
@@ -339,10 +333,10 @@ void rock_island()
     cin >> choice;
     choice = tolower(choice);
 
+    print_line();
     switch (choice)
     {
     case 'a':
-        print_line();
         cout << "Thinking it could be a device, you reach between the rocks and feel around, trying to find something that could be making the noise. It is then the clicking suddenly stops, and you, in turn, pause.\n"
                 "You hold still for a moment, and just when you're about to pull your arm out, something grabs onto you. You scream and pull away, tearing a finger off in the process. Falling down, you clutch your\n"
                 "bleeding hand, pinching the severed stump in an attempt to stop the bleeding. It is then the biggest boulder in the pile moves. Momentarily forgotten, you look away from your missing finger and look\n"
@@ -363,7 +357,6 @@ void rock_island()
         break;
         
     case 'b':
-        print_line();
         cout << "You decide it would not be worth it to find out. You get up and return to the boat. The clicking noise increases in frequency, but you ignore it. Suddenly, the biggest rock in the pile gets up and turns towards you.\n"
                 "It's not a rock at all, but a giant crab. You watch as it clicks its mandibles together, reproducing the clicking noise you heard. You stare in shock for a moment before the crab starts crawling rapidly towards you.\n"
                 "You turn and run, jumping into the boat and pushing off the shore, paddling as fast as you can. The crab soon reaches the shore and watches you for a moment before turning back around and settling back into its divet,\n"
@@ -401,103 +394,100 @@ void the_hunt()
     cin >> choice;
     choice = tolower(choice);
 
+    print_line();
     switch (choice)
     {
-    print_line();
-    case 'a':
-        cout << "You decide to pick up the rocks.\n"
-                "You start digging through the puddle, grabbing the larger of the rocks and bringing them onto the boat. Soon after grabbing a few of the rocks, you suddenly feel the hairs on the back of your neck stand up.\n"
-                "Your slowly lift your head up and notice that the swamp has grown silent all around you. It is so quiet in fact, that you can hear your own heartbeat and shallow breathing. Then it returns, that feeling of being watched.\n"
-                "Except now you know exactly what it is that is watching you. You hurriedly grab some rocks and get in position to throw them as soon as you see the Nightflesh creature. Keeping your eyes peeled, you look all\n"
-                "around the silent swamp. The boat rocking back and forth from your motions. Then you hear it, a growing roar directly above you. Immediately, you look up. The Possessor of the Black Heart looks down from the canopy\n"
-                "of trees, spread out like a spider's web with a multitude of eyes all along the strands. You scream and immediately throw a rock up towards it, hitting of its eyes. The thing roars in anger and falls down towards you\n"
-                "at breakneck speed. You get off one more shot with a rock before it is upon you, now in humanoid form, gripping your throat in its strong claws. You beat at it with a large rock in one hand while the other claws at the\n"
-                "vice-like grip it has on your throat. Soon, your lungs scream for air and you try to suck in what you can while your strength wanes and your hits with the rocks falter. The thing, sensing your situation, lifts you up\n"
-                "by the neck and holds you. You drop the rock you were holding and pry desperately at the ferociously strong grip it has on your neck, your face now turning blue. It brings you closer, looking at you with numerous eyes\n"
-                "on its slick black flesh where a face should be. Soon, darkness creeps in at the edges of your vision as the thing's face morphs into several rows of jagged shark-like teeth and takes a large bite of your head.\n";
+        case 'a':
+            cout << "You decide to pick up the rocks.\n"
+                    "You start digging through the puddle, grabbing the larger of the rocks and bringing them onto the boat. Soon after grabbing a few of the rocks, you suddenly feel the hairs on the back of your neck stand up.\n"
+                    "Your slowly lift your head up and notice that the swamp has grown silent all around you. It is so quiet in fact, that you can hear your own heartbeat and shallow breathing. Then it returns, that feeling of being watched.\n"
+                    "Except now you know exactly what it is that is watching you. You hurriedly grab some rocks and get in position to throw them as soon as you see the Nightflesh creature. Keeping your eyes peeled, you look all\n"
+                    "around the silent swamp. The boat rocking back and forth from your motions. Then you hear it, a growing roar directly above you. Immediately, you look up. The Possessor of the Black Heart looks down from the canopy\n"
+                    "of trees, spread out like a spider's web with a multitude of eyes all along the strands. You scream and immediately throw a rock up towards it, hitting of its eyes. The thing roars in anger and falls down towards you\n"
+                    "at breakneck speed. You get off one more shot with a rock before it is upon you, now in humanoid form, gripping your throat in its strong claws. You beat at it with a large rock in one hand while the other claws at the\n"
+                    "vice-like grip it has on your throat. Soon, your lungs scream for air and you try to suck in what you can while your strength wanes and your hits with the rocks falter. The thing, sensing your situation, lifts you up\n"
+                    "by the neck and holds you. You drop the rock you were holding and pry desperately at the ferociously strong grip it has on your neck, your face now turning blue. It brings you closer, looking at you with numerous eyes\n"
+                    "on its slick black flesh where a face should be. Soon, darkness creeps in at the edges of your vision as the thing's face morphs into several rows of jagged shark-like teeth and takes a large bite of your head.\n";
+            
+            cout << "\n\nEnding 21A: The End of the Hunt - Stones\n";
+            print_line();
+            retry(&the_hunt);
+            break;
         
-        cout << "\n\nEnding 21A: The End of the Hunt - Stones\n";
-        print_line();
-        retry(&the_hunt);
-        break;
-    
-    case 'b':
-        print_line();
-        cout << "You decide to pick up the large branch.\n"
-                "You paddle towards the large branch leaning against one of the tall swamp trees and position yourself to pull it out of the stagnant swamp water. Balancing carefully, you hoist the large branch up out of the water\n"
-                "and into your hands. It's nearly a yard long and hefty. You give a few practice swings and find yourself nearly falling out of the boat. You squat back down, grabbing the sides of the boat as it gradually settles back down,\n"
-                "dropping the branch in the process. After stilling the boat, you stand back up but immediately notice a change in the atmosphere of the swamp. Everything has gone silent, so quiet that the only thing making noise is you.\n"
-                "Immediately, you fumble for the branch as you feel eyes on you and stand back up, goosebumps breaking out on your skin. Then you see it, the Nightflesh creature, crawling on the side of a tree and looking down at you\n"
-                "with numerous eyes pockmarking its slick pitch-black skin all across its humanoid head. You reach down and grab the branch, trying to steady yourself in the rocking boat. All at once, the thing's face morphs into a large\n"
-                "mouth as it roars and dives at you. You raise the branch just in time for it to absorb most of the impact of the beast before tumbling into the water with it as the boat rolls over. Under the water, you struggle against\n"
-                "its much larger mass as it pulls you deeper and deeper. Changing the orientation of the branch, you shove the larger end of it into the thing's face, breaking its hold on you as you start to swim back to the surface.\n"
-                "Breaking free of the surface of the water for just a moment, you take a big gulp of air before you are pulled under yet again. This time, the thing has the branch and hits you with it across the cheek, causing you to lose\n"
-                "your breath and see stars. It then pulls you deeper as you struggle to regain your composure, pulling you towards a collection of large boulders. There, with great strength it throws you against the largest boulder.\n"
-                "You hear a sickening crack in your back and breathe in a lungful of dirty water as the wind is knocked out of you. Then, the Nightflesh creature lifts the branch with one hand and with a mighty thrust, impales the smaller end\n"
-                "of the branch through your abdomen and into a large crack in the boulder. Bloods pours out of you and darkens the water as the Nightflesh creature swims closer to look in your eyes one more time before swimming away,\n"
-                "leaving you to die under the water.\n";
-        cout << "\n\nEnding 21B: The End of the Hunt - Branch\n";
-        print_line();
-        retry(&the_hunt);
-        break;
+        case 'b':
+            cout << "You decide to pick up the large branch.\n"
+                    "You paddle towards the large branch leaning against one of the tall swamp trees and position yourself to pull it out of the stagnant swamp water. Balancing carefully, you hoist the large branch up out of the water\n"
+                    "and into your hands. It's nearly a yard long and hefty. You give a few practice swings and find yourself nearly falling out of the boat. You squat back down, grabbing the sides of the boat as it gradually settles back down,\n"
+                    "dropping the branch in the process. After stilling the boat, you stand back up but immediately notice a change in the atmosphere of the swamp. Everything has gone silent, so quiet that the only thing making noise is you.\n"
+                    "Immediately, you fumble for the branch as you feel eyes on you and stand back up, goosebumps breaking out on your skin. Then you see it, the Nightflesh creature, crawling on the side of a tree and looking down at you\n"
+                    "with numerous eyes pockmarking its slick pitch-black skin all across its humanoid head. You reach down and grab the branch, trying to steady yourself in the rocking boat. All at once, the thing's face morphs into a large\n"
+                    "mouth as it roars and dives at you. You raise the branch just in time for it to absorb most of the impact of the beast before tumbling into the water with it as the boat rolls over. Under the water, you struggle against\n"
+                    "its much larger mass as it pulls you deeper and deeper. Changing the orientation of the branch, you shove the larger end of it into the thing's face, breaking its hold on you as you start to swim back to the surface.\n"
+                    "Breaking free of the surface of the water for just a moment, you take a big gulp of air before you are pulled under yet again. This time, the thing has the branch and hits you with it across the cheek, causing you to lose\n"
+                    "your breath and see stars. It then pulls you deeper as you struggle to regain your composure, pulling you towards a collection of large boulders. There, with great strength it throws you against the largest boulder.\n"
+                    "You hear a sickening crack in your back and breathe in a lungful of dirty water as the wind is knocked out of you. Then, the Nightflesh creature lifts the branch with one hand and with a mighty thrust, impales the smaller end\n"
+                    "of the branch through your abdomen and into a large crack in the boulder. Bloods pours out of you and darkens the water as the Nightflesh creature swims closer to look in your eyes one more time before swimming away,\n"
+                    "leaving you to die under the water.\n";
+            cout << "\n\nEnding 21B: The End of the Hunt - Branch\n";
+            print_line();
+            retry(&the_hunt);
+            break;
 
-    case 'c':
-        print_line();
-        cout << "You decide to sharpen the paddle into a spear.\n"
-                "Paddling towards a small raised piece of land nearby, you stop the boat on it and steady yourself as you take out the dagger and carefully start to whittle away the rounded end of the handle into a sharp point.\n"
-                "After some time, you develop a nice sharp point that could do some real damage. Putting the dagger away, you stand up and practice a few jabs with the sharpened paddle, making sure not to dislodge the boat while you're at it.\n"
-                "Soon, you realize that the swamp has fallen silent, with you being the only source of noise. Save for one thing, the sound of a slowed heartbeat, beating with an unearthly sound in your skull. You grip your makeshift spear\n"
-                "and look around for the source, keeping a keen eye on your periphery. After several seconds you finally spot it standing between two large bushes, almost unnoticeable in its rigid posture, poised like an animal ready to strike.\n"
-                "As soon as you see it, several eyes pop open all over its body, look at you with unrestrained hatred and malice. You stand firm, the spear giving you some degree of confidence despite your pounding heart and fear flooding through\n"
-                "your veins. Suddenly it rears back and lets loose a deafening roar before plunging through the bushes towards you. You brace yourself the best you can in the still boat, your spear pointed towards the charging beast.\n"
-                "Loud thuds can be heard with the creature's every step as it hurtles towards you, its mostly humanoid silhouette changing shape at random. Soon, it is upon you tearing at your clothes. You thrust the spear into it with all your might,\n"
-                "grinding it in and twisting the handle as you go. To your dismay however, it doesn't seem phased, proceeding to simply absorb the spear into its form with a sickening sucking sound before pulling it out the other side. You watch\n"
-                "in stunned silence as it lifts and holds the spear inches from its 'face', inspecting it. Then, it simply tosses your makeshift weapon into the waters with contempt. It then looks at you and you feel your stomach sink with despair.\n"
-                "Oh, you've gone and done it now. With blinding speed, the Nightflesh creature impales you on one of its sharply twisted limbs. Pain floods your system as you feel your feet lift off the ground. The taste of blood fills your mouth as it\n"
-                "raises you above it with one arm and lets out a loud raspy choking sound that you soon realize is its laughter, its form writhing with glee. Unbearable pain soon gives way to a growing numbness as you realize your inevitable fate, and as\n"
-                "your vision fades, you feel the thing retract its sharp, twisted limb and your form fall to the floor of the boat. The last thing you see is its multitude of eyes staring at you as your vision fades to black, like an unblinking slice of night sky.\n";
-        
-        cout << "\n\nEnding 21C: The End of the Hunt - Spear\n";
-        print_line();
-        retry(&the_hunt);
-        break;
+        case 'c':
+            cout << "You decide to sharpen the paddle into a spear.\n"
+                    "Paddling towards a small raised piece of land nearby, you stop the boat on it and steady yourself as you take out the dagger and carefully start to whittle away the rounded end of the handle into a sharp point.\n"
+                    "After some time, you develop a nice sharp point that could do some real damage. Putting the dagger away, you stand up and practice a few jabs with the sharpened paddle, making sure not to dislodge the boat while you're at it.\n"
+                    "Soon, you realize that the swamp has fallen silent, with you being the only source of noise. Save for one thing, the sound of a slowed heartbeat, beating with an unearthly sound in your skull. You grip your makeshift spear\n"
+                    "and look around for the source, keeping a keen eye on your periphery. After several seconds you finally spot it standing between two large bushes, almost unnoticeable in its rigid posture, poised like an animal ready to strike.\n"
+                    "As soon as you see it, several eyes pop open all over its body, look at you with unrestrained hatred and malice. You stand firm, the spear giving you some degree of confidence despite your pounding heart and fear flooding through\n"
+                    "your veins. Suddenly it rears back and lets loose a deafening roar before plunging through the bushes towards you. You brace yourself the best you can in the still boat, your spear pointed towards the charging beast.\n"
+                    "Loud thuds can be heard with the creature's every step as it hurtles towards you, its mostly humanoid silhouette changing shape at random. Soon, it is upon you tearing at your clothes. You thrust the spear into it with all your might,\n"
+                    "grinding it in and twisting the handle as you go. To your dismay however, it doesn't seem phased, proceeding to simply absorb the spear into its form with a sickening sucking sound before pulling it out the other side. You watch\n"
+                    "in stunned silence as it lifts and holds the spear inches from its 'face', inspecting it. Then, it simply tosses your makeshift weapon into the waters with contempt. It then looks at you and you feel your stomach sink with despair.\n"
+                    "Oh, you've gone and done it now. With blinding speed, the Nightflesh creature impales you on one of its sharply twisted limbs. Pain floods your system as you feel your feet lift off the ground. The taste of blood fills your mouth as it\n"
+                    "raises you above it with one arm and lets out a loud raspy choking sound that you soon realize is its laughter, its form writhing with glee. Unbearable pain soon gives way to a growing numbness as you realize your inevitable fate, and as\n"
+                    "your vision fades, you feel the thing retract its sharp, twisted limb and your form fall to the floor of the boat. The last thing you see is its multitude of eyes staring at you as your vision fades to black, like an unblinking slice of night sky.\n";
+            
+            cout << "\n\nEnding 21C: The End of the Hunt - Spear\n";
+            print_line();
+            retry(&the_hunt);
+            break;
 
-    case 'd':
-        print_line();
-        cout << "You decide to make do with the dagger.\n"
-                "Taking it out, you examine it closer. Surprisingly, the red jewel embedded into the guard of the dagger is glowing slightly.\n"
-                "Taking time to examine it fully, you find that the dagger also has some intricate carvings on the guard and pommel, somewhat resembling the artwork found around the gates in the temple.\n"
-                "As you continue to inspect it, you notice the glowing of the jewel slowly growing brighter. Then, you notice that the swamp in slowly growing quieter simultaneously.\n"
-                "Gripping the dagger in your right hand, you stand up in the boat and take in the now silent swamp. Somehow, you feel as though your senses have grown slightly more keen, and your head\n"
-                "snaps up and catches the form of the Nightflesh creature flash by overhead as it leaps from tree to tree before finally coming to a rest above you. Looking down, it's seems somewhat surprised\n"
-                "to see that you've already spotted it. Recovering quickly, it roars loudly, giving you time to prepare and set your feet into position, assumging a stance ready to receive a charge from the creature.\n"
-                "And it does, jumping from its position on the tree to the boat. As it lands, the boat shudders violently and a loud crack can be heard as it splits into two. You jump off the boat and onto a small\n"
-                "nearby island supported by roots of a nearby tree and again, get ready for another charge by the creature. The creature quickly surfaces and jumps onto the land, snarling and circling around you.\n"
-                "Now in its humanoid form, the face of the creature is taken up by a huge mouth spread from ear-to-ear with long sharp dagger-like teeth as its body is covered with numerous blinking eyes.\n"
-                "Taking your steps carefully, you mirror the movements of the creature, keeping the dagger pointed at it while making your own circle on the island. Finally, after several moments, the creature lashes\n"
-                "out at you with a huge clawed hand but you manage to just avoid it and slice the dagger across its arm. It howls with pain and rage as the slash visibly bubbles the flesh around it, acting like a severe\n"
-                "chemical burn. Noticing this, you quickly look at the dagger and notice the glyphs on the blade and the jewel inset into the guard are now glowing bright red. So bright in fact, that you expect the dagger\n"
-                "to be red-hot, and you realize, it might just be to the creature. Placing its hand on its cut, the creature appears to be confused as to why its flesh remains scarred, and unchanging as the flesh around it\n"
-                "morphs and shifts in-place. It then looks back up to you and roars angrily. It pushes off the ground and charges at you once again at remarkable speed. Dodging the otherwise supernatural strike easily with\n"
-                "your own newfound speed, you stab the dagger into the back of the creature and cut a deep slash across its back. It roars in pain and falters mid-charge, stumbling away from you quickly. You jump back equally\n"
-                "as quickly and brandish the dagger before you. The creature stumbles, the flesh of its back bubbling violently as it lets out a pained roar and falls to the ground, clawing at the earth. Taking advantage\n"
-                "of the situation, you quickly close the distance and turn the lightly thrashing beast over, exposing the heart surrounded by writhing muscle. You lift the dagger up and plunge it into the connecting tissue.\n"
-                "The creature lets out a pained howl and claws at you, drawing blood. You yelp and jump back, but kick the creature down again as it slowly tries to get up. Keeping the creature's good arm pinned beneath your\n"
-                "own, you again plunge the knife into the muscle surrounding the Black Heart, cutting it away from the creature. It writhes and snarls at you, hissing but yowling in pain whenever you cut more of its tissue.\n"
-                "Eventually, its movements slow and grow weak as you cut the final strands away and lift the slowly beating organ out of its chest. As the final strand snaps like taut rubber band, the creature's body turns\n"
-                "a ghostly white and it soldifies into a chalky white dust, blowing away at a slight breeze. The swamp comes alive again, somehow with more fervor than before. You stand there panting, the dagger still gripped\n"
-                "in your right hand but no longer glowing. The Black Heart slowly beating in your left. It's not long before you start to hear it - a low whisper in your mind. Promises of power, strength, and abilities beyond\n"
-                "your wildest dreams manifest in your mind. Quickly, you stow the heart away in your pocket, but can still feel its whispers, though more faintly now. Taking note of you predicament, you make your way back towards\n"
-                "the house you first found the Nightflesh creature in, you're sure you saw a spare boat nearby, albeit a somewhat decrepit one. Time to head back to the Temple before you really start to listen to what the Black\n"
-                "Heart has to say. After several minutes, you find the boat you were looking for and make your way back to the now open Gate.\n";
-        inventory.push_back(the_swamplands_key);
-        tsl_completed = true;
-        temple_second_room();
-        break;
+        case 'd':
+            cout << "You decide to make do with the dagger.\n"
+                    "Taking it out, you examine it closer. Surprisingly, the red jewel embedded into the guard of the dagger is glowing slightly.\n"
+                    "Taking time to examine it fully, you find that the dagger also has some intricate carvings on the guard and pommel, somewhat resembling the artwork found around the gates in the temple.\n"
+                    "As you continue to inspect it, you notice the glowing of the jewel slowly growing brighter. Then, you notice that the swamp in slowly growing quieter simultaneously.\n"
+                    "Gripping the dagger in your right hand, you stand up in the boat and take in the now silent swamp. Somehow, you feel as though your senses have grown slightly more keen, and your head\n"
+                    "snaps up and catches the form of the Nightflesh creature flash by overhead as it leaps from tree to tree before finally coming to a rest above you. Looking down, it's seems somewhat surprised\n"
+                    "to see that you've already spotted it. Recovering quickly, it roars loudly, giving you time to prepare and set your feet into position, assumging a stance ready to receive a charge from the creature.\n"
+                    "And it does, jumping from its position on the tree to the boat. As it lands, the boat shudders violently and a loud crack can be heard as it splits into two. You jump off the boat and onto a small\n"
+                    "nearby island supported by roots of a nearby tree and again, get ready for another charge by the creature. The creature quickly surfaces and jumps onto the land, snarling and circling around you.\n"
+                    "Now in its humanoid form, the face of the creature is taken up by a huge mouth spread from ear-to-ear with long sharp dagger-like teeth as its body is covered with numerous blinking eyes.\n"
+                    "Taking your steps carefully, you mirror the movements of the creature, keeping the dagger pointed at it while making your own circle on the island. Finally, after several moments, the creature lashes\n"
+                    "out at you with a huge clawed hand but you manage to just avoid it and slice the dagger across its arm. It howls with pain and rage as the slash visibly bubbles the flesh around it, acting like a severe\n"
+                    "chemical burn. Noticing this, you quickly look at the dagger and notice the glyphs on the blade and the jewel inset into the guard are now glowing bright red. So bright in fact, that you expect the dagger\n"
+                    "to be red-hot, and you realize, it might just be to the creature. Placing its hand on its cut, the creature appears to be confused as to why its flesh remains scarred, and unchanging as the flesh around it\n"
+                    "morphs and shifts in-place. It then looks back up to you and roars angrily. It pushes off the ground and charges at you once again at remarkable speed. Dodging the otherwise supernatural strike easily with\n"
+                    "your own newfound speed, you stab the dagger into the back of the creature and cut a deep slash across its back. It roars in pain and falters mid-charge, stumbling away from you quickly. You jump back equally\n"
+                    "as quickly and brandish the dagger before you. The creature stumbles, the flesh of its back bubbling violently as it lets out a pained roar and falls to the ground, clawing at the earth. Taking advantage\n"
+                    "of the situation, you quickly close the distance and turn the lightly thrashing beast over, exposing the heart surrounded by writhing muscle. You lift the dagger up and plunge it into the connecting tissue.\n"
+                    "The creature lets out a pained howl and claws at you, drawing blood. You yelp and jump back, but kick the creature down again as it slowly tries to get up. Keeping the creature's good arm pinned beneath your\n"
+                    "own, you again plunge the knife into the muscle surrounding the Black Heart, cutting it away from the creature. It writhes and snarls at you, hissing but yowling in pain whenever you cut more of its tissue.\n"
+                    "Eventually, its movements slow and grow weak as you cut the final strands away and lift the slowly beating organ out of its chest. As the final strand snaps like taut rubber band, the creature's body turns\n"
+                    "a ghostly white and it soldifies into a chalky white dust, blowing away at a slight breeze. The swamp comes alive again, somehow with more fervor than before. You stand there panting, the dagger still gripped\n"
+                    "in your right hand but no longer glowing. The Black Heart slowly beating in your left. It's not long before you start to hear it - a low whisper in your mind. Promises of power, strength, and abilities beyond\n"
+                    "your wildest dreams manifest in your mind. Quickly, you stow the heart away in your pocket, but can still feel its whispers, though more faintly now. Taking note of you predicament, you make your way back towards\n"
+                    "the house you first found the Nightflesh creature in, you're sure you saw a spare boat nearby, albeit a somewhat decrepit one. Time to head back to the Temple before you really start to listen to what the Black\n"
+                    "Heart has to say. After several minutes, you find the boat you were looking for and make your way back to the now open Gate.\n";
+            inventory.push_back(the_swamplands_key);
+            tsl_completed = true;
+            temple_second_room();
+            break;
 
-    default:
-        try_again();
-        the_hunt();
-        break;
+        default:
+            try_again();
+            the_hunt();
+            break;
     }
 }
