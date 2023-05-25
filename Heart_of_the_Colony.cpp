@@ -107,6 +107,7 @@ void the_heart_of_the_colony()
 
 void the_queens_chambers()
 {
+    print_line();
     cout << "Eventually, the tunnel opens up into a large chamber where you spy a distinct silhouette facing away from you: the Ant Queen.\n"
             "It doesn't look like the typical ant, it is much bigger and has a distinctly semi-humanoid upper torso attached to the thorax,\n"
             "complete with chitin-covered humanoid hands and arms, giving it a very centaur-like appearance.\n"
