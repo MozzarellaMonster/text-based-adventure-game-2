@@ -176,6 +176,7 @@ void gc_left_tunnel(){
     cin >> choice;
     choice = tolower(choice);
 
+    print_line();
     switch(choice)
     {
         case 'a':
@@ -309,6 +310,7 @@ void gc_pathway()
     cin >> choice;
     choice = tolower(choice);
     
+    print_line();
     switch(choice)
     {
         case 'a':
