@@ -78,46 +78,6 @@ void retry(void (*func)())
     }
 }
 
-// switch will not work
-/*void present_options(vector<string> option_names, vector<string> dialogue)
-{
-    char choice;
-    print_line();
-    cout << "What would you like to do?\n";
-    cout << "A. " << option_names[0];
-    cout << "B. " << option_names[1];
-    cout << "C. " << option_names[2];
-    cout << "D. " << option_names[3];
-    print_line();
-    cin >> choice;
-    choice = tolower(choice);
-
-    switch (choice)
-    {
-    case 'a':
-        cout << dialogue[0];
-        break;
-    
-    case 'b':
-        cout << dialogue[1];
-        break;
-    
-    case 'c':
-        cout << dialogue[2];
-        break;
-    
-    case 'd':
-        cout << dialogue[3];
-        break;
-
-    default:
-        try_again();
-        present_options(option_names, dialogue);
-        break;
-    }
-}*/
-
-
 void archway(string message, string name, bool *archway_read, void (*func)())
 {
     char answer;
