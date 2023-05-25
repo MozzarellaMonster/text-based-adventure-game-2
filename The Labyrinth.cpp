@@ -10,10 +10,10 @@ using namespace std;
 
 void the_labyrinth_text()
 {
-    
+    cout << "";
 }
 
 void the_labyrinth()
 {
-
+    cout << "";
 }
