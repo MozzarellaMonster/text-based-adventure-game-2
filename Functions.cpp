@@ -13,6 +13,7 @@
 #include "The Whistling Gorge.hpp"
 #include "The Oasis.hpp"
 #include "The Swamplands.hpp"
+#include "The Labyrinth.hpp"
 
 using namespace std;
 
