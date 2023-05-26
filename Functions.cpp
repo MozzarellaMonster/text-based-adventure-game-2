@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <windows.h>
 
 #include "Functions.hpp"
 #include "Items.hpp"
@@ -50,6 +51,7 @@ void retry()
     else if(choice == 'N' || choice == 'n')
     {
         cout << "\nThanks for playing \"The Temple\"!\n";
+        Sleep(3000); // Works on Windows
         return;
     }
     else
