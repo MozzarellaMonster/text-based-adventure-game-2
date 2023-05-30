@@ -2,7 +2,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <windows.h>
+#include <chrono>
+#include <thread>
 
 #include "Functions.hpp"
 #include "Items.hpp"
@@ -51,7 +52,7 @@ void retry()
     else if(choice == 'N' || choice == 'n')
     {
         cout << "\nThanks for playing \"The Temple\"!\n";
-        Sleep(3000); // Works on Windows
+        std::this_thread::sleep_for(std::chrono::seconds(3));
         return;
     }
     else
