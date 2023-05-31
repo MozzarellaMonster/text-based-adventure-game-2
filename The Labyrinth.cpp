@@ -95,7 +95,7 @@ void first_puzzle()
                     "\tEmitting a soft glow, resembling commotion,\n"
                     "\tAn object of unknown origin, granting extra locomotion,\n"
                     "\tThough, only applicable in the lack of light,\n"
-                    "\tHave you, this petrified might?";
+                    "\tHave you, this petrified might?\n";
             door_object(choice);
             break;
         
