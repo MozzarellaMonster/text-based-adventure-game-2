@@ -10,6 +10,7 @@
 using namespace std;
 
 bool middle_path_intro = false;
+bool explored_clearing = false;
 bool pond_hint = false;
 
 void the_oasis_text()
@@ -40,28 +41,21 @@ void the_oasis()
     switch(choice)
     {
         case 'a':
-            cout << "You decide to explore the left path.\n"
-                    "You look towards the left path. It lays in darkness, an overarching tunnel of branches that goes deeper into the jungle. You hesitate for just a moment, but step forward into the tunnel.\n"
-                    "After several minutes, you find yourself in a small clearing. The floor of the clearing is littered with strange-looking twigs. Curious, you lean down and pick up a few of the twigs, rolling them between your fingers.\n"
-                    "You inspect one of the twigs closely, small, white and perforated. Very brittle as well, you note as it snaps easily between your fingers. It is then you notice the marrow in the center of the twig.\n"
-                    "These aren't twigs, they're bones. Your blood freezes as you drop the bones you're holding and turn to run. As you turn, a low growl rumbles all around you, and steadily grows louder.\n"
-                    "You quickly turn to look at the entrance to the clearing, but you're met with a close-knit, intertwined collection of branches blocking the entrance. You're trapped here. The rumble is incredibly loud now.\n"
-                    "It is then you hear wooden creaks as several branches are shifted away from the 'wall' of the clearing opposite the entrance, and a hideous gaping maw is shown in the space left behind.\n"
-                    "Your heart gallops in your chest as the humid breath of the huge mouth hits you and several large tentacle-like tongues slowly wind their way up through the gullet of the thing in the branches.\n"
-                    "You desperately turn back to the entrance of the clearing and tear at the branches blocking your way, slivers and cuts be damned. Remembering the dagger, you bring it out and start cutting at the branches\n"
-                    "only for you to clumsily drop it in the nest of bones. Stooping to search, you see the tongues move closer and decide there's no time as you stand back up and resume your escape attempt.\n"
-                    "You snap away as many of the branches as you can, but see through the spaces between them that they are quickly replaced with more as the entrance is further barricaded,\n"
-                    "cutting off the dim light from the tunnel in the process and hopelessly sealing you in. The tongues slither ever closer, taking their time to savor the moment - playing with their prey.\n"
-                    "You feel the breath of the thing grow in anticipation as one of the tongues finally wraps itself around your ankle, another around your waist. As a final futile attempt at escape,\n"
-                    "you plunge your arm into the interwoven barricade of branches and grab one of them. Slowly, the tongue grows taut as the thing struggles to pull you in.\n"
-                    "It pulls and pulls, but you hold fast, pulling yourself away whenever the thing grows tired. Finally impatient with this tug-of-war, the thing's final tongue wraps around the shoulder of the arm planted in the\n"
-                    "web of branches and with great force, pulls. You hear a sickening pop as your shoulder dislocates and you scream in pain, but the thing is not done. It pulls even harder and harder, the fabric of your clothes\n"
-                    "tearing at the seams. The pain is unbearable. And with a final tug, the things pulls you free of the branches as you lose your grip, several pieces of skin left behind on sharp thorns within.\n"
-                    "Tears flow freely now as your limp arm drags behind you and you close your eyes in defeat as you enter the warm mouth of the thing.\n";
-            
-            cout << "\n\nEnding 14: Eaten\n";
-            print_line();
-            retry(&the_oasis);
+            if(explored_clearing)
+            {
+                cout << "You look down the dark tunnel, an that familiar uneasy feeling bubbling like a noxious pit in your stomach. Whatever that clearing was, you want nothing to do with it.\n"
+                        "you look back to the options in front of you.\n";
+                the_oasis();
+            }
+            else
+            {
+                cout << "You decide to explore the left path.\n"
+                        "You look towards the left path. It lays in darkness, an overarching tunnel of branches that goes deeper into the jungle. You hesitate for just a moment, but step forward into the tunnel.\n"
+                        "After a short walk, you find a small clearing carpeted by a thick moss and illuminated brightly by a ray of sunshine peeking through the canopy. Small flowers line the circumference of the area.\n"
+                        "Their colorful petals gently dancing in a small breeze. Despite the welcoming atmosphere, a creeping feeling of unease slinks up your spine. You notice small particles floating through the air,\n"
+                        "dancing like the fae in fairytales. You hesitate, unsure of what to do.\n";
+                small_clearing();
+            }
             break;
             
         case 'b':
@@ -105,6 +99,63 @@ void the_oasis()
             the_oasis();
     }
 }
+
+void small_clearing()
+{
+    char choice;
+    print_line();
+    cout << "What would you like to do?\n";
+    cout << "A. Proceed into the clearing\n";
+    cout << "B. Go back through the tunnel\n";
+    print_line();
+    cin >> choice;
+    choice = tolower(choice);
+
+    print_line();
+    switch(choice)
+    {
+        case 'a':
+            cout << "You head deeper into the clearing, curious about the flowers. You head up to one to look closer. Several filaments reach out from the center of the flower, tipped red with a crimson hue.\n"
+                    "After a short moment, the flower suddenly blasts your face full of pollen, causing you to cough and sneeze as your eyes begin to water. After regaining your breath and wiping at your eyes,\n"
+                    "you notice something at the far end of the clearing - an ancient-looking stone shrine with a golden idol sitting in the center of it. Could that be what you needed to retrieve from here?\n"
+                    "After only a brief hesitation, you briskly walk towards the shrine, eager to be done with this world. As you cross the center of the clearing, you hear something unusual, a shifting sound,\n"
+                    "coming from directly beneath you. As soon as you look down, the floor of the clearing opens up beneath you, revealing itself to be large, mossy leaves that are now retracting towards the edges\n"
+                    "of the small glade. Your breath catches in your throat as you fall into a large nest of thorny vines. The vines immediately poke into your skin through your clothing, scratching deep enough\n"
+                    "to draw blood. You thrash and thrash, trying to free yourself from the bramble prison, but only succeed in getting yourself even more tangled up. Finally, your strength wanes and you remain there,\n"
+                    "suspended in the air as you bleed from several shallow cuts. As you catch your breath, you watch as a droplet of your blood travels down the length of a vine, slowly making its way towards the bottom.\n"
+                    "It is then you notice something in the distance, beyond the vine. As your vision refocuses on the object, your gut fills with horror as you stare at the desiccated corpse of a small furry mammal.\n"
+                    "You look around some more and notice even more corpses hung up in the vines, all dry and brittle, resembling large, horrific raisins. All except one, a larger animal, resembling a panther,\n"
+                    "taking in weak, shuddering breaths as it lays suspended in a cocoon of vines. There is one unusual thing about this one, however. You notice a large vine attached to the chest of the animal,\n"
+                    "with a splayed-open flower bulb firmly connected. You watch in growing horror as the vine sucks at the chest of the animal, a low slurping noise being heard even from your distance.\n"
+                    "It is then that, unbeknownst to you, the drop of blood you watched earlier has finally made its way to the bottom of the shaft, slowing just before being collected in an organic cup-like orifice\n"
+                    "lined with several small holes. An slick, wet sound emanates loudly from the bottom of the shaft as a similar vine with an large flower containing several long, sharp filaments in its center snakes\n"
+                    "its way up the shaft towards you. You scream and writhe in your prison, trying desperately to reach for the dagger on your person, but unable to grasp it due to the strong vines holding you up like a ragdoll.\n"
+                    "You kick and pull, but the vines hold fast, digging their thorns even deeper into your skin. You can do nothing but watch helplessly as the vine finally reaches you, its filaments tentacle-like,\n"
+                    "squirming and brushing over your form, looking for a place to settle in. During all this, you continue to writhe, but the vines pull tighter, restricting your movements, allowing the flower to search\n"
+                    "your body with relative ease. When it comes to your chest, it pauses, the movement of its filaments slowing as it places them lengthwise against your rapidly beating heart. Then, the filaments straighten out,\n"
+                    "poised above your chest, and pierce through your skin. The pain is immense as the flower brings itself closer to your torso. It is then you feel them. The filaments fan out throughout your body,\n"
+                    "squirming through your flesh like parasitic worms, searching. And they find what they're looking for. Your heartbeat slows as you feel the invasive tendrils wrap around and puncture your organ.\n"
+                    "It is then you scream. You scream the scream of a soul damned to an eternity of suffering. And suffer you will, as the flower begins to drink.\n";
+            
+            cout << "\n\nEnding 14: Punctured\n";
+                    print_line();
+                    retry(&the_oasis);
+            break;
+        
+        case 'b':
+            cout << "You decide to listen to your gut and turn around, taking a small step towards the tunnel. It is then that you hear a low rumble, almost as if the world itself was sighing in disappointment.\n"
+                    "Curious, you turn back towards the clearing, and your breath catches in your throat as you now see that all the flowers lining the perimeter of the clearing have shifted to face your direction.\n"
+                    "Your eyes widen in horror and the uneasy feeling grows stronger as it is joined by the feeling of being watched. You quickly turn away from the accursed clearing and hurry back down the tunnel.\n";
+            explored_clearing = true;
+            the_oasis();
+            break;
+
+        default:
+            try_again();
+            small_clearing();
+    }
+}
+
 
 void pond_options()
 {
