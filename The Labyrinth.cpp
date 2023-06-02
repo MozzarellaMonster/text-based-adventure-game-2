@@ -202,5 +202,39 @@ void door_object(char option)
 
 void second_puzzle()
 {
-
+    string object;
+    print_line();
+    cout << "After walking for several minute, you now find yourself in another peculiar location. Before you lays a corridor with a sudden drop off ahead, descending into pitch black darkness.\n"
+            "Inching closer, you look over the edge and suddenly the whirring of machinery starts as platforms materialize out of thin air before disappearing a second later.\n"
+            "You watch for a bit but can discern no pattern to their appearances, with it being seemingly randomized. Not only that, but the platforms appear and disappear in random directions,\n"
+            "with some appearing in a position that draws you closer to the other side and some that go away from or in another direction entirely.\n"
+            "Try as you might, you cannot get a hold of any possible pattern to them, only noticing that they appear within jumping distance of each other,\n"
+            "but the timing of the appearances is so precise to the point that they would only appear when you had already jumped. You watch for a bit longer and can confirm that you would have to already\n"
+            "be in the air when another platform appears. With this in mind, you look over the items you have.\n";
+    print_line();
+    show_inventory();
+    cout << "What object would you like to use?\n";
+    print_line();
+    object = remove_from_inventory();
+    cout << "You select the " << object << " from your inventory and use it.\n";
+    print_line();
+    
+    if(object == the_heart_of_the_colony_key)
+    {
+        // Correct option - leads to next area
+        cout << "";
+    }
+    else if(object == the_glowing_cave_key)
+    {
+        // Unique death sequence
+        cout << "";
+    }
+    else
+    {
+        // Default death sequence
+        cout << "You jump from platform to platform, but to no avail. The platform disappears from underneath you, and you fall to your death.\n";
+        cout << "\n\nEnding 25: Overzealous\n";
+        print_line();
+        retry(second_puzzle);
+    }
 }
