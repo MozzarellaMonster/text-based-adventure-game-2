@@ -216,25 +216,43 @@ void second_puzzle()
     cout << "What object would you like to use?\n";
     print_line();
     object = remove_from_inventory();
-    cout << "You select the " << object << " from your inventory and use it.\n";
+    cout << "You select " << object << " from your inventory and use it.\n";
     print_line();
     
     if(object == the_heart_of_the_colony_key)
     {
-        // Correct option - leads to next area
-        cout << "";
+        cout << "Holding out the Amber Eye, you are suddenly assaulted by a stream of images flooding your mind. Scenes from your journey up until this point,\n"
+                "scenes of what would have happened if you had answered wrong on the previous puzzle, and finally, scenes of you attempting the puzzle you are now faced with.\n"
+                "In a split second, you watch yourself die a thousand times over, some with other objects, some with the Amber Eye itself. You focus, mentally sorting through the images\n"
+                "until you come across some that offer actual solutions to the puzzle. Closing your eyes, you envision yourself leaping from one ephemeral platform to another,\n"
+                "paying special attention to when the platforms appear. And soon, you body freezes up, but then floods with adrenaline as you suddenly charge forward and take a flying leap from the edge of the pit.\n"
+                "You land on a floating platform that wasn't there a mere fraction of a second earlier. Quickly, you get back up and jump in another seemingly random direction,\n"
+                "the images from the Amber Eye flasing through your mind. Instantly, another platform appears, saving you from falling to your death. You keep this up,\n"
+                "jumping from one location to another until you're close enough to the other side to make one final jump to safety. You jump to the other ledge, your momentum causing you to roll.\n"
+                "For a moment, you just lay there, staring upward as you catch your breath. Your legs burn from all the jumping and for a moment, you feel as though you can't get back up.\n"
+                "After a long pause however, you do. You make your way to the other side of the chamber where a door with a slot in it stands. Placing the Amber Eye in the slot, the door opens up and you proceed forward.\n";
+        third_puzzle();
     }
     else if(object == the_glowing_cave_key)
     {
-        // Unique death sequence
-        cout << "";
+        cout << "Holding the Fossil in your hand, you feel your body flood with a renewed sense of power as your senses heighten and your body feels lighter, though not as much compared to the cave you found it in.\n"
+                "With a renewed vigor, you jump into the pit safely onto a materialized platform. With your heightened hearing and echolocation, you can just make out when the platforms might appear. You continue jumping,\n"
+                "slowly making your way to the other side. Then, when you're just one platform away from the other side, you misjudge a jump, missing the platform by mere inches. As you fall into the dark pit, you feel the\n"
+                "effects of the Fossil intensify, but it's all no use now, as the ground rushes up to meet you.\n";
+        cout << "\n\nEnding 26: Wrong choice\n";
+        print_line();
+        retry(&second_puzzle);
     }
     else
     {
-        // Default death sequence
         cout << "You jump from platform to platform, but to no avail. The platform disappears from underneath you, and you fall to your death.\n";
         cout << "\n\nEnding 25: Overzealous\n";
         print_line();
-        retry(second_puzzle);
+        retry(&second_puzzle);
     }
+}
+
+void third_puzzle()
+{
+
 }

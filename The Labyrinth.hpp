@@ -12,5 +12,6 @@ extern string remove_from_inventory();
 extern void the_labyrinth_text();
 extern void first_puzzle();
 extern void second_puzzle();
+extern void third_puzzle();
 
 #endif
