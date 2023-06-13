@@ -13,5 +13,6 @@ extern void the_labyrinth_text();
 extern void first_puzzle();
 extern void second_puzzle();
 extern void third_puzzle();
+extern void fourth_puzzle();
 
 #endif

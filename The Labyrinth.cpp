@@ -204,7 +204,7 @@ void second_puzzle()
 {
     string object;
     print_line();
-    cout << "After walking for several minute, you now find yourself in another peculiar location. Before you lays a corridor with a sudden drop off ahead, descending into pitch black darkness.\n"
+    cout << "After walking for several minutes, you now find yourself in another peculiar location. Before you lays a corridor with a sudden drop off ahead, descending into pitch black darkness.\n"
             "Inching closer, you look over the edge and suddenly the whirring of machinery starts as platforms materialize out of thin air before disappearing a second later.\n"
             "You watch for a bit but can discern no pattern to their appearances, with it being seemingly randomized. Not only that, but the platforms appear and disappear in random directions,\n"
             "with some appearing in a position that draws you closer to the other side and some that go away from or in another direction entirely.\n"
@@ -239,7 +239,8 @@ void second_puzzle()
                 "With a renewed vigor, you jump into the pit safely onto a materialized platform. With your heightened hearing and echolocation, you can just make out when the platforms might appear. You continue jumping,\n"
                 "slowly making your way to the other side. Then, when you're just one platform away from the other side, you misjudge a jump, missing the platform by mere inches. As you fall into the dark pit, you feel the\n"
                 "effects of the Fossil intensify, but it's all no use now, as the ground rushes up to meet you.\n";
-        cout << "\n\nEnding 26: Wrong choice\n";
+
+        cout << "\n\nEnding 26: Fossil doesn't fly\n";
         print_line();
         retry(&second_puzzle);
     }
@@ -254,5 +255,63 @@ void second_puzzle()
 
 void third_puzzle()
 {
+    string object;
+    print_line();
+    cout << "After a brief period of time you come across a closed door. However, this door is different from the ones you've seen thus far. It resembles more of a blast door\n"
+            "with thick windows than the usual stone doors with slots in them. Next to the door is a small screen. Ignoring the screen for now, you peer through the windows of the blast door.\n"
+            "Inside, you see a chamber: one full of huge centipede-like creatures, all crawling over each other and occasionally fighting. You stare for a moment in disbelief\n"
+            "at the size of the creatures, before lurching back when one of them takes notice of you and attempts to break the thick glass of the blast door before giving up and returning to\n"
+            "crawling over the others, like a writhing mass of worms. From a small break in between the creatures' writhing mass, you spy another blast door and just beyond that, the usual slotted door.\n"
+            "It is then you notice a raised platform to the right of the other blast door, you can't see much from here, so you turn to the screen next to you. The small screen resembles what looks like a camera feed,\n"
+            "showing the interior of the chamber from a different angle that shows the surface of the raised platform. On the top of the raised platform, you see a glowing raised tile.\n"
+            "As a few of the creatures walk over the tile, you see it ever-so-slightly give, before popping back up when all of them leave. You look around you and spy a button on the left side of the chamber door,\n"
+            "inferring its purpose to be to open the door. You look back to the swarming mass of insectoids inside before looking through your options.\n";
+    print_line();
+    show_inventory();
+    cout << "What object would you like to use?\n";
+    print_line();
+    object = remove_from_inventory();
+    cout << "You select " << object << " from your inventory and use it.\n";
 
+    if(object == the_whistling_gorge_key)
+    {
+        cout << "Holding Twisted Bone to your mouth, you quickly hit the button next to the door and blow into the flute. Immediately, the centipede-like creatures freeze, stunned by the inaudible sound of the flute.\n"
+                "Slowly, you force them to clear a path for you to the other blast door. They stand by, close enough for you to see the unbridled anger and hatred in their eyes, despite their otherwise calm-looking exterior.\n"
+                "Still playing the flute, you finally reach the blast door, only to find that there is no button nearby. You frantically search for it, your eyes looking around wildly as your mouth starts to grow tired.\n"
+                "Then you remember the raised platform next to you with the raised tile on it. You look to it and immediately, nearby creatures start to climb up to the platform and sit on the tile, gently depressing it.\n"
+                "After several of them fully depress the tile, the blast door finally opens. Your mouth is hurting now, and as you quickly step past the door you tear Twisted Bone away from your mouth and take a gasp of air.\n"
+                "Instantly, the creatures break out of their trance and rush towards you, but the blast door quickly shuts again as the tile raises once again.\n"
+                "Holding your chest, you feel your heartbeat slowly start to calm back down as you look to the other door ahead of you - a familiar one with a slot for Twisted Bone in it. Placing the flute in the slot of the door,\n"
+                "it opens and you head through it.\n";
+        fourth_puzzle();
+    }
+    else if(object == the_swamplands_key)
+    {
+        cout << "Gripping the Black Heart in your hand, you will your body to change form, taking on a more aggressive appearance. The appearance of a predator.\n"
+                "As your muscles ripple under your pitch-black skin, your teeth grow long and pointed and your nails grow into long sharp claws. Feeling invincible,\n"
+                "you smash the button and open the blast door. Immediately, you are assaulted by several of the huge creatures, all gnashing jaws and teeth, their multi-segmented bodies\n"
+                "lined with several long, sharp legs wrap around you, piercing into your body. They swarm over you, but you fight back, tearing their bodies apart with your newly grown teeth and\n"
+                "slamming their comparatively fragile bodies into the hard ground, splattering them all over. Bloodlust fills you as you charge into them, ripping them to pieces with your claws and teeth,\n"
+                "smashing the rest with your massive hands and feet. You fight and fight and fight, but they continue to swarm over you, relentless and unforgiving. Merciless, they slowly beat you back as your\n"
+                "strength and energy wanes, unable to keep steady as you attempt to keep up your slaughter. Only when the room is nearl empty and you're so tired you can barely stand do you realize the other\n"
+                "blast door is still shut tight. You lean over, exhausted, as several new tentacles sprout from your back and slice and stab any creatures that dare to approach you. Soon, the room is empty all\n"
+                "around you... but the door remains shut. You fall to your knees and feel your mind on the verge of breaking, as the muscles in your body burn with the promise of pain and the Heart whispers to you\n"
+                "sweet dreams of carnage and carrion. As you look up to ceiling of the room, you notice several doors open as more of the creatures are poured back in, several thousand at a time.\n"
+                "Your mind snaps and your body moves on its own, showering itself in the blood and gore of the creatures as they mindlessly attack you over and over.\n"
+                "You feel your consciousness leave you as the last thing you hear before completely giving in to insanity is the blast door closing behind you.\n";
+
+        cout << "\n\nEnding 28: Endless Bloodlust\n";
+        print_line();
+        retry(&third_puzzle);
+    }
+    else
+    {
+        cout << "You open the door and try to use the object, but to no avail. And in that moment, you realize your horrible mistake as a wave of jaws, teeth, and long sharp legs comes barreling towards you.\n";
+        cout << "\n\nEnding 27: Splattered\n";
+    }
+}
+
+void fourth_puzzle()
+{
+    cout << "After a short period of time you come across another unique chamber: a long corridor with a door at the other end";
 }
