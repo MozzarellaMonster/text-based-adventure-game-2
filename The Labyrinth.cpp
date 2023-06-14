@@ -308,10 +308,65 @@ void third_puzzle()
     {
         cout << "You open the door and try to use the object, but to no avail. And in that moment, you realize your horrible mistake as a wave of jaws, teeth, and long sharp legs comes barreling towards you.\n";
         cout << "\n\nEnding 27: Splattered\n";
+        print_line();
+        retry(&third_puzzle);
     }
 }
 
 void fourth_puzzle()
 {
-    cout << "After a short period of time you come across another unique chamber: a long corridor with a door at the other end";
+    string object;
+    print_line();
+    cout << "After a short period of time you come across another unique chamber: a long, brightly lit corridor with a slotted door at the other end. The corridor is suspiciously clear of any obstacles.\n"
+            "After a moment's hesitation, you start to take a step into the corridor before hearing a roar behind you. Quickly, you turn around to see that one of the centipede creatures has followed you.\n"
+            "You freeze in place as it charges towards you, but you deftly roll to the side right before it collides with you. Instantly, the giant bug is cut into small chunks, they scatter about from the speed of the charge.\n"
+            "Surprised, you roll back over and stand upright. You realize that there are obstacles down this corridor, but for some reason you can't see them right now. You look to the artifacts you still have:\n";
+    print_line();
+    show_inventory();
+    cout << "What object would you like to use?\n";
+    print_line();
+    object = remove_from_inventory();
+    cout << "You remove " << object << " from your inventory and use it.\n";
+
+    if(object == the_oasis_key)
+    {
+        cout << "You hold the Shimmering Leaf up to your eye and look down the corridor. At first, you don't see anything, but then it comes into focus: there is what appears to be a laser grid of some kind directly ahead of you.\n"
+                "Knowing the deadly potential this grid has, you look around the entire surface of it, looking for some kind of opening. And moments later, you find it. A large square opening in the grid of lasers,\n"
+                "but it is at the top of the grid, touching the ceiling. You look around some more, and think about finding some kind of switch or button of sorts before immediately seeing a panel on the left side of the corridor just before the grid.\n"
+                "Still looking through the leaf, you walk over to it and drop the leaf, only for the panel to disappear before your eyes. You bring the leaf back up and look through it to see the panel again.\n"
+                "With one hand, you operate a simple two-dimensional knob, much like a touchscreen representation of one, and slowly turn it. In the corner of your eye, you notice the grid slowly rotate as you turn the knob.\n"
+                "You rotate it until the square opening is directly in front of you and touching the ground with no lasers blocking your progress. Carefully, you step through the hole in the grid and proceed to the next obstacle.\n"
+                "Several different obstacles, each with a unique mechanism lay at intervals through the length of the corridor. At each one, you must stop and solve a simple puzzle or use some kind of mechanism in order to orient\n"
+                "lasers to make a safe passage through. At one point, you even had to orient a series of lasers into a two-dimensional pyramid shape in order to make a big enough gap to pass through.\n"
+                "After numerous obstacles, you finally make your way through the corridor and reach the slotted door at the other end. Placing the Shimmering Leaf in the slot, the door slides down and you proceed through.\n";
+        fifth_puzzle();
+    }
+    else if(object == the_glowing_cave_key)
+    {
+        cout << "Taking the Fossil out, you hold it in your hand and can feel your senses sharpen, but only a tiny bit. Still, it's better than you could hear before and you slowly step into the corridor.\n"
+                "You reach the area where you saw the centipede get minced and slow your approach. With your better hearing, you can hear a low droning sound, similar to that of a flourescent bulb.\n"
+                "Listening intently, you walk from side to side, listening for changes in the pattern of the drone. Suddenly, after approaching one side of the corridor, you hear a sudden break in the droning noise.\n"
+                "You close your eyes and listen intently, lifting your foot and slamming it back down. The sound visualizes in the darkness of your closed eyes, but just barely. Still it's provided enough guidance for\n"
+                "you to take a confident step forward. At first you don't feel anything, but then you reach up and see your arm fall away like freshly sliced deli meat. You scream and back away holding the stump of your arm\n"
+                "with your other hand, before you realize that you can't actually step backward. You look down and see your leg slowly fall apart too, before the weight of your body pulls you forward.\n"
+                "You land on the other side of the invisible barrier, steam coming off your precisely sliced chunks.\n";
+        
+        cout << "\n\nEnding 30: Diced\n";
+        print_line();
+        retry(&fourth_puzzle);
+    }
+    else
+    {
+        cout << "You take out the Black Heart and turn into the smallest creature you can think of: a small insectoid resembling an ant. You then hurriedly scurry forward, getting past the remains of the centipede creature and running full speed ahead.\n"
+                "Confidence floods your tiny body and you run full speed ahead. Unfortunately, you don't get very far, as a small sizzle can be heard soon after as you are cut cleanly in half.\n";
+
+        cout << "\n\nEnding 29: Split\n";
+        print_line();
+        retry(&fourth_puzzle);
+    }
+}
+
+void fifth_puzzle()
+{
+    
 }
