@@ -358,7 +358,7 @@ void fourth_puzzle()
     else
     {
         cout << "You take out the Black Heart and turn into the smallest creature you can think of: a small insectoid resembling an ant. You then hurriedly scurry forward, getting past the remains of the centipede creature and running full speed ahead.\n"
-                "Confidence floods your tiny body and you run full speed ahead. Unfortunately, you don't get very far, as a small sizzle can be heard soon after as you are cut cleanly in half.\n";
+                "Confidence floods your tiny body and you run full speed ahead. Unfortunately, you don't get very far, as a small sizzle can be heard in the corridor as you are cut cleanly in half.\n";
 
         cout << "\n\nEnding 29: Split\n";
         print_line();
@@ -368,5 +368,25 @@ void fourth_puzzle()
 
 void fifth_puzzle()
 {
-    
+    string object;
+    print_line();
+    cout << "";
+    print_line();
+    show_inventory();
+    cout << "What object would you like to use?\n";
+    print_line();
+    object = remove_from_inventory();
+    cout << "You remove " << object << " from your inventory and use it.\n";
+
+    if(object == the_glowing_cave_key)
+    {
+        cout << "";
+    }
+    else
+    {
+        cout << "";
+        print_line();
+        retry(&fifth_puzzle);
+    }
+
 }
