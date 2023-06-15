@@ -370,7 +370,10 @@ void fifth_puzzle()
 {
     string object;
     print_line();
-    cout << "";
+    cout << "You proceed down a long, winding corridor until you reach another door. This time, the door slides open without any input from you. You hesitantly proceed further in and find yourself\n"
+            "in a strange dark chamber. There are no lights to be seen anywhere, you can't even make out your hands in front of your face. Suddenly, the door shuts behind you and you hear machinery power up,\n"
+            "what sounds like giant ancient gears start to turn, metal scrapes against metal, and there is a definite whoosh in front of you at regular intervals since you can feel the change in the air.\n"
+            "Seeing no other option, you stand where you are and search your person for the objects you still have.\n";
     print_line();
     show_inventory();
     cout << "What object would you like to use?\n";
@@ -380,13 +383,34 @@ void fifth_puzzle()
 
     if(object == the_glowing_cave_key)
     {
-        cout << "";
+        cout << "Holding the Fossil, you immediately feel a significant increase in the sharpness of your senses, especially your hearing. Your ears are so sensitive in fact, that you can make out the details of the large structures\n"
+                "moving in the cavernous chamber ahead of you. The chamber is remarkably lacking in terms of a solid floor to walk on, with the exception of the small platform you're currently standing on.\n"
+                "It appears as the though the machinery is somehow suspended in the air, as if floating around in zero gravity, with some partially hidden in what appear to be energy bubbles of some kind, based purely on the low, strange sound they emit.\n"
+                "Despite the oppressive dark, the large clunky machinery generates enough sound for you to effectively visualize your surroundings as if you were looking at it in broad daylight, thanks to the effects of the Fossil.\n"
+                "At the same time, you feel your muscles flood with newfound strength and agility. Crouching low, you tense your legs and take a flying leap into the strangely suspended maze of machinery, deftly moving between areas as gears turn, pistons pound, and steam whistles blow.\n"
+                "Soon, you find the slotted door floating amidst the chaos, with a series of intricately woven metal bars resembling filigree blocking access to it, like security bars. You jump up to it and find yourself standing straight up on the narrow platform the door is floating on,\n"
+                "as if it possessed its own gravity. Looking to the lock, you notice several different designs on the filigree, designs you remember feeling engraved on particular areas of the suspended machinery. You turn back to the machinery and start to feel around on them, the sound of everything\n"
+                "acting like a light for your enhanced senses. Soon, you discover the key to the locked gate: four different tubes needing to be filled with liquid. Moving among the machinery, you listen intently to several pipes filled with liquid and move among the intricate network of pipes\n"
+                "opening valves and closing others to move the liquid into the tubes. After several minutes, you finally fill the tubes and pull a nearby chain, causing a whistle to go off and the intricate gate to open, revealing the slotted door.\n"
+                "You jump back up to the floating platform and place the Fossil into the slot, causing the door to slide open, revealing the corridor beyond. Taking a deep breath, you step out of the dark void and into the lit doorway.\n";
+        sixth_puzzle();
     }
     else
     {
-        cout << "";
+        cout << "Bringing out the Black Heart, you turn into a creature that can see in the dark and make out a chaotic swarm of machinery parts floating in an zero gravity abyss. Stunned for only a moment, you jump high, coiling the pitch-black muscles in your mutated legs like springs.\n"
+                "You reach a floating piece of machinery, listening to it hiss with steam and fluid as it flows through a complex network of interwoven pipes. As you jump from each floating piece of machinery to another, you slowly start to feel your sanity draining away, the strange environment\n"
+                "and lack of an outlet for your aggression accelerating it. You try to keep your head on straight, but can't afford to stop using the Black Heart now, fearing that you'll be defenseless among the grinding gears and loud whistles. You keep jumping, hoping to find a way out but everything\n"
+                "either looks completely alien or completely familiar and you feel yourself losing grip on your reality. As your desperation increases, you frantically search for the door but find nothing, realizing that you're lost among the machinery. Soon, the grinding gears and low whistles seem deafening\n"
+                "as you grip the sides of your head and let loose a long, loud roar as you finally lose your sanity amid the uncaring, unstoppable floating machinery.\n";
+        
+        cout << "\n\nEnding 31: Stimulating Environment\n";
         print_line();
         retry(&fifth_puzzle);
     }
 
+}
+
+void sixth_puzzle()
+{
+    
 }

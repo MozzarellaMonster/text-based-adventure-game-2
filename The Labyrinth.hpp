@@ -15,5 +15,6 @@ extern void second_puzzle();
 extern void third_puzzle();
 extern void fourth_puzzle();
 extern void fifth_puzzle();
+extern void sixth_puzzle();
 
 #endif
