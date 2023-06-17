@@ -412,5 +412,21 @@ void fifth_puzzle()
 
 void sixth_puzzle()
 {
-    
-}
+    // Final puzzle for The Black Heart: Fighting through a dimensional prison full of terrifying creatures in differing environments. 
+    print_line();
+    cout << "You walk for some time down the long corridor, longer than you had to for the other corridors. After some time, you come to a door resembling that to a large vault. It is then you notice a small slot in the door.\n"
+            "At first, you think that there's no way it can hold the Black Heart, since it is so small, but then you realize something. It's not a slot for the Black Heart, but rather, the dagger you received at the start of this whole ordeal.\n"
+            "Taking out the dagger from your belt, you look at it one final time, before sliding it into the slot. It fits snugly, the jewel embedded in the handle shining brightly. You then hear several loud thunks as the vault door unlocks.\n"
+            "A hiss then escapes, like pressurized air before the vault door swings open before you. Inside, you see strange structures that are difficult to completely make out from your perspective. After a moment's hesitation, you step past the threshold.\n"
+            "Taking a closer look without the frame of the vault door in the way, you can clearly see several strange orbs floating in the white void you find yourself in. Realizing the tendency for the Labyrinth to trick you, you quickly turn around,\n"
+            "only to see that the vault door has now vanished, replaced by nothing but more white void. Frustrated but not surprised, you turn back to the orbs before you. In each, you can see a fisheye view of different environments, ranging from a forest\n"
+            "to an underwaters ocean scene. You wander among the orbs, looking through each of them and trying to find a way out. After looking for a long time, you find no door. With little other choice, you look back to the orbs and decide to try the one\n"
+            "with a forest scene inside. Stepping into the orb, you are immediately hit with a rush of air and the pull of gravity as you see the ground rush up to you. Quickly, you pull out the Black Heart and transform into a winged creature,\n"
+            "catching the air and slowing your descent. Eventually, you settle back on the ground and look around. This forest is unlike any you've seen before in that it actually looks rather normal, but deserted. Tall, thin trees populate the landscape around you\n"
+            "and the forest floor is littered with dry, dead leaves. You look around, expecting to see some kind of structure, but nothing is revealed. Thinking it would be better to get a bird's-eye view, you flap your wings and try to lift off,\n"
+            "but are suddenly assailed by a hit to your side that sends you crashing into nearby tree, shattering it apart and leaving you laying amid the rubble. You feel your anger boil as you look up to see a strange stick-like figure, almost humanoid in its appearance\n"
+            "were it not for its strange, misshapen head. The head of the thing had a saucer-like quality to it, with a large mouth splitting the head halfway along the circumference of the thing. It roars at you, spitting saliva as it did. Your anger boils as you change your\n"
+            "form and charge at the thing. After a brief fight, you pull the thing's head off with your massive, mutated muscle and throw it far away from its body. Suddenly, you find yourself back in the white void with the orbs all around you again, the blood of the thing\n"
+            "still on your hulking form. Quickly, you change back. You look around at the orbs again and notice that the one with the forest scene is now gone, and the faint outline of a door can just barely be made out at the other end of the void.\n"
+            "You look back to the orbs around you, picking the underwater scene, and enter into it.\n"
+            "";
