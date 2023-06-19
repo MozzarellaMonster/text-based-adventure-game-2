@@ -43,8 +43,8 @@ void the_oasis()
         case 'a':
             if(explored_clearing)
             {
-                cout << "You look down the dark tunnel, an that familiar uneasy feeling bubbling like a noxious pit in your stomach. Whatever that clearing was, you want nothing to do with it.\n"
-                        "you look back to the options in front of you.\n";
+                cout << "You look down the dark tunnel, and that familiar uneasy feeling bubbles like a noxious pit in your stomach. Whatever that clearing was, you want nothing to do with it.\n"
+                        "You look back to the options in front of you.\n";
                 the_oasis();
             }
             else
