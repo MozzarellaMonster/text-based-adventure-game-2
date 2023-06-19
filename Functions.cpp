@@ -197,7 +197,7 @@ void determine_riddle()
 void show_inventory()
 {
     cout << "Your inventory contains:\n";
-    for(int i = 0; i < inventory.size(); i++)
+    for(int i = 1; i < inventory.size(); i++)
     {
         if(i == inventory.size() - 1)
         {
