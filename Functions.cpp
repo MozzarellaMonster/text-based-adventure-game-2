@@ -166,8 +166,8 @@ void deposit()
             }
             obslots.clear();
             print_line();
-            cout << "With a deafening roar, the giant stone blockingb the fourth archway opens, revealing the final portal.\n"
-                    "You hear a voice in your head: \"Congratulations, you have unlocked the final world. Use all that you've learned to pass the final test.\n";
+            cout << "With a deafening roar, the giant stone blocking the fourth archway opens, revealing the final portal.\n"
+                    "You hear a voice in your head: \"Congratulations, you have unlocked the final world. Use all that you've learned to pass the final test.\"\n\n";
             second_room_obelisk_complete = true;
             show_inventory();
         }
