@@ -1,6 +1,8 @@
 // File containing functions for The Labyrinth passage
 #include <iostream>
 #include <string>
+#include <chrono>
+#include <thread>
 #include "Functions.hpp"
 #include "Journal Entries.hpp"
 #include "Trackers.hpp"
@@ -11,29 +13,58 @@ using namespace std;
 
 void door_object(char option);
 
+int saved_index = 0;
+string saved_object = "";
+
 string first_puzzle_death = "The door remains closed. Surprised, you reach for the object but the floor suddenly opens up beneath you.\n"
                             "You fall into the dark abyss, but never stop falling. Down and down, impossibly deep.\n"
                             "You fall for what feels like forever. Until you suddenly meet the end.\n"
                             "\n\nEnding 22: Splat\n";
 
+void timer(int time)
+{
+    while(time > 0)
+    {
+        cout << "\r";
+        cout << "Countdown " << time << " seconds.";
+        cout.flush();
+        this_thread::sleep_for(chrono::seconds(1));
+        time--;
+    }
+}
+
+// Need to fix to return object to inventory when player chooses to retry after death
+// Need to better show available objects that are NOT the Jeweled Dagger
 string remove_from_inventory()
 {
     int index;
     string object;
-    cout << "Use 1-6 for the object you wish to use.\n";
+    cout << "Use 1-" << inventory.size() << " for the object you wish to use.\n\n";
     print_line();
     cin >> index;
     if(index < inventory.size() && index >= 1)
     {
         object = inventory.at(index);
+        saved_object = object;
+        saved_index = index;
         inventory.erase(inventory.begin()+index);
         return object;
     }
     else
     {
-        cout << "Number out of range, please try again.\n";
+        cout << "Number out of range, please try again.\n\n";
         remove_from_inventory();
     }
+}
+
+void add_to_inventory()
+{
+    if(saved_index != 0 && saved_object != "")
+    {
+        inventory.insert(inventory.begin() + saved_index, saved_object);
+    }
+    saved_index = 0;
+    saved_object = "";
 }
 
 void the_labyrinth_text()
@@ -111,6 +142,7 @@ void door_object(char option)
     print_line();
     cout << "The hole in the center of the door has enough room for one of the objects in your inventory.\n";
     cout << "What object do you want to put in?\n";
+    print_line();
     show_inventory();
     print_line();
     object = remove_from_inventory();
@@ -128,6 +160,7 @@ void door_object(char option)
             {
                 cout << first_puzzle_death;
                 print_line();
+                add_to_inventory();
                 retry(&first_puzzle);
             }
             break;
@@ -161,6 +194,7 @@ void door_object(char option)
                 cout << first_puzzle_death;
             }
             print_line();
+            add_to_inventory();
             retry(&first_puzzle);
             break;
         
@@ -190,6 +224,7 @@ void door_object(char option)
                 cout << first_puzzle_death;
             }
             print_line();
+            add_to_inventory();
             retry(&first_puzzle);
             break;
         
@@ -213,6 +248,7 @@ void second_puzzle()
             "be in the air when another platform appears. With this in mind, you look over the items you have.\n";
     print_line();
     show_inventory();
+    print_line();
     cout << "What object would you like to use?\n";
     print_line();
     object = remove_from_inventory();
@@ -242,6 +278,7 @@ void second_puzzle()
 
         cout << "\n\nEnding 26: Fossil doesn't fly\n";
         print_line();
+        add_to_inventory();
         retry(&second_puzzle);
     }
     else
@@ -249,6 +286,7 @@ void second_puzzle()
         cout << "You jump from platform to platform, but to no avail. The platform disappears from underneath you, and you fall to your death.\n";
         cout << "\n\nEnding 25: Overzealous\n";
         print_line();
+        add_to_inventory();
         retry(&second_puzzle);
     }
 }
@@ -268,6 +306,7 @@ void third_puzzle()
             "inferring its purpose to be to open the door. You look back to the swarming mass of insectoids inside before looking through your options.\n";
     print_line();
     show_inventory();
+    print_line();
     cout << "What object would you like to use?\n";
     print_line();
     object = remove_from_inventory();
@@ -302,6 +341,7 @@ void third_puzzle()
 
         cout << "\n\nEnding 28: Endless Bloodlust\n";
         print_line();
+        add_to_inventory();
         retry(&third_puzzle);
     }
     else
@@ -309,6 +349,7 @@ void third_puzzle()
         cout << "You open the door and try to use the object, but to no avail. And in that moment, you realize your horrible mistake as a wave of jaws, teeth, and long sharp legs comes barreling towards you.\n";
         cout << "\n\nEnding 27: Splattered\n";
         print_line();
+        add_to_inventory();
         retry(&third_puzzle);
     }
 }
@@ -323,6 +364,7 @@ void fourth_puzzle()
             "Surprised, you roll back over and stand upright. You realize that there are obstacles down this corridor, but for some reason you can't see them right now. You look to the artifacts you still have:\n";
     print_line();
     show_inventory();
+    print_line();
     cout << "What object would you like to use?\n";
     print_line();
     object = remove_from_inventory();
@@ -353,6 +395,7 @@ void fourth_puzzle()
         
         cout << "\n\nEnding 30: Diced\n";
         print_line();
+        add_to_inventory();
         retry(&fourth_puzzle);
     }
     else
@@ -362,6 +405,7 @@ void fourth_puzzle()
 
         cout << "\n\nEnding 29: Split\n";
         print_line();
+        add_to_inventory();
         retry(&fourth_puzzle);
     }
 }
@@ -376,6 +420,7 @@ void fifth_puzzle()
             "Seeing no other option, you stand where you are and search your person for the objects you still have.\n";
     print_line();
     show_inventory();
+    print_line();
     cout << "What object would you like to use?\n";
     print_line();
     object = remove_from_inventory();
@@ -405,6 +450,7 @@ void fifth_puzzle()
         
         cout << "\n\nEnding 31: Stimulating Environment\n";
         print_line();
+        add_to_inventory();
         retry(&fifth_puzzle);
     }
 
@@ -428,5 +474,8 @@ void sixth_puzzle()
             "were it not for its strange, misshapen head. The head of the thing had a saucer-like quality to it, with a large mouth splitting the head halfway along the circumference of the thing. It roars at you, spitting saliva as it did. Your anger boils as you change your\n"
             "form and charge at the thing. After a brief fight, you pull the thing's head off with your massive, mutated muscle and throw it far away from its body. Suddenly, you find yourself back in the white void with the orbs all around you again, the blood of the thing\n"
             "still on your hulking form. Quickly, you change back. You look around at the orbs again and notice that the one with the forest scene is now gone, and the faint outline of a door can just barely be made out at the other end of the void.\n"
-            "You look back to the orbs around you, picking the underwater scene, and enter into it.\n"
-            "";
+            "You look back to the orbs around you, picking the underwater scene, and enter into it.\n";
+
+    timer(10);
+    return;
+}

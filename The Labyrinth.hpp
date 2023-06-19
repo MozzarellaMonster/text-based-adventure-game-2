@@ -6,9 +6,13 @@
 
 using namespace std;
 
+extern int saved_index;
+extern string saved_object;
 extern string first_puzzle_death;
 
 extern string remove_from_inventory();
+extern void add_to_inventory();
+extern void timer();
 extern void the_labyrinth_text();
 extern void first_puzzle();
 extern void second_puzzle();
