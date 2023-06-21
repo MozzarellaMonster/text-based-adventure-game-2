@@ -34,9 +34,10 @@ int jungle_repeat = 0;
 // First room
 int set_riddle;
 bool first_room_explored = false;
-bool second_room_obelisk_complete = false;
 
 // Second room trials
+bool must_deposit = true;
+bool second_room_obelisk_complete = false;
 bool first_archway_read = false;
 bool second_archway_read = false;
 bool third_archway_read = false;

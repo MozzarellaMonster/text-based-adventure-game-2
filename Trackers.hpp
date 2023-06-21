@@ -17,8 +17,9 @@ extern string completed_world;
 extern int jungle_repeat;
 extern int set_riddle;
 extern bool first_room_explored;
-extern bool second_room_obelisk_complete;
 
+extern bool must_deposit;
+extern bool second_room_obelisk_complete;
 extern bool first_archway_read;
 extern bool second_archway_read;
 extern bool third_archway_read;
