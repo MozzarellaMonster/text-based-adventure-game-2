@@ -569,7 +569,11 @@ void temple_second_room_text()
 void temple_second_room()
 {
     char choice;
-    deposit();
+    if(must_deposit == true)
+    {
+        deposit();
+    }
+    must_deposit = true;
     print_line();
     cout << "What would you like to do?\n";
     if(first_archway_read)
@@ -706,6 +710,7 @@ void temple_second_room()
         case 'd':
             // The Fourth Archway - The Labyrinth - the final challenge, will not be unlocked until all the other worlds have been completed.
             print_line();
+            must_deposit = false;
             if(!fourth_archway_read)
             {
                 cout << "You approach the Fourth Archway. As you approach, the name of the Archway becomes clear: \"The Labyrinth\"\n"
