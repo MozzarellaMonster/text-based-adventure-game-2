@@ -2,12 +2,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
-#ifdef _WIN32
-#include <windows.h>
-#else
-#include <unistd.h>
-#endif
+#include <thread>
+#include <chrono>
 
 #include "Functions.hpp"
 #include "Items.hpp"
@@ -42,15 +38,6 @@ void reset()
     // Once all trackers are determined, use this function to reset them upon a retry.
 }
 
-void sleeptimer(int seconds)
-{
-    #ifdef _WIN32
-        Sleep(seconds * 1000);
-    #else
-        usleep(seconds * 1000000);
-    #endif
-}
-
 void retry()
 {
     char choice;
@@ -65,7 +52,7 @@ void retry()
     else if(choice == 'N' || choice == 'n')
     {
         cout << "\nThanks for playing \"The Temple\"!\n";
-        sleeptimer(3);
+        this_thread::sleep_for(chrono::seconds(3));
         return;
     }
     else

@@ -22,7 +22,6 @@ extern void determine_riddle();
 extern bool inv_contains(string object);
 extern void start();
 extern void show_inventory();
-extern void sleeptimer(int seconds);
 
 extern void first_choice();
 extern void temple_entrance();
