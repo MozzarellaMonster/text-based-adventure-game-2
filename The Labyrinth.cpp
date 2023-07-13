@@ -1,5 +1,7 @@
 // File containing functions for The Labyrinth passage
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include <string>
 #include <chrono>
 #include <thread>
@@ -31,16 +33,16 @@ void timer(int time)
         this_thread::sleep_for(chrono::seconds(1));
         time--;
     }
+    //print_line();
+    //cout << "\nGAME OVER!";
+    //retry(&underwater_scene);
 }
 
-// Need to fix to return object to inventory when player chooses to retry after death
-// Need to better show available objects that are NOT the Jeweled Dagger
 string remove_from_inventory()
 {
     int index;
     string object;
-    cout << "Use 1-" << inventory.size() << " for the object you wish to use.\n\n";
-    print_line();
+    cout << "Use 1-" << inventory.size() - 1 << " for the object you wish to use.\n";
     cin >> index;
     if(index < inventory.size() && index >= 1)
     {
@@ -52,8 +54,9 @@ string remove_from_inventory()
     }
     else
     {
-        cout << "Number out of range, please try again.\n\n";
+        cout << "Number out of range, please try again.";
         remove_from_inventory();
+        return ""; // Never actually executes
     }
 }
 
@@ -458,6 +461,7 @@ void fifth_puzzle()
 
 void sixth_puzzle()
 {
+    string text;
     // Final puzzle for The Black Heart: Fighting through a dimensional prison full of terrifying creatures in differing environments. 
     print_line();
     cout << "You walk for some time down the long corridor, longer than you had to for the other corridors. After some time, you come to a door resembling that to a large vault. It is then you notice a small slot in the door.\n"
@@ -475,7 +479,69 @@ void sixth_puzzle()
             "form and charge at the thing. After a brief fight, you pull the thing's head off with your massive, mutated muscle and throw it far away from its body. Suddenly, you find yourself back in the white void with the orbs all around you again, the blood of the thing\n"
             "still on your hulking form. Quickly, you change back. You look around at the orbs again and notice that the one with the forest scene is now gone, and the faint outline of a door can just barely be made out at the other end of the void.\n"
             "You look back to the orbs around you, picking the underwater scene, and enter into it.\n";
+    underwater_scene();
+}
 
-    timer(10);
-    return;
+void underwater_scene()
+{
+    bool correct_solution = false;
+    cout << "As you enter the orb, water rushes all around you and throws you off your guard. Utilizing the Black Heart, you change your form into an aquatic one, able to breathe underwater and move around effortlessly in the deep.\n"
+            "";
+
+
+    /*
+        Idea for final puzzle: Implement a timer and a separate function that will output a random character and ask the user for input, if the input matches, the character gets in a hit.
+        If the input does not match, the player suffers a hit. If the user gets in more hits than misses, the player successfully defeats the creature and proceeds to the next challenge.
+        If not, the player gets a 'game over'.
+    */
+    thread time(timer, 10);
+    time.detach();
+}
+
+void fight(string monster, int str_len, int difficulty)
+{
+    // str_len determines length of randomized string
+    // difficulty determines types of characters found in string
+    // monster is just the monster you fight
+    cout << "You start a fight with the " << monster << ".\n";
+    this_thread::sleep_for(chrono::seconds(10)); // Need to run in separate thread
+    string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    string randomString, attack;
+    int chars;
+    switch(difficulty)
+    {
+        case 1:
+            chars = 26;
+            break;
+        case 2:
+            chars = 52;
+            break;
+        case 3:
+            chars = 62;
+            break;
+    }
+    
+    for(int i = 0; i < str_len; ++i)
+    {
+        int randomIndex = rand() % chars;
+        randomString += characters[randomIndex];
+    }
+
+}
+
+void input()
+{
+    string sentence;
+    cout << "\n";
+    cin >> sentence;
+    cout << "You wrote: " << sentence;
+
+    if(sentence == "This is a sentence.")
+    {
+        cout << "You won!";
+    }
+    else
+    {
+        cout << "You lost!";
+    }
 }
