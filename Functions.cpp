@@ -164,6 +164,7 @@ void deposit()
 
 void determine_riddle()
 {
+    srand(time());
     set_riddle = 1 + (rand() % 3);
     switch(set_riddle)
     {
