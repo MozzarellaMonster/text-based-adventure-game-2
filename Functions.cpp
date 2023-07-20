@@ -699,7 +699,43 @@ void temple_second_room()
             // The Fourth Archway - The Labyrinth - the final challenge, will not be unlocked until all the other worlds have been completed.
             print_line();
             must_deposit = false;
-            if(!fourth_archway_read)
+
+            // Fix to include to possibility of the user obtaining all the keys before ever reading the archway.
+
+            if(!fourth_archway_read && second_room_obelisk_complete)
+            {
+                cout << "You approach the Fourth Archway. As you approach, the name of the Archway becomes clear: \"The Labyrinth\"\n"
+                        "The stone archway appears to be made of bricks, with several different intricate carvings of maze-like lines on them.\n"
+                        "You look up and read the message beneath the name of the archway:\n"
+                        "\n\tThe final obstacle, open only to those who've found all the keys.\n\n"
+                        "You feel the intricate carvings on the archway, the lines like ridges on the stone bricks.\n"
+                        "In your head you hear:\n"
+                        "\n\t\"You have found all the keys, and the Gate has now been opened.\"\n\n"
+                        "Right before your very eyes, you see an opaque liquid shimmer manifest as it covers the wall of stone between the arches.\n";
+                
+                char answer;
+                cout << "\nDo you want to enter the archway? Y/N: ";
+                cin >> answer;
+                cout << "\n";
+                if(answer == 'Y' || answer == 'y')
+                {
+                    cout << "You have traveled the six paths and have collected the keys from each one.\n"
+                            "With the stone guarding the entrance gone, you can now enter The Labyrinth.\n"
+                            "You take a step forward and enter the archway.\n";
+                    the_labyrinth_text();
+                }
+                else if(answer == 'N' || answer == 'n')
+                {
+                    cout << "\nYou decide not to go in and return to the center of the room.\n";
+                    temple_second_room();
+                }
+                else
+                {
+                    try_again();
+                    temple_second_room();
+                }
+            }
+            else if(!fourth_archway_read)
             {
                 cout << "You approach the Fourth Archway. As you approach, the name of the Archway becomes clear: \"The Labyrinth\"\n"
                         "The stone archway appears to be made of bricks, with several different intricate carvings of maze-like lines on them.\n"
