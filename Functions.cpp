@@ -38,7 +38,7 @@ void reset()
     // Once all trackers are determined, use this function to reset them upon a retry.
 }
 
-void retry()
+int retry()
 {
     char choice;
     cout << "\nWould you like to play again? Y/N: ";
@@ -53,7 +53,7 @@ void retry()
     {
         cout << "\nThanks for playing \"The Temple\"!\n";
         this_thread::sleep_for(chrono::seconds(3));
-        return;
+        return 0;
     }
     else
     {
@@ -714,9 +714,11 @@ void temple_second_room()
                         "Right before your very eyes, you see an opaque liquid shimmer manifest as it covers the wall of stone between the arches.\n";
                 
                 char answer;
+                print_line();
                 cout << "\nDo you want to enter the archway? Y/N: ";
                 cin >> answer;
                 cout << "\n";
+                print_line();
                 if(answer == 'Y' || answer == 'y')
                 {
                     cout << "You have traveled the six paths and have collected the keys from each one.\n"

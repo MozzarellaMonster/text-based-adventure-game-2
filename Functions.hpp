@@ -14,7 +14,7 @@ extern vector<string> obslots;
 extern void print_line();
 extern void try_again();
 extern void reset();
-extern void retry();
+extern int retry();
 extern void retry(void (*func)());
 extern void archway(string message, string name, bool *archway_read, void (*func)());
 extern void deposit();
