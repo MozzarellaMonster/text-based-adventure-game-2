@@ -42,22 +42,34 @@ string remove_from_inventory()
 {
     int index;
     string object;
+    print_line();
+    show_inventory();
+    print_line();
     cout << "Use 1-" << inventory.size() - 1 << " for the object you wish to use.\n";
     cin >> index;
-    if(index < inventory.size() && index >= 1)
+    index = int(index);
+    if(!cin.fail())
     {
-        object = inventory.at(index);
-        saved_object = object;
-        saved_index = index;
-        inventory.erase(inventory.begin()+index);
-        return object;
+        if(index >= 1 && index < inventory.size())
+        {
+            object = inventory.at(index);
+            saved_object = object;
+            saved_index = index;
+            inventory.erase(inventory.begin()+index);
+            return object;
+        }
+        else
+        {
+            cout << "Number out of range, please try again.\n";
+        }
     }
     else
     {
-        cout << "Number out of range, please try again.";
-        remove_from_inventory();
-        return ""; // Never actually executes
+        cout << "Input not a number, please try again.\n";
+        //return ""; // Never actually executes
     }
+    cin.clear();
+    remove_from_inventory(); // Infinitely recurses, need to fix.
 }
 
 void add_to_inventory()
@@ -145,9 +157,6 @@ void door_object(char option)
     print_line();
     cout << "The hole in the center of the door has enough room for one of the objects in your inventory.\n";
     cout << "What object do you want to put in?\n";
-    print_line();
-    show_inventory();
-    print_line();
     object = remove_from_inventory();
     cout << "You place " << object << " into the hole in the door\n";
     print_line();
@@ -249,12 +258,9 @@ void second_puzzle()
             "Try as you might, you cannot get a hold of any possible pattern to them, only noticing that they appear within jumping distance of each other,\n"
             "but the timing of the appearances is so precise to the point that they would only appear when you had already jumped. You watch for a bit longer and can confirm that you would have to already\n"
             "be in the air when another platform appears. With this in mind, you look over the items you have.\n";
-    print_line();
-    show_inventory();
-    print_line();
     cout << "What object would you like to use?\n";
-    print_line();
     object = remove_from_inventory();
+    print_line();
     cout << "You select " << object << " from your inventory and use it.\n";
     print_line();
     
@@ -307,12 +313,9 @@ void third_puzzle()
             "showing the interior of the chamber from a different angle that shows the surface of the raised platform. On the top of the raised platform, you see a glowing raised tile.\n"
             "As a few of the creatures walk over the tile, you see it ever-so-slightly give, before popping back up when all of them leave. You look around you and spy a button on the left side of the chamber door,\n"
             "inferring its purpose to be to open the door. You look back to the swarming mass of insectoids inside before looking through your options.\n";
-    print_line();
-    show_inventory();
-    print_line();
     cout << "What object would you like to use?\n";
-    print_line();
     object = remove_from_inventory();
+    print_line();
     cout << "You select " << object << " from your inventory and use it.\n";
 
     if(object == the_whistling_gorge_key)
@@ -365,12 +368,9 @@ void fourth_puzzle()
             "After a moment's hesitation, you start to take a step into the corridor before hearing a roar behind you. Quickly, you turn around to see that one of the centipede creatures has followed you.\n"
             "You freeze in place as it charges towards you, but you deftly roll to the side right before it collides with you. Instantly, the giant bug is cut into small chunks, they scatter about from the speed of the charge.\n"
             "Surprised, you roll back over and stand upright. You realize that there are obstacles down this corridor, but for some reason you can't see them right now. You look to the artifacts you still have:\n";
-    print_line();
-    show_inventory();
-    print_line();
     cout << "What object would you like to use?\n";
-    print_line();
     object = remove_from_inventory();
+    print_line();
     cout << "You remove " << object << " from your inventory and use it.\n";
 
     if(object == the_oasis_key)
@@ -421,12 +421,9 @@ void fifth_puzzle()
             "in a strange dark chamber. There are no lights to be seen anywhere, you can't even make out your hands in front of your face. Suddenly, the door shuts behind you and you hear machinery power up,\n"
             "what sounds like giant ancient gears start to turn, metal scrapes against metal, and there is a definite whoosh in front of you at regular intervals since you can feel the change in the air.\n"
             "Seeing no other option, you stand where you are and search your person for the objects you still have.\n";
-    print_line();
-    show_inventory();
-    print_line();
     cout << "What object would you like to use?\n";
-    print_line();
     object = remove_from_inventory();
+    print_line();
     cout << "You remove " << object << " from your inventory and use it.\n";
 
     if(object == the_glowing_cave_key)
