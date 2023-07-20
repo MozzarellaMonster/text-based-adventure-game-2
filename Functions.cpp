@@ -38,7 +38,7 @@ void reset()
     // Once all trackers are determined, use this function to reset them upon a retry.
 }
 
-int retry()
+void retry()
 {
     char choice;
     cout << "\nWould you like to play again? Y/N: ";
@@ -53,7 +53,7 @@ int retry()
     {
         cout << "\nThanks for playing \"The Temple\"!\n";
         this_thread::sleep_for(chrono::seconds(3));
-        return 0;
+        exit(0);
     }
     else
     {
