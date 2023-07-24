@@ -5,6 +5,7 @@
 #include <string>
 #include <chrono>
 #include <thread>
+#include <conio.h>
 #include "Functions.hpp"
 #include "Journal Entries.hpp"
 #include "Trackers.hpp"
@@ -13,15 +14,34 @@
 
 using namespace std;
 
-void door_object(char option);
+void door_object(char option, string puzzle);
 
 int saved_index = 0;
 string saved_object = "";
+string object;
 
 string first_puzzle_death = "The door remains closed. Surprised, you reach for the object but the floor suddenly opens up beneath you.\n"
                             "You fall into the dark abyss, but never stop falling. Down and down, impossibly deep.\n"
                             "You fall for what feels like forever. Until you suddenly meet the end.\n"
                             "\n\nEnding 22: Splat\n";
+
+string door_1_riddle =        "\tLustrous and gleaming, fit for royalty\n"
+                              "\tCarved into the face of Death, I grin for eternity\n"
+                              "\tMy scarlet smile never wanes, yet amusement is not to blame\n"
+                              "\tI stand for greatness, but possess no dexterity\n"
+                              "\tI am the physical construction of a name\n";
+
+string door_2_riddle =       "\tDealt with the swift hand of fate,\n"
+                              "\tEminence slapped across the face,\n"
+                              "\tAn object of prescience and relay,\n"
+                              "\tThe path warned of bearing respect,\n"
+                              "\tHave you, the object?\n";
+
+string door_3_riddle =      "\tDwelling in darkness, a strange apparition,\n"
+                              "\tEmitting a soft glow, resembling commotion,\n"
+                              "\tAn object of unknown origin, granting extra locomotion,\n"
+                              "\tThough, only applicable in the lack of light,\n"
+                              "\tHave you, this petrified might?\n";
 
 void timer(int time)
 {
@@ -38,38 +58,34 @@ void timer(int time)
     //retry(&underwater_scene);
 }
 
-string remove_from_inventory()
+void remove_from_inventory(string puzzle, bool recursing=false)
 {
     int index;
-    string object;
+
     print_line();
+    if(recursing)
+    {
+        cout << "The puzzle is:\n\n";
+        cout << puzzle << "\n\n";
+    }
     show_inventory();
     print_line();
+
     cout << "Use 1-" << inventory.size() - 1 << " for the object you wish to use.\n";
-    cin >> index;
-    index = int(index);
-    if(!cin.fail())
+    index = int(getch()) - '0'; // Accept user input as single character.
+
+    if(index < 1 || index > inventory.size() - 1)
     {
-        if(index >= 1 && index < inventory.size())
-        {
-            object = inventory.at(index);
-            saved_object = object;
-            saved_index = index;
-            inventory.erase(inventory.begin()+index);
-            return object;
-        }
-        else
-        {
-            cout << "Number out of range, please try again.\n";
-        }
+        cout << "\nInput not a number or out of range, please try again.\n";
+        remove_from_inventory(puzzle, true);
     }
     else
     {
-        cout << "Input not a number, please try again.\n";
-        //return ""; // Never actually executes
+        object = inventory.at(index);
+        saved_object = object;
+        saved_index = index;
+        inventory.erase(inventory.begin()+index);
     }
-    cin.clear();
-    remove_from_inventory(); // Infinitely recurses, need to fix.
 }
 
 void add_to_inventory()
@@ -116,33 +132,21 @@ void first_puzzle()
     switch(choice)
     {
         case 'a':
-            cout << "You approach the left door and read the riddle:\n"
-                    "\tLustrous and gleaming, fit for royalty\n"
-                    "\tCarved into the face of Death, I grin for eternity\n"
-                    "\tMy scarlet smile never wanes, yet amusement is not to blame\n"
-                    "\tI stand for greatness, but possess no dexterity\n"
-                    "\tI am the physical construction of a name\n";
-            door_object(choice);
+            cout << "You approach the left door and read the riddle:\n\n";
+            cout << door_1_riddle;
+            door_object(choice, door_1_riddle);
             break;
         
         case 'b':
-            cout << "You approach the center door and read the riddle:\n"
-                    "\tDealt with the swift hand of fate,\n"
-                    "\tEminence slapped across the face,\n"
-                    "\tAn object of prescience and relay,\n"
-                    "\tThe path warned of bearing respect,\n"
-                    "\tHave you, the object?\n";
-            door_object(choice);
+            cout << "You approach the left door and read the riddle:\n\n";
+            cout << door_2_riddle;
+            door_object(choice, door_2_riddle);
             break;
         
         case 'c':
-            cout << "You approach the right door and read the riddle:\n"
-                    "\tDwelling in darkness, a strange apparition,\n"
-                    "\tEmitting a soft glow, resembling commotion,\n"
-                    "\tAn object of unknown origin, granting extra locomotion,\n"
-                    "\tThough, only applicable in the lack of light,\n"
-                    "\tHave you, this petrified might?\n";
-            door_object(choice);
+            cout << "You approach the left door and read the riddle:\n\n";
+            cout << door_3_riddle;
+            door_object(choice, door_3_riddle);
             break;
         
         default:
@@ -151,13 +155,12 @@ void first_puzzle()
     }
 }
 
-void door_object(char option)
+void door_object(char option, string puzzle)
 {
-    string object;
     print_line();
     cout << "The hole in the center of the door has enough room for one of the objects in your inventory.\n";
     cout << "What object do you want to put in?\n";
-    object = remove_from_inventory();
+    remove_from_inventory(puzzle);
     cout << "You place " << object << " into the hole in the door\n";
     print_line();
     switch(option)
@@ -249,7 +252,6 @@ void door_object(char option)
 
 void second_puzzle()
 {
-    string object;
     print_line();
     cout << "After walking for several minutes, you now find yourself in another peculiar location. Before you lays a corridor with a sudden drop off ahead, descending into pitch black darkness.\n"
             "Inching closer, you look over the edge and suddenly the whirring of machinery starts as platforms materialize out of thin air before disappearing a second later.\n"
@@ -259,7 +261,7 @@ void second_puzzle()
             "but the timing of the appearances is so precise to the point that they would only appear when you had already jumped. You watch for a bit longer and can confirm that you would have to already\n"
             "be in the air when another platform appears. With this in mind, you look over the items you have.\n";
     cout << "What object would you like to use?\n";
-    object = remove_from_inventory();
+    remove_from_inventory("A large gap that can only be crossed with manifesting platforms that require precise timing, practically needing some form of precognition.\n");
     print_line();
     cout << "You select " << object << " from your inventory and use it.\n";
     print_line();
@@ -302,7 +304,6 @@ void second_puzzle()
 
 void third_puzzle()
 {
-    string object;
     print_line();
     cout << "After a brief period of time you come across a closed door. However, this door is different from the ones you've seen thus far. It resembles more of a blast door\n"
             "with thick windows than the usual stone doors with slots in them. Next to the door is a small screen. Ignoring the screen for now, you peer through the windows of the blast door.\n"
@@ -314,7 +315,7 @@ void third_puzzle()
             "As a few of the creatures walk over the tile, you see it ever-so-slightly give, before popping back up when all of them leave. You look around you and spy a button on the left side of the chamber door,\n"
             "inferring its purpose to be to open the door. You look back to the swarming mass of insectoids inside before looking through your options.\n";
     cout << "What object would you like to use?\n";
-    object = remove_from_inventory();
+    remove_from_inventory("A room full of dangerous insectoid monsters that you'll need to pass through safely. A pressure plate is hidden on a raised platform in a corner of the room.\n");
     print_line();
     cout << "You select " << object << " from your inventory and use it.\n";
 
@@ -362,14 +363,13 @@ void third_puzzle()
 
 void fourth_puzzle()
 {
-    string object;
     print_line();
     cout << "After a short period of time you come across another unique chamber: a long, brightly lit corridor with a slotted door at the other end. The corridor is suspiciously clear of any obstacles.\n"
             "After a moment's hesitation, you start to take a step into the corridor before hearing a roar behind you. Quickly, you turn around to see that one of the centipede creatures has followed you.\n"
             "You freeze in place as it charges towards you, but you deftly roll to the side right before it collides with you. Instantly, the giant bug is cut into small chunks, they scatter about from the speed of the charge.\n"
             "Surprised, you roll back over and stand upright. You realize that there are obstacles down this corridor, but for some reason you can't see them right now. You look to the artifacts you still have:\n";
     cout << "What object would you like to use?\n";
-    object = remove_from_inventory();
+    remove_from_inventory("A brightly-lit hallway with some form of invisible laser grid. A door awaits you at the other end.\n");
     print_line();
     cout << "You remove " << object << " from your inventory and use it.\n";
 
@@ -415,14 +415,13 @@ void fourth_puzzle()
 
 void fifth_puzzle()
 {
-    string object;
     print_line();
     cout << "You proceed down a long, winding corridor until you reach another door. This time, the door slides open without any input from you. You hesitantly proceed further in and find yourself\n"
             "in a strange dark chamber. There are no lights to be seen anywhere, you can't even make out your hands in front of your face. Suddenly, the door shuts behind you and you hear machinery power up,\n"
             "what sounds like giant ancient gears start to turn, metal scrapes against metal, and there is a definite whoosh in front of you at regular intervals since you can feel the change in the air.\n"
             "Seeing no other option, you stand where you are and search your person for the objects you still have.\n";
     cout << "What object would you like to use?\n";
-    object = remove_from_inventory();
+    remove_from_inventory("A dark chamber with the sound of machinery in front of you.\n");
     print_line();
     cout << "You remove " << object << " from your inventory and use it.\n";
 
