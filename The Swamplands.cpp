@@ -1,6 +1,7 @@
 // File containing functions for The Swamplands passage
 #include <iostream>
 #include <string>
+#include <conio.h>
 #include "The Swamplands.hpp"
 #include "Functions.hpp"
 #include "Journal Entries.hpp"
@@ -38,15 +39,15 @@ void the_swamplands_text()
 
 void the_swamplands()
 {
-    char choice;
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Explore the tall grasslands\n";
     cout << "B. Explore the deep swamp with tall trees\n";
     cout << "C. Explore the clusters of tiny islands\n";
     print_line();
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
+    cout << choice << "\n";
 
     print_line();
     switch (choice)
@@ -105,13 +106,12 @@ void the_swamplands()
 
 void grasslands()
 {
-    char choice;
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Follow the footprints\n";
     cout << "B. Go in a separate direction\n";
     print_line();
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
 
     print_line();
@@ -170,13 +170,12 @@ void grasslands()
 
 void tall_trees()
 {
-    char choice;
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Go into the darker part of the swamp\n";
     cout << "B. Go further into the swamp\n";
     print_line();
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
 
     print_line();
@@ -249,14 +248,13 @@ void tall_trees()
 
 void islands()
 {
-    char choice;
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Explore the large island with several large boulders\n";
     cout << "B. Explore the abandoned village\n";
     cout << "C. Turn around and head back to the dock\n";
     print_line();
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
 
     print_line();
@@ -324,13 +322,12 @@ void islands()
 }
 void rock_island()
 {
-    char choice;
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Reach between the rocks\n";
     cout << "B. Return to the boat\n";
     print_line();
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
 
     print_line();
@@ -383,7 +380,6 @@ void the_hunt()
             "Alternatively, you could just wait for the creature to arrive and fend it off with only the dagger. Whatever choice you make right now will be your final decision before the final confrontation,\n"
             "so you better make a good decision and make it fast.\n\n";
 
-    char choice;
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Pick up the rocks\n";
@@ -391,7 +387,7 @@ void the_hunt()
     cout << "C. Sharpen the paddle into a spear\n";
     cout << "D. Make do with the dagger\n";
     print_line();
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
 
     print_line();

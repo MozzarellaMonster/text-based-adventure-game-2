@@ -1,6 +1,7 @@
 // File containing functions for The Heart of the Colony passage
 #include <iostream>
 #include <string>
+#include <conio.h>
 #include "Heart_of_the_Colony.hpp"
 #include "Functions.hpp"
 #include "Items.hpp"
@@ -35,14 +36,13 @@ void the_heart_of_the_colony_text()
 
 void the_heart_of_the_colony()
 {
-    char choice;
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Run away from the sound\n";
     cout << "B. Wait\n";
     cout << "C. Look around some more\n";
     print_line();
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
 
     print_line();
@@ -152,7 +152,6 @@ void hotc_explore_nest_text()
 
 void hotc_explore_nest()
 {
-    char choice;
     print_line();
     cout << "What would you like to do?\n";
     if(hotc_explored_left_tunnel)
@@ -181,7 +180,7 @@ void hotc_explore_nest()
     }
     cout << "D. Explore the Queen's Chambers\n";
     print_line();
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
 
     print_line();
@@ -363,14 +362,13 @@ void hotc_archives()
 {
     print_line();
     cout << "\"If you have any questions, feel free to ask me,\" the Librarian says in your mind.\n";
-    char choice;
     cout << "What would you like to do?\n";
     cout << "A. Ask about the book on the pedestal\n";
     cout << "B. Ask about the history of the colony\n";
     cout << "C. Ask about the Queen's orb\n";
     cout << "D. Leave the archives\n";
     print_line();
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
 
     print_line();
@@ -477,14 +475,13 @@ void hotc_archives()
 
 void hotc_tunnel_options()
 {
-    char choice;
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Run away\n";
     cout << "B. Surrender\n";
     cout << "C. Fight\n";
     print_line();
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
 
     print_line();

@@ -1,6 +1,7 @@
 // File containing functions for The Whistling Gorge passage
 #include <iostream>
 #include <string>
+#include <conio.h>
 #include "The Whistling Gorge.hpp"
 #include "Functions.hpp"
 #include "Journal Entries.hpp"
@@ -24,7 +25,7 @@ void the_whistling_gorge_text()
             "You look back to see a large similarly carved Gate set into the rock face behind you.\n"
             "However, this one is clearly inactive as nothing but black stone greets you between either pillar of the Gate.\n"
             "You turn back around and see what looks like a small forest a few hundred meters away from you.\n"
-            "With no other option in the dead end of the canyon you find yourself in, you walk forward.\n"
+            "With no other choice in the dead end of the canyon you find yourself in, you walk forward.\n"
             "As you approach the forest, you soon realize that seemingly every tree within it is dead.\n"
             "Their gnarled, twisted branches reach toward the calm blue sky like withering fingers from a grave.\n"
             "Wandering through the thicket, you notice several trees have lines of holes scattered along the length of their trunks.\n"
@@ -36,14 +37,13 @@ void the_whistling_gorge_text()
             "You stand back up, shaking the dust free from your hands. The breeze is noticeably gone, and the somber whistle nowhere to be heard.\n"
             "You don't know why you were digging, but you're sure it wasn't for a good reason, as a creeping dread crawls slowly up your spine.\n"
             "Something tells you it would be in your best interest to not hear the whistling woods again.\n"
-            "Walking forward, you soon come upon a split in the path. There are two options: the path on the left goes up a hill,\n"
+            "Walking forward, you soon come upon a split in the path. There are two choices: the path on the left goes up a hill,\n"
             "the path on the right goes further into the forest.\n";
     the_whistling_gorge();
 }
 
 void the_whistling_gorge()
 {
-    char choice;
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Take the path on the left\n";
@@ -51,8 +51,9 @@ void the_whistling_gorge()
     cout << "C. Look around where you are\n";
     cout << "D. Go back\n";
     print_line();
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
+    cout << choice << "\n";
 
     print_line();
     switch(choice)
@@ -122,13 +123,12 @@ void the_whistling_gorge()
 
 void fruit_options()
 {
-    char option;
     print_line();
     cout << "Eat the fruit? Y/N: ";
-    cin >> option;
-    cout << "\n";
+    char choice = getch();
+    cout << choice << "\n";
 
-    if(option == 'Y' || option == 'y')
+    if(tolower(choice) == 'y')
     {
         cout << "Despite your better judgement, you reach up, pluck some berries off a low-hanging branch, and pop them into your mouth.\n"
                 "Immediately, your mouth foams up as the berries hit your saliva. You choke and fall to your knees,\n"
@@ -144,7 +144,7 @@ void fruit_options()
         print_line();
         retry(&the_whistling_gorge);
     }
-    else if(option == 'N' || option == 'n')
+    else if(tolower(choice) == 'n')
     {
         cout << "Wisely, you decide not to take the fruit and turn around, heading back into the grove.\n";
         denied_fruit = true;
@@ -159,14 +159,13 @@ void fruit_options()
 
 void branch_options()
 {
-    char option;
     print_line();
     cout << "Take the branch? Y/N: ";
-    cin >> option;
-    cout << "\n";
+    char choice = getch();
+    cout << choice << "\n";
 
     print_line();
-    if(option == 'Y' || option == 'y')
+    if(tolower(choice) == 'y')
     {
         cout << "You slowly approach the tree and reach towards the branch in the trunk, expecting something horrible to happen to you before you can actually grab it.\n"
                 "But nothing does, and you retrieve it successfully. Holding the twisted branch closer,\n"
@@ -178,7 +177,7 @@ void branch_options()
         twg_completed = true;
         temple_second_room();
     }
-    else if(option == 'N' || option == 'n')
+    else if(tolower(choice) == 'n')
     {
             cout << "You decide not to take the branch and instead head around the tree and travel further into the forest.\n"
                     "Several minutes pass until you realize you're hopelessly lost.\n"

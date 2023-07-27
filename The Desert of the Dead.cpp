@@ -1,6 +1,7 @@
 // File containing functions for The Desert of the Dead passage
 #include <iostream>
 #include <string>
+#include <conio.h>
 #include "The Desert of the Dead.hpp"
 #include "Functions.hpp"
 #include "Journal Entries.hpp"
@@ -32,7 +33,6 @@ void the_desert_of_the_dead_text()
 
 void the_desert_of_the_dead()
 {
-    char choice;
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Look around the room\n";
@@ -47,7 +47,7 @@ void the_desert_of_the_dead()
     }
 
     print_line();
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
     
     print_line();

@@ -1,6 +1,7 @@
 // File containing functions for The Glowing Cave passage
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
+#include <conio.h>
 #include "The_Glowing_Cave.hpp"
 #include "Journal Entries.hpp"
 #include "Functions.hpp"
@@ -60,14 +61,13 @@ void the_glowing_cave()
         temple_second_room();
     }
 
-    char choice;
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Explore the left tunnel\n";
     cout << "B. Explore the right tunnel\n";
     cout << "C. Explore the well-tread path\n";
     print_line();
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
 
     print_line();
@@ -166,14 +166,13 @@ void gc_left_tunnel_text()
 
 void gc_left_tunnel(){
     gc_explored_left_tunnel = true;
-    char choice;
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Cross the bridge\n";
     cout << "B. Try to get the attention of the \"figures\"\n";
     cout << "C. Go back through the tunnel\n";
     print_line();
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
 
     print_line();
@@ -297,7 +296,6 @@ void gc_pathway_text()
 void gc_pathway()
 {
     gc_explored_path = true;
-    char choice;
     print_line();
     cout << "Standing in the center of the small clearing in the middle of the fungi forest, you look around.\n";
     cout << "What would you like to do?\n";
@@ -307,7 +305,7 @@ void gc_pathway()
     cout << "D. Return to the cave\n";
     print_line();
     
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
     
     print_line();

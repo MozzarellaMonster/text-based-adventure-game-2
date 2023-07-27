@@ -4,6 +4,7 @@
 #include <vector>
 #include <thread>
 #include <chrono>
+#include <conio.h>
 
 #include "Functions.hpp"
 #include "Items.hpp"
@@ -40,16 +41,16 @@ void reset()
 
 void retry()
 {
-    char choice;
     cout << "\nWould you like to play again? Y/N: ";
-    cin >> choice;
-    if(choice == 'Y' || choice == 'y')
+    char choice = getch();
+    cout << choice << "\n";
+    if(tolower(choice) == 'y')
     {
         cout << "\n\nRESTARTING...\n\n";
         //reset();
         start();
     }
-    else if(choice == 'N' || choice == 'n')
+    else if(tolower(choice) == 'n')
     {
         cout << "\nThanks for playing \"The Temple\"!\n";
         this_thread::sleep_for(chrono::seconds(3));
@@ -64,14 +65,14 @@ void retry()
 
 void retry(void (*func)())
 {
-    char choice;
     cout << "\nRetry from the last area? Y/N: ";
-    cin >> choice;
-    if(choice == 'Y' || choice == 'y')
+    char choice = getch();
+    cout << choice << "\n";
+    if(tolower(choice) == 'y')
     {
         func();
     }
-    else if(choice == 'N' || choice == 'n')
+    else if(tolower(choice) == 'n')
     {
         retry();
     }
@@ -84,41 +85,39 @@ void retry(void (*func)())
 
 void archway(string message, string name, bool *archway_read, void (*func)())
 {
-    char answer;
+    if(!(*archway_read))
+    {
+        print_line();
+        cout << message;
+        if(!saw_archway){
+            cout << shimmer;
+        }
+        *archway_read = true;
+        saw_archway = true;
+    }
+    else{
+        print_line();
+        cout << "\nYou approach " << name << "\n";
+    }
 
-        if(!(*archway_read))
-        {
-            print_line();
-            cout << message;
-            if(!saw_archway){
-                cout << shimmer;
-            }
-            *archway_read = true;
-            saw_archway = true;
-        }
-        else{
-            print_line();
-            cout << "\nYou approach " << name << "\n";
-        }
-
-        cout << "\nDo you want to enter the archway? Y/N: ";
-        cin >> answer;
-        cout << "\n";
-        if(answer == 'Y' || answer == 'y')
-        {
-            cout << "\nYou take a step forward and enter " << name << "\n";
-            func();
-        }
-        else if(answer == 'N' || answer == 'n')
-        {
-            cout << "\nYou decide not to go in and return to the center of the room.\n";
-            temple_second_room();
-        }
-        else
-        {
-            try_again();
-            temple_second_room();
-        }
+    cout << "\nDo you want to enter the archway? Y/N: ";
+    char answer = getch();
+    cout << answer << "\n";
+    if(tolower(answer) == 'y')
+    {
+        cout << "\nYou take a step forward and enter " << name << "\n";
+        func();
+    }
+    else if(tolower(answer) == 'n')
+    {
+        cout << "\nYou decide not to go in and return to the center of the room.\n";
+        temple_second_room();
+    }
+    else
+    {
+        try_again();
+        temple_second_room();
+    }
 }
 
 void deposit()
@@ -240,13 +239,12 @@ void start()
 
 void first_choice()
 {
-    char choice;
     print_line();
     cout << "Do you wish to take the dagger? Y/N: ";
-    cin >> choice;
-    cout << "\n";
+    char choice = getch();
+    cout << choice << "\n";
 
-    if(choice == 'Y' || choice == 'y')
+    if(tolower(choice) == 'y')
     {
         print_line();
         cout << "You take the dagger out of the recess.\n"
@@ -265,7 +263,7 @@ void first_choice()
         inventory.push_back(dagger);
         temple_entrance();
     }
-    else if(choice == 'N' || choice == 'n')
+    else if(tolower(choice) == 'n')
     {
         print_line();
         if(jungle_repeat > 2)
@@ -310,7 +308,6 @@ void first_choice()
 
 void temple_entrance()
 {
-    char choice;
     print_line();
     cout << "After making your choice, you turn back to the now-open temple entrance.\n"
             "Something catches your eye however, and you turn to look at the pedestal holding the bowl of fire.\n"
@@ -318,16 +315,16 @@ void temple_entrance()
             "The engraved text reads:\n\n\tAn offering needed to gain insight and entrance.\n\n";
     print_line();
     cout << "Will you go into the temple? Y/N: ";
-    cin >> choice;
-    cout << "\n";
+    char choice = getch();
+    cout << choice << "\n";
 
-    if(choice == 'Y' || choice == 'y')
+    if(tolower(choice) == 'y')
     {
         print_line();
         cout << "You head deeper into the temple.\n\n";
         temple_first_room_text();
     }
-    else if(choice == 'N' || choice == 'n')
+    else if(tolower(choice) == 'n')
     {
         cout << "You decide against going into the temple, instead opting to explore your location more.\n\n"
                 "You look around more and come across a rucksack half-buried in the dense foliage.\n"
@@ -366,20 +363,20 @@ void temple_first_room_text()
 
 void temple_first_room()
 {
-    char choice;
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. I'll try to solve the riddle now\n";
     cout << "B. I want to look around the room more\n";
     cout << "C. Look at the entrance\n";
     print_line();
-    cin >> choice;
+    char choice = getch();
+    cout << choice << "\n";
     choice = tolower(choice);
 
     switch(choice)
     {
         case 'a':
-            char second_choice;
+        {
             print_line();
             cout << "You decide you want to try and solve the riddle now.\n";
             cout << "The riddle is:\n\n";
@@ -390,7 +387,8 @@ void temple_first_room()
             cout << "C. Fire\n\n";
             print_line();
         
-            cin >> second_choice;
+            char second_choice = getch();
+            cout << second_choice << "\n";
             second_choice = tolower(second_choice);
 
             switch(second_choice)
@@ -499,6 +497,7 @@ void temple_first_room()
                     temple_first_room();
             }
             break;
+        }
             
         case 'b':
             print_line();
@@ -556,7 +555,6 @@ void temple_second_room_text()
 
 void temple_second_room()
 {
-    char choice;
     if(must_deposit == true)
     {
         deposit();
@@ -622,7 +620,8 @@ void temple_second_room()
     }
     
     print_line();
-    cin >> choice;
+    char choice = getch();
+    cout << choice << "\n";
     choice = tolower(choice);
     string message;
     switch(choice)

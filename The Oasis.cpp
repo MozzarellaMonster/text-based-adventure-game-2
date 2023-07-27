@@ -1,6 +1,7 @@
 // File containing functions for The Oasis passage
 #include <iostream>
 #include <string>
+#include <conio.h>
 #include "The Oasis.hpp"
 #include "Functions.hpp"
 #include "Journal Entries.hpp"
@@ -27,14 +28,13 @@ void the_oasis_text()
 
 void the_oasis()
 {
-    char choice;
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Explore the left path\n";
     cout << "B. Explore the middle path\n";
     cout << "C. Explore the right path\n";
     print_line();
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
 
     print_line();
@@ -102,13 +102,12 @@ void the_oasis()
 
 void small_clearing()
 {
-    char choice;
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Proceed into the clearing\n";
     cout << "B. Go back through the tunnel\n";
     print_line();
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
 
     print_line();
@@ -159,7 +158,6 @@ void small_clearing()
 
 void pond_options()
 {
-    char choice;
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Investigate the pile of rocks\n";
@@ -174,7 +172,7 @@ void pond_options()
         cout << "C. Go back\n";
     }
     print_line();
-    cin >> choice;
+    char choice = getch();
     choice = tolower(choice);
 
     print_line();
