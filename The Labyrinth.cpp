@@ -515,6 +515,8 @@ void fight(string monster, int str_len, int difficulty)
         case 3:
             chars = 62;
             break;
+        default:
+            chars = 26;
     }
     
     for(int i = 0; i < str_len; ++i)
