@@ -16,9 +16,12 @@ using namespace std;
 
 void door_object(char option, string puzzle);
 
+bool timer_done = false;
 int saved_index = 0;
+
 string saved_object = "";
 string object;
+string time_remaining;
 
 string first_puzzle_death = "The door remains closed. Surprised, you reach for the object but the floor suddenly opens up beneath you.\n"
                             "You fall into the dark abyss, but never stop falling. Down and down, impossibly deep.\n"
@@ -47,15 +50,65 @@ void timer(int time)
 {
     while(time > 0)
     {
-        cout << "\r";
-        cout << "Countdown " << time << " seconds.";
-        cout.flush();
         this_thread::sleep_for(chrono::seconds(1));
+        time_remaining = to_string(time) + " seconds remaining.\n";
         time--;
     }
-    //print_line();
-    //cout << "\nGAME OVER!";
-    //retry(&underwater_scene);
+    timer_done = true;
+}
+
+int fight(string monster, int str_len, int difficulty)
+{
+    // Function made for the final puzzle of the game
+    // str_len determines length of randomized string
+    // difficulty determines types of characters found in string
+    // monster is just the monster you fight
+    cout << "You start a fight with the " << monster << ".\n";
+    string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    string input;
+    int chars, points = 0;
+
+    switch(difficulty)
+    {
+        case 1:
+            chars = 26;
+            break;
+        case 2:
+            chars = 52;
+            break;
+        case 3:
+            chars = 62;
+            break;
+        default:
+            chars = 52;
+    }
+    
+    while(timer_done == false)
+    {
+        string randomString = "";
+        for(int i = 0; i < str_len; ++i)
+        {
+            randomString += characters[rand() % chars];
+        }
+
+        cout << "Match the sentence to score a hit on the " << monster << "!\n";
+        cout << "Sentence: " << randomString << "\n\n";
+
+        cin >> input;
+
+        if(input == randomString)
+        {
+            points++;
+            cout << "\nCorrect! You scored a hit!\n";
+        }
+        else
+        {
+            points--;
+            cout << "\nIncorrect! You suffer a hit from the " << monster << "!\n";
+        }
+        cout << time_remaining;
+    }
+    return points;
 }
 
 void remove_from_inventory(string puzzle, bool recursing=false)
@@ -484,62 +537,28 @@ void underwater_scene()
     cout << "As you enter the orb, water rushes all around you and throws you off your guard. Utilizing the Black Heart, you change your form into an aquatic one, able to breathe underwater and move around effortlessly in the deep.\n"
             "";
 
-
     /*
         Idea for final puzzle: Implement a timer and a separate function that will output a random character and ask the user for input, if the input matches, the character gets in a hit.
         If the input does not match, the player suffers a hit. If the user gets in more hits than misses, the player successfully defeats the creature and proceeds to the next challenge.
         If not, the player gets a 'game over'.
     */
-    thread time(timer, 10);
+
+    thread time(timer, 30);
     time.detach();
-}
-
-void fight(string monster, int str_len, int difficulty)
-{
-    // str_len determines length of randomized string
-    // difficulty determines types of characters found in string
-    // monster is just the monster you fight
-    cout << "You start a fight with the " << monster << ".\n";
-    this_thread::sleep_for(chrono::seconds(10)); // Need to run in separate thread
-    string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-    string randomString, attack;
-    int chars;
-    switch(difficulty)
+    cout << "You struggle valiantly, time is ticking! 30 seconds to get in as much damage as possible!\n";
+    int fight_results = fight("tentacle monster", 5, 1);
+    if(fight_results > 0)
     {
-        case 1:
-            chars = 26;
-            break;
-        case 2:
-            chars = 52;
-            break;
-        case 3:
-            chars = 62;
-            break;
-        default:
-            chars = 52;
+        cout << "Your fight against the monster results in your victory!\n";
+        // Include call to next scene here.
     }
-    
-    for(int i = 0; i < str_len; ++i)
+    else if(fight_results < 0)
     {
-        int randomIndex = rand() % chars;
-        randomString += characters[randomIndex];
-    }
-
-}
-
-void input()
-{
-    string sentence;
-    cout << "\n";
-    cin >> sentence;
-    cout << "You wrote: " << sentence;
-
-    if(sentence == "This is a sentence.")
-    {
-        cout << "You won!";
-    }
-    else
-    {
-        cout << "You lost!";
+        cout << "You get pulled down into the depths of the chasm, as the tentacles pull you down. You stare upward towards the dazzling display of light on the surface of the water.\n"
+                "You think how beautiful it looks before the creature's jaws close around you.\n";
+        
+        cout << "\n\nEnding 31: The Depths\n";
+        print_line();
+        retry(&sixth_puzzle);
     }
 }
