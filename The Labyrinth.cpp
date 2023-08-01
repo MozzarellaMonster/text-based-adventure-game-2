@@ -57,7 +57,7 @@ void timer(int time)
     timer_done = true;
 }
 
-int fight(string monster, int str_len, int difficulty)
+int fight(string monster, int str_len, int difficulty, int seconds) // Possibly add parameter to change allotted time and add call to timer function
 {
     // Function made for the final puzzle of the game
     // str_len determines length of randomized string
@@ -67,6 +67,9 @@ int fight(string monster, int str_len, int difficulty)
     string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     string input;
     int chars, points = 0;
+
+    thread time(timer, seconds);
+    time.detach();
 
     switch(difficulty)
     {
@@ -519,7 +522,7 @@ void sixth_puzzle()
             "A hiss then escapes, like pressurized air before the vault door swings open before you. Inside, you see strange structures that are difficult to completely make out from your perspective. After a moment's hesitation, you step past the threshold.\n"
             "Taking a closer look without the frame of the vault door in the way, you can clearly see several strange orbs floating in the white void you find yourself in. Realizing the tendency for the Labyrinth to trick you, you quickly turn around,\n"
             "only to see that the vault door has now vanished, replaced by nothing but more white void. Frustrated but not surprised, you turn back to the orbs before you. In each, you can see a fisheye view of different environments, ranging from a forest\n"
-            "to an underwaters ocean scene. You wander among the orbs, looking through each of them and trying to find a way out. After looking for a long time, you find no door. With little other choice, you look back to the orbs and decide to try the one\n"
+            "to an underwater ocean scene. You wander among the orbs, looking through each of them and trying to find a way out. After looking for a long time, you find no door. With little other choice, you look back to the orbs and decide to try the one\n"
             "with a forest scene inside. Stepping into the orb, you are immediately hit with a rush of air and the pull of gravity as you see the ground rush up to you. Quickly, you pull out the Black Heart and transform into a winged creature,\n"
             "catching the air and slowing your descent. Eventually, you settle back on the ground and look around. This forest is unlike any you've seen before in that it actually looks rather normal, but deserted. Tall, thin trees populate the landscape around you\n"
             "and the forest floor is littered with dry, dead leaves. You look around, expecting to see some kind of structure, but nothing is revealed. Thinking it would be better to get a bird's-eye view, you flap your wings and try to lift off,\n"
@@ -535,22 +538,29 @@ void underwater_scene()
 {
     bool correct_solution = false;
     cout << "As you enter the orb, water rushes all around you and throws you off your guard. Utilizing the Black Heart, you change your form into an aquatic one, able to breathe underwater and move around effortlessly in the deep.\n"
-            "";
+            "Regaining your vertical orientation, you look all around you. A deep blue abyss expands in all directions around you, but directly below you lies a dark chasm - a huge dark canyon filled with the blackest black imaginable.\n"
+            "Staring into the void, you suddenly hear an immense roar as deep, visceral dread floods your body. Immense tentacles erupt from the chasm as several glowing yellow-green eyes appear deep within the chasm, staring at you with a deep hunger.\n"
+            "Immediately, you bolt for the surface, but are grabbed by a tentacle around your leg. Suddenly, pain erupts in the area as a hook comes out of the tentacle and plunges deep into your leg. Pain overwhelms your fear as anger surges through your veins.\n"
+            "Turning back to the tentacles, you slash at them with your newly-formed claws and black blood spills from the gaping wounds in them. Immediately, the tentacle releases you, but you dive deeper and begin to slash at more of them.\n"
+            "After seeing your charge, more tentacles erupt from the darkness, hooks fully deployed as they shoot straight for you.\n\n";
 
     /*
-        Idea for final puzzle: Implement a timer and a separate function that will output a random character and ask the user for input, if the input matches, the character gets in a hit.
+        Idea for final puzzle: Implement a timer and a separate function that will output a random sentence and ask the user for input, if the input matches, the player gets in a hit.
         If the input does not match, the player suffers a hit. If the user gets in more hits than misses, the player successfully defeats the creature and proceeds to the next challenge.
         If not, the player gets a 'game over'.
     */
 
-    thread time(timer, 30);
-    time.detach();
-    cout << "You struggle valiantly, time is ticking! 30 seconds to get in as much damage as possible!\n";
-    int fight_results = fight("tentacle monster", 5, 1);
+    cout << "The fight is on! Time is ticking! 30 seconds to get in as much damage as possible!\n";
+    int fight_results = fight("tentacle monster", 5, 1, 30);
     if(fight_results > 0)
     {
-        cout << "Your fight against the monster results in your victory!\n";
-        // Include call to next scene here.
+        cout << "Your fight against the monster results in your victory!\n"
+                "As the water around you grows murky with a mixture of both yours and the creature's blood. You suddenly feel a violent force sucking at your worn and wounded body as your mind suddenly goes blank.\n"
+                "When you come to, you find yourself back at the white void filled with orbs, the ocean orb you were just in nowhere to be seen. You take a moment to sit and heal as your wounds close with the help of the Black Heart.\n"
+                "Becoming aware of exactly how much time you've spent using it already, you stop using it and rest for a while. Finally rested, you stand back up and approach another orb - this one looking oddly clustered with what appears\n"
+                "to be fine white strands of... hair?\n"
+                "Refusing to be swayed, not after you've come this far, you approach and touch the orb, getting sucked right into it.\n\n";
+        web_scene();
     }
     else if(fight_results < 0)
     {
@@ -561,4 +571,9 @@ void underwater_scene()
         print_line();
         retry(&sixth_puzzle);
     }
+}
+
+void web_scene()
+{
+    
 }

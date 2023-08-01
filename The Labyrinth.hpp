@@ -19,7 +19,7 @@ extern string door_2_riddle;
 extern string door_3_riddle;
 
 extern void timer(int time);
-extern int fight(string monster, int str_len, int difficulty);
+extern int fight(string monster, int str_len, int difficulty, int seconds);
 extern void remove_from_inventory(string puzzle, bool recursing);
 extern void add_to_inventory();
 extern void the_labyrinth_text();
@@ -30,5 +30,6 @@ extern void fourth_puzzle();
 extern void fifth_puzzle();
 extern void sixth_puzzle();
 extern void underwater_scene();
+extern void web_scene();
 
 #endif
