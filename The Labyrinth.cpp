@@ -57,12 +57,13 @@ void timer(int time)
     timer_done = true;
 }
 
-int fight(string monster, int str_len, int difficulty, int seconds) // Possibly add parameter to change allotted time and add call to timer function
+int fight(string monster, int str_len, int difficulty, int seconds)
 {
     // Function made for the final puzzle of the game
     // str_len determines length of randomized string
     // difficulty determines types of characters found in string
     // monster is just the monster you fight
+    // seconds is the amount of time the timer counts down from
     cout << "You start a fight with the " << monster << ".\n";
     string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     string input;
@@ -536,7 +537,6 @@ void sixth_puzzle()
 
 void underwater_scene()
 {
-    bool correct_solution = false;
     cout << "As you enter the orb, water rushes all around you and throws you off your guard. Utilizing the Black Heart, you change your form into an aquatic one, able to breathe underwater and move around effortlessly in the deep.\n"
             "Regaining your vertical orientation, you look all around you. A deep blue abyss expands in all directions around you, but directly below you lies a dark chasm - a huge dark canyon filled with the blackest black imaginable.\n"
             "Staring into the void, you suddenly hear an immense roar as deep, visceral dread floods your body. Immense tentacles erupt from the chasm as several glowing yellow-green eyes appear deep within the chasm, staring at you with a deep hunger.\n"
@@ -558,7 +558,7 @@ void underwater_scene()
                 "As the water around you grows murky with a mixture of both yours and the creature's blood. You suddenly feel a violent force sucking at your worn and wounded body as your mind suddenly goes blank.\n"
                 "When you come to, you find yourself back at the white void filled with orbs, the ocean orb you were just in nowhere to be seen. You take a moment to sit and heal as your wounds close with the help of the Black Heart.\n"
                 "Becoming aware of exactly how much time you've spent using it already, you stop using it and rest for a while. Finally rested, you stand back up and approach another orb - this one looking oddly clustered with what appears\n"
-                "to be fine white strands of... hair?\n"
+                "to be fine white strands of... silk?\n"
                 "Refusing to be swayed, not after you've come this far, you approach and touch the orb, getting sucked right into it.\n\n";
         web_scene();
     }
@@ -567,13 +567,67 @@ void underwater_scene()
         cout << "You get pulled down into the depths of the chasm, as the tentacles pull you down. You stare upward towards the dazzling display of light on the surface of the water.\n"
                 "You think how beautiful it looks before the creature's jaws close around you.\n";
         
-        cout << "\n\nEnding 31: The Depths\n";
+        cout << "\n\nEnding 31: Claimed By The Chasm\n";
         print_line();
-        retry(&sixth_puzzle);
+        retry(&underwater_scene);
+    }
+    else
+    {
+        cout << "Succumbing to your wounds, you slowly fall into the chasm, the water murky from the blood spilled during the fight. A solemn, low growl emanates from below you as the monster also slowly perishes.\n"
+                "As the darkness encroaches on the edges of your vision, you stare up towards the dazzling light penetrating the surface of the water and finally, let the cold embrace of death take you.\n\n";
+
+        cout << "\n\nEnding 32: The Depths\n";
+        print_line();
+        retry(&underwater_scene);
     }
 }
 
 void web_scene()
 {
+    cout << "You come to in a dark place, surrounded by long, sticky strands of silk. Trying to get up, you find that the webs all around you keep you stuck in place. Tossing and turning, you only manage to get yourself even more tangled.\n"
+            "After struggling for a while, you notice that one particular strong strand of silk is vibrating rapidly with your movements. A signal. It is then you notice several strands of silk starting to vibrate, rapidly increasing in motion\n"
+            "as something approaches. Something big. As you feel that familiar feeling of fear start to take hold, you quickly bring out the Black Heart and morph into an arachnid-like being capable of resisting the sticky entrapment of the webs.\n"
+            "As your body changes, you shrug off the strands previously entangling you as your body sprouts thick, prickly hairs and your face erupts with several large eyes. Just as you finish changing, a large exotic, alien arachnid with several\n"
+            "brightly-colored jagged streaks covering its body bursts onto your section of the web and hisses angrily.\n"
+            "\t\"You are intruding on my domain, trespasser. Leave now or perish.\" you hear in your head.\n"
+            "Your anger flares and your aggression increases tenfold as the Black Heart finishes its work and you charge at the arachnid, lusting for blood. The arachnid hisses angrily and charges in turn.\n\n";
     
+    cout << "The fight is on! Time is ticking! 45 seconds to get in as much damage as possible!\n";
+    int fight_results = fight("arachnid", 10, 2, 45);
+
+    if(fight_results > 0)
+    {
+        cout << "Missing some limbs and covered in blood and stray strands of silk, you emerge from the tangled mass of silk and broken exoskeleton triumphant. Quickly, you feel your mind slipping and you hastily stop using the Black Heart,\n"
+                "drawing in a sharp breath as your body twists and contorts, making horrible cracking and splintering sounds as you shed your exoskeleton in favor of your familiar epidermis. As your bones return to their original shape and your\n"
+                "wounds rapidly close, you are suddenly flung into nothingness before re-emerging back in the white void, now populated with much less floating orbs.\n"
+                "You sit back a while and slowly regain your composure, stilling your mind and weaving your sanity back into place. You're not sure how much more of this your mind or body can take. Continuously using the Black Heart like this is\n"
+                "straining your fragile grasp on reality. Taking several deep breaths, you calm back down until you finally stand back up, ready to take on the next challenge.\n";
+        shaft_scene();
+    }
+    else if(fight_results < 0)
+    {
+        cout << "You lay on the web, what little limbs you have left entangled in more of the arachnid's webs. Blood drips from the gaping holes in your exoskeleton where your limbs used to connect. Blinking away the goo dripping from several of your\n"
+                "ruptured eyes, you stare daggers at the arachnid as it moves in closer for the kill.\n"
+                "\t\"You put up a decent fight trespasser, but you're in MY domain.\" it says snidely.\n"
+                "Moving over you, it bares its huge fangs and quickly plunges them into your head. You feel the venom pump into your body as your vision blurs and the final threads of your life finally snap.\n";
+        
+        cout << "\n\nEnding 33: Slain in Silk\n";
+        print_line();
+        retry(&web_scene);
+    }
+    else
+    {
+        cout << "You lay there, completely broken. Blood and goo drips from several wounds all over your arachnid-like body. You feel your life slipping away. With your final reserves of strength, you look towards the alien arachnid and see that,\n"
+                "it too, is dying. It lays amidst its webs, missing several limbs and quietly nursing a gaping hole in its abdomen. You slowly turn back to look in direction you believe may be upward, though you can't tell as your senses slip away\n"
+                "and the world spins out of control around you. You laugh quietly to yourself, before erupting into a painful choking fit. As you coughs get weaker and weaker, your multitude of eyes glaze over and you perish within the confines of the silken prison.\n";
+        
+        cout << "\n\nEnding 34: The Silken Tomb\n";
+        print_line();
+        retry(&web_scene);
+    }
+}
+
+void shaft_scene()
+{
+
 }
