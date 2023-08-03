@@ -514,8 +514,6 @@ void fifth_puzzle()
 
 void sixth_puzzle()
 {
-    string text;
-    // Final puzzle for The Black Heart: Fighting through a dimensional prison full of terrifying creatures in differing environments. 
     print_line();
     cout << "You walk for some time down the long corridor, longer than you had to for the other corridors. After some time, you come to a door resembling that to a large vault. It is then you notice a small slot in the door.\n"
             "At first, you think that there's no way it can hold the Black Heart, since it is so small, but then you realize something. It's not a slot for the Black Heart, but rather, the dagger you received at the start of this whole ordeal.\n"
@@ -544,14 +542,9 @@ void underwater_scene()
             "Turning back to the tentacles, you slash at them with your newly-formed claws and black blood spills from the gaping wounds in them. Immediately, the tentacle releases you, but you dive deeper and begin to slash at more of them.\n"
             "After seeing your charge, more tentacles erupt from the darkness, hooks fully deployed as they shoot straight for you.\n\n";
 
-    /*
-        Idea for final puzzle: Implement a timer and a separate function that will output a random sentence and ask the user for input, if the input matches, the player gets in a hit.
-        If the input does not match, the player suffers a hit. If the user gets in more hits than misses, the player successfully defeats the creature and proceeds to the next challenge.
-        If not, the player gets a 'game over'.
-    */
-
     cout << "The fight is on! Time is ticking! 30 seconds to get in as much damage as possible!\n";
     int fight_results = fight("tentacle monster", 5, 1, 30);
+
     if(fight_results > 0)
     {
         cout << "Your fight against the monster results in your victory!\n"
@@ -629,5 +622,82 @@ void web_scene()
 
 void shaft_scene()
 {
+    cout << "You find yourself falling, falling deep into a dark hole before you see the ground approaching fast. Quickly, you use the Black Heart to sprout wings that catch the air and slow your descent before growing claws and grabbing onto the hard rock wall nearby.\n"
+            "Slowing to a stop, you jump the last few feet to the ground and look up. Above you, you see a hole in the ceiling of a tall circular shaft where you can see the stars above. All along the length of the shaft, you see clusters of diamonds sprouting from the walls,\n"
+            "catching the starlight just right to sparkle brilliantly in the dim light. Momentarily distracted by the sudden natural beauty, you feel your body start to change back into its human form. Your short reverie is interrupted by a sudden loud growl emanating from a cave\n"
+            "connected at the base of the shaft. Turning towards it you see two large yellow eyes glowing in the darkness of the cave. Feeling your aggression and anger start to bubble, you increase your muscle mass and overall size as much as possible before roaring at it.\n"
+            "The eyes narrow in contempt before closing completely. A little confused, you take a step towards the cave before you see the eyes snap back open, smoke come out of the opening of the cave, and a loud roar emanates from it.\n"
+            "Taking a step back, you see a huge clawed hand grip the side of the cave and a massive dragon climb out of it. Your eyes widen as you take in the hulking form of the huge dragon, and despite the effects of the Black Heart, you feel fear seep into your body.\n"
+            "The dragon roars and opens its huge jaws, smoke seeping out of it as a fiery glow forms in its throat. Thinking quickly, you climb up the side of the shaft and use your massive arms to launch yourself towards the open top, taking to the air with your wings.\n"
+            "For a moment, you smile smugly before looking behind you and seeing that the dragon has now given chase. Turning back to the hole, you flap your wings harder and fly out of the volcanic shaft, the dragon now chasing you through the night sky. Making a wide arc,\n"
+            "you fly away as you feel the heat of the fire the dragon shoots in your direction. You realize that the dragon will not stop, and your anger flares again as you turn back around and face it.\n\n";
 
+    cout << "The fight is on! Time is ticking! 50 seconds to get in as much damage as possible!\n";
+    int fight_results = fight("dragon", 15, 3, 50);
+
+    if(fight_results == 0)
+    {
+        // Tie - Ending
+        cout << "You fall. And to your side, you see the dragon falling some distance away from you. Both of you have succumbed to your wounds. In your final moments, you look back to night sky, stars twinkling in the distance.\n"
+                "You smile to yourself, appreciating the beautiful sight before your body slams into the ground.\n";
+
+        cout << "\n\nEnding 35: Fallen\n";
+        print_line();
+        retry(&shaft_scene);
+
+    }
+    else if(fight_results > 0)
+    {
+        // Alternative text - dragon is wounded
+        cout << "Wounded, the dragon circles back around and dives toward the volcanic shaft. Quickly you follow, eager to finish the fight. You follow it down the volcanic shaft and suddenly get slammed against the wall, feeling a cluster of diamonds pierce your side.\n"
+                "You let out a pained roar and claw at the dragon's face. It lets you go, a look of smug triumph on its face. It may be injured, but it is not done fighting you either. Now bloodlusted, you dive back in again as it prepares another blast of fire for you.\n";
+    }
+    else
+    {
+        // Alternative text - you are wounded
+        cout << "Wounded, you return to the volcanic shaft, all the while being chased by the dragon. Thinking quickly, you turn around and spread your wings to catch the air, passing by the dragon as it turns back to look at you in surprise.\n"
+                "Immediately, you take this opportunity to slash at the dragon's face and push it against the wall of the shaft will all your might. It slams against the wall, a large piece of clustered diamonds piercing its thick hide.\n"
+                "It lets out a pained roar as you dive back in and continue the fight.\n";
+    }
+
+    cout << "The fight is still on! Time is ticking! 60 seconds to get in as much damage as possible!\n";
+    fight_results = fight("dragon", 20, 3, 60);
+
+    if(fight_results == 0)
+    {
+        // Tie - Ending
+        cout << "You lay in the center of the base of the volcanic shaft, exhausted and bleeding profusely. Across the shaft, the dragon snorts defeatedly and falls to the ground. You watch as its chest rises and falls repeatedly, slowly at first,\n"
+                "but then stops entirely. Slowly, you roll over onto your back and stare at the open circle of sky at the top of the shaft, distantly aware that you've lost way too much blood as your body slowly returns to its human form.\n"
+                "Dreamily, you stare at the small piece of sky high above you as you close your eyes. A small smile creeps onto your face as you breathe your last breath and feel the cold embrace of death.\n";
+
+        cout << "\n\nEnding 36: Starry Skies\n";
+        print_line();
+        retry(&shaft_scene);
+    }
+    else if(fight_results > 0)
+    {
+        // Victory - call to final ending
+        cout << "With a final cry of victory, you slam the dragon into the ground of the volcanic shaft. It groans in defeat, succumbing to the strength of your blow. But your rage boils on and you slam your enlarged fists into its body over and over,\n"
+                "pounding it harder and harder into the ground. Soon, a crack forms in the hard rock of the shaft's floor. Seeing this, you redouble your efforts, the dragon now whimpering with pain. Raising both of your fists high, you slam them down in\n"
+                "together with enough force to break open the shaft floor. Immediately, the ground gives and the dragon falls into several feet down into a pool of lava. It writhes in the molten rock for a moment before its movements slow and it sinks below the surface.\n"
+                "You watch for a few moments, but the pool of lava remains still. Suddenly, you feel the familiar pulling sensation as your are yanked from this reality and flung back into the white void.\n";
+        the_end();
+    }
+    else
+    {
+        // Defeat
+        cout << "The dragon slams your beaten and broken body hard into the floor of the volcanic shaft. You hear several horrible snaps as multiple bones break all across your body. The Black Heart tries desperately to hold you together, but to no avail.\n"
+                "You are far too broken for it to be of any help. Sensing its victory, the dragon picks you up with its sharp claws and holds you up to its eye, looking you over with pure contempt in its gaze.\n"
+                "\t\"You are pathetic and weak, far too pitiful to even consider eating.\n"
+                "Taken aback, you open your mouth to reply, but are too late as the dragon breathes fire upon your defeated form, burning you down until you are nothing but ash.\n";
+
+        cout << "\n\nEnding 37: Roasted\n";
+        print_line();
+        retry(&shaft_scene);
+    }
+}
+
+void the_end()
+{
+    cout << "";
 }

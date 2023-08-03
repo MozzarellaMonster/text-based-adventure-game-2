@@ -32,5 +32,6 @@ extern void sixth_puzzle();
 extern void underwater_scene();
 extern void web_scene();
 extern void shaft_scene();
+extern void the_end();
 
 #endif
