@@ -680,7 +680,7 @@ void shaft_scene()
         cout << "With a final cry of victory, you slam the dragon into the ground of the volcanic shaft. It groans in defeat, succumbing to the strength of your blow. But your rage boils on and you slam your enlarged fists into its body over and over,\n"
                 "pounding it harder and harder into the ground. Soon, a crack forms in the hard rock of the shaft's floor. Seeing this, you redouble your efforts, the dragon now whimpering with pain. Raising both of your fists high, you slam them down in\n"
                 "together with enough force to break open the shaft floor. Immediately, the ground gives and the dragon falls into several feet down into a pool of lava. It writhes in the molten rock for a moment before its movements slow and it sinks below the surface.\n"
-                "You watch for a few moments, but the pool of lava remains still. Suddenly, you feel the familiar pulling sensation as your are yanked from this reality and flung back into the white void.\n";
+                "You watch for a few moments, but the pool of lava remains still. Suddenly, you feel the familiar pulling sensation as you are yanked from this reality and flung back into the white void.\n";
         the_end();
     }
     else
@@ -699,5 +699,8 @@ void shaft_scene()
 
 void the_end()
 {
-    cout << "";
+    cout << "Stumbling from reentry into the white void, you grab ahold of something solid. Leaning against it, you catch your breath as your muscles scream for rest and your legs barely hold you up. It is not over however, as you realize that you're leaning against a door.\n"
+            "Standing back up, you back up a bit to see the door in full view. It is intricately carved, looking to be made of some kind of white petrified wood. The carvings resemble vines, but each 'leaf' is a Gate. A slot opens in the center of the door, revealing a small platform.\n"
+            "Reaching into your pocket, you take out the Black Heart and place it on the platform. The slot slowly closes and some grinding sounds can be heard, like ancient gears coming to life after centuries of neglect.\n";
+            // Need to finish this
 }
