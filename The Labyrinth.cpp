@@ -171,7 +171,6 @@ void the_labyrinth_text()
 
 void first_puzzle()
 {
-    char choice;
     cout << "You proceed further into the maze and eventually happen upon an unusual sight:\n"
             "A room with three doors in front of you, each one enscribed with a riddle and possessing a hole in the center of the door.\n"
             "You have the left door, the center door, and the right door.\n";
@@ -182,7 +181,8 @@ void first_puzzle()
     cout << "B. Approach the center door\n";
     cout << "C. Approach the right door\n";
     print_line();
-    cin >> choice;
+    char choice = getch();
+    cout << choice << "\n";
     choice = tolower(choice);
 
     print_line();

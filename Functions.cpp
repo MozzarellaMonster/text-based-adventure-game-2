@@ -711,20 +711,19 @@ void temple_second_room()
                         "\n\t\"You have found all the keys, and the Gate has now been opened.\"\n\n"
                         "Right before your very eyes, you see an opaque liquid shimmer manifest as it covers the wall of stone between the arches.\n";
                 
-                char answer;
                 print_line();
                 cout << "\nDo you want to enter the archway? Y/N: ";
-                cin >> answer;
-                cout << "\n";
+                char answer = getch();
+                cout << answer << "\n";
                 print_line();
-                if(answer == 'Y' || answer == 'y')
+                if(tolower(answer) == 'y')
                 {
                     cout << "You have traveled the six paths and have collected the keys from each one.\n"
                             "With the stone guarding the entrance gone, you can now enter The Labyrinth.\n"
                             "You take a step forward and enter the archway.\n";
                     the_labyrinth_text();
                 }
-                else if(answer == 'N' || answer == 'n')
+                else if(tolower(answer) == 'n')
                 {
                     cout << "\nYou decide not to go in and return to the center of the room.\n";
                     temple_second_room();
@@ -752,10 +751,10 @@ void temple_second_room()
             }
             else
             {
-                char answer;
+                
                 cout << "\nYou approach The Labyrinth.\n";
                 cout << "\nDo you want to enter the archway? Y/N: ";
-                cin >> answer;
+                char answer = getch();
                 cout << "\n";
                 if(answer == 'Y' || answer == 'y')
                 {
