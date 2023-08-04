@@ -67,6 +67,7 @@ int fight(string monster, int str_len, int difficulty, int seconds)
     cout << "You start a fight with the " << monster << ".\n";
     string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     string input;
+    timer_done = false;
     int chars, points = 0;
 
     thread time(timer, seconds);
@@ -542,6 +543,8 @@ void underwater_scene()
             "Immediately, you bolt for the surface, but are grabbed by a tentacle around your leg. Suddenly, pain erupts in the area as a hook comes out of the tentacle and plunges deep into your leg. Pain overwhelms your fear as anger surges through your veins.\n"
             "Turning back to the tentacles, you slash at them with your newly-formed claws and black blood spills from the gaping wounds in them. Immediately, the tentacle releases you, but you dive deeper and begin to slash at more of them.\n"
             "After seeing your charge, more tentacles erupt from the darkness, hooks fully deployed as they shoot straight for you.\n\n";
+
+    // Incorporate sleep timer so the player has some time to read the text.
 
     cout << "The fight is on! Time is ticking! 30 seconds to get in as much damage as possible!\n";
     int fight_results = fight("tentacle monster", 5, 1, 30);
