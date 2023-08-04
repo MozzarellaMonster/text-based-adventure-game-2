@@ -535,6 +535,7 @@ void sixth_puzzle()
 
 void underwater_scene()
 {
+    print_line();
     cout << "As you enter the orb, water rushes all around you and throws you off your guard. Utilizing the Black Heart, you change your form into an aquatic one, able to breathe underwater and move around effortlessly in the deep.\n"
             "Regaining your vertical orientation, you look all around you. A deep blue abyss expands in all directions around you, but directly below you lies a dark chasm - a huge dark canyon filled with the blackest black imaginable.\n"
             "Staring into the void, you suddenly hear an immense roar as deep, visceral dread floods your body. Immense tentacles erupt from the chasm as several glowing yellow-green eyes appear deep within the chasm, staring at you with a deep hunger.\n"
@@ -545,6 +546,7 @@ void underwater_scene()
     cout << "The fight is on! Time is ticking! 30 seconds to get in as much damage as possible!\n";
     int fight_results = fight("tentacle monster", 5, 1, 30);
 
+    print_line();
     if(fight_results > 0)
     {
         cout << "Your fight against the monster results in your victory!\n"
@@ -577,6 +579,7 @@ void underwater_scene()
 
 void web_scene()
 {
+    print_line();
     cout << "You come to in a dark place, surrounded by long, sticky strands of silk. Trying to get up, you find that the webs all around you keep you stuck in place. Tossing and turning, you only manage to get yourself even more tangled.\n"
             "After struggling for a while, you notice that one particular strong strand of silk is vibrating rapidly with your movements. A signal. It is then you notice several strands of silk starting to vibrate, rapidly increasing in motion\n"
             "as something approaches. Something big. As you feel that familiar feeling of fear start to take hold, you quickly bring out the Black Heart and morph into an arachnid-like being capable of resisting the sticky entrapment of the webs.\n"
@@ -588,6 +591,7 @@ void web_scene()
     cout << "The fight is on! Time is ticking! 45 seconds to get in as much damage as possible!\n";
     int fight_results = fight("arachnid", 10, 2, 45);
 
+    print_line();
     if(fight_results > 0)
     {
         cout << "Missing some limbs and covered in blood and stray strands of silk, you emerge from the tangled mass of silk and broken exoskeleton triumphant. Quickly, you feel your mind slipping and you hastily stop using the Black Heart,\n"
@@ -622,6 +626,7 @@ void web_scene()
 
 void shaft_scene()
 {
+    print_line();
     cout << "You find yourself falling, falling deep into a dark hole before you see the ground approaching fast. Quickly, you use the Black Heart to sprout wings that catch the air and slow your descent before growing claws and grabbing onto the hard rock wall nearby.\n"
             "Slowing to a stop, you jump the last few feet to the ground and look up. Above you, you see a hole in the ceiling of a tall circular shaft where you can see the stars above. All along the length of the shaft, you see clusters of diamonds sprouting from the walls,\n"
             "catching the starlight just right to sparkle brilliantly in the dim light. Momentarily distracted by the sudden natural beauty, you feel your body start to change back into its human form. Your short reverie is interrupted by a sudden loud growl emanating from a cave\n"
@@ -635,6 +640,7 @@ void shaft_scene()
     cout << "The fight is on! Time is ticking! 50 seconds to get in as much damage as possible!\n";
     int fight_results = fight("dragon", 15, 3, 50);
 
+    print_line();
     if(fight_results == 0)
     {
         // Tie - Ending
@@ -660,9 +666,11 @@ void shaft_scene()
                 "It lets out a pained roar as you dive back in and continue the fight.\n";
     }
 
+    print_line();
     cout << "The fight is still on! Time is ticking! 60 seconds to get in as much damage as possible!\n";
     fight_results = fight("dragon", 20, 3, 60);
 
+    print_line();
     if(fight_results == 0)
     {
         // Tie - Ending
@@ -699,6 +707,7 @@ void shaft_scene()
 
 void the_end()
 {
+    print_line();
     cout << "Stumbling from reentry into the white void, you grab ahold of something solid. Leaning against it, you catch your breath as your muscles scream for rest and your legs barely hold you up. It is not over however, as you realize that you're leaning against a door.\n"
             "Standing back up, you back up a bit to see the door in full view. It is intricately carved, looking to be made of some kind of white petrified wood. The carvings resemble vines, but each 'leaf' is a Gate. A slot opens in the center of the door, revealing a small platform.\n"
             "Reaching into your pocket, you take out the Black Heart and place it on the platform. The slot slowly closes and some grinding sounds can be heard, like ancient gears coming to life after centuries of neglect.\n";
