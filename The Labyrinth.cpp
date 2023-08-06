@@ -16,7 +16,7 @@ using namespace std;
 
 void door_object(char option, string puzzle);
 
-bool timer_done = false;
+bool timer_done;
 int saved_index = 0;
 
 string saved_object = "";
