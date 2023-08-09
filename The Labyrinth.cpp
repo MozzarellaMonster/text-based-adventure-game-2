@@ -57,13 +57,26 @@ void timer(int time)
     timer_done = true;
 }
 
+void interlude()
+{
+    this_thread::sleep_for(chrono::seconds(5));
+    cout << "Press enter to start the fight.\n";
+    cin.clear();
+    if(getch() == '\n')
+    {
+        return;
+    }
+}
+
 int fight(string monster, int str_len, int difficulty, int seconds)
 {
-    // Function made for the final puzzle of the game
-    // str_len determines length of randomized string
-    // difficulty determines types of characters found in string
-    // monster is just the monster you fight
-    // seconds is the amount of time the timer counts down from
+    /*
+        Function made for the final puzzle of the game
+        str_len determines length of randomized string
+        difficulty determines types of characters found in string
+        monster is just the monster you fight
+        seconds is the amount of time the timer counts down from
+    */
     cout << "You start a fight with the " << monster << ".\n";
     string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     string input;
@@ -96,8 +109,9 @@ int fight(string monster, int str_len, int difficulty, int seconds)
             randomString += characters[rand() % chars];
         }
 
+        cout << "Points: " << points << "\n\n";
         cout << "Match the sentence to score a hit on the " << monster << "!\n";
-        cout << "Sentence: " << randomString << "\n\n";
+        cout << "Sentence: " << randomString << "\n";
 
         cin >> input;
 
@@ -545,12 +559,12 @@ void underwater_scene()
             "After seeing your charge, more tentacles erupt from the darkness, hooks fully deployed as they shoot straight for you.\n\n";
 
     // Incorporate sleep timer so the player has some time to read the text.
-
-    cout << "The fight is on! Time is ticking! 30 seconds to get in as much damage as possible!\n";
+    interlude();
+    cout << "The fight is on! Score at least five hits to win! 30 seconds to get in as much damage as possible!\n";
     int fight_results = fight("tentacle monster", 5, 1, 30);
 
     print_line();
-    if(fight_results > 0)
+    if(fight_results > 5)
     {
         cout << "Your fight against the monster results in your victory!\n"
                 "As the water around you grows murky with a mixture of both yours and the creature's blood. You suddenly feel a violent force sucking at your worn and wounded body as your mind suddenly goes blank.\n"
@@ -591,11 +605,12 @@ void web_scene()
             "\t\"You are intruding on my domain, trespasser. Leave now or perish.\" you hear in your head.\n"
             "Your anger flares and your aggression increases tenfold as the Black Heart finishes its work and you charge at the arachnid, lusting for blood. The arachnid hisses angrily and charges in turn.\n\n";
     
-    cout << "The fight is on! Time is ticking! 45 seconds to get in as much damage as possible!\n";
+    interlude();
+    cout << "The fight is on! Score at least five hits to win! 45 seconds to get in as much damage as possible!\n";
     int fight_results = fight("arachnid", 10, 2, 45);
 
     print_line();
-    if(fight_results > 0)
+    if(fight_results > 5)
     {
         cout << "Missing some limbs and covered in blood and stray strands of silk, you emerge from the tangled mass of silk and broken exoskeleton triumphant. Quickly, you feel your mind slipping and you hastily stop using the Black Heart,\n"
                 "drawing in a sharp breath as your body twists and contorts, making horrible cracking and splintering sounds as you shed your exoskeleton in favor of your familiar epidermis. As your bones return to their original shape and your\n"
@@ -640,11 +655,18 @@ void shaft_scene()
             "For a moment, you smile smugly before looking behind you and seeing that the dragon has now given chase. Turning back to the hole, you flap your wings harder and fly out of the volcanic shaft, the dragon now chasing you through the night sky. Making a wide arc,\n"
             "you fly away as you feel the heat of the fire the dragon shoots in your direction. You realize that the dragon will not stop, and your anger flares again as you turn back around and face it.\n\n";
 
-    cout << "The fight is on! Time is ticking! 50 seconds to get in as much damage as possible!\n";
-    int fight_results = fight("dragon", 15, 3, 50);
+    interlude();
+    cout << "The fight is on! Score at least five hits to win! 60 seconds to get in as much damage as possible!\n";
+    int fight_results = fight("dragon", 15, 3, 60);
 
     print_line();
-    if(fight_results == 0)
+    if(fight_results > 5)
+    {
+        // Alternative text - dragon is wounded
+        cout << "Wounded, the dragon circles back around and dives toward the volcanic shaft. Quickly you follow, eager to finish the fight. You follow it down the volcanic shaft and suddenly get slammed against the wall, feeling a cluster of diamonds pierce your side.\n"
+                "You let out a pained roar and claw at the dragon's face. It lets you go, a look of smug triumph on its face. It may be injured, but it is not done fighting you either. Now bloodlusted, you dive back in again as it prepares another blast of fire for you.\n";
+    }
+    else if(fight_results < 5 && fight_results > 0)
     {
         // Tie - Ending
         cout << "You fall. And to your side, you see the dragon falling some distance away from you. Both of you have succumbed to your wounds. In your final moments, you look back to night sky, stars twinkling in the distance.\n"
@@ -655,12 +677,6 @@ void shaft_scene()
         retry(&shaft_scene);
 
     }
-    else if(fight_results > 0)
-    {
-        // Alternative text - dragon is wounded
-        cout << "Wounded, the dragon circles back around and dives toward the volcanic shaft. Quickly you follow, eager to finish the fight. You follow it down the volcanic shaft and suddenly get slammed against the wall, feeling a cluster of diamonds pierce your side.\n"
-                "You let out a pained roar and claw at the dragon's face. It lets you go, a look of smug triumph on its face. It may be injured, but it is not done fighting you either. Now bloodlusted, you dive back in again as it prepares another blast of fire for you.\n";
-    }
     else
     {
         // Alternative text - you are wounded
@@ -670,11 +686,21 @@ void shaft_scene()
     }
 
     print_line();
-    cout << "The fight is still on! Time is ticking! 60 seconds to get in as much damage as possible!\n";
+    interlude();
+    cout << "The fight is still on! Score at least five hits to win! 60 seconds to get in as much damage as possible!\n";
     fight_results = fight("dragon", 20, 3, 60);
 
     print_line();
-    if(fight_results == 0)
+    if(fight_results > 5)
+    {
+        // Victory - call to final ending
+        cout << "With a final cry of victory, you slam the dragon into the ground of the volcanic shaft. It groans in defeat, succumbing to the strength of your blow. But your rage boils on and you slam your enlarged fists into its body over and over,\n"
+                "pounding it harder and harder into the ground. Soon, a crack forms in the hard rock of the shaft's floor. Seeing this, you redouble your efforts, the dragon now whimpering with pain. Raising both of your fists high, you slam them down in\n"
+                "together with enough force to break open the shaft floor. Immediately, the ground gives and the dragon falls into several feet down into a pool of lava. It writhes in the molten rock for a moment before its movements slow and it sinks below the surface.\n"
+                "You watch for a few moments, but the pool of lava remains still. Suddenly, you feel the familiar pulling sensation as you are yanked from this reality and flung back into the white void.\n";
+        the_end();
+    }
+    else if(fight_results < 5 && fight_results > 0)
     {
         // Tie - Ending
         cout << "You lay in the center of the base of the volcanic shaft, exhausted and bleeding profusely. Across the shaft, the dragon snorts defeatedly and falls to the ground. You watch as its chest rises and falls repeatedly, slowly at first,\n"
@@ -684,15 +710,6 @@ void shaft_scene()
         cout << "\n\nEnding 36: Starry Skies\n";
         print_line();
         retry(&shaft_scene);
-    }
-    else if(fight_results > 0)
-    {
-        // Victory - call to final ending
-        cout << "With a final cry of victory, you slam the dragon into the ground of the volcanic shaft. It groans in defeat, succumbing to the strength of your blow. But your rage boils on and you slam your enlarged fists into its body over and over,\n"
-                "pounding it harder and harder into the ground. Soon, a crack forms in the hard rock of the shaft's floor. Seeing this, you redouble your efforts, the dragon now whimpering with pain. Raising both of your fists high, you slam them down in\n"
-                "together with enough force to break open the shaft floor. Immediately, the ground gives and the dragon falls into several feet down into a pool of lava. It writhes in the molten rock for a moment before its movements slow and it sinks below the surface.\n"
-                "You watch for a few moments, but the pool of lava remains still. Suddenly, you feel the familiar pulling sensation as you are yanked from this reality and flung back into the white void.\n";
-        the_end();
     }
     else
     {
