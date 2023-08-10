@@ -730,6 +730,12 @@ void the_end()
     print_line();
     cout << "Stumbling from reentry into the white void, you grab ahold of something solid. Leaning against it, you catch your breath as your muscles scream for rest and your legs barely hold you up. It is not over however, as you realize that you're leaning against a door.\n"
             "Standing back up, you back up a bit to see the door in full view. It is intricately carved, looking to be made of some kind of white petrified wood. The carvings resemble vines, but each 'leaf' is a Gate. A slot opens in the center of the door, revealing a small platform.\n"
-            "Reaching into your pocket, you take out the Black Heart and place it on the platform. The slot slowly closes and some grinding sounds can be heard, like ancient gears coming to life after centuries of neglect.\n";
-            // Need to finish this
+            "Reaching into your pocket, you take out the Black Heart and place it on the platform. The slot slowly closes and some grinding sounds can be heard, like ancient gears coming to life after centuries of neglect. Slowly, the door slides open. You can't see anything beyond the\n"
+            "threshold as a bright light shines from beyond. Shielding your eyes, you walk through the doorway.\n\n";
+    print_line();
+    cout << "\nYou find yourself outside the Temple, your wounds healed and your body back in pristine condition. You look back behind you to see that the entrance to the temple is now gone, replaced with a smooth stone wall. Suddenly, the temple begins to descend into the ground,\n"
+            "the layers of the temple smoothing out into a smooth, flat black stone surface. Suddenly, an object in your pocket vibrates. Taking it out, you see that it is the USB drive that you found in The Glowing Cave. You see a small red light fading in and out. Walking around,\n"
+            "you notice the red light fade in and out in shorter and shorter intervals. Following the vibration and light, you find yourself at the base of a nearby tree. Kneeling down to dig, you find a small metal box. Opening it, you find a small camcorder within. Plugging in the USB drive,\n"
+            "you find only one recording on it. Selecting it, the video begins to play.\n\n";
+    // Need to have video transcription here.
 }
