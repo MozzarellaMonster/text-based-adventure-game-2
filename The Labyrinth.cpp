@@ -737,5 +737,10 @@ void the_end()
             "the layers of the temple smoothing out into a smooth, flat black stone surface. Suddenly, an object in your pocket vibrates. Taking it out, you see that it is the USB drive that you found in The Glowing Cave. You see a small red light fading in and out. Walking around,\n"
             "you notice the red light fade in and out in shorter and shorter intervals. Following the vibration and light, you find yourself at the base of a nearby tree. Kneeling down to dig, you find a small metal box. Opening it, you find a small camcorder within. Plugging in the USB drive,\n"
             "you find only one recording on it. Selecting it, the video begins to play.\n\n";
-    // Need to have video transcription here.
+    cout << video_log;
+    cout << "";
+
+    cout << "\nEnding 38: The End\n\n";
+
+    retry();
 }
