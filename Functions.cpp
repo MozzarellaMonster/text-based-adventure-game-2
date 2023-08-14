@@ -36,7 +36,85 @@ inline void try_again()
 
 void reset()
 {
+    // Clear out inventory and others
+    inventory.clear();
+    journals.clear();
+    obslots.clear();
+
     // Once all trackers are determined, use this function to reset them upon a retry.
+    // First room
+    jungle_repeat = 0;
+    first_room_explored = false;
+
+    // Second room trials
+    must_deposit = true;
+    second_room_obelisk_complete = false;
+    first_archway_read = false;
+    second_archway_read = false;
+    third_archway_read = false;
+    fourth_archway_read = false;
+    fifth_archway_read = false;
+    sixth_archway_read = false;
+    seventh_archway_read = false;
+    saw_archway = false;
+    dod_completed = false;
+    hotc_completed = false;
+    tgc_completed = false;
+    oasis_completed = false;
+    twg_completed = false;
+    tsl_completed = false;
+
+    // Desert of the Dead
+    dod_explored_room = false;
+    dod_looked_outside = false;
+    dod_investigated_platform = false;
+    dod_sandstorm = false;
+    dod_used_dagger = false;
+
+
+    // Heart of the Colony
+    hotc_explored_left_tunnel = false;
+    hotc_explored_middle_tunnel = false;
+    hotc_explored_right_tunnel = false;
+    hotc_heard_history = false;
+    hotc_queens_story = false;
+    hotc_found_hint = false;
+    hotc_found_root = false;
+    hotc_read_book = false;
+    hotc_ask_orb = false;
+
+    // The Glowing Cave
+    gc_explored_left_tunnel = false;
+    gc_explored_right_tunnel = false;
+    gc_explored_path = false;
+    gc_usb_drive = false;
+    gc_found_journal = false;
+    gc_found_fossil = false;
+    recovered = false;
+    attention_seeker = false;
+
+    // The Oasis
+    middle_path_intro = false;
+    explored_clearing = false;
+    pond_hint = false;
+
+    // The Whistling Gorge
+    explored_left_path = false;
+    explored_right_path = false;
+    looked_around = false;
+    twg_found_journal = false;
+    denied_fruit = false;
+
+    // The Swamplands
+    explored_grasslands = false;
+    explored_tall_trees = false;
+    explored_islands = false;
+    hunt = false;
+    crab = false;
+
+    // The Labyrinth
+    saved_index = 0;
+    saved_object = "";
 }
 
 void retry()
@@ -47,12 +125,20 @@ void retry()
     if(tolower(choice) == 'y')
     {
         cout << "\n\nRESTARTING...\n\n";
-        //reset();
+        reset();
         start();
     }
     else if(tolower(choice) == 'n')
     {
-        cout << "\nThanks for playing \"The Temple\"!\n";
+        cout << "\nThanks for playing...\n";
+        cout << "_________          _______   _________ _______  _______  _______  _        _______ \n";
+        cout << "\\__   __/|\\     /|(  ____ \\  \\__   __/(  ____ \\(       )(  ____ )( \\      (  ____ \\\n";
+        cout << "   ) (   | )   ( || (    \\/     ) (   | (    \\/| () () || (    )|| (      | (    \\/\n";
+        cout << "   | |   | (___) || (__         | |   | (__    | || || || (____)|| |      | (__    \n";
+        cout << "   | |   |  ___  ||  __)        | |   |  __)   | |(_)| ||  _____)| |      |  __)   \n";
+        cout << "   | |   | (   ) || (           | |   | (      | |   | || (      | |      | (      \n";
+        cout << "   | |   | )   ( || (____/\\     | |   | (____/\\| )   ( || )      | (____/\\| (____/\\\n";
+        cout << "   )_(   |/     \\|(_______/     )_(   (_______/|/     \\||/       (_______/(_______/\n\n\n";
         this_thread::sleep_for(chrono::seconds(3));
         exit(0);
     }
@@ -194,18 +280,6 @@ void show_inventory()
             cout << inventory.at(i) << ", ";
         }
     }
-}
-
-bool inv_contains(string object)
-{
-    for(int i = 0; i < inventory.size(); i++)
-    {
-        if(inventory[i] == object)
-        {
-            return true;
-        }
-    }
-    return false;
 }
 
 void start()

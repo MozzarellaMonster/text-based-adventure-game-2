@@ -19,7 +19,6 @@ extern void retry(void (*func)());
 extern void archway(string message, string name, bool *archway_read, void (*func)());
 extern void deposit();
 extern void determine_riddle();
-extern bool inv_contains(string object);
 extern void start();
 extern void show_inventory();
 
