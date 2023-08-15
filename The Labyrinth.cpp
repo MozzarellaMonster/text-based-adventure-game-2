@@ -564,7 +564,7 @@ void underwater_scene()
     int fight_results = fight("tentacle monster", 5, 1, 30);
 
     print_line();
-    if(fight_results > 5)
+    if(fight_results >= 5)
     {
         cout << "Your fight against the monster results in your victory!\n"
                 "As the water around you grows murky with a mixture of both yours and the creature's blood. You suddenly feel a violent force sucking at your worn and wounded body as your mind suddenly goes blank.\n"
@@ -610,7 +610,7 @@ void web_scene()
     int fight_results = fight("arachnid", 10, 2, 45);
 
     print_line();
-    if(fight_results > 5)
+    if(fight_results >= 5)
     {
         cout << "Missing some limbs and covered in blood and stray strands of silk, you emerge from the tangled mass of silk and broken exoskeleton triumphant. Quickly, you feel your mind slipping and you hastily stop using the Black Heart,\n"
                 "drawing in a sharp breath as your body twists and contorts, making horrible cracking and splintering sounds as you shed your exoskeleton in favor of your familiar epidermis. As your bones return to their original shape and your\n"
@@ -660,7 +660,7 @@ void shaft_scene()
     int fight_results = fight("dragon", 15, 3, 60);
 
     print_line();
-    if(fight_results > 5)
+    if(fight_results >= 5)
     {
         // Alternative text - dragon is wounded
         cout << "Wounded, the dragon circles back around and dives toward the volcanic shaft. Quickly you follow, eager to finish the fight. You follow it down the volcanic shaft and suddenly get slammed against the wall, feeling a cluster of diamonds pierce your side.\n"
@@ -687,11 +687,11 @@ void shaft_scene()
 
     print_line();
     interlude();
-    cout << "The fight is still on! Score at least five hits to win! 60 seconds to get in as much damage as possible!\n";
+    cout << "The fight is still on! Score at least 3 hits to win! 60 seconds to get in as much damage as possible!\n";
     fight_results = fight("dragon", 20, 3, 60);
 
     print_line();
-    if(fight_results > 5)
+    if(fight_results >= 3)
     {
         // Victory - call to final ending
         cout << "With a final cry of victory, you slam the dragon into the ground of the volcanic shaft. It groans in defeat, succumbing to the strength of your blow. But your rage boils on and you slam your enlarged fists into its body over and over,\n"
@@ -700,7 +700,7 @@ void shaft_scene()
                 "You watch for a few moments, but the pool of lava remains still. Suddenly, you feel the familiar pulling sensation as you are yanked from this reality and flung back into the white void.\n";
         the_end();
     }
-    else if(fight_results < 5 && fight_results > 0)
+    else if(fight_results < 3 && fight_results > 0)
     {
         // Tie - Ending
         cout << "You lay in the center of the base of the volcanic shaft, exhausted and bleeding profusely. Across the shaft, the dragon snorts defeatedly and falls to the ground. You watch as its chest rises and falls repeatedly, slowly at first,\n"
@@ -716,7 +716,7 @@ void shaft_scene()
         // Defeat
         cout << "The dragon slams your beaten and broken body hard into the floor of the volcanic shaft. You hear several horrible snaps as multiple bones break all across your body. The Black Heart tries desperately to hold you together, but to no avail.\n"
                 "You are far too broken for it to be of any help. Sensing its victory, the dragon picks you up with its sharp claws and holds you up to its eye, looking you over with pure contempt in its gaze.\n"
-                "\t\"You are pathetic and weak, far too pitiful to even consider eating.\n"
+                "\t\"You are pathetic and weak, far too pitiful to even consider eating.\"\n"
                 "Taken aback, you open your mouth to reply, but are too late as the dragon breathes fire upon your defeated form, burning you down until you are nothing but ash.\n";
 
         cout << "\n\nEnding 37: Roasted\n";
@@ -738,7 +738,26 @@ void the_end()
             "you notice the red light fade in and out in shorter and shorter intervals. Following the vibration and light, you find yourself at the base of a nearby tree. Kneeling down to dig, you find a small metal box. Opening it, you find a small camcorder within. Plugging in the USB drive,\n"
             "you find only one recording on it. Selecting it, the video begins to play.\n\n";
     cout << video_log;
-    cout << "";
+    cout << "\nTurning the camera off, you look back into the box and see the vial full of the faintly luminescent crimson liquid similar to the one in the video. You take it out of the box and pocket it.\n"
+            "Standing back up, you hear a strange grinding sound as an archway rises out of the flat black surface of the flattened temple. That familiar liquid shimmer manifests within the archway as you walk towards it.\n"
+            "Standing in front of the archway, you can hear birds chirping and the sound of a car driving past beyond the surface of the Gate. Hesitating for just a moment, you step through the Gate.\n\n";
+    print_line();
+    cout << "You almost don't feel the pull this time as you calmly walk past the barrier and find yourself back in the basement of the House. The familiar concrete walls around you.\n"
+            "You turn around and see that familiar old stone ring laying in the center of the basement floor, the liquid shimmer nonexistent within the confines of the it.\n"
+            "Taking out your phone, you snap several pictures of the old stone ring before taking out the small gray cylinder and placing it in the center of the stone ring.\n"
+            "Immediately, the top of the cylinder pops open, releasing a small puff of air before rotating counterclockwise, coming to a stop, and sliding back down.\n"
+            "Electricity arcs from the cylinder to the inner circumference of the stone ring. A high, strange droning sound fills the air as you see some small pebbles rise\n"
+            "from the floor of the basement and float in the air beside you. You look around you in mild concern at the floating rocks before noticing the symbols of the stone ring light up on the ground in front of you.\n"
+            "Then, the last symbol loses its light as the droning sound gets higher. Then, the next symbol goes out, and another. Realizing it's a countdown timer, you turn around and run up the stairs.\n"
+            "All the while, the droning sound gets louder and louder as arcs of electricity dance on the surfaces of the house around you.\n"
+            "You fling open the door and run outside, feeling the warm glow of the afternoon sun on your skin, your car parked out on the street in front of you.\n"
+            "You reach it and turn around, waiting for the spectacle. The House is now covered in arcing electricity all over and suddenly, folds in on itself, as if it was getting sucked into a vacuum of some sort.\n"
+            "A bright white light suddenly flashes from the inside of the House. Shielding your eyes, you look away for a moment, hearing the wood crack as the house is violently sucked away and soon... silence.\n"
+            "You look back up to see an empty lot, the house completely gone and the basement now an empty hole in the ground.\n"
+            "Taking out the vial, you drink the crimson liquid, grimacing at the bitter taste before closing it back up and pocketing the vial again.\n"
+            "You stand there for a moment, thinking about everything that you've been through, all that you've experienced.\n"
+            "You close your eyes and take in a huge breath before turning back around, digging out your keys, and hopping into your car.\n"
+            "The paper is gonna love this story.\n\n";
 
     cout << "\nEnding 38: The End\n\n";
 
