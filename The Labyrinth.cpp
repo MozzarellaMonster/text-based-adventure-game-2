@@ -759,7 +759,7 @@ void the_end()
             "You close your eyes and take in a huge breath before turning back around, digging out your keys, and hopping into your car.\n"
             "The paper is gonna love this story.\n\n";
 
-    cout << "\nEnding 38: The End\n\n";
+    cout << "\nEnding 38: The End (True Ending)\n\n";
 
     retry();
 }
