@@ -100,12 +100,13 @@ string hint_2 = "\n\t\"This is the burial ground for an ancient race that once t
                 "\tthat slowly eroded away all organic life, including this race of highly intelligent beings.\n"
                 "\tEven with their vastly superior technology, they could not escape it. With their few remaining numbers, they instead erected monuments\n"
                 "\tto honor their dead and record their achievements. These beings prized their scientific prowess and achievements above all else,\n"
-                "\tto a nigh-unattainable perfectionistic standard. It is one of these monuments that you now stand in.\n"
-                "\tHowever, it was this perfectionism that gave valuable insight to the Worldwalkers that allowed them to fine-tune their own Gate technology.\n"
+                "\tto a nigh-unattainable perfectionistic standard. They prided themselves on their intelligence, but in the end, it consumed them.\n"
+                "\tIt is one of these monuments that you now stand in.\n"
+                "\tHowever, it was also this perfectionism that gave valuable insight to the Worldwalkers that allowed them to fine-tune their own Gate technology.\n"
                 "\tI still don't know the true origin of the Gates. All I know is that the Worldwalkers were not the progenitors of the technology.\n"
                 "\tNor were they the first, or the last, to use them.\n\n"
-                "\tYou must find the Ruby Skull, held by the head of the Crimson Head family, and the temple will grant you passage back.\n"
-                "\tBut be cautious, for this ancient race's yearning for perfection persists even in death.\"\n\n";
+                "\tYou must find the Ruby Skull, held by the patriarch of the Crimson Head family, and the temple will grant you passage back.\n"
+                "\tBut be cautious, for this ancient race's pride persists even in death.\"\n\n";
 
 string hint_3 = "\n\t\"When the Worldwalkers first came through the Gate into this world, they were immediately met with hostility from the ants.\n"
                 "\tIt was only through the superior intelligence and communication with the survivors of the first party here that a deal was struck.\n"
