@@ -16,6 +16,15 @@ bool dod_investigated_platform = false;
 bool dod_sandstorm = false;
 bool dod_used_dagger = false;
 
+void reset_dod()
+{
+    dod_explored_room = false;
+    dod_looked_outside = false;
+    dod_investigated_platform = false;
+    dod_sandstorm = false;
+    dod_used_dagger = false;
+}
+
 void the_desert_of_the_dead_text()
 {
     print_line();
@@ -49,11 +58,13 @@ void the_desert_of_the_dead()
     print_line();
     char choice = getch();
     choice = tolower(choice);
+    cout << choice;
     
     print_line();
     switch(choice)
     {
         case 'a':
+            cout << "You decide to look around the room.\n\n";
             if(!dod_explored_room)
             {
                 cout << "You walk between the rows of tombs, noticing the names inscribed on several of them.\n"
@@ -73,18 +84,19 @@ void the_desert_of_the_dead()
                         "You continue to move along between the rows of tombs. The sandstorm persists outside the building.\n"
                         "You are about halfway through the rows of tombs, still looking for the Crimson Head family name when something grabs your foot.\n"
                         "You quickly look down to see the head of a mummified corpse poking out of the sand, its soulless eyes staring straight up at you and its hand grabbing your foot.\n"
-                        "It then roars an unearthly low growl that resonates throughout the chamber."
+                        "It then roars an unearthly low growl that resonates throughout the chamber.\n"
                         "There is a moment of absolute silence before a chorus of unearthly screams erupt from every tomb in the room.\n"
-                        "Panicking now, you rip your foot out of the mummy's grip and run towards the entrance of the building."
+                        "Panicking now, you rip your foot out of the mummy's grip and run towards the entrance of the building.\n"
                         "You try to force yourself into the sandstorm but are viciously flung backwards as the sandstorm picks up in even more intensity.\n"
-                        "You pull yourself into a sitting position and look towards the entrance, but freeze and scream at what you see." 
+                        "You pull yourself into a sitting position and look towards the entrance, but freeze and scream at what you see.\n" 
                         "Within the silicon tempest, a skull forms out of the flying sand, eyes shining with an ethereal bright blue light.\n"
                         "It roars at you and the voice in your head speaks again, \"You disturbed their peace, and now you will pay with your life.\"\n"
                         "It is then you notice the sound of the lumbering forms behind you. Before you can move, you are roughly pulled to your feet.\n"
-                        "The mummy pulls you into the crowd of corpses. You kick and scream, but there is nothing more you can do as they pull you apart piece by piece."
+                        "The mummy pulls you into the crowd of corpses. You kick and scream, but there is nothing more you can do as they pull you apart piece by piece.\n"
                         "As your screams soften into gurgles and the light leaves your eyes, the swarm of bodies disperses, the sandstorm calms, and all is silent in the desert again.\n";
 
                 cout << "\n\nEnding 6: Torn\n";
+                reset_dod();
                 retry(&the_desert_of_the_dead_text);
             }
             else
@@ -100,6 +112,7 @@ void the_desert_of_the_dead()
             break;
 
         case 'b':
+            cout << "You decide to investigate the center platform.\n\n";
             if(!dod_investigated_platform)
             {
                 cout << "You head up to the raised platform in the center of the room.\n"
@@ -152,6 +165,7 @@ void the_desert_of_the_dead()
         case 'c':
             if(!dod_looked_outside && !dod_sandstorm)
             {
+                cout << "You decide to look outside.\n\n";
                 cout << "You poke your head out of the doorway to the building you're in.\n"
                         "Heat waves ripple the air around you, forcing you to squint for a better view of your surroundings.\n"
                         "Mountainous volcanic rock ridges jut out of the sand several miles directly ahead of you.\n"
@@ -166,6 +180,7 @@ void the_desert_of_the_dead()
             }
             else if(dod_sandstorm)
             {
+                cout << "You decide to look outside.\n\n";
                 cout << "The sandstorm is so severe, there is no way you could find your way around out there.\n"
                         "You can't even safely stick your head out.\n"
                         "Despite this, sand somehow does not enter the building and you don't feel even the slightest of breezes.\n"
@@ -174,6 +189,7 @@ void the_desert_of_the_dead()
             }
             else
             {
+                cout << "You decide to head outside.\n\n";
                 cout << "Despite the brutal heat and the extreme isolation, you head out into the desert.\n"
                         "Within minutes, you are severely sweating and overwhelmingly hot.\n"
                         "You turn to head back to the building, but don't see it anymore.\n"
@@ -193,6 +209,7 @@ void the_desert_of_the_dead()
 
                 cout << "\n\nEnding 5: Thirst";
                 print_line();
+                reset_dod();
                 retry(&the_desert_of_the_dead_text);
             }
             break;

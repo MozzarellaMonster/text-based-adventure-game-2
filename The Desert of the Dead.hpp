@@ -12,6 +12,7 @@ extern bool dod_investigated_platform;
 extern bool dod_sandstorm;
 extern bool dod_used_dagger;
 
+extern void reset_dod();
 extern void the_desert_of_the_dead_text();
 extern void the_desert_of_the_dead();
 
