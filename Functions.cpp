@@ -65,12 +65,7 @@ void reset()
     tsl_completed = false;
 
     // Desert of the Dead
-    dod_explored_room = false;
-    dod_looked_outside = false;
-    dod_investigated_platform = false;
-    dod_sandstorm = false;
-    dod_used_dagger = false;
-
+    reset_dod();
 
     // Heart of the Colony
     hotc_explored_left_tunnel = false;
