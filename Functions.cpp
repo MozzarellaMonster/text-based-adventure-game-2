@@ -305,7 +305,7 @@ void start()
             "An ornate stone archway is set into the temple, but is currently blocked by what appears to be a large slab of stone.\n"
             "A stone pedestal stands before you holding a bowl of fire, seemingly burning some kind of charcoal.\n"
             "Exactly how the bowl of fire is burning when you have not come across anyone that could have started it is strange,\nbut you've already seen enough weird stuff to not question it further.\n"
-            "There is an engraving below the pedestal, but you have cannot read the strange writing.\n"
+            "There is an engraving below the pedestal, but you cannot read the strange writing.\n"
             "An ornate dagger lies in a small recess beneath the inscription, seemingly made of an iron-like metal.\n";
     first_choice();
 }
@@ -326,7 +326,8 @@ void first_choice()
                 "You slowly run your thumb over the strange symbols.\n"
                 "Suddenly, the glyphs glow a menacing red and you feel a sudden urge to cut your hand.\n"
                 "The urge steadily grows until you deftly slice open the palm of your left hand.\n"
-                "Complete surprise overtakes you for a moment as you process what you have just done until you suddenly and involuntarily thrust your hand over the bowl of fire\n and squeeze several large drops of your own blood into the waiting flames below.\n"
+                "Complete surprise overtakes you for a moment as you process what you have just done until you suddenly and involuntarily thrust your hand over the bowl of fire\n"
+                "and squeeze several large drops of your own blood into the waiting flames below.\n"
                 "The blood sizzles as it hits the hot coals and the fire astoundingly changes colors into a deep red before quickly reverting back.\n"
                 "Remarkably, the cut on your left palm has sealed completely with no visible scars, as if it was never there.\n"
                 "You stand still for a while, flexing your hand and running your fingers over your smooth, unharmed palm.\n"
@@ -408,7 +409,7 @@ void temple_entrance()
                 "It reads:\n";
         cout << journal_entry_1;
         cout << "You fold up the piece of paper and stash it on your person.\n";
-        inventory.push_back(journal_entry_1);
+        //inventory.push_back(journal_entry_1);
         cout << "You head back to the temple entrance and step inside.\n";
         temple_first_room_text();
     }
