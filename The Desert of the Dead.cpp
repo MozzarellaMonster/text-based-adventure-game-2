@@ -80,11 +80,11 @@ void the_desert_of_the_dead()
             else if(dod_investigated_platform)
             {
                 cout << "You wander around, looking at the names of tombs you pass, looking for the Crimson Head family name.\n"
-                        "As you move, you hear something - a shuffling noise, but every time you look you don't see anything.\n"
+                        "As you move, you hear something - a shuffling noise, but every time you look towards the noise, you don't see anything.\n"
                         "You continue to move along between the rows of tombs. The sandstorm persists outside the building.\n"
                         "You are about halfway through the rows of tombs, still looking for the Crimson Head family name when something grabs your foot.\n"
                         "You quickly look down to see the head of a mummified corpse poking out of the sand, its soulless eyes staring straight up at you and its hand grabbing your foot.\n"
-                        "It then roars an unearthly low growl that resonates throughout the chamber.\n"
+                        "It then roars with an unearthly low growl that resonates throughout the chamber.\n"
                         "There is a moment of absolute silence before a chorus of unearthly screams erupt from every tomb in the room.\n"
                         "Panicking now, you rip your foot out of the mummy's grip and run towards the entrance of the building.\n"
                         "You try to force yourself into the sandstorm but are viciously flung backwards as the sandstorm picks up in even more intensity.\n"
@@ -144,7 +144,7 @@ void the_desert_of_the_dead()
                         "You look towards the tombs and notice several mummies have now opened their sarcophaguses and are climbing out.\n"
                         "It seems in your eagerness to get out of there, you accidentally woke up the dead. You quicken your pace.\n"
                         "There are a lot of mummies now, and they're all taking notice of you. You quickly run up to the tomb that was said to contain the Ruby Skull and deftly push the lid off.\n"
-                        "There inside the tomb lays a mummy holding the Ruby Skull in its cold dead hands. No time for respect or reverence, you quickly yank the Ruby Skull out of the mummy's hands and take off towards the exit.\n"
+                        "There, inside the tomb lays a mummy holding the Ruby Skull in its cold dead hands. No time for respect or reverence, you quickly yank the Ruby Skull out of the mummy's hands and take off towards the exit.\n"
                         "You hear a piercing wail behind you as several mummies have now closed in on your position.\n"
                         "Pulling out the dagger, you cut at the limbs of any that manage to grab you, forcing them to let go, and dodge the rest.\n"
                         "The entrance has reopened into that familiar shimmer of an active Gate, and you make a mad dash for it.\n"
