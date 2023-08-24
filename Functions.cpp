@@ -178,7 +178,7 @@ void archway(string message, string name, bool *archway_read, void (*func)())
     }
     else{
         print_line();
-        cout << "\nYou approach " << name << "\n";
+        cout << "\nYou approach " << name << ".\n";
     }
 
     cout << "\nDo you want to enter the archway? Y/N: ";
@@ -186,7 +186,7 @@ void archway(string message, string name, bool *archway_read, void (*func)())
     cout << answer << "\n";
     if(tolower(answer) == 'y')
     {
-        cout << "\nYou take a step forward and enter " << name << "\n";
+        cout << "\nYou take a step forward and enter " << name << ".\n";
         func();
     }
     else if(tolower(answer) == 'n')
