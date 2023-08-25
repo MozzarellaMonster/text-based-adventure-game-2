@@ -400,7 +400,7 @@ void temple_entrance()
                 "You pull it out and search the pockets. You find an old map, a broken watch, and a piece of paper.\n"
                 "The old map is nearly useless, as it is so worn and faded that all you can really see are faint gridlines and the border.\n"
                 "The broken watch is even more useless since the casing seemingly broke open long ago and all the internal mechanisms have now fallen completely apart.\n"
-                "The piece of paper is actually the most interesting of the junk you find. There's something written on it in in crooked, barely legible script.\n"
+                "The piece of paper is actually the most interesting of the junk you find. There's something written on it in crooked, barely legible script.\n"
                 "It reads:\n";
         cout << journal_entry_1;
         cout << "You fold up the piece of paper and stash it on your person.\n";
