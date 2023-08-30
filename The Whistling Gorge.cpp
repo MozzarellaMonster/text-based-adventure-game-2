@@ -22,12 +22,12 @@ void the_whistling_gorge_text()
     print_line();
     cout << "You stumble through the Gate, barely managing to regain your balance to avoid face planting in the chalky white dust.\n"
             "Standing upright, you find yourself in a large canyon with looming rock faces on either side of you.\n"
-            "You look back to see a large similarly carved Gate set into the rock face behind you.\n"
+            "You look back to see a large carved archway set into the rock face behind you.\n"
             "However, this one is clearly inactive as nothing but black stone greets you between either pillar of the Gate.\n"
             "You turn back around and see what looks like a small forest a few hundred meters away from you.\n"
             "With no other choice in the dead end of the canyon you find yourself in, you walk forward.\n"
             "As you approach the forest, you soon realize that seemingly every tree within it is dead.\n"
-            "Their gnarled, twisted branches reach toward the calm blue sky like withering fingers from a grave.\n"
+            "Their gnarled, twisted branches reach toward the calm blue sky like withered fingers from a grave.\n"
             "Wandering through the thicket, you notice several trees have lines of holes scattered along the length of their trunks.\n"
             "Like the holes along the length of a flute. You stop and stare at one series close to you before you feel the breeze pick up\n"
             "and you hear a somber whistling tone all around you...\n\n"
@@ -36,7 +36,7 @@ void the_whistling_gorge_text()
             "chalky white dust, and you look down to see you are crouched in front of a small hole in the ground where you had been digging.\n"
             "You stand back up, shaking the dust free from your hands. The breeze is noticeably gone, and the somber whistle nowhere to be heard.\n"
             "You don't know why you were digging, but you're sure it wasn't for a good reason, as a creeping dread crawls slowly up your spine.\n"
-            "Something tells you it would be in your best interest to not hear the whistling woods again.\n"
+            "Something tells you it would be in your best interest to not hear the whistling noise again.\n"
             "Walking forward, you soon come upon a split in the path. There are two choices: the path on the left goes up a hill,\n"
             "the path on the right goes further into the forest.\n";
     the_whistling_gorge();
@@ -76,12 +76,12 @@ void the_whistling_gorge()
         
         case 'b':
             cout << "You head down the path on the right. As you walk down the path, you notice the trees here seem to be getting bigger.\n"
-                "Unusual, given that you would think dead trees wouldn't grow.\n"
-                "Soon, the path leads to a small clearing with a large black tree in the center, surrounded on all sides by a dense scattering of trees.\n"
-                "The branches of said trees reach over the clearing, creating a domed roof that the sunlight is barely able to penetrate and casting the\n"
-                "entire area into a gloomy shade.\n"
-                "It is then you notice the hole in the center of the trunk of the large black tree,\n"
-                "dimly glowing a shade of red, and the white twisted branch in the center of the hole.\n";
+                    "Unusual, given that you would think dead trees wouldn't grow.\n"
+                    "Soon, the path leads to a small clearing with a large white tree in the center, surrounded on all sides by a dense scattering of trees.\n"
+                    "The branches of said trees reach over the clearing, creating a domed roof that the sunlight is barely able to penetrate and casting the\n"
+                    "entire area into a gloomy shade.\n"
+                    "It is then you notice the hole in the center of the trunk of the large white tree,\n"
+                    "dimly glowing a shade of red, and the white twisted branch in the center of the hole.\n";
             branch_options();
             break;
         
@@ -95,7 +95,7 @@ void the_whistling_gorge()
             {
                 cout << "You decide to look around where you are first before settling on a path. After a few seconds of looking over the area,\n"
                         "you find a stone between the paths that looks as though it was recently disturbed.\n"
-                        "You look around it first and finding nothing, lift the stone up. Underneath, you find two folded pieces of paper.\n"
+                        "You look around it first and finding nothing, so you lift the stone up. Underneath, you find two folded pieces of paper.\n"
                         "Rolling the stone aside, you pick up the papers and begin to read:\n\n";
                 cout << journal_entry_3;
                 journals.push_back(journal_entry_3);
@@ -108,8 +108,8 @@ void the_whistling_gorge()
             break;
         
         case 'd':
-            cout << "You look back from where you came, but remember that solid rock that made up the way out -\n"
-                    "you weren't getting out of here until you found what you needed.\n";
+            cout << "You look back from where you came, but remember the solid rock between the pillars of the archway -\n"
+                    "you aren't getting out of here until you find what you're looking for.\n";
                     "You turn back to the paths ahead of you.\n";
             the_whistling_gorge();
             break;
@@ -169,7 +169,7 @@ void branch_options()
     {
         cout << "You slowly approach the tree and reach towards the branch in the trunk, expecting something horrible to happen to you before you can actually grab it.\n"
                 "But nothing does, and you retrieve it successfully. Holding the twisted branch closer,\n"
-                "you notice there are holes along the length of it and a larger one at one end.\n"
+                "you notice there are holes along the length of it and a larger one at one end, similar to the trees in the grove.\n"
                 "It's a flute, you realize. A slight breeze picks up and creates a low tune in the flute and in some of the surrounding trees.\n"
                 "A cold chill creeps up your spine as a slight dizzying spell assaults you. You quickly regain your composure,\n"
                 "put the flute away, and head back through the now open Gate.\n";
@@ -183,6 +183,7 @@ void branch_options()
                     "Several minutes pass until you realize you're hopelessly lost.\n"
                     "You spin around in place, hoping to spot some familiar landmarks, but see nothing.\n"
                     "It is then a strong wind stirs up and you once again hear the strange whistling sound fill the air around you…\n"
+                    "                                                       *****                                                                   \n"
                     "When you come to, you can't move. You spin your head and look up to see a hole with a view of the sky above, it is now nighttime.\n"
                     "Dirt fully encases your body from the neck down, completely immobilizing you. You scream, but soon stop, realizing how fruitless it is.\n"
                     "It is then you feel something wriggling in the dirt around you. Fear floods your body as you hear the earth shifting around you.\n"
@@ -190,19 +191,19 @@ void branch_options()
                     "wrapping themselves around your limbs and forcing themselves into your orifices.\n"
                     "You choke as the roots force their way down your throat, you grow deaf as your eardrums are ruptured,\n"
                     "and blinded as your eyes are crushed within their sockets.\n"
-                    "Pain erupts in your skull as the roots invade your cranium. Somehow, pitifully, you are kept alive.\n"
-                    "You feel the roots dig into your skin, invade your arteries,\n"
-                    "and pierce your muscles.\n"
+                    "Pain erupts in your skull as the roots invade your cranium. Somehow, through some unknown, teribble means, you are kept alive.\n"
+                    "You feel the roots dig into your skin, invade your arteries, and pierce your muscles.\n"
                     "It is then you hear the sickening crunch of bone as the roots permeate them. Your existence is nothing but pain, and you soon black out…\n\n"
+                    "                                                       *****                                                                   \n"
                     "Dry.\n"
                     "Desiccate.\n"
                     "Dead.\n"
-                    "Your limbs splay out, aching for moisture, reaching towards the sky that never grants rain.\n"
+                    "Your limbs splay out, aching for moisture, reaching pleadingly towards a sky that never grants rain.\n"
                     "Your ribs and spine gruesomely twisted into a trunk, patterned with holes down the length of your new body.\n"
                     "Your toes grown beyond anything humanly possible, planted firmly into the ground, writhing in eternal anticipation.\n"
                     "Everything that was human about you is now gone, as your mind fades away into eternity.\n"
-                    "The wind blows and you hear it rise from the others around you, joining in yourself later. The whistle.\n"
-                    "You join in the accursed chorus until the wind settles down and your song ends.\n"
+                    "The wind blows and you hear it rise from the others around you, joining in yourself later as the wind fills your empty husk of a body. The whistle.\n"
+                    "You join in the accursed, mournful chorus until the wind settles down and your song ends.\n"
                     "Soon.\n"
                     "Soon someone will come. And then you can feed again.\n";
 
