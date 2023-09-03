@@ -281,7 +281,7 @@ void interlude()
 {
     this_thread::sleep_for(chrono::seconds(5));
     print_line();
-    cout << "Press enter to continue.\n";
+    cout << "Press ENTER to continue.\n";
     cin.clear();
     if(getch() == '\n')
     {
