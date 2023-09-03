@@ -27,6 +27,8 @@ void reset_dod()
 
 void the_desert_of_the_dead_text()
 {
+    interlude();
+    system("cls");
     print_line();
     cout << "You fall to your knees. Going through the entrance knocked the wind out of you.\n"
             "After taking a few seconds to catch your breath, you stand back up and look around the room you are now in.\n"
@@ -158,7 +160,7 @@ void the_desert_of_the_dead()
                 journals.push_back(journal_entry_6);
                 inventory.push_back(the_desert_of_the_dead_key);
                 dod_completed = true;
-                temple_second_room();
+                temple_second_room(true);
             }
             break;
 
