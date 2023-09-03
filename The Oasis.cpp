@@ -16,6 +16,8 @@ bool pond_hint = false;
 
 void the_oasis_text()
 {
+    interlude();
+    system("cls");
     print_line();
     cout << "You stumble out of the portal and quickly catch your balance as it closes behind you. Standing up straight, you take in your surroundings.\n"
             "You find yourself in a hot and humid jungle, large trees and exotic-looking plants surround you on all sides. The sun burns brightly through the canopy of trees.\n"
@@ -23,11 +25,16 @@ void the_oasis_text()
             "As a result, this jungle has a much less somber atmosphere and the foliage is noticeably lighter green in color compared to the one you found the Temple in.\n"
             "Although the jungle is dense and the undergrowth thick, you're able to make out three pathways in front of you - one to your left, one directly ahead, and another to your right.\n"
             "Looking behind you, you see a carved stone archway with no active portal. You look back towards the three pathways in front of you.\n";
-    the_oasis();
+    the_oasis(false);
 }
 
-void the_oasis()
+void the_oasis(bool show_interlude=false)
 {
+    if(show_interlude)
+    {
+        interlude();
+        system("cls");
+    }
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Explore the left path\n";
@@ -36,6 +43,7 @@ void the_oasis()
     print_line();
     char choice = getch();
     choice = tolower(choice);
+    cout << choice << "\n";
 
     print_line();
     switch(choice)
@@ -45,15 +53,10 @@ void the_oasis()
             {
                 cout << "You look down the dark tunnel, and that familiar uneasy feeling bubbles like a noxious pit in your stomach. Whatever that clearing was, you want nothing to do with it.\n"
                         "You look back to the options in front of you.\n";
-                the_oasis();
+                the_oasis(false);
             }
             else
             {
-                cout << "You decide to explore the left path.\n"
-                        "You look towards the left path. It lays in darkness, with an overarching tunnel of branches that goes deeper into the jungle. You hesitate for just a moment, but step forward into the tunnel.\n"
-                        "After a short walk, you find a small clearing carpeted by thick moss and illuminated brightly by a ray of sunshine peeking through the canopy. Small flowers line the circumference of the area.\n"
-                        "Their colorful petals gently dancing in a small breeze. Despite the welcoming atmosphere, a creeping feeling of unease slinks up your spine. You notice small particles floating through the air,\n"
-                        "dancing like the fae in fairytales. You hesitate, unsure of what to do.\n";
                 small_clearing();
             }
             break;
@@ -70,7 +73,7 @@ void the_oasis()
             }
             cout << "You stand on the shoreline of the small pond the roaring waterfall pours into. To your left, you see an unusually neatly stacked pile of rocks set against a cliff wall next to the waterfall,\n"
                     "to your left lies a log overgrown with mushrooms and moss, but appears hollow inside, and directly ahead of you lies the waterfall.\n";
-            pond_options();
+            pond_options(true);
             break;
 
         case 'c':
@@ -91,17 +94,26 @@ void the_oasis()
             
             cout << "\n\nEnding 16: Baby Food\n";
             print_line();
-            retry(&the_oasis);
+            retry(&the_oasis, true);
             break;
 
         default:
             try_again();
-            the_oasis();
+            the_oasis(false);
     }
 }
 
 void small_clearing()
 {
+    interlude();
+    system("cls");
+    print_line();
+    cout << "You decide to explore the left path.\n"
+            "You look towards the left path. It lays in darkness, with an overarching tunnel of branches that goes deeper into the jungle. You hesitate for just a moment, but step forward into the tunnel.\n"
+            "After a short walk, you find a small clearing carpeted by thick moss and illuminated brightly by a ray of sunshine peeking through the canopy. Small flowers line the circumference of the area.\n"
+            "Their colorful petals gently dancing in a small breeze. Despite the welcoming atmosphere, a creeping feeling of unease slinks up your spine. You notice small particles floating through the air,\n"
+            "dancing like the fae in fairytales. You hesitate, unsure of what to do.\n";
+
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Proceed into the clearing\n";
@@ -109,6 +121,7 @@ void small_clearing()
     print_line();
     char choice = getch();
     choice = tolower(choice);
+    cout << choice << "\n";
 
     print_line();
     switch(choice)
@@ -138,7 +151,7 @@ void small_clearing()
             
             cout << "\n\nEnding 14: Punctured\n";
                     print_line();
-                    retry(&the_oasis);
+                    retry(&the_oasis, true);
             break;
         
         case 'b':
@@ -146,7 +159,7 @@ void small_clearing()
                     "Curious, you turn back towards the clearing, and your breath catches in your throat as you now see that all the flowers lining the perimeter of the clearing have shifted to face your direction.\n"
                     "Your eyes widen in horror and the uneasy feeling grows stronger as it is joined by the feeling of being watched. You quickly turn away from the accursed clearing and hurry back down the tunnel.\n";
             explored_clearing = true;
-            the_oasis();
+            the_oasis(true);
             break;
 
         default:
@@ -155,9 +168,13 @@ void small_clearing()
     }
 }
 
-
-void pond_options()
+void pond_options(bool show_interlude=false)
 {
+    if(show_interlude)
+    {
+        interlude();
+        system("cls");
+    }
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Investigate the pile of rocks\n";
@@ -174,6 +191,7 @@ void pond_options()
     print_line();
     char choice = getch();
     choice = tolower(choice);
+    cout << choice << "\n";
 
     print_line();
     switch (choice)
@@ -196,7 +214,7 @@ void pond_options()
         {
             cout << "You look to the now dismantled pile of rocks. Besides the papers you found, there was nothing helpful there. You look back to the shoreline.\n";
         }
-        pond_options();
+        pond_options(false);
         break;
     
     case 'b':
@@ -213,7 +231,7 @@ void pond_options()
 
         cout << "\n\nEnding 15: Rot Mk. II\n";
         print_line();
-        retry(&pond_options);
+        retry(&pond_options, true);
         break;
     
     case 'c':
@@ -241,13 +259,13 @@ void pond_options()
                     "Pocketing the leaf, you head back down the tree, through the waterfall and back through the portal.\n";
             inventory.push_back(the_oasis_key);
             oasis_completed = true;
-            temple_second_room();
+            temple_second_room(true);
         }
         else
         {
             cout << "You decide to go back through the jungle.\n"
                     "Turning around, you head back through the trees.\n";
-            the_oasis();
+            the_oasis(true);
         }
         break;
 
@@ -256,18 +274,18 @@ void pond_options()
         {
             cout << "You decide to go back through the jungle.\n"
                     "Turning around, you head back through the trees.\n";
-            the_oasis();
+            the_oasis(true);
         }
         else
         {
             try_again();
-            retry(&pond_options);    
+            retry(&pond_options, false);    
         }
         break;
     
     default:
         try_again();
-        retry(&pond_options);
+        retry(&pond_options, false);
         break;
     }
 }

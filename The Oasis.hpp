@@ -11,8 +11,8 @@ extern bool explored_clearing;
 extern bool pond_hint;
 
 extern void the_oasis_text();
-extern void the_oasis();
+extern void the_oasis(bool show_interlude);
 extern void small_clearing();
-extern void pond_options();
+extern void pond_options(bool show_interlude);
 
 #endif
