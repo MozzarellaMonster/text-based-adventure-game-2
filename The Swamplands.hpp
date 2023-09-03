@@ -13,7 +13,7 @@ extern bool hunt;
 extern bool crab;
 
 extern void the_swamplands_text();
-extern void the_swamplands();
+extern void the_swamplands(bool show_interlude);
 extern void grasslands();
 extern void tall_trees();
 extern void islands();

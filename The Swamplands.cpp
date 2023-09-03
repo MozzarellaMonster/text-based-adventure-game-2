@@ -18,6 +18,8 @@ bool crab = false;
 
 void the_swamplands_text()
 {
+    interlude();
+    system("cls");
     print_line();
     cout << "You stumble out of the Gate and immediately get your foot stuck in a deep puddle of mud. The mud sucks at your shoes as you desperately try to free your foot without falling over.\n"
             "Thankfully, after much wiggling and pulling, you manage to free your foot, shoe and all, from the mud without so much as a slight stumble. You finally look up from the muddy puddle\n"
@@ -34,11 +36,16 @@ void the_swamplands_text()
     cout << "Suddenly, you hear a loud roar erupt from the central area of the swamp, birds flying away from the loud sound. Scared but determined, you stand before the options before you - you could explore\n"
             "the left area that consists of tall grassland higher than your shoulders, a central area that consists of tall trees and deep waters, or the right area that is made up of lots of little islands and\n"
             "several weeping willow trees.\n\n";
-    the_swamplands();
+    the_swamplands(false);
 }
 
-void the_swamplands()
+void the_swamplands(bool show_interlude=false)
 {
+    if(show_interlude)
+    {
+        interlude();
+        system("cls");
+    }
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Explore the tall grasslands\n";
@@ -56,18 +63,10 @@ void the_swamplands()
         if(explored_grasslands)
         {
             cout << "You look toward the tall grasslands, but remember that you didn't find anything there. You look back to the options before you.\n";
-            the_swamplands();
+            the_swamplands(false);
         }
         else
         {
-            cout << "You decide to explore the tall grasslands.\n"
-                    "Getting into the boat, you paddle your way to the left area where the tall grasslands greet you on thankfully solid ground. Reaching a smaller, more decrepit dock, you tie your boat to a piling\n"
-                    "and climb out. As expected, the grass is much higher than what you initially expected, well above your full height. With deep trepidation, yet equally deep determination, you step into the grasslands.\n"
-                    "Several minutes pass before you come across anything within the field. Even traveling in a straight line, you're pleasantly surprised that nothing has actually tried to kill you yet.\n"
-                    "Unexpectedly however, the monotony is dropped once you come across an unusual sight - a small camp of wooden and straw huts. And small is not an exaggeration, the huts are barely above knee-height.\n"
-                    "You stoop low to look inside one of them - empty. Eventually, you spot several small footprints on the ground leading away from every hut and into the tall grass. You now have two options - follow the\n"
-                    "footprints further into the grass or go in a separate direction away from them.\n";
-            explored_grasslands = true;
             grasslands();
         }
         break;
@@ -84,7 +83,7 @@ void the_swamplands()
         if(explored_islands)
         {
             cout << "You look towards the islands and think about what you saw there, then look back towards the options in front of you.\n";
-            the_swamplands();
+            the_swamplands(false);
         }
         else
         {
@@ -99,13 +98,23 @@ void the_swamplands()
     
     default:
         try_again();
-        the_swamplands();
+        the_swamplands(false);
         break;
     }
 }
 
 void grasslands()
 {
+    cout << "You decide to explore the tall grasslands.\n"
+            "Getting into the boat, you paddle your way to the left area where the tall grasslands greet you on thankfully solid ground. Reaching a smaller, more decrepit dock, you tie your boat to a piling\n"
+            "and climb out. As expected, the grass is much higher than what you initially expected, well above your full height. With deep trepidation, yet equally deep determination, you step into the grasslands.\n"
+            "Several minutes pass before you come across anything within the field. Even traveling in a straight line, you're pleasantly surprised that nothing has actually tried to kill you yet.\n"
+            "Unexpectedly however, the monotony is dropped once you come across an unusual sight - a small camp of wooden and straw huts. And small is not an exaggeration, the huts are barely above knee-height.\n"
+            "You stoop low to look inside one of them - empty. Eventually, you spot several small footprints on the ground leading away from every hut and into the tall grass. You now have two options - follow the\n"
+            "footprints further into the grass or go in a separate direction away from them.\n";
+            explored_grasslands = true;
+    interlude();
+    system("cls");
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Follow the footprints\n";
@@ -113,6 +122,7 @@ void grasslands()
     print_line();
     char choice = getch();
     choice = tolower(choice);
+    cout << choice << "\n";
 
     print_line();
     switch (choice)
@@ -158,7 +168,7 @@ void grasslands()
                 "crocodile grabs one of them in its huge jaws. Its screams cut through the air as the others try to help free their companion, and the crocodile pulls it under the water. In all the commotion,\n"
                 "you are quickly forgotten and manage to run along the shoreline back around the field of tall grass to the small dock where the boat is anchored. You quickly untie the boat from the piling,\n"
                 "jump in, and paddle your way back to the first dock you found the boat at.\n";
-        the_swamplands();
+        the_swamplands(true);
         break;
     
     default:
@@ -170,6 +180,8 @@ void grasslands()
 
 void tall_trees()
 {
+    interlude();
+    system("cls");
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Go into the darker part of the swamp\n";
@@ -177,6 +189,7 @@ void tall_trees()
     print_line();
     char choice = getch();
     choice = tolower(choice);
+    cout << choice << "\n";
 
     print_line();
     switch (choice)
@@ -252,6 +265,8 @@ void tall_trees()
 
 void islands()
 {
+    interlude();
+    system("cls");
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Explore the large island with several large boulders\n";
@@ -260,6 +275,7 @@ void islands()
     print_line();
     char choice = getch();
     choice = tolower(choice);
+    cout << choice << "\n";
 
     print_line();
     switch (choice)
@@ -316,7 +332,7 @@ void islands()
     case 'c':
         cout << "You turn the boat around and head back to the dock.\n";
         explored_islands = true;
-        the_swamplands();
+        the_swamplands(true);
         break;
 
     default:
@@ -328,6 +344,8 @@ void islands()
 }
 void rock_island()
 {
+    interlude();
+    system("cls");
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Reach between the rocks\n";
@@ -335,6 +353,7 @@ void rock_island()
     print_line();
     char choice = getch();
     choice = tolower(choice);
+    cout << choice << "\n";
 
     print_line();
     switch (choice)
@@ -379,6 +398,8 @@ void rock_island()
         
 void the_hunt()
 {
+    interlude();
+    system("cls");
     print_line();
     cout << "Going back to the starting position, you look around quickly, taking in your surroundings and looking for anything that might make a good makeshift weapon. The Nightflesh monster will be here any minute now,\n"
             "and you only have the dagger on you for protection. There are a few sizable rocks laying in a pool nearby, a large broken-off branch that could make a good makeshift club lying against the trunk of a tree,\n"
@@ -395,6 +416,7 @@ void the_hunt()
     print_line();
     char choice = getch();
     choice = tolower(choice);
+    cout << choice << "\n";
 
     print_line();
     switch (choice)
@@ -486,7 +508,7 @@ void the_hunt()
             
             inventory.push_back(the_swamplands_key);
             tsl_completed = true;
-            temple_second_room();
+            temple_second_room(true);
             break;
 
         default:
