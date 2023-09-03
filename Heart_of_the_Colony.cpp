@@ -22,6 +22,8 @@ bool hotc_ask_orb = false;
 
 void the_heart_of_the_colony_text()
 {
+    interlude();
+    system("cls");
     print_line();
     cout << "You brace yourself, but fall to your hands and knees anyway as you go through the entrance.\n"
             "Immediately, you notice something odd about the atmosphere here. The air is thick, yet strangely dry.\n"
@@ -43,6 +45,7 @@ void the_heart_of_the_colony()
     print_line();
     char choice = getch();
     choice = tolower(choice);
+    cout << choice << "\n";
 
     print_line();
     switch(choice)
@@ -103,6 +106,8 @@ void the_heart_of_the_colony()
 
 void the_queens_chambers()
 {
+    interlude();
+    system("cls");
     print_line();
     cout << "Eventually, the tunnel opens up into a large chamber where you spy a distinct silhouette facing away from you: the Ant Queen.\n"
             "It doesn't look like the typical ant, it is much bigger and has a distinctly semi-humanoid upper torso attached to the thorax,\n"
@@ -123,8 +128,8 @@ void the_queens_chambers()
             "The Queen is silent for a moment before continuing, \"You travel from place to place with little regard for the strain on your mortal husk.\" she approaches you and you tilt your head back as she towers over you.\n"
             "\"So did the Travelers, and they paid the ultimate price for it.\" After a pause, she walks back towards the center of the room.\n"
             "\"Now leave, you've taken enough of my time.\" Still confused by the interaction, you clumsily take a step towards her before being harshly stopped by the ants that escorted you through the tunnel.\n"
-            "\"I c-can't.\", you say. \"And why is that?\" she thought-speaks to you, clutching the amber orb close to her thorax. \"I have to find something here before the Gate reopens.\""
-            "\"And just what is it you seek?\" she asks, clutching the orb even closer to herself. \"I don't know, all I know is that it holds some significance to the Worldwalkers.\""
+            "\"I c-can't.\", you say. \"And why is that?\" she thought-speaks to you, clutching the amber orb close to her thorax. \"I have to find something here before the Gate reopens.\"\n"
+            "\"And just what is it you seek?\" she asks, clutching the orb even closer to herself. \"I don't know, all I know is that it holds some significance to the Worldwalkers.\"\n"
             "The Queen's antennae twitch in thought as she mulls over what you say. After a pregnant pause, she finally thought-speaks, \"The Travelers rarely stayed here longer than necessary, but when they did,\n"
             "they spent most of their in our archives. \'Historians\' and \'archaeologists,\' they called themselves.\" She slowly draws a claw over the surface of the orb, \"But I know they had other intentions.\"\n"
             "She says as her compound eyes narrow. \"You share no such intentions, you merely wish to return home. Because of this, I will allow you to search through my hive, but be forewarned,\"\n"
@@ -137,6 +142,8 @@ void the_queens_chambers()
 
 void hotc_explore_nest_text()
 {
+    interlude();
+    system("cls");
     print_line();
     cout << "You are now free to explore the ant hive as you please, however keep in mind the warnings the Ant Queen gave you:\n"
             "\"[I]f you bring harm to any of my subjects, your bones will line my walls.\"\n"
@@ -145,11 +152,16 @@ void hotc_explore_nest_text()
             "From where you stand, you can see three different tunnels before you that lead away from the Queen's Chambers.\n"
             "First, there is the middle tunnel where you were first found but never found out what was at the other end, then there are the\n"
             "two tunnels to the left and right that remain unexplored.\n";
-    hotc_explore_nest();
+    hotc_explore_nest(false);
 }
 
-void hotc_explore_nest()
+void hotc_explore_nest(bool show_interlude=false)
 {
+    if(show_interlude)
+    {
+        interlude();
+        system("cls");
+    }
     print_line();
     cout << "What would you like to do?\n";
     if(hotc_explored_left_tunnel)
@@ -180,6 +192,7 @@ void hotc_explore_nest()
     print_line();
     char choice = getch();
     choice = tolower(choice);
+    cout << choice << "\n";
 
     print_line();
     switch(choice)
@@ -218,7 +231,7 @@ void hotc_explore_nest()
                 hotc_found_hint = true;
                 hotc_explored_left_tunnel = true;
             }
-            hotc_explore_nest();
+            hotc_explore_nest(false);
             break;
 
         case 'b':
@@ -268,7 +281,7 @@ void hotc_explore_nest()
                         "Besides the piles of items and bustling activity, you don't find anything that may help you figure out what you're looking for and decide to leave back down the tunnel.\n";
                 hotc_explored_right_tunnel = true;
             }
-            hotc_explore_nest();
+            hotc_explore_nest(false);
             break;
 
         case 'd':
@@ -301,7 +314,7 @@ void hotc_explore_nest()
                         "After a while, you get back up and face the room of the temple, amber orb in hand.\n\n";
                 inventory.push_back(the_heart_of_the_colony_key);
                 hotc_completed = true;
-                temple_second_room();
+                temple_second_room(true);
             }
             else if(hotc_read_book && !hotc_found_root)
             {
@@ -326,17 +339,19 @@ void hotc_explore_nest()
                         "You look at the tunnels before you.\n";
                 hotc_queens_story = true;
             }
-            hotc_explore_nest();
+            hotc_explore_nest(false);
             break;
 
         default:
             try_again();
-            hotc_explore_nest();
+            hotc_explore_nest(true);
     }
 }
 
 void hotc_archives_text()
 {
+    interlude();
+    system("cls");
     print_line();
     cout << "You approach the stone pedestal in the center of the room. Unlike the other chambers you've been in so far, this one appears to be close to the surface.\n"
             "You look up towards the circular hole in the roof of the chamber where sunlight pours through unhindered, it shines directly down on the stone pedestal.\n"
@@ -368,6 +383,7 @@ void hotc_archives()
     print_line();
     char choice = getch();
     choice = tolower(choice);
+    cout << choice << "\n";
 
     print_line();
     switch(choice)
@@ -462,7 +478,7 @@ void hotc_archives()
 
         case 'd':
             cout << "You leave the archives and head back down the tunnel.\n";
-            hotc_explore_nest();
+            hotc_explore_nest(true);
             break;
 
         default:
@@ -481,6 +497,7 @@ void hotc_tunnel_options()
     print_line();
     char choice = getch();
     choice = tolower(choice);
+    cout << choice << "\n";
 
     print_line();
     switch(choice)
