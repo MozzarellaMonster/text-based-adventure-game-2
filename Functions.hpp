@@ -21,6 +21,7 @@ extern void deposit();
 extern void determine_riddle();
 extern void start();
 extern void show_inventory();
+extern void interlude();
 
 extern void first_choice();
 extern void temple_entrance();

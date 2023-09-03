@@ -277,8 +277,21 @@ void show_inventory()
     }
 }
 
+void interlude()
+{
+    this_thread::sleep_for(chrono::seconds(5));
+    print_line();
+    cout << "Press enter to continue.\n";
+    cin.clear();
+    if(getch() == '\n')
+    {
+        return;
+    }
+}
+
 void start()
 {
+    system("cls");
     print_line();
     cout << "_________          _______   _________ _______  _______  _______  _        _______ \n";
     cout << "\\__   __/|\\     /|(  ____ \\  \\__   __/(  ____ \\(       )(  ____ )( \\      (  ____ \\\n";
@@ -416,6 +429,8 @@ void temple_entrance()
 
 void temple_first_room_text()
 {
+    interlude();
+    system("cls");
     determine_riddle();
     print_line();
     cout << "You enter the temple and find yourself in a dimly lit room.\n"
@@ -605,6 +620,8 @@ void temple_first_room()
 
 void temple_second_room_text()
 {
+    interlude();
+    system("cls");
     print_line();
     cout << "You step into the much larger room and look around.\n"
             "Spaced evenly around the perimeter of the room are seven stone archways.\n"
