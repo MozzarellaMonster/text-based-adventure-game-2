@@ -30,7 +30,7 @@ extern void temple_first_room_text();
 extern void temple_first_room();
 
 extern void temple_second_room_text();
-extern void temple_second_room();
+extern void temple_second_room(bool from_world);
 
 extern void the_desert_of_the_dead_text();
 extern void the_desert_of_the_dead();

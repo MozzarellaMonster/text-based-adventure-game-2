@@ -192,12 +192,12 @@ void archway(string message, string name, bool *archway_read, void (*func)())
     else if(tolower(answer) == 'n')
     {
         cout << "\nYou decide not to go in and return to the center of the room.\n";
-        temple_second_room();
+        temple_second_room(false);
     }
     else
     {
         try_again();
-        temple_second_room();
+        temple_second_room(false);
     }
 }
 
@@ -635,11 +635,16 @@ void temple_second_room_text()
             "You look to the seven archways, all but one are open. The largest one in the center of all the archways is closed off by a large stone.\n"
             "You look back to the obelisk where six recesses are arranged in a hexagonal pattern.\n"
             "You scan the different open archways again.\n";
-    temple_second_room();
+    temple_second_room(false);
 }
 
-void temple_second_room()
+void temple_second_room(bool from_world=false)
 {
+    if(from_world)
+    {
+        interlude();
+        system("cls");
+    }
     if(must_deposit == true)
     {
         deposit();
@@ -716,7 +721,7 @@ void temple_second_room()
             {
                 print_line();
                 cout << completed_world;
-                temple_second_room();
+                temple_second_room(false);
                 break;
             }
             else
@@ -738,7 +743,7 @@ void temple_second_room()
             {
                 print_line();
                 cout << completed_world;
-                temple_second_room();
+                temple_second_room(false);
                 break;
             }
             else
@@ -762,7 +767,7 @@ void temple_second_room()
             {
                 print_line();
                 cout << completed_world;
-                temple_second_room();
+                temple_second_room(false);
                 break;
             }
             else
@@ -812,12 +817,12 @@ void temple_second_room()
                 else if(tolower(answer) == 'n')
                 {
                     cout << "\nYou decide not to go in and return to the center of the room.\n";
-                    temple_second_room();
+                    temple_second_room(false);
                 }
                 else
                 {
                     try_again();
-                    temple_second_room();
+                    temple_second_room(false);
                 }
             }
             else if(!fourth_archway_read)
@@ -833,7 +838,7 @@ void temple_second_room()
                         "You head back to the center of the room.\n";
                 fourth_archway_read = true;
                 saw_archway = true;
-                temple_second_room();
+                temple_second_room(false);
             }
             else
             {
@@ -855,18 +860,18 @@ void temple_second_room()
                     {
                         cout << "You cannot go through the archway because you do not have all the keys for the stone obelisk.\n"
                                 "You return to the center of the room.\n";
-                        temple_second_room();
+                        temple_second_room(false);
                     }
                 }
                 else if(answer == 'N' || answer == 'n')
                 {
                     cout << "\nYou decide not to go in and return to the center of the room.\n";
-                    temple_second_room();
+                    temple_second_room(false);
                 }
                 else
                 {
                     try_again();
-                    temple_second_room();
+                    temple_second_room(false);
                 }
             }
             break;
@@ -876,7 +881,7 @@ void temple_second_room()
             {
                 print_line();
                 cout << completed_world;
-                temple_second_room();
+                temple_second_room(false);
                 break;
             }
             else
@@ -901,7 +906,7 @@ void temple_second_room()
             {
                 print_line();
                 cout << completed_world;
-                temple_second_room();
+                temple_second_room(false);
                 break;
             }
             else
@@ -924,7 +929,7 @@ void temple_second_room()
             {
                 print_line();
                 cout << completed_world;
-                temple_second_room();
+                temple_second_room(false);
                 break;
             }
             else
@@ -945,6 +950,6 @@ void temple_second_room()
         
         default:
             try_again();
-            temple_second_room();
+            temple_second_room(false);
     }
 }
