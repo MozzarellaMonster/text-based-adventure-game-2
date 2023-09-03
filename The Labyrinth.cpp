@@ -57,17 +57,6 @@ void timer(int time)
     timer_done = true;
 }
 
-void interlude()
-{
-    this_thread::sleep_for(chrono::seconds(5));
-    cout << "Press enter to start the fight.\n";
-    cin.clear();
-    if(getch() == '\n')
-    {
-        return;
-    }
-}
-
 int fight(string monster, int str_len, int difficulty, int seconds)
 {
     /*
