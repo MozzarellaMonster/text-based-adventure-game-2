@@ -22,6 +22,6 @@ extern void gc_left_tunnel_text();
 extern void gc_left_tunnel();
 extern void gc_right_tunnel();
 extern void gc_pathway_text();
-extern void gc_pathway();
+extern void gc_pathway(bool show_interlude);
 
 #endif

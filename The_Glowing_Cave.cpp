@@ -22,6 +22,8 @@ bool attention_seeker = false;
 
 void the_glowing_cave_text()
 {
+    interlude();
+    system("cls");
     print_line();
     cout << "Bracing yourself, you close your eyes and take a step into the portal.\n"
             "However, you are met with an eerie silence, followed by a sudden feeling of moisture in the air.\n"
@@ -59,7 +61,7 @@ void the_glowing_cave()
         print_line();
         cout << "\nAfter exploring everything and finding the fossil, the Gate reopens and you head back into the temple.\n\n";
         tgc_completed = true;
-        temple_second_room();
+        temple_second_room(true);
     }
 
     print_line();
@@ -70,7 +72,7 @@ void the_glowing_cave()
     print_line();
     char choice = getch();
     choice = tolower(choice);
-    cout << choice;
+    cout << choice << "\n";
     
     print_line();
     switch(choice)
@@ -131,7 +133,7 @@ void the_glowing_cave()
                 else
                 {
                     cout << "You once again make your way down the well-tread path through the forest of fungi.\n\n";
-                    gc_pathway();
+                    gc_pathway(true);
                 }
             }
             else
@@ -152,6 +154,8 @@ void the_glowing_cave()
 
 void gc_left_tunnel_text()
 {
+    interlude();
+    system("cls");
     print_line();
     cout << "You find yourself in a large cavern, a narrow, natural land bridge stretching across a massive canyon splitting the chamber in two. A large waterfall cascades down from above and to the left of the land bridge,\n"
             "completely soaking the bridge to the point that puddles have formed on it, giving the illusion of holes. Were it not for the constant spray sending ripples through the puddles, you'd believe the illusion.\n"
@@ -165,7 +169,8 @@ void gc_left_tunnel_text()
     gc_left_tunnel();
 }
 
-void gc_left_tunnel(){
+void gc_left_tunnel()
+{
     gc_explored_left_tunnel = true;
     print_line();
     cout << "What would you like to do?\n";
@@ -175,6 +180,7 @@ void gc_left_tunnel(){
     print_line();
     char choice = getch();
     choice = tolower(choice);
+    cout << choice << "\n";
 
     print_line();
     switch(choice)
@@ -230,10 +236,12 @@ void gc_left_tunnel(){
             try_again();
             gc_left_tunnel();
     }
-};
+}
 
 void gc_right_tunnel()
 {
+    interlude();
+    system("cls");
     print_line();
     if(!gc_explored_right_tunnel)
     {
@@ -281,6 +289,8 @@ void gc_right_tunnel()
 
 void gc_pathway_text()
 {
+    interlude();
+    system("cls");
     print_line();
     cout << "You follow the trail for some distance before arriving in a small clearing in the forest of fungi. A portion of the dirt here is tilled and small, dead sprouts of an unknown plant line the ground.\n"
             "Nearby, a wooden cart with a missing wheel lays tilted at an angle. In the back of the cart are intricately-woven baskets with decayed remains of the plant inside them.\n"
@@ -293,11 +303,16 @@ void gc_pathway_text()
             "It is then you notice what appears to be a parchment or scroll of some kind partially hidden between two of the baskets. You pull it out and open it. At first, the unusual text is illegible, but then it translates\n"
             "before your very eyes. It's an inventory order of some kind. Evidently, this cart belonged to a merchant and this farm was used to produce a good used for trade.\n"
             "You look back to the blanket on the wall of the cart. Perhaps this farm was used to grow some material to make blankets? You put the scroll back in the cart and move to the middle of the clearing.\n\n";
-    gc_pathway();
+    gc_pathway(false);
 }
 
-void gc_pathway()
+void gc_pathway(bool show_interlude=false)
 {
+    if(show_interlude)
+    {
+        interlude();
+        system("cls");
+    }
     gc_explored_path = true;
     print_line();
     cout << "Standing in the center of the small clearing in the middle of the fungi forest, you look around.\n";
@@ -306,23 +321,24 @@ void gc_pathway()
     cout << "B. Examine the tilled earth\n";
     cout << "C. Explore the clearing\n";
     cout << "D. Return to the cave\n";
+
     print_line();
-    
     char choice = getch();
     choice = tolower(choice);
+    cout << choice << "\n";
     
     print_line();
     switch(choice)
     {
         case 'a':
             cout << "You briefly look in the cart, but find nothing else of interest, so you return to the center of the clearing.\n\n";
-            gc_pathway();
+            gc_pathway(false);
             break;
             
         case 'b':
             cout << "You go back to the small tilled section of earth and start scanning the area. Other than the blackened dead sprouts in some areas of the tilled earth, there isn't anything of note in the area.\n"
                     "Giving the area a brief once-over again, you return to the center of the clearing.\n\n";
-            gc_pathway();
+            gc_pathway(false);
             break;
 
         case 'c':
@@ -340,7 +356,7 @@ void gc_pathway()
                         "You carefully close the box back up and place it back in the mound of dirt before walking back to the center of the clearing.\n\n";
                 gc_usb_drive = true;
             }
-            gc_pathway();
+            gc_pathway(false);
             break;
 
         case 'd':
@@ -350,6 +366,6 @@ void gc_pathway()
 
         default:
             try_again();
-            gc_pathway();
+            gc_pathway(true);
     }
 }
