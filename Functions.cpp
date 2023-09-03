@@ -144,6 +144,26 @@ void retry()
     }
 }
 
+void retry(void (*func)(bool), bool show_interlude)
+{
+    cout << "\nRetry from the last area? Y/N: ";
+    char choice = getch();
+    cout << choice << "\n";
+    if(tolower(choice) == 'y')
+    {
+        func(show_interlude);
+    }
+    else if(tolower(choice) == 'n')
+    {
+        retry();
+    }
+    else
+    {
+        try_again();
+        retry(func, show_interlude);
+    }
+}
+
 void retry(void (*func)())
 {
     cout << "\nRetry from the last area? Y/N: ";

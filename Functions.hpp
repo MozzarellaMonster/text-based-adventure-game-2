@@ -16,6 +16,7 @@ extern void try_again();
 extern void reset();
 extern void retry();
 extern void retry(void (*func)());
+extern void retry(void (*func)(bool), bool show_interlude);
 extern void archway(string message, string name, bool *archway_read, void (*func)());
 extern void deposit();
 extern void determine_riddle();
