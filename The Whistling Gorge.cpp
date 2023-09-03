@@ -19,6 +19,8 @@ bool denied_fruit;
 
 void the_whistling_gorge_text()
 {
+    interlude();
+    system("cls");
     print_line();
     cout << "You stumble through the Gate, barely managing to regain your balance to avoid face planting in the chalky white dust.\n"
             "Standing upright, you find yourself in a large canyon with looming rock faces on either side of you.\n"
@@ -39,11 +41,16 @@ void the_whistling_gorge_text()
             "Something tells you it would be in your best interest to not hear the whistling noise again.\n"
             "Walking forward, you soon come upon a split in the path. There are two choices: the path on the left goes up a hill,\n"
             "the path on the right goes further into the forest.\n";
-    the_whistling_gorge();
+    the_whistling_gorge(false);
 }
 
-void the_whistling_gorge()
+void the_whistling_gorge(bool show_interlude=false)
 {
+    if(show_interlude)
+    {
+        interlude();
+        system("cls");
+    }
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Take the path on the left\n";
@@ -63,7 +70,7 @@ void the_whistling_gorge()
             {
                 cout << "You look down the path that lead to the fruit and your stomach churns. Disgusted, you turn away from it, grateful you chose not to eat it.\n"
                         "You look back to the paths before you.\n";
-                the_whistling_gorge();
+                the_whistling_gorge(false);
             }
             else
             {
@@ -89,7 +96,7 @@ void the_whistling_gorge()
             if(twg_found_journal)
             {
                 cout << "You briefly scan the area, but find nothing else of interest and turn back to the paths before you.\n";
-                the_whistling_gorge();
+                the_whistling_gorge(false);
             }
             else
             {
@@ -104,20 +111,20 @@ void the_whistling_gorge()
                 cout << hint_6;
                 cout << "You pocket the papers and walk back to your previous position. Once again, the paths lay before you.\n";
             }
-            the_whistling_gorge();
+            the_whistling_gorge(false);
             break;
         
         case 'd':
             cout << "You look back from where you came, but remember the solid rock between the pillars of the archway -\n"
                     "you aren't getting out of here until you find what you're looking for.\n";
                     "You turn back to the paths ahead of you.\n";
-            the_whistling_gorge();
+            the_whistling_gorge(false);
             break;
         
         default:
         
             try_again();
-            the_whistling_gorge();
+            the_whistling_gorge(false);
     }
 }
 
@@ -142,13 +149,13 @@ void fruit_options()
             
         cout << "\n\nEnding 12: Dissolved\n";
         print_line();
-        retry(&the_whistling_gorge);
+        retry(&the_whistling_gorge, true);
     }
     else if(tolower(choice) == 'n')
     {
         cout << "Wisely, you decide not to take the fruit and turn around, heading back into the grove.\n";
         denied_fruit = true;
-        the_whistling_gorge();
+        the_whistling_gorge(true);
     }
     else
     {
@@ -175,7 +182,7 @@ void branch_options()
                 "put the flute away, and head back through the now open Gate.\n";
         inventory.push_back(the_whistling_gorge_key);
         twg_completed = true;
-        temple_second_room();
+        temple_second_room(true);
     }
     else if(tolower(choice) == 'n')
     {
@@ -210,7 +217,7 @@ void branch_options()
             cout << "\n\nEnding 13: Dry\n";
 
             print_line();
-            retry(&the_whistling_gorge);
+            retry(&the_whistling_gorge, true);
     }
     else
     {

@@ -14,7 +14,7 @@ extern bool twg_found_journal;
 extern bool denied_fruit;
 
 extern void the_whistling_gorge_text();
-extern void the_whistling_gorge();
+extern void the_whistling_gorge(bool show_interlude);
 extern void fruit_options();
 extern void branch_options();
 
