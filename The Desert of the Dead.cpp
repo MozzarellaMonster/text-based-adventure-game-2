@@ -60,7 +60,7 @@ void the_desert_of_the_dead()
     print_line();
     char choice = getch();
     choice = tolower(choice);
-    cout << choice;
+    cout << choice << "\n";
     
     print_line();
     switch(choice)
