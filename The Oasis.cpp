@@ -14,6 +14,13 @@ bool middle_path_intro = false;
 bool explored_clearing = false;
 bool pond_hint = false;
 
+void reset_to()
+{
+    middle_path_intro = false;
+    explored_clearing = false;
+    pond_hint = false;
+}
+
 void the_oasis_text()
 {
     interlude();

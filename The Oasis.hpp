@@ -10,6 +10,7 @@ extern bool middle_path_intro;
 extern bool explored_clearing;
 extern bool pond_hint;
 
+extern void reset_to();
 extern void the_oasis_text();
 extern void the_oasis(bool show_interlude);
 extern void small_clearing();

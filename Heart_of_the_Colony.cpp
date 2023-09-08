@@ -20,6 +20,19 @@ bool hotc_found_root = false;
 bool hotc_read_book = false;
 bool hotc_ask_orb = false;
 
+void reset_hotc()
+{
+    hotc_explored_left_tunnel = false;
+    hotc_explored_middle_tunnel = false;
+    hotc_explored_right_tunnel = false;
+    hotc_heard_history = false;
+    hotc_queens_story = false;
+    hotc_found_hint = false;
+    hotc_found_root = false;
+    hotc_read_book = false;
+    hotc_ask_orb = false;
+}
+
 void the_heart_of_the_colony_text()
 {
     interlude();

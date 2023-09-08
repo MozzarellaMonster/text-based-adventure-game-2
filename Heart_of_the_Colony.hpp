@@ -16,6 +16,7 @@ extern bool hotc_found_root;
 extern bool hotc_read_book;
 extern bool hotc_ask_orb;
 
+extern void reset_hotc();
 extern void the_heart_of_the_colony_text();
 extern void the_heart_of_the_colony();
 extern void hotc_explore_nest_text();

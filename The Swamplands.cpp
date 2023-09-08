@@ -17,6 +17,16 @@ bool tt_intro_text = true;
 bool hunt = false;
 bool crab = false;
 
+void reset_ts()
+{
+    explored_grasslands = false;
+    explored_tall_trees = false;
+    explored_islands = false;
+    tt_intro_text = true;
+    hunt = false;
+    crab = false;
+}
+
 void the_swamplands_text()
 {
     interlude();

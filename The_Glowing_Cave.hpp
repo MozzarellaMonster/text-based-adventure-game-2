@@ -16,6 +16,7 @@ extern bool recovered;
 
 extern bool attention_seeker;
 
+extern void reset_tgc();
 extern void the_glowing_cave_text();
 extern void the_glowing_cave();
 extern void gc_left_tunnel_text();

@@ -20,6 +20,19 @@ bool recovered = false;
 
 bool attention_seeker = false;
 
+void reset_tgc()
+{
+    gc_explored_left_tunnel = false;
+    gc_explored_right_tunnel = false;
+    gc_explored_path = false;
+    gc_usb_drive = false;
+    gc_found_journal = false;
+    gc_found_fossil = false;
+    recovered = false;
+
+    attention_seeker = false;
+}
+
 void the_glowing_cave_text()
 {
     interlude();
