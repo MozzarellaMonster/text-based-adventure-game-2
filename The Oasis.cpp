@@ -62,17 +62,7 @@ void the_oasis(bool show_interlude=false)
             break;
             
         case 'b':
-            if(!middle_path_intro)
-            {
-                cout << "You decide to explore the middle path.\n"
-                        "Peering through the trees, you can just make out a beautiful waterfall in the distance, a small rainbow reflected in the spray.\n"
-                        "You follow the path through the jungle until you stand on the shore of the small pond the waterfall pours into. You stare at the beauty all around you.\n"
-                        "The roar of the waterfall provides some natural white noise as you slowly close your eyes and simply soak in the moment. It's a nice reprieve from what you've been through lately.\n"
-                        "Several moments later, after taking one final deep breath, you finally open your eyes and return to your previous mindset: looking for what you need.\n";
-                middle_path_intro = true;
-            }
-            cout << "You stand on the shoreline of the small pond the roaring waterfall pours into. To your left, you see an unusually neatly stacked pile of rocks set against a cliff wall next to the waterfall,\n"
-                    "to your left lies a log overgrown with mushrooms and moss, but appears hollow inside, and directly ahead of you lies the waterfall.\n";
+            cout << "You decide to explore the middle path.\n";
             pond_options(true);
             break;
 
@@ -175,6 +165,17 @@ void pond_options(bool show_interlude=false)
         interlude();
         system("cls");
     }
+    if(!middle_path_intro)
+    {
+        cout << "Peering through the trees, you can just make out a beautiful waterfall in the distance, a small rainbow reflected in the spray.\n"
+                "You follow the path through the jungle until you stand on the shore of the small pond the waterfall pours into. You stare at the beauty all around you.\n"
+                "The roar of the waterfall provides some natural white noise as you slowly close your eyes and simply soak in the moment. It's a nice reprieve from what you've been through lately.\n"
+                "Several moments later, after taking one final deep breath, you finally open your eyes and return to your previous mindset: looking for what you need.\n";
+        middle_path_intro = true;
+    }
+    cout << "You stand on the shoreline of the small pond the roaring waterfall pours into. To your left, you see an unusually neatly stacked pile of rocks set against a cliff wall next to the waterfall,\n"
+            "to your left lies a log overgrown with mushrooms and moss, but appears hollow inside, and directly ahead of you lies the waterfall.\n";
+
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Investigate the pile of rocks\n";
