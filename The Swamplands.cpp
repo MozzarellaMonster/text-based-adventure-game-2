@@ -13,6 +13,7 @@ using namespace std;
 bool explored_grasslands = false;
 bool explored_tall_trees = false;
 bool explored_islands = false;
+bool tt_intro_text = true;
 bool hunt = false;
 bool crab = false;
 
@@ -175,12 +176,17 @@ void grasslands()
 
 void tall_trees()
 {
-    cout << "Getting into the boat, you paddle your way straight towards the deep swamp littered with numerous tall trees. As you approach, the sun hides behind the thick canopy, effectively darkening the entire area.\n"
-            "Slowing the boat, you look around the deep swamp. The lack of light makes it hard to see, but you can just make out two paths ahead of you - the left path leads into a darker, older part of the swamp\n"
-            "with much more densely packed and larger trees, whereas the other simply leads further into the swamp.\n";
-
     interlude();
     system("cls");
+
+    if(tt_intro_text)
+    {
+        cout << "Getting into the boat, you paddle your way straight towards the deep swamp littered with numerous tall trees. As you approach, the sun hides behind the thick canopy, effectively darkening the entire area.\n"
+                "Slowing the boat, you look around the deep swamp. The lack of light makes it hard to see, but you can just make out two paths ahead of you - the left path leads into a darker, older part of the swamp\n"
+                "with much more densely packed and larger trees, whereas the other simply leads further into the swamp.\n";
+        tt_intro_text = false;
+    }
+
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Go into the darker part of the swamp\n";

@@ -9,6 +9,7 @@ using namespace std;
 extern bool explored_grasslands;
 extern bool explored_tall_trees;
 extern bool explored_islands;
+extern bool tt_intro_text;
 extern bool hunt;
 extern bool crab;
 
