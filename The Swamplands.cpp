@@ -67,15 +67,13 @@ void the_swamplands(bool show_interlude=false)
         }
         else
         {
+            cout << "You decide to explore the tall grasslands.\n";
             grasslands();
         }
         break;
 
     case 'b':
-        cout << "You decide to explore the area with the tall trees.\n"
-                "Getting into the boat, you paddle your way straight towards the deep swamp littered with numerous tall trees. As you approach, the sun hides behind the thick canopy, effectively darkening the entire area.\n"
-                "Slowing the boat, you look around the deep swamp. The lack of light makes it hard to see, but you can just make out two paths ahead of you - the left path leads into a darker, older part of the swamp\n"
-                "with much more densely packed and larger trees, whereas the other simply leads further into the swamp.\n";
+        cout << "You decide to explore the area with the tall trees.\n";
         tall_trees();
         break;
 
@@ -87,11 +85,7 @@ void the_swamplands(bool show_interlude=false)
         }
         else
         {
-            cout << "You decide to explore the cluster of small islands.\n"
-                    "Getting into the boat, you point it in the direction of the cluster of islands and begin to paddle your way there. Unlike the other areas, this area is further away.\n"
-                    "After paddling for a long while, you finally arrive at the first of the islands. A dense fog has collected around the islands, making it hard to see in particular areas.\n"
-                    "From what you can make out, it seems as though there are two areas that seem to be worth exploring - a large island with a collection of large boulders in the middle of it and another area\n"
-                    "filled with several broken and rotting wooden structures that may have been a village at some point in the past.\n";
+            cout << "You decide to explore the cluster of small islands.\n";
             islands();
         }
         break;
@@ -105,16 +99,17 @@ void the_swamplands(bool show_interlude=false)
 
 void grasslands()
 {
-    cout << "You decide to explore the tall grasslands.\n"
-            "Getting into the boat, you paddle your way to the left area where the tall grasslands greet you on thankfully solid ground. Reaching a smaller, more decrepit dock, you tie your boat to a piling\n"
+    interlude();
+    system("cls");
+
+    cout << "Getting into the boat, you paddle your way to the left area where the tall grasslands greet you on thankfully solid ground. Reaching a smaller, more decrepit dock, you tie your boat to a piling\n"
             "and climb out. As expected, the grass is much higher than what you initially expected, well above your full height. With deep trepidation, yet equally deep determination, you step into the grasslands.\n"
             "Several minutes pass before you come across anything within the field. Even traveling in a straight line, you're pleasantly surprised that nothing has actually tried to kill you yet.\n"
             "Unexpectedly however, the monotony is dropped once you come across an unusual sight - a small camp of wooden and straw huts. And small is not an exaggeration, the huts are barely above knee-height.\n"
             "You stoop low to look inside one of them - empty. Eventually, you spot several small footprints on the ground leading away from every hut and into the tall grass. You now have two options - follow the\n"
             "footprints further into the grass or go in a separate direction away from them.\n";
-            explored_grasslands = true;
-    interlude();
-    system("cls");
+    explored_grasslands = true;
+    
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Follow the footprints\n";
@@ -180,6 +175,10 @@ void grasslands()
 
 void tall_trees()
 {
+    cout << "Getting into the boat, you paddle your way straight towards the deep swamp littered with numerous tall trees. As you approach, the sun hides behind the thick canopy, effectively darkening the entire area.\n"
+            "Slowing the boat, you look around the deep swamp. The lack of light makes it hard to see, but you can just make out two paths ahead of you - the left path leads into a darker, older part of the swamp\n"
+            "with much more densely packed and larger trees, whereas the other simply leads further into the swamp.\n";
+
     interlude();
     system("cls");
     print_line();
@@ -267,6 +266,12 @@ void islands()
 {
     interlude();
     system("cls");
+
+    cout << "Getting into the boat, you point it in the direction of the cluster of islands and begin to paddle your way there. Unlike the other areas, this area is further away.\n"
+            "After paddling for a long while, you finally arrive at the first of the islands. A dense fog has collected around the islands, making it hard to see in particular areas.\n"
+            "From what you can make out, it seems as though there are two areas that seem to be worth exploring - a large island with a collection of large boulders in the middle of it and another area\n"
+            "filled with several broken and rotting wooden structures that may have been a village at some point in the past.\n";
+
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Explore the large island with several large boulders\n";
