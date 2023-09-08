@@ -41,7 +41,6 @@ void reset()
     journals.clear();
     obslots.clear();
 
-    // Once all trackers are determined, use this function to reset them upon a retry.
     // First room
     jungle_repeat = 0;
     first_room_explored = false;
@@ -68,44 +67,19 @@ void reset()
     reset_dod();
 
     // Heart of the Colony
-    hotc_explored_left_tunnel = false;
-    hotc_explored_middle_tunnel = false;
-    hotc_explored_right_tunnel = false;
-    hotc_heard_history = false;
-    hotc_queens_story = false;
-    hotc_found_hint = false;
-    hotc_found_root = false;
-    hotc_read_book = false;
-    hotc_ask_orb = false;
+    reset_hotc();
 
     // The Glowing Cave
-    gc_explored_left_tunnel = false;
-    gc_explored_right_tunnel = false;
-    gc_explored_path = false;
-    gc_usb_drive = false;
-    gc_found_journal = false;
-    gc_found_fossil = false;
-    recovered = false;
-    attention_seeker = false;
+    reset_tgc();
 
     // The Oasis
-    middle_path_intro = false;
-    explored_clearing = false;
-    pond_hint = false;
+    reset_to();
 
     // The Whistling Gorge
-    explored_left_path = false;
-    explored_right_path = false;
-    looked_around = false;
-    twg_found_journal = false;
-    denied_fruit = false;
+    reset_twg();
 
     // The Swamplands
-    explored_grasslands = false;
-    explored_tall_trees = false;
-    explored_islands = false;
-    hunt = false;
-    crab = false;
+    reset_ts();
 
     // The Labyrinth
     saved_index = 0;
