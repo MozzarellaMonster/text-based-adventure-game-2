@@ -6,13 +6,10 @@
 
 using namespace std;
 
-extern bool explored_left_path;
-extern bool explored_right_path;
-extern bool looked_around;
 extern bool twg_found_journal;
-
 extern bool denied_fruit;
 
+extern void reset_twg();
 extern void the_whistling_gorge_text();
 extern void the_whistling_gorge(bool show_interlude);
 extern void fruit_options();

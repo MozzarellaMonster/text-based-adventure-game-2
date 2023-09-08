@@ -10,12 +10,13 @@
 
 using namespace std;
 
-bool explored_left_path;
-bool explored_right_path;
-bool looked_around;
 bool twg_found_journal = false;
+bool denied_fruit = false;
 
-bool denied_fruit;
+void reset_twg()
+{
+
+}
 
 void the_whistling_gorge_text()
 {
