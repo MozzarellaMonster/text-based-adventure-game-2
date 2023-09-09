@@ -10,6 +10,7 @@
 #include "Journal Entries.hpp"
 #include "Trackers.hpp"
 #include "Items.hpp"
+#include "The_Glowing_Cave.hpp"
 #include "The Labyrinth.hpp"
 
 using namespace std;
@@ -294,9 +295,9 @@ void door_object(char option, string puzzle)
                         "You continue on your way, the path coming more into focus, seemingly lit by some unknown source. It is then that you realize the waterfall is no longer splashing onto the bridge.\n"
                         "The hairs on the back of your neck stand straight up as you finally hear it - deep breathing that you had mistaken as wind traveling through the chamber earlier.\n"
                         "The terrifyingly familiar orange glow dances above you now, making your shadow lean from side to side, almost as if in an terror-stricken dance.\n"
-                        "A hot, humid breath suddenly caresses the stiff hairs along your neck and you shut your eyes as you brace yourself for what you're about to see, remembering how you wished to never witness it again.\n"
-                        "You slowly turn around, foolishly hoping it wasn't what you feared. You open your eyes and immediately regret it. You stare hopelessly into those same huge opal globes of the reptillian monstrosity.\n"
-                        "Its huge jaws cracked open, breathing hot, sticky fire your way. Its tongue licks the air, taking in your scent. You hold back as long as you can, but your fear eventually wins.\n"
+                        "A hot, humid breath suddenly caresses the stiff hairs along your neck and you shut your eyes as you brace yourself for what you're about to see.\n"
+                        "You slowly turn around and open your eyes, immediately regretting it. You stare hopelessly into two huge opal globes of a reptillian monstrosity.\n"
+                        "Its huge mouth hangs open, breathing hot, sticky fire your way. Its tongue licks the air, taking in your scent. You hold back as long as you can, but your fear eventually wins.\n"
                         "You scream, long and loud. And throughout that long chamber, the sound of massive jaws snapping closed echoes throughout.\n";
 
                 cout << "\n\nEnding 24: Canyon Crawler\n";
