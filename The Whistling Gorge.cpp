@@ -15,7 +15,8 @@ bool denied_fruit = false;
 
 void reset_twg()
 {
-
+    twg_found_journal = false;
+    denied_fruit = false;
 }
 
 void the_whistling_gorge_text()
