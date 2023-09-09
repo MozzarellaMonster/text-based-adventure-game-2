@@ -22,6 +22,7 @@ using namespace std;
 
 vector<string> inventory;
 vector<string> journals;
+vector<string> hints;
 vector<string> obslots;
 
 inline void print_line()
@@ -108,6 +109,8 @@ void retry()
         cout << "   | |   | (   ) || (           | |   | (      | |   | || (      | |      | (      \n";
         cout << "   | |   | )   ( || (____/\\     | |   | (____/\\| )   ( || )      | (____/\\| (____/\\\n";
         cout << "   )_(   |/     \\|(_______/     )_(   (_______/|/     \\||/       (_______/(_______/\n\n\n";
+
+        cout << "You found " << journals.size() << " of 7 journals.\n";
         this_thread::sleep_for(chrono::seconds(3));
         exit(0);
     }
