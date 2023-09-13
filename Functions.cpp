@@ -22,7 +22,6 @@ using namespace std;
 
 vector<string> inventory;
 vector<string> journals;
-vector<string> hints;
 vector<string> obslots;
 
 inline void print_line()
