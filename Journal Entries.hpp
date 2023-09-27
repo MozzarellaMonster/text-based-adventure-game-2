@@ -6,6 +6,7 @@
 
 using namespace std;
 
+extern string the_house_summary;
 extern string journal_entry_1;
 extern string journal_entry_2;
 extern string journal_entry_3;

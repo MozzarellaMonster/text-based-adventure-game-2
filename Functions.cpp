@@ -275,7 +275,7 @@ void show_inventory()
 
 void interlude()
 {
-    this_thread::sleep_for(chrono::seconds(5));
+    //this_thread::sleep_for(chrono::seconds(5));
     print_line();
     cout << "Press ENTER to continue.\n";
     cin.clear();
@@ -300,6 +300,10 @@ void start()
     cout << "A game by MozzarellaMonster.\n"
             "Hello! Welcome to the sequel to The House!\n"
             "Hopefully you enjoy it and have as much fun as I did making it!\n\n";
+
+    print_line();
+    cout << "Here is a recap of the previous game's events: \n";
+    cout << the_house_summary;
     
     print_line();
     cout << "After wandering through the jungle for an immeasurable amount of time, you come across a strange temple.\n"

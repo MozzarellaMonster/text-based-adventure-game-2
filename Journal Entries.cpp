@@ -4,6 +4,13 @@
 
 using namespace std;
 
+string the_house_summary = "\nYou are a journalist that was sent to a strange house surrounded by mystery to find some explanation for some mysterious happenings\n"
+                 "that have occurred at the residence. During your exploration of The House, you find that nothing is as it seems and there is more\n"
+                 "to the house and its previous owner than initially believed. At the end of your exploration, you are suddenly thrust into an empty\n"
+                 "jungle after activating a mysterious device in the basement of The House with no chance of getting back in sight.\n"
+                 "With no other option, you head further into the jungle.\n\n"
+                 "This is where this story begins...\n\n";
+
 // Found outside the temple
 string journal_entry_1 = "\n\t06/07/01\n"
                          "\tThe archeological dig has done tremendous work,\n"
