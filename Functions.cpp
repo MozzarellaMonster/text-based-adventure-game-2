@@ -6,6 +6,16 @@
 #include <chrono>
 #include <conio.h>
 
+#ifdef linux
+#include <sys/ioctl.h>
+#include <unistd.h>
+#include <stdio.h>
+#endif
+
+#ifdef _WIN32
+    #include <windows.h>
+#endif
+
 #include "Functions.hpp"
 #include "Items.hpp"
 #include "Trackers.hpp"
@@ -26,7 +36,26 @@ vector<string> obslots;
 
 inline void print_line()
 {
-    cout << "\n=====================================================================================================================================================================================================\n";
+    int console_size;
+    #ifdef linux
+    struct winsize size;
+    ioctl(STDOUT_FILENO, TIOCGWINSZ, &size);
+
+    console_size = size.ws_col;
+    #endif
+
+    #ifdef _WIN32
+    _CONSOLE_SCREEN_BUFFER_INFO consoleSizeInfo;
+    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &consoleSizeInfo);
+    console_size = consoleSizeInfo.dwSize.X;
+    #endif
+
+    cout << "\n";
+    for(int i = 0; i < console_size; i++)
+    {
+        cout << "=";
+    }
+    cout << "\n\n";
 }
 
 inline void try_again()
