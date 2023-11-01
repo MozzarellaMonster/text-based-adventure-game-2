@@ -6,13 +6,13 @@
 #include <chrono>
 #include <conio.h>
 
-#ifdef linux
+#ifndeflinux
 #include <sys/ioctl.h>
 #include <unistd.h>
 #include <stdio.h>
 #endif
 
-#ifdef _WIN32
+#ifndef_WIN32
     #include <windows.h>
 #endif
 
@@ -37,14 +37,14 @@ vector<string> obslots;
 inline void print_line()
 {
     int console_size;
-    #ifdef linux
+    #ifndeflinux
     struct winsize size;
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &size);
 
     console_size = size.ws_col;
     #endif
 
-    #ifdef _WIN32
+    #ifndef_WIN32
     _CONSOLE_SCREEN_BUFFER_INFO consoleSizeInfo;
     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &consoleSizeInfo);
     console_size = consoleSizeInfo.dwSize.X;
@@ -316,7 +316,13 @@ void interlude()
 
 void start()
 {
+    #ifndef _WIN32
     system("cls");
+    #endif
+
+    #ifndef linux
+    system("clear");
+    #endif
     cout << "_________          _______   _________ _______  _______  _______  _        _______ \n";
     cout << "\\__   __/|\\     /|(  ____ \\  \\__   __/(  ____ \\(       )(  ____ )( \\      (  ____ \\\n";
     cout << "   ) (   | )   ( || (    \\/     ) (   | (    \\/| () () || (    )|| (      | (    \\/\n";
@@ -468,7 +474,13 @@ void temple_entrance()
 void temple_first_room_text()
 {
     interlude();
+    #ifndef _WIN32
     system("cls");
+    #endif
+    #ifndef linux
+    system("clear");
+    #endif
+    
     determine_riddle();
     print_line();
     cout << "You enter the temple and find yourself in a dimly lit room.\n"
@@ -659,7 +671,14 @@ void temple_first_room()
 void temple_second_room_text()
 {
     interlude();
+    #ifndef _WIN32
     system("cls");
+    #endif
+
+    #ifndef linux
+    system("clear");
+    #endif
+
     print_line();
     cout << "You step into the much larger room and look around.\n"
             "Spaced evenly around the perimeter of the room are seven stone archways.\n"
@@ -681,7 +700,12 @@ void temple_second_room(bool from_world=false)
     if(from_world)
     {
         interlude();
+        #ifndef _WIN32
         system("cls");
+        #endif
+        #ifndef linux
+        system("clear");
+        #endif
     }
     if(must_deposit == true)
     {

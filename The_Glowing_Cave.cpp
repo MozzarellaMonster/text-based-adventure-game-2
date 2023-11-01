@@ -36,7 +36,13 @@ void reset_tgc()
 void the_glowing_cave_text()
 {
     interlude();
+    #ifndef _WIN32
     system("cls");
+    #endif
+
+    #ifndef linux
+    system("clear");
+    #endif
     print_line();
     cout << "Bracing yourself, you close your eyes and take a step into the portal.\n"
             "However, you are met with an eerie silence, followed by a sudden feeling of moisture in the air.\n"
@@ -168,7 +174,13 @@ void the_glowing_cave()
 void gc_left_tunnel_text()
 {
     interlude();
+    #ifndef _WIN32
     system("cls");
+    #endif
+
+    #ifndef linux
+    system("clear");
+    #endif
     print_line();
     cout << "You find yourself in a large cavern, a narrow, natural land bridge stretching across a massive canyon splitting the chamber in two. A large waterfall cascades down from above and to the left of the land bridge,\n"
             "completely soaking the bridge to the point that puddles have formed on it, giving the illusion of holes. Were it not for the constant spray sending ripples through the puddles, you'd believe the illusion.\n"
@@ -254,7 +266,13 @@ void gc_left_tunnel()
 void gc_right_tunnel()
 {
     interlude();
+    #ifndef _WIN32
     system("cls");
+    #endif
+
+    #ifndef linux
+    system("clear");
+    #endif
     print_line();
     if(!gc_explored_right_tunnel)
     {
@@ -303,7 +321,13 @@ void gc_right_tunnel()
 void gc_pathway_text()
 {
     interlude();
+    #ifndef _WIN32
     system("cls");
+    #endif
+
+    #ifndef linux
+    system("clear");
+    #endif
     print_line();
     cout << "You follow the trail for some distance before arriving in a small clearing in the forest of fungi. A portion of the dirt here is tilled and small, dead sprouts of an unknown plant line the ground.\n"
             "Nearby, a wooden cart with a missing wheel lays tilted at an angle. In the back of the cart are intricately-woven baskets with decayed remains of the plant inside them.\n"
@@ -324,7 +348,13 @@ void gc_pathway(bool show_interlude=false)
     if(show_interlude)
     {
         interlude();
+        #ifndef _WIN32
         system("cls");
+        #endif
+
+        #ifndef linux
+        system("clear");
+        #endif
     }
     gc_explored_path = true;
     print_line();

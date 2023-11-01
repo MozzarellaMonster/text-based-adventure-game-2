@@ -36,7 +36,13 @@ void reset_hotc()
 void the_heart_of_the_colony_text()
 {
     interlude();
+    #ifndef _WIN32
     system("cls");
+    #endif
+
+    #ifndef linux
+    system("clear");
+    #endif
     print_line();
     cout << "You brace yourself, but fall to your hands and knees anyway as you go through the entrance.\n"
             "Immediately, you notice something odd about the atmosphere here. The air is thick, yet strangely dry.\n"
@@ -120,7 +126,13 @@ void the_heart_of_the_colony()
 void the_queens_chambers()
 {
     interlude();
+    #ifndef _WIN32
     system("cls");
+    #endif
+
+    #ifndef linux
+    system("clear");
+    #endif
     print_line();
     cout << "Eventually, the tunnel opens up into a large chamber where you spy a distinct silhouette facing away from you: the Ant Queen.\n"
             "It doesn't look like the typical ant, it is much bigger and has a distinctly semi-humanoid upper torso attached to the thorax,\n"
@@ -156,7 +168,13 @@ void the_queens_chambers()
 void hotc_explore_nest_text()
 {
     interlude();
+    #ifndef _WIN32
     system("cls");
+    #endif
+
+    #ifndef linux
+    system("clear");
+    #endif
     print_line();
     cout << "You are now free to explore the ant hive as you please, however keep in mind the warnings the Ant Queen gave you:\n"
             "\"[I]f you bring harm to any of my subjects, your bones will line my walls.\"\n"
@@ -173,7 +191,13 @@ void hotc_explore_nest(bool show_interlude=false)
     if(show_interlude)
     {
         interlude();
+        #ifndef _WIN32
         system("cls");
+        #endif
+
+        #ifndef linux
+        system("clear");
+        #endif
     }
     print_line();
     cout << "What would you like to do?\n";
@@ -364,7 +388,13 @@ void hotc_explore_nest(bool show_interlude=false)
 void hotc_archives_text()
 {
     interlude();
+    #ifndef _WIN32
     system("cls");
+    #endif
+
+    #ifndef linux
+    system("clear");
+    #endif
     print_line();
     cout << "You approach the stone pedestal in the center of the room. Unlike the other chambers you've been in so far, this one appears to be close to the surface.\n"
             "You look up towards the circular hole in the roof of the chamber where sunlight pours through unhindered, it shines directly down on the stone pedestal.\n"
