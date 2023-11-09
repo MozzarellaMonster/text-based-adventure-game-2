@@ -163,13 +163,7 @@ void add_to_inventory()
 void the_labyrinth_text()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
     cout << "Unlike the other portals, you don't seem to be forced through. Rather, you find the ingress to be much more pleasant.\n"
             "You look around you, at first it seems as though there is nothing but a long stone floor all around you polished to a mirror-like sheen.\n"
             "Then, the blocky outlines of edges form around you in a bright white light, like a solid wire mesh in a 3D animating program.\n"
@@ -185,13 +179,7 @@ void the_labyrinth_text()
 void first_puzzle()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
     cout << "You proceed further into the maze and eventually happen upon an unusual sight:\n"
             "A room with three doors in front of you, each one inscribed with a riddle and possessing a hole in the center of the door.\n"
             "You have the left door, the center door, and the right door.\n";
@@ -333,13 +321,7 @@ void door_object(char option, string puzzle)
 void second_puzzle()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
     print_line();
     cout << "After walking for several minutes, you now find yourself in another peculiar location. Before you lays a corridor with a sudden drop off ahead, descending into pitch black darkness.\n"
             "Inching closer, you look over the edge and suddenly the sound of whirring machinery starts as platforms materialize out of thin air before disappearing a second later.\n"
@@ -393,13 +375,7 @@ void second_puzzle()
 void third_puzzle()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
     print_line();
     cout << "After a brief period of time you come across a closed door. However, this door is different from the ones you've seen thus far. It resembles more of a blast door\n"
             "with thick windows than the usual stone doors with slots in them. Next to the door is a small screen. Ignoring the screen for now, you peer through the windows of the blast door.\n"
@@ -461,13 +437,7 @@ void third_puzzle()
 void fourth_puzzle()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
     print_line();
     cout << "After a short period of time you come across another unique chamber: a long, brightly lit corridor with a slotted door at the other end. The corridor is suspiciously clear of any obstacles.\n"
             "After a moment's hesitation, you start to take a step into the corridor before hearing a roar behind you. Quickly, you turn around to see that one of the centipede creatures has followed you.\n"
@@ -523,13 +493,7 @@ void fourth_puzzle()
 void fifth_puzzle()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
     print_line();
     cout << "You proceed down a long, winding corridor until you reach another door. This time, the door slides open without any input from you. You hesitantly proceed and find yourself in a strange dark chamber.\n"
             "There are no lights to be seen anywhere, you can't even make out your hands in front of your face. Suddenly, the door shuts behind you and you hear machinery power up.\n"
@@ -573,13 +537,7 @@ void fifth_puzzle()
 void sixth_puzzle()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
     print_line();
     cout << "You walk for some time down the long corridor, longer than you had to for the other corridors. After some time, you come to a door resembling that to a large vault. It is then you notice a small slot in the door.\n"
             "At first, you think that there's no way it can hold the Black Heart, since it is so small, but then you realize something. It's not a slot for the Black Heart, but rather, the dagger you received at the start of this whole ordeal.\n"
@@ -602,13 +560,7 @@ void sixth_puzzle()
 void underwater_scene()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
     print_line();
     cout << "As you enter the orb, water rushes all around you and throws you off your guard. Utilizing the Black Heart, you change your form into an aquatic one, able to breathe underwater and move around effortlessly in the deep.\n"
             "Regaining your vertical orientation, you look all around you. A deep blue abyss expands in all directions around you, but directly below you lies a dark chasm - a huge dark canyon filled with the blackest black imaginable.\n"
@@ -655,13 +607,7 @@ void underwater_scene()
 void web_scene()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
     print_line();
     cout << "You come to in a dark place, surrounded by long, sticky strands of silk. Trying to get up, you find that the webs all around you keep you stuck in place. Tossing and turning, you only manage to get yourself even more tangled.\n"
             "After struggling for a while, you notice that one particular strong strand of silk is vibrating rapidly with your movements. A signal. It is then you notice several strands of silk starting to vibrate, rapidly increasing in motion\n"
@@ -711,13 +657,7 @@ void web_scene()
 void shaft_scene()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
     print_line();
     cout << "You find yourself falling, falling deep into a dark hole before you see the ground approaching fast. Quickly, you use the Black Heart to sprout wings that catch the air and slow your descent before growing claws and grabbing onto the hard rock wall nearby.\n"
             "Slowing to a stop, you jump the last few feet to the ground and look up. Above you, you see a hole in the ceiling of a tall circular shaft where you can see the stars above. All along the length of the shaft, you see clusters of diamonds sprouting from the walls.\n"
@@ -802,13 +742,7 @@ void shaft_scene()
 void the_end()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
     print_line();
     cout << "Stumbling from reentry into the white void, you grab ahold of something solid. Leaning against it, you catch your breath as your muscles scream for rest and your legs barely hold you up.\n"
             "It is not over however, as you realize that you're leaning against a door. Standing back up, you back up a bit to see the door in full view. It is intricately carved,\n"

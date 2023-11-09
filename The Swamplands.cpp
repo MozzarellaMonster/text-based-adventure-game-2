@@ -30,13 +30,7 @@ void reset_ts()
 void the_swamplands_text()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
     print_line();
     cout << "You stumble out of the Gate and immediately get your foot stuck in a deep puddle of mud. The mud sucks at your shoes as you desperately try to free your foot without falling over.\n"
             "Thankfully, after much wiggling and pulling, you manage to free your foot, shoe and all, from the mud without so much as a slight stumble. You finally look up from the muddy puddle\n"
@@ -123,13 +117,7 @@ void the_swamplands(bool show_interlude=false)
 void grasslands()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
 
     cout << "Getting into the boat, you paddle your way to the left area where the tall grasslands greet you on thankfully solid ground. Reaching a smaller, more decrepit dock, you tie your boat to a piling\n"
             "and climb out. As expected, the grass is much higher than what you initially expected, well above your full height. With deep trepidation, yet equally deep determination, you step into the grasslands.\n"
@@ -205,13 +193,7 @@ void grasslands()
 void tall_trees()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
 
     if(tt_intro_text)
     {
@@ -305,13 +287,7 @@ void tall_trees()
 void islands()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
 
     cout << "Getting into the boat, you point it in the direction of the cluster of islands and begin to paddle your way there. Unlike the other areas, this area is further away.\n"
             "After paddling for a long while, you finally arrive at the first of the islands. A dense fog has collected around the islands, making it hard to see in particular areas.\n"
@@ -396,13 +372,7 @@ void islands()
 void rock_island()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Reach between the rocks\n";
@@ -456,13 +426,7 @@ void rock_island()
 void the_hunt()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
     print_line();
     cout << "Going back to the starting position, you look around quickly, taking in your surroundings and looking for anything that might make a good makeshift weapon. The Nightflesh monster will be here any minute now,\n"
             "and you only have the dagger on you for protection. There are a few sizable rocks laying in a pool nearby, a large broken-off branch that could make a good makeshift club lying against the trunk of a tree,\n"

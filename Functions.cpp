@@ -6,10 +6,10 @@
 #include <chrono>
 #include <conio.h>
 
-#ifndeflinux
-#include <sys/ioctl.h>
-#include <unistd.h>
-#include <stdio.h>
+#ifndef linux
+    #include <sys/ioctl.h>
+    #include <unistd.h>
+    #include <stdio.h>
 #endif
 
 #ifndef_WIN32
@@ -314,7 +314,7 @@ void interlude()
     }
 }
 
-void start()
+void clear_screen()
 {
     #ifndef _WIN32
     system("cls");
@@ -323,6 +323,11 @@ void start()
     #ifndef linux
     system("clear");
     #endif
+}
+
+void start()
+{
+    clear_screen();
     cout << "_________          _______   _________ _______  _______  _______  _        _______ \n";
     cout << "\\__   __/|\\     /|(  ____ \\  \\__   __/(  ____ \\(       )(  ____ )( \\      (  ____ \\\n";
     cout << "   ) (   | )   ( || (    \\/     ) (   | (    \\/| () () || (    )|| (      | (    \\/\n";
@@ -671,13 +676,7 @@ void temple_first_room()
 void temple_second_room_text()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
 
     print_line();
     cout << "You step into the much larger room and look around.\n"

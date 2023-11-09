@@ -23,6 +23,7 @@ extern void determine_riddle();
 extern void start();
 extern void show_inventory();
 extern void interlude();
+extern void clear_screen();
 
 extern void first_choice();
 extern void temple_entrance();

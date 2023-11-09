@@ -22,13 +22,7 @@ void reset_twg()
 void the_whistling_gorge_text()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
     print_line();
     cout << "You stumble through the Gate, barely managing to regain your balance to avoid face planting in the chalky white dust.\n"
             "Standing upright, you find yourself in a large canyon with looming rock faces on either side of you.\n"

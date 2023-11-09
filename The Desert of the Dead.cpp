@@ -28,13 +28,7 @@ void reset_dod()
 void the_desert_of_the_dead_text()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
     print_line();
     cout << "You fall to your knees. Going through the entrance knocked the wind out of you.\n"
             "After taking a few seconds to catch your breath, you stand back up and look around the room you are now in.\n"

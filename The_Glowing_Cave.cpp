@@ -348,13 +348,7 @@ void gc_pathway(bool show_interlude=false)
     if(show_interlude)
     {
         interlude();
-        #ifndef _WIN32
-        system("cls");
-        #endif
-
-        #ifndef linux
-        system("clear");
-        #endif
+        clear_screen();
     }
     gc_explored_path = true;
     print_line();
