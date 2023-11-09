@@ -6,13 +6,11 @@
 #include <chrono>
 #include <conio.h>
 
-#ifndef linux
+#if linux
     #include <sys/ioctl.h>
     #include <unistd.h>
     #include <stdio.h>
-#endif
-
-#ifndef_WIN32
+#elif _WIN32
     #include <windows.h>
 #endif
 
@@ -37,14 +35,14 @@ vector<string> obslots;
 inline void print_line()
 {
     int console_size;
-    #ifndeflinux
+    #if linux
     struct winsize size;
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &size);
 
     console_size = size.ws_col;
     #endif
 
-    #ifndef_WIN32
+    #if _WIN32
     _CONSOLE_SCREEN_BUFFER_INFO consoleSizeInfo;
     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &consoleSizeInfo);
     console_size = consoleSizeInfo.dwSize.X;
@@ -316,11 +314,11 @@ void interlude()
 
 void clear_screen()
 {
-    #ifndef _WIN32
+    #if _WIN32
     system("cls");
     #endif
 
-    #ifndef linux
+    #if linux
     system("clear");
     #endif
 }
