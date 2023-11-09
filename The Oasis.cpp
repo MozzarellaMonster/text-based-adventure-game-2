@@ -40,13 +40,7 @@ void the_oasis(bool show_interlude=false)
     if(show_interlude)
     {
         interlude();
-        #ifndef _WIN32
-        system("cls");
-        #endif
-
-        #ifndef linux
-        system("clear");
-        #endif
+        clear_screen();
     }
     print_line();
     cout << "What would you like to do?\n";
@@ -176,13 +170,7 @@ void pond_options(bool show_interlude=false)
     if(show_interlude)
     {
         interlude();
-        #ifndef _WIN32
-        system("cls");
-        #endif
-
-        #ifndef linux
-        system("clear");
-        #endif
+        clear_screen();
     }
     if(!middle_path_intro)
     {

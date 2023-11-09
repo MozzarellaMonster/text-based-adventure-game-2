@@ -173,13 +173,7 @@ void hotc_explore_nest(bool show_interlude=false)
     if(show_interlude)
     {
         interlude();
-        #ifndef _WIN32
-        system("cls");
-        #endif
-
-        #ifndef linux
-        system("clear");
-        #endif
+        clear_screen();
     }
     print_line();
     cout << "What would you like to do?\n";

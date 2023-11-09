@@ -10,7 +10,7 @@
     #include <sys/ioctl.h>
     #include <unistd.h>
     #include <stdio.h>
-#elif _WIN32
+#elif _WIN32 || _WIN64
     #include <windows.h>
 #endif
 
@@ -40,9 +40,7 @@ inline void print_line()
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &size);
 
     console_size = size.ws_col;
-    #endif
-
-    #if _WIN32
+    #elif _WIN32 || _WIN64
     _CONSOLE_SCREEN_BUFFER_INFO consoleSizeInfo;
     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &consoleSizeInfo);
     console_size = consoleSizeInfo.dwSize.X;
@@ -314,11 +312,9 @@ void interlude()
 
 void clear_screen()
 {
-    #if _WIN32
+    #if _WIN32 || _WIN64
     system("cls");
-    #endif
-
-    #if linux
+    #elif linux
     system("clear");
     #endif
 }
@@ -477,12 +473,7 @@ void temple_entrance()
 void temple_first_room_text()
 {
     interlude();
-    #ifndef _WIN32
-    system("cls");
-    #endif
-    #ifndef linux
-    system("clear");
-    #endif
+    clear_screen();
     
     determine_riddle();
     print_line();
@@ -697,12 +688,7 @@ void temple_second_room(bool from_world=false)
     if(from_world)
     {
         interlude();
-        #ifndef _WIN32
-        system("cls");
-        #endif
-        #ifndef linux
-        system("clear");
-        #endif
+        clear_screen();
     }
     if(must_deposit == true)
     {
