@@ -111,6 +111,8 @@ void small_clearing()
             "Their colorful petals gently dancing in a small breeze. Despite the welcoming atmosphere, a creeping feeling of unease slinks up your spine. You notice small particles floating through the air,\n"
             "dancing like the fae in fairytales. You hesitate, unsure of what to do.\n";
 
+    cout << warning;
+
     print_line();
     cout << "What would you like to do?\n";
     cout << "A. Proceed into the clearing\n";

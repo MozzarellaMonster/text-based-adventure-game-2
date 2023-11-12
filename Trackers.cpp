@@ -29,6 +29,8 @@ string shimmer = "The same opaque liquid shimmer that you saw in the machine in 
 
 string completed_world = "You look to the now-sealed archway, unable to pass through. You return to the center of the room.\n\n";
 
+string warning = "\n\nNOTE: You cannot return to this area once you leave.\n\n";
+
 int jungle_repeat = 0;
 
 // First room
