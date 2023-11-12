@@ -300,7 +300,6 @@ void show_inventory()
 
 void interlude()
 {
-    //this_thread::sleep_for(chrono::seconds(5));
     print_line();
     cout << "Press ENTER to continue.\n";
     cin.clear();
